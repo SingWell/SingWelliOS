@@ -1,0 +1,599 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		162D98081FA65CD3006068BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162D98071FA65CD3006068BC /* AppDelegate.swift */; };
+		162D980F1FA65CD3006068BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 162D980E1FA65CD3006068BC /* Assets.xcassets */; };
+		162D98121FA65CD3006068BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 162D98101FA65CD3006068BC /* LaunchScreen.storyboard */; };
+		162D981D1FA65CD3006068BC /* SingWellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162D981C1FA65CD3006068BC /* SingWellTests.swift */; };
+		162D98281FA65CD3006068BC /* SingWellUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162D98271FA65CD3006068BC /* SingWellUITests.swift */; };
+		162D98371FA65D09006068BC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162D98361FA65D09006068BC /* Extensions.swift */; };
+		162D983B1FA65D76006068BC /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162D983A1FA65D76006068BC /* MenuViewController.swift */; };
+		162D983E1FA65D9A006068BC /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 162D983D1FA65D9A006068BC /* Menu.storyboard */; };
+		162D98401FA65DB7006068BC /* Child.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 162D983F1FA65DB7006068BC /* Child.storyboard */; };
+		162D98421FA65DD1006068BC /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162D98411FA65DD1006068BC /* ChildViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		162D98191FA65CD3006068BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 162D97FC1FA65CD3006068BC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 162D98031FA65CD3006068BC;
+			remoteInfo = SingWell;
+		};
+		162D98241FA65CD3006068BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 162D97FC1FA65CD3006068BC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 162D98031FA65CD3006068BC;
+			remoteInfo = SingWell;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		162D98041FA65CD3006068BC /* SingWell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SingWell.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		162D98071FA65CD3006068BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		162D980E1FA65CD3006068BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		162D98111FA65CD3006068BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		162D98131FA65CD3006068BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		162D98181FA65CD3006068BC /* SingWellTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SingWellTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		162D981C1FA65CD3006068BC /* SingWellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingWellTests.swift; sourceTree = "<group>"; };
+		162D981E1FA65CD3006068BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		162D98231FA65CD3006068BC /* SingWellUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SingWellUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		162D98271FA65CD3006068BC /* SingWellUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingWellUITests.swift; sourceTree = "<group>"; };
+		162D98291FA65CD3006068BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		162D98361FA65D09006068BC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		162D983A1FA65D76006068BC /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		162D983D1FA65D9A006068BC /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
+		162D983F1FA65DB7006068BC /* Child.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Child.storyboard; sourceTree = "<group>"; };
+		162D98411FA65DD1006068BC /* ChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		162D98011FA65CD3006068BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		162D98151FA65CD3006068BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		162D98201FA65CD3006068BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		162D97FB1FA65CD3006068BC = {
+			isa = PBXGroup;
+			children = (
+				162D98061FA65CD3006068BC /* SingWell */,
+				162D981B1FA65CD3006068BC /* SingWellTests */,
+				162D98261FA65CD3006068BC /* SingWellUITests */,
+				162D98051FA65CD3006068BC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		162D98051FA65CD3006068BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				162D98041FA65CD3006068BC /* SingWell.app */,
+				162D98181FA65CD3006068BC /* SingWellTests.xctest */,
+				162D98231FA65CD3006068BC /* SingWellUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		162D98061FA65CD3006068BC /* SingWell */ = {
+			isa = PBXGroup;
+			children = (
+				162D98071FA65CD3006068BC /* AppDelegate.swift */,
+				162D98351FA65CF6006068BC /* Resources */,
+				162D98381FA65D2E006068BC /* ViewControllers */,
+				162D980E1FA65CD3006068BC /* Assets.xcassets */,
+				162D98101FA65CD3006068BC /* LaunchScreen.storyboard */,
+				162D98131FA65CD3006068BC /* Info.plist */,
+			);
+			path = SingWell;
+			sourceTree = "<group>";
+		};
+		162D981B1FA65CD3006068BC /* SingWellTests */ = {
+			isa = PBXGroup;
+			children = (
+				162D981C1FA65CD3006068BC /* SingWellTests.swift */,
+				162D981E1FA65CD3006068BC /* Info.plist */,
+			);
+			path = SingWellTests;
+			sourceTree = "<group>";
+		};
+		162D98261FA65CD3006068BC /* SingWellUITests */ = {
+			isa = PBXGroup;
+			children = (
+				162D98271FA65CD3006068BC /* SingWellUITests.swift */,
+				162D98291FA65CD3006068BC /* Info.plist */,
+			);
+			path = SingWellUITests;
+			sourceTree = "<group>";
+		};
+		162D98351FA65CF6006068BC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				162D98361FA65D09006068BC /* Extensions.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		162D98381FA65D2E006068BC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				162D983C1FA65D7E006068BC /* ChildViewController */,
+				162D98391FA65D39006068BC /* MenuViewController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		162D98391FA65D39006068BC /* MenuViewController */ = {
+			isa = PBXGroup;
+			children = (
+				162D983A1FA65D76006068BC /* MenuViewController.swift */,
+				162D983D1FA65D9A006068BC /* Menu.storyboard */,
+			);
+			path = MenuViewController;
+			sourceTree = "<group>";
+		};
+		162D983C1FA65D7E006068BC /* ChildViewController */ = {
+			isa = PBXGroup;
+			children = (
+				162D98411FA65DD1006068BC /* ChildViewController.swift */,
+				162D983F1FA65DB7006068BC /* Child.storyboard */,
+			);
+			path = ChildViewController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		162D98031FA65CD3006068BC /* SingWell */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 162D982C1FA65CD3006068BC /* Build configuration list for PBXNativeTarget "SingWell" */;
+			buildPhases = (
+				162D98001FA65CD3006068BC /* Sources */,
+				162D98011FA65CD3006068BC /* Frameworks */,
+				162D98021FA65CD3006068BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SingWell;
+			productName = SingWell;
+			productReference = 162D98041FA65CD3006068BC /* SingWell.app */;
+			productType = "com.apple.product-type.application";
+		};
+		162D98171FA65CD3006068BC /* SingWellTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 162D982F1FA65CD3006068BC /* Build configuration list for PBXNativeTarget "SingWellTests" */;
+			buildPhases = (
+				162D98141FA65CD3006068BC /* Sources */,
+				162D98151FA65CD3006068BC /* Frameworks */,
+				162D98161FA65CD3006068BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				162D981A1FA65CD3006068BC /* PBXTargetDependency */,
+			);
+			name = SingWellTests;
+			productName = SingWellTests;
+			productReference = 162D98181FA65CD3006068BC /* SingWellTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		162D98221FA65CD3006068BC /* SingWellUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 162D98321FA65CD3006068BC /* Build configuration list for PBXNativeTarget "SingWellUITests" */;
+			buildPhases = (
+				162D981F1FA65CD3006068BC /* Sources */,
+				162D98201FA65CD3006068BC /* Frameworks */,
+				162D98211FA65CD3006068BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				162D98251FA65CD3006068BC /* PBXTargetDependency */,
+			);
+			name = SingWellUITests;
+			productName = SingWellUITests;
+			productReference = 162D98231FA65CD3006068BC /* SingWellUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		162D97FC1FA65CD3006068BC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Travis Siems";
+				TargetAttributes = {
+					162D98031FA65CD3006068BC = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+					};
+					162D98171FA65CD3006068BC = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 162D98031FA65CD3006068BC;
+					};
+					162D98221FA65CD3006068BC = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 162D98031FA65CD3006068BC;
+					};
+				};
+			};
+			buildConfigurationList = 162D97FF1FA65CD3006068BC /* Build configuration list for PBXProject "SingWell" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 162D97FB1FA65CD3006068BC;
+			productRefGroup = 162D98051FA65CD3006068BC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				162D98031FA65CD3006068BC /* SingWell */,
+				162D98171FA65CD3006068BC /* SingWellTests */,
+				162D98221FA65CD3006068BC /* SingWellUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		162D98021FA65CD3006068BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				162D98121FA65CD3006068BC /* LaunchScreen.storyboard in Resources */,
+				162D98401FA65DB7006068BC /* Child.storyboard in Resources */,
+				162D980F1FA65CD3006068BC /* Assets.xcassets in Resources */,
+				162D983E1FA65D9A006068BC /* Menu.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		162D98161FA65CD3006068BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		162D98211FA65CD3006068BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		162D98001FA65CD3006068BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				162D98371FA65D09006068BC /* Extensions.swift in Sources */,
+				162D98081FA65CD3006068BC /* AppDelegate.swift in Sources */,
+				162D983B1FA65D76006068BC /* MenuViewController.swift in Sources */,
+				162D98421FA65DD1006068BC /* ChildViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		162D98141FA65CD3006068BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				162D981D1FA65CD3006068BC /* SingWellTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		162D981F1FA65CD3006068BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				162D98281FA65CD3006068BC /* SingWellUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		162D981A1FA65CD3006068BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 162D98031FA65CD3006068BC /* SingWell */;
+			targetProxy = 162D98191FA65CD3006068BC /* PBXContainerItemProxy */;
+		};
+		162D98251FA65CD3006068BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 162D98031FA65CD3006068BC /* SingWell */;
+			targetProxy = 162D98241FA65CD3006068BC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		162D98101FA65CD3006068BC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				162D98111FA65CD3006068BC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		162D982A1FA65CD3006068BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		162D982B1FA65CD3006068BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		162D982D1FA65CD3006068BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 788J8M5NBX;
+				INFOPLIST_FILE = SingWell/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appcoda.tsiems.SingWell;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		162D982E1FA65CD3006068BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 788J8M5NBX;
+				INFOPLIST_FILE = SingWell/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appcoda.tsiems.SingWell;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		162D98301FA65CD3006068BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 788J8M5NBX;
+				INFOPLIST_FILE = SingWellTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appcoda.tsiems.SingWellTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SingWell.app/SingWell";
+			};
+			name = Debug;
+		};
+		162D98311FA65CD3006068BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 788J8M5NBX;
+				INFOPLIST_FILE = SingWellTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appcoda.tsiems.SingWellTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SingWell.app/SingWell";
+			};
+			name = Release;
+		};
+		162D98331FA65CD3006068BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 788J8M5NBX;
+				INFOPLIST_FILE = SingWellUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appcoda.tsiems.SingWellUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SingWell;
+			};
+			name = Debug;
+		};
+		162D98341FA65CD3006068BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 788J8M5NBX;
+				INFOPLIST_FILE = SingWellUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appcoda.tsiems.SingWellUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SingWell;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		162D97FF1FA65CD3006068BC /* Build configuration list for PBXProject "SingWell" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				162D982A1FA65CD3006068BC /* Debug */,
+				162D982B1FA65CD3006068BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		162D982C1FA65CD3006068BC /* Build configuration list for PBXNativeTarget "SingWell" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				162D982D1FA65CD3006068BC /* Debug */,
+				162D982E1FA65CD3006068BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		162D982F1FA65CD3006068BC /* Build configuration list for PBXNativeTarget "SingWellTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				162D98301FA65CD3006068BC /* Debug */,
+				162D98311FA65CD3006068BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		162D98321FA65CD3006068BC /* Build configuration list for PBXNativeTarget "SingWellUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				162D98331FA65CD3006068BC /* Debug */,
+				162D98341FA65CD3006068BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 162D97FC1FA65CD3006068BC /* Project object */;
+}
