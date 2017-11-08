@@ -1,0 +1,9 @@
+
+target 'SingWell' do
+	pod 'SwiftyJSON'
+	pod 'Alamofire'
+	pod 'PDFReader'
+	pod 'IBAnimatable'
+
+	use_frameworks!
+end

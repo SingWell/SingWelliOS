@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1617DF941FB39EEB0094C474 /* ApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1617DF931FB39EEB0094C474 /* ApiHelper.swift */; };
 		162D98081FA65CD3006068BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162D98071FA65CD3006068BC /* AppDelegate.swift */; };
 		162D980F1FA65CD3006068BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 162D980E1FA65CD3006068BC /* Assets.xcassets */; };
 		162D98121FA65CD3006068BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 162D98101FA65CD3006068BC /* LaunchScreen.storyboard */; };
@@ -17,6 +18,7 @@
 		162D983E1FA65D9A006068BC /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 162D983D1FA65D9A006068BC /* Menu.storyboard */; };
 		162D98401FA65DB7006068BC /* Child.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 162D983F1FA65DB7006068BC /* Child.storyboard */; };
 		162D98421FA65DD1006068BC /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162D98411FA65DD1006068BC /* ChildViewController.swift */; };
+		DC314C3CF81F0D65E4D3B09F /* Pods_SingWell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9A2CC9F02AA47F953461F6 /* Pods_SingWell.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1617DF931FB39EEB0094C474 /* ApiHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ApiHelper.swift; path = "/Users/travissiems/Senior Design/SingWelliOS/SingWell/SingWell/Resources/ApiHelper.swift"; sourceTree = "<absolute>"; };
 		162D98041FA65CD3006068BC /* SingWell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SingWell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		162D98071FA65CD3006068BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		162D980E1FA65CD3006068BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +56,9 @@
 		162D983D1FA65D9A006068BC /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		162D983F1FA65DB7006068BC /* Child.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Child.storyboard; sourceTree = "<group>"; };
 		162D98411FA65DD1006068BC /* ChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
+		7A89585724F70104CBA47295 /* Pods-SingWell.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingWell.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SingWell/Pods-SingWell.debug.xcconfig"; sourceTree = "<group>"; };
+		E2A8DF318F1B2398F5F35CF7 /* Pods-SingWell.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingWell.release.xcconfig"; path = "Pods/Target Support Files/Pods-SingWell/Pods-SingWell.release.xcconfig"; sourceTree = "<group>"; };
+		ED9A2CC9F02AA47F953461F6 /* Pods_SingWell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SingWell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC314C3CF81F0D65E4D3B09F /* Pods_SingWell.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +94,8 @@
 				162D981B1FA65CD3006068BC /* SingWellTests */,
 				162D98261FA65CD3006068BC /* SingWellUITests */,
 				162D98051FA65CD3006068BC /* Products */,
+				4D889C1DFD7AF5499E1B4903 /* Pods */,
+				1FCB8BA79C196CB62C7A05A4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,6 +143,7 @@
 		162D98351FA65CF6006068BC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1617DF931FB39EEB0094C474 /* ApiHelper.swift */,
 				162D98361FA65D09006068BC /* Extensions.swift */,
 			);
 			path = Resources;
@@ -166,6 +176,23 @@
 			path = ChildViewController;
 			sourceTree = "<group>";
 		};
+		1FCB8BA79C196CB62C7A05A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED9A2CC9F02AA47F953461F6 /* Pods_SingWell.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4D889C1DFD7AF5499E1B4903 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7A89585724F70104CBA47295 /* Pods-SingWell.debug.xcconfig */,
+				E2A8DF318F1B2398F5F35CF7 /* Pods-SingWell.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -173,9 +200,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 162D982C1FA65CD3006068BC /* Build configuration list for PBXNativeTarget "SingWell" */;
 			buildPhases = (
+				2733FCF255BCEB4BA8B0FB75 /* [CP] Check Pods Manifest.lock */,
 				162D98001FA65CD3006068BC /* Sources */,
 				162D98011FA65CD3006068BC /* Frameworks */,
 				162D98021FA65CD3006068BC /* Resources */,
+				1505FF534950B65B3BA82B4A /* [CP] Embed Pods Frameworks */,
+				C09506E06B8649978445079F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -296,6 +326,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1505FF534950B65B3BA82B4A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SingWell/Pods-SingWell-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/IBAnimatable/IBAnimatable.framework",
+				"${BUILT_PRODUCTS_DIR}/PDFReader/PDFReader.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IBAnimatable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PDFReader.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SingWell/Pods-SingWell-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2733FCF255BCEB4BA8B0FB75 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SingWell-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C09506E06B8649978445079F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SingWell/Pods-SingWell-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		162D98001FA65CD3006068BC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -305,6 +395,7 @@
 				162D98081FA65CD3006068BC /* AppDelegate.swift in Sources */,
 				162D983B1FA65D76006068BC /* MenuViewController.swift in Sources */,
 				162D98421FA65DD1006068BC /* ChildViewController.swift in Sources */,
+				1617DF941FB39EEB0094C474 /* ApiHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +551,7 @@
 		};
 		162D982D1FA65CD3006068BC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A89585724F70104CBA47295 /* Pods-SingWell.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -475,6 +567,7 @@
 		};
 		162D982E1FA65CD3006068BC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2A8DF318F1B2398F5F35CF7 /* Pods-SingWell.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
