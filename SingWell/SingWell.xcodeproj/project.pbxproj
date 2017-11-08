@@ -18,6 +18,8 @@
 		162D983E1FA65D9A006068BC /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 162D983D1FA65D9A006068BC /* Menu.storyboard */; };
 		162D98401FA65DB7006068BC /* Child.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 162D983F1FA65DB7006068BC /* Child.storyboard */; };
 		162D98421FA65DD1006068BC /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162D98411FA65DD1006068BC /* ChildViewController.swift */; };
+		521BCF2D1FB3A472000662F7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521BCF2C1FB3A472000662F7 /* ProfileViewController.swift */; };
+		521BCF2F1FB3A48A000662F7 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521BCF2E1FB3A48A000662F7 /* Profile.storyboard */; };
 		DC314C3CF81F0D65E4D3B09F /* Pods_SingWell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9A2CC9F02AA47F953461F6 /* Pods_SingWell.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,8 @@
 		162D983D1FA65D9A006068BC /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		162D983F1FA65DB7006068BC /* Child.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Child.storyboard; sourceTree = "<group>"; };
 		162D98411FA65DD1006068BC /* ChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
+		521BCF2C1FB3A472000662F7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		521BCF2E1FB3A48A000662F7 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		7A89585724F70104CBA47295 /* Pods-SingWell.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingWell.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SingWell/Pods-SingWell.debug.xcconfig"; sourceTree = "<group>"; };
 		E2A8DF318F1B2398F5F35CF7 /* Pods-SingWell.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingWell.release.xcconfig"; path = "Pods/Target Support Files/Pods-SingWell/Pods-SingWell.release.xcconfig"; sourceTree = "<group>"; };
 		ED9A2CC9F02AA47F953461F6 /* Pods_SingWell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SingWell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +156,7 @@
 		162D98381FA65D2E006068BC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				521BCF2B1FB3A44A000662F7 /* ProfileViewController */,
 				162D983C1FA65D7E006068BC /* ChildViewController */,
 				162D98391FA65D39006068BC /* MenuViewController */,
 			);
@@ -191,6 +196,15 @@
 				E2A8DF318F1B2398F5F35CF7 /* Pods-SingWell.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		521BCF2B1FB3A44A000662F7 /* ProfileViewController */ = {
+			isa = PBXGroup;
+			children = (
+				521BCF2C1FB3A472000662F7 /* ProfileViewController.swift */,
+				521BCF2E1FB3A48A000662F7 /* Profile.storyboard */,
+			);
+			path = ProfileViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,6 +319,7 @@
 			files = (
 				162D98121FA65CD3006068BC /* LaunchScreen.storyboard in Resources */,
 				162D98401FA65DB7006068BC /* Child.storyboard in Resources */,
+				521BCF2F1FB3A48A000662F7 /* Profile.storyboard in Resources */,
 				162D980F1FA65CD3006068BC /* Assets.xcassets in Resources */,
 				162D983E1FA65D9A006068BC /* Menu.storyboard in Resources */,
 			);
@@ -391,6 +406,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				521BCF2D1FB3A472000662F7 /* ProfileViewController.swift in Sources */,
 				162D98371FA65D09006068BC /* Extensions.swift in Sources */,
 				162D98081FA65CD3006068BC /* AppDelegate.swift in Sources */,
 				162D983B1FA65D76006068BC /* MenuViewController.swift in Sources */,

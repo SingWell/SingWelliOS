@@ -21,13 +21,19 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func buttonPressed(_ sender: Any) {
-        goToChildView()
+        goToProfile()
     }
     
     func goToChildView() {
         let nextViewController = AppStoryboard.Child.initialViewController()!
 //        self.present(nextViewController, animated: true, completion: nil)
     self.navigationController?.pushViewController(nextViewController, animated: true)
+    }
+    
+    func goToProfile() {
+        let nextViewController = AppStoryboard.Profile.initialViewController()!
+        //        self.present(nextViewController, animated: true, completion: nil)
+        self.navigationController?.pushViewController(nextViewController, animated: true)
     }
 
 }
