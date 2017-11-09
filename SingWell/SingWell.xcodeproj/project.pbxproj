@@ -14,12 +14,17 @@
 		162D981D1FA65CD3006068BC /* SingWellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162D981C1FA65CD3006068BC /* SingWellTests.swift */; };
 		162D98281FA65CD3006068BC /* SingWellUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162D98271FA65CD3006068BC /* SingWellUITests.swift */; };
 		162D98371FA65D09006068BC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162D98361FA65D09006068BC /* Extensions.swift */; };
-		162D983B1FA65D76006068BC /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162D983A1FA65D76006068BC /* MenuViewController.swift */; };
-		162D983E1FA65D9A006068BC /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 162D983D1FA65D9A006068BC /* Menu.storyboard */; };
 		162D98401FA65DB7006068BC /* Child.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 162D983F1FA65DB7006068BC /* Child.storyboard */; };
 		162D98421FA65DD1006068BC /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162D98411FA65DD1006068BC /* ChildViewController.swift */; };
+		1652FDAD1FB5016F00D921EB /* ChoirTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652FDAC1FB5016F00D921EB /* ChoirTableViewController.swift */; };
+		1652FDAF1FB5018000D921EB /* Choir.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1652FDAE1FB5018000D921EB /* Choir.storyboard */; };
+		1652FDB11FB502D200D921EB /* HostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652FDB01FB502D200D921EB /* HostViewController.swift */; };
+		1652FDB31FB5039400D921EB /* NavigationMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652FDB21FB5039400D921EB /* NavigationMenuViewController.swift */; };
+		1652FDB51FB5041600D921EB /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1652FDB41FB5041600D921EB /* SideMenu.storyboard */; };
 		521BCF2D1FB3A472000662F7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521BCF2C1FB3A472000662F7 /* ProfileViewController.swift */; };
 		521BCF2F1FB3A48A000662F7 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521BCF2E1FB3A48A000662F7 /* Profile.storyboard */; };
+		86F76E547079493C7DAADA22 /* Pods_SingWellTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5B7BEEE8800BC4F7098CCD /* Pods_SingWellTests.framework */; };
+		D0B4A43E772600F9DCBBBBEF /* Pods_SingWellUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56D8462546CB3640CFED1D64 /* Pods_SingWellUITests.framework */; };
 		DC314C3CF81F0D65E4D3B09F /* Pods_SingWell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9A2CC9F02AA47F953461F6 /* Pods_SingWell.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		091858B7E57F4BDBB305B7A9 /* Pods-SingWellUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingWellUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SingWellUITests/Pods-SingWellUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1617DF931FB39EEB0094C474 /* ApiHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHelper.swift; sourceTree = "<group>"; };
 		162D98041FA65CD3006068BC /* SingWell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SingWell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		162D98071FA65CD3006068BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,13 +60,21 @@
 		162D98271FA65CD3006068BC /* SingWellUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingWellUITests.swift; sourceTree = "<group>"; };
 		162D98291FA65CD3006068BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		162D98361FA65D09006068BC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		162D983A1FA65D76006068BC /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		162D983D1FA65D9A006068BC /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		162D983F1FA65DB7006068BC /* Child.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Child.storyboard; sourceTree = "<group>"; };
 		162D98411FA65DD1006068BC /* ChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
+		1652FDAC1FB5016F00D921EB /* ChoirTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoirTableViewController.swift; sourceTree = "<group>"; };
+		1652FDAE1FB5018000D921EB /* Choir.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Choir.storyboard; sourceTree = "<group>"; };
+		1652FDB01FB502D200D921EB /* HostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
+		1652FDB21FB5039400D921EB /* NavigationMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationMenuViewController.swift; sourceTree = "<group>"; };
+		1652FDB41FB5041600D921EB /* SideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
+		2CF3257DBA9274E82C0A0B81 /* Pods-SingWellTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingWellTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SingWellTests/Pods-SingWellTests.debug.xcconfig"; sourceTree = "<group>"; };
 		521BCF2C1FB3A472000662F7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		521BCF2E1FB3A48A000662F7 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		56D8462546CB3640CFED1D64 /* Pods_SingWellUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SingWellUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A89585724F70104CBA47295 /* Pods-SingWell.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingWell.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SingWell/Pods-SingWell.debug.xcconfig"; sourceTree = "<group>"; };
+		BAD46F51B65E4DD47A9291FB /* Pods-SingWellTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingWellTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SingWellTests/Pods-SingWellTests.release.xcconfig"; sourceTree = "<group>"; };
+		D53354B5C6F94981027EC9A6 /* Pods-SingWellUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingWellUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SingWellUITests/Pods-SingWellUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DD5B7BEEE8800BC4F7098CCD /* Pods_SingWellTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SingWellTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2A8DF318F1B2398F5F35CF7 /* Pods-SingWell.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingWell.release.xcconfig"; path = "Pods/Target Support Files/Pods-SingWell/Pods-SingWell.release.xcconfig"; sourceTree = "<group>"; };
 		ED9A2CC9F02AA47F953461F6 /* Pods_SingWell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SingWell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -78,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86F76E547079493C7DAADA22 /* Pods_SingWellTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0B4A43E772600F9DCBBBBEF /* Pods_SingWellUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				162D98071FA65CD3006068BC /* AppDelegate.swift */,
+				1652FDAA1FB500FB00D921EB /* SideMenu */,
 				162D98351FA65CF6006068BC /* Resources */,
 				162D98381FA65D2E006068BC /* ViewControllers */,
 				162D980E1FA65CD3006068BC /* Assets.xcassets */,
@@ -156,20 +173,11 @@
 		162D98381FA65D2E006068BC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				1652FDAB1FB5012300D921EB /* ChoirViewController */,
 				521BCF2B1FB3A44A000662F7 /* ProfileViewController */,
 				162D983C1FA65D7E006068BC /* ChildViewController */,
-				162D98391FA65D39006068BC /* MenuViewController */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		162D98391FA65D39006068BC /* MenuViewController */ = {
-			isa = PBXGroup;
-			children = (
-				162D983A1FA65D76006068BC /* MenuViewController.swift */,
-				162D983D1FA65D9A006068BC /* Menu.storyboard */,
-			);
-			path = MenuViewController;
 			sourceTree = "<group>";
 		};
 		162D983C1FA65D7E006068BC /* ChildViewController */ = {
@@ -181,10 +189,31 @@
 			path = ChildViewController;
 			sourceTree = "<group>";
 		};
+		1652FDAA1FB500FB00D921EB /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				1652FDB01FB502D200D921EB /* HostViewController.swift */,
+				1652FDB21FB5039400D921EB /* NavigationMenuViewController.swift */,
+				1652FDB41FB5041600D921EB /* SideMenu.storyboard */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		1652FDAB1FB5012300D921EB /* ChoirViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1652FDAC1FB5016F00D921EB /* ChoirTableViewController.swift */,
+				1652FDAE1FB5018000D921EB /* Choir.storyboard */,
+			);
+			path = ChoirViewController;
+			sourceTree = "<group>";
+		};
 		1FCB8BA79C196CB62C7A05A4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED9A2CC9F02AA47F953461F6 /* Pods_SingWell.framework */,
+				DD5B7BEEE8800BC4F7098CCD /* Pods_SingWellTests.framework */,
+				56D8462546CB3640CFED1D64 /* Pods_SingWellUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -194,6 +223,10 @@
 			children = (
 				7A89585724F70104CBA47295 /* Pods-SingWell.debug.xcconfig */,
 				E2A8DF318F1B2398F5F35CF7 /* Pods-SingWell.release.xcconfig */,
+				2CF3257DBA9274E82C0A0B81 /* Pods-SingWellTests.debug.xcconfig */,
+				BAD46F51B65E4DD47A9291FB /* Pods-SingWellTests.release.xcconfig */,
+				D53354B5C6F94981027EC9A6 /* Pods-SingWellUITests.debug.xcconfig */,
+				091858B7E57F4BDBB305B7A9 /* Pods-SingWellUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -234,9 +267,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 162D982F1FA65CD3006068BC /* Build configuration list for PBXNativeTarget "SingWellTests" */;
 			buildPhases = (
+				81F003C0AD6CBCD4EF4BD9FC /* [CP] Check Pods Manifest.lock */,
 				162D98141FA65CD3006068BC /* Sources */,
 				162D98151FA65CD3006068BC /* Frameworks */,
 				162D98161FA65CD3006068BC /* Resources */,
+				38DA55C4037327E2798646CE /* [CP] Embed Pods Frameworks */,
+				6D6D8DC59E825417F14AD33E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -252,9 +288,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 162D98321FA65CD3006068BC /* Build configuration list for PBXNativeTarget "SingWellUITests" */;
 			buildPhases = (
+				BC2D44AD15040DBF980CD1B4 /* [CP] Check Pods Manifest.lock */,
 				162D981F1FA65CD3006068BC /* Sources */,
 				162D98201FA65CD3006068BC /* Frameworks */,
 				162D98211FA65CD3006068BC /* Resources */,
+				827E0D5365F7C8E710D2622B /* [CP] Embed Pods Frameworks */,
+				730FF12098043188E3A88BB7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -317,11 +356,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1652FDB51FB5041600D921EB /* SideMenu.storyboard in Resources */,
+				1652FDAF1FB5018000D921EB /* Choir.storyboard in Resources */,
 				162D98121FA65CD3006068BC /* LaunchScreen.storyboard in Resources */,
 				162D98401FA65DB7006068BC /* Child.storyboard in Resources */,
 				521BCF2F1FB3A48A000662F7 /* Profile.storyboard in Resources */,
 				162D980F1FA65CD3006068BC /* Assets.xcassets in Resources */,
-				162D983E1FA65D9A006068BC /* Menu.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +391,8 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-SingWell/Pods-SingWell-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/IBAnimatable/IBAnimatable.framework",
+				"${BUILT_PRODUCTS_DIR}/InteractiveSideMenu/InteractiveSideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/IoniconsKit/IoniconsKit.framework",
 				"${BUILT_PRODUCTS_DIR}/PDFReader/PDFReader.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
@@ -358,6 +400,8 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IBAnimatable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InteractiveSideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IoniconsKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PDFReader.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -378,6 +422,102 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-SingWell-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		38DA55C4037327E2798646CE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SingWellTests/Pods-SingWellTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D6D8DC59E825417F14AD33E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SingWellTests/Pods-SingWellTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		730FF12098043188E3A88BB7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SingWellUITests/Pods-SingWellUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81F003C0AD6CBCD4EF4BD9FC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SingWellTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		827E0D5365F7C8E710D2622B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SingWellUITests/Pods-SingWellUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC2D44AD15040DBF980CD1B4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SingWellUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -408,10 +548,12 @@
 			files = (
 				521BCF2D1FB3A472000662F7 /* ProfileViewController.swift in Sources */,
 				162D98371FA65D09006068BC /* Extensions.swift in Sources */,
+				1652FDB11FB502D200D921EB /* HostViewController.swift in Sources */,
 				162D98081FA65CD3006068BC /* AppDelegate.swift in Sources */,
-				162D983B1FA65D76006068BC /* MenuViewController.swift in Sources */,
 				162D98421FA65DD1006068BC /* ChildViewController.swift in Sources */,
+				1652FDB31FB5039400D921EB /* NavigationMenuViewController.swift in Sources */,
 				1617DF941FB39EEB0094C474 /* ApiHelper.swift in Sources */,
+				1652FDAD1FB5016F00D921EB /* ChoirTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,6 +741,7 @@
 		};
 		162D98301FA65CD3006068BC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CF3257DBA9274E82C0A0B81 /* Pods-SingWellTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -616,6 +759,7 @@
 		};
 		162D98311FA65CD3006068BC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAD46F51B65E4DD47A9291FB /* Pods-SingWellTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -633,6 +777,7 @@
 		};
 		162D98331FA65CD3006068BC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D53354B5C6F94981027EC9A6 /* Pods-SingWellUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -649,6 +794,7 @@
 		};
 		162D98341FA65CD3006068BC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 091858B7E57F4BDBB305B7A9 /* Pods-SingWellUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
