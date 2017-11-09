@@ -23,14 +23,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tL9-BB-ita" customClass="AnimatableImageView" customModule="IBAnimatable">
+                                <rect key="frame" x="115" y="46" width="145" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="eT1-wY-OD7"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="tL9-BB-ita" firstAttribute="top" secondItem="oOl-tH-M13" secondAttribute="top" constant="26" id="1UT-SC-b6v"/>
+                            <constraint firstItem="tL9-BB-ita" firstAttribute="leading" secondItem="oOl-tH-M13" secondAttribute="leading" constant="115" id="T5V-32-wda"/>
                             <constraint firstItem="jjq-lw-c3Z" firstAttribute="centerY" secondItem="1bN-An-Zih" secondAttribute="centerY" id="ZbN-RO-2jq"/>
                             <constraint firstItem="jjq-lw-c3Z" firstAttribute="leading" secondItem="oOl-tH-M13" secondAttribute="leading" constant="166" id="eHr-ca-856"/>
+                            <constraint firstItem="tL9-BB-ita" firstAttribute="centerX" secondItem="oOl-tH-M13" secondAttribute="centerX" id="kdm-fI-xzK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oOl-tH-M13"/>
                     </view>
+                    <connections>
+                        <outlet property="profileImageView" destination="tL9-BB-ita" id="aSN-jz-m6m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yQD-Nq-pqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
