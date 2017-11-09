@@ -4,6 +4,17 @@ target 'SingWell' do
 	pod 'Alamofire'
 	pod 'PDFReader'
 	pod 'IBAnimatable'
+	pod 'InteractiveSideMenu'
+	pod 'IoniconsKit'
 
 	use_frameworks!
+
+
+	target 'SingWellTests' do
+      inherit! :search_paths
+  	end
+
+	target 'SingWellUITests' do
+      inherit! :search_paths
+    end
 end
