@@ -52,7 +52,7 @@ class HostViewController: MenuContainerViewController {
     }
     
     private func contentControllers() -> [UIViewController] {
-        let controllersIdentifiers = ["Choir", "Profile"]
+        let controllersIdentifiers = ["Profile", "Choir"]
         var contentList = [UIViewController]()
         
         /*
