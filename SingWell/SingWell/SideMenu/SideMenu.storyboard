@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,13 +27,101 @@
                                 <rect key="frame" x="16" y="20" width="343" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChoirNameCell" id="JFW-Mk-PjH">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileCell" rowHeight="110" id="JFW-Mk-PjH" customClass="ProfileTableViewCell" customModule="SingWell" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JFW-Mk-PjH" id="Z1d-Q5-M37">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="109.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FoY-rp-w7n" customClass="AnimatableImageView" customModule="IBAnimatable">
+                                                    <rect key="frame" x="15" y="11" width="88" height="88"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="FoY-rp-w7n" secondAttribute="height" multiplier="1:1" id="c1F-a6-iGI"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhU-RD-NIf" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                                    <rect key="frame" x="111" y="45" width="217" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="plI-bD-Wwt"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="FoY-rp-w7n" firstAttribute="leading" secondItem="Z1d-Q5-M37" secondAttribute="leading" constant="15" id="6Ng-NR-NSG"/>
+                                                <constraint firstAttribute="trailing" secondItem="EhU-RD-NIf" secondAttribute="trailing" constant="15" id="BSX-JV-VcW"/>
+                                                <constraint firstItem="EhU-RD-NIf" firstAttribute="leading" secondItem="FoY-rp-w7n" secondAttribute="trailing" constant="8" id="K4c-uv-CY7"/>
+                                                <constraint firstItem="EhU-RD-NIf" firstAttribute="centerY" secondItem="FoY-rp-w7n" secondAttribute="centerY" id="L8y-nH-Q35"/>
+                                                <constraint firstItem="FoY-rp-w7n" firstAttribute="top" secondItem="Z1d-Q5-M37" secondAttribute="top" constant="11" id="atx-tg-CQS"/>
+                                                <constraint firstAttribute="bottom" secondItem="FoY-rp-w7n" secondAttribute="bottom" constant="10.5" id="ryx-7N-pqY"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="EhU-RD-NIf" id="O9m-2e-lf3"/>
+                                            <outlet property="pictureView" destination="FoY-rp-w7n" id="m79-Te-hh4"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChoirNameCell" rowHeight="110" id="EVy-de-6Wo" customClass="ChoirNameTableViewCell" customModule="SingWell" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="138" width="343" height="110"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EVy-de-6Wo" id="peY-64-Edn">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="109.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k38-tl-wDf" customClass="AnimatableImageView" customModule="IBAnimatable">
+                                                    <rect key="frame" x="15" y="11" width="88" height="88"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="k38-tl-wDf" secondAttribute="height" multiplier="1:1" id="wIf-MI-hSq"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RhU-Ao-POl" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                                    <rect key="frame" x="111" y="44" width="217" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="lfd-6x-6jC"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="RhU-Ao-POl" firstAttribute="leading" secondItem="k38-tl-wDf" secondAttribute="trailing" constant="8" id="0b2-Mw-Bdv"/>
+                                                <constraint firstItem="RhU-Ao-POl" firstAttribute="centerY" secondItem="k38-tl-wDf" secondAttribute="centerY" id="DZg-3F-ROt"/>
+                                                <constraint firstAttribute="bottom" secondItem="k38-tl-wDf" secondAttribute="bottom" constant="10.5" id="Pgx-2J-LMJ"/>
+                                                <constraint firstItem="k38-tl-wDf" firstAttribute="leading" secondItem="peY-64-Edn" secondAttribute="leading" constant="15" id="PiV-3B-DS2"/>
+                                                <constraint firstAttribute="trailing" secondItem="RhU-Ao-POl" secondAttribute="trailing" constant="15" id="SsA-Up-PbT"/>
+                                                <constraint firstItem="k38-tl-wDf" firstAttribute="top" secondItem="peY-64-Edn" secondAttribute="top" constant="11" id="qzL-gA-KaI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="RhU-Ao-POl" id="fOv-NU-n72"/>
+                                            <outlet property="pictureView" destination="k38-tl-wDf" id="lgF-IL-gkh"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -56,7 +145,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NR7-By-2lE" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1769" y="139"/>
+            <point key="canvasLocation" x="1768.8" y="138.98050974512745"/>
         </scene>
         <!--Host View Controller-->
         <scene sceneID="zrW-f1-4LL">

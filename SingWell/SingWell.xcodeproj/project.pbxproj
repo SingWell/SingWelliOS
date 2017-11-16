@@ -22,6 +22,8 @@
 		1652FDB11FB502D200D921EB /* HostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652FDB01FB502D200D921EB /* HostViewController.swift */; };
 		1652FDB31FB5039400D921EB /* NavigationMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652FDB21FB5039400D921EB /* NavigationMenuViewController.swift */; };
 		1652FDB51FB5041600D921EB /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1652FDB41FB5041600D921EB /* SideMenu.storyboard */; };
+		16D2CFA01FBE423500FDFF4D /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2CF9F1FBE423500FDFF4D /* ProfileTableViewCell.swift */; };
+		16D2CFA21FBE424300FDFF4D /* ChoirNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2CFA11FBE424300FDFF4D /* ChoirNameTableViewCell.swift */; };
 		521BCF2D1FB3A472000662F7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521BCF2C1FB3A472000662F7 /* ProfileViewController.swift */; };
 		521BCF2F1FB3A48A000662F7 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521BCF2E1FB3A48A000662F7 /* Profile.storyboard */; };
 		52218E171FB50C0400EC4DDA /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52218E161FB50C0400EC4DDA /* UIImageExtension.swift */; };
@@ -70,6 +72,8 @@
 		1652FDB01FB502D200D921EB /* HostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
 		1652FDB21FB5039400D921EB /* NavigationMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationMenuViewController.swift; sourceTree = "<group>"; };
 		1652FDB41FB5041600D921EB /* SideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
+		16D2CF9F1FBE423500FDFF4D /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		16D2CFA11FBE424300FDFF4D /* ChoirNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoirNameTableViewCell.swift; sourceTree = "<group>"; };
 		2CF3257DBA9274E82C0A0B81 /* Pods-SingWellTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingWellTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SingWellTests/Pods-SingWellTests.debug.xcconfig"; sourceTree = "<group>"; };
 		521BCF2C1FB3A472000662F7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		521BCF2E1FB3A48A000662F7 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -199,6 +203,8 @@
 				1652FDB01FB502D200D921EB /* HostViewController.swift */,
 				1652FDB21FB5039400D921EB /* NavigationMenuViewController.swift */,
 				1652FDB41FB5041600D921EB /* SideMenu.storyboard */,
+				16D2CF9F1FBE423500FDFF4D /* ProfileTableViewCell.swift */,
+				16D2CFA11FBE424300FDFF4D /* ChoirNameTableViewCell.swift */,
 			);
 			path = SideMenu;
 			sourceTree = "<group>";
@@ -552,9 +558,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16D2CFA21FBE424300FDFF4D /* ChoirNameTableViewCell.swift in Sources */,
 				521BCF2D1FB3A472000662F7 /* ProfileViewController.swift in Sources */,
 				162D98371FA65D09006068BC /* Extensions.swift in Sources */,
 				52218E171FB50C0400EC4DDA /* UIImageExtension.swift in Sources */,
+				16D2CFA01FBE423500FDFF4D /* ProfileTableViewCell.swift in Sources */,
 				1652FDB11FB502D200D921EB /* HostViewController.swift in Sources */,
 				162D98081FA65CD3006068BC /* AppDelegate.swift in Sources */,
 				162D98421FA65DD1006068BC /* ChildViewController.swift in Sources */,

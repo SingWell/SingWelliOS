@@ -13,7 +13,8 @@ import SwiftyJSON
 
 class NavigationMenuViewController: MenuViewController {
 
-    let kChoirCellReuseIdentifier = "ChoirNameCell"
+    let kProfileCellReuseIdentifier = "ProfileCell"
+    let kChoirNameCellReuseIdentifier = "ChoirNameCell"
     
     var choirs:[JSON] = []
 //    var menuItems = ["Profile", "Choir A"]
@@ -104,17 +105,35 @@ extension NavigationMenuViewController: UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.section {
+        case 0:
+            return 80.0
+        default:
+            return 80.0
+        }
+        
+    }
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         switch indexPath.section {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: kChoirCellReuseIdentifier, for: indexPath)
-            cell.textLabel?.text = "Profile"
+            let cell = tableView.dequeueReusableCell(withIdentifier: kProfileCellReuseIdentifier, for: indexPath) as! ProfileTableViewCell
+            cell.nameLabel?.text = "Profile"
+            
+            let profileImage: UIImage = UIImage(named: "profileImage")!
+            cell.pictureView.image = profileImage
             
             return cell
         default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: kChoirCellReuseIdentifier, for: indexPath)
-            cell.textLabel?.text = self.choirs[indexPath.row]["name"].stringValue
+            let cell = tableView.dequeueReusableCell(withIdentifier: kChoirNameCellReuseIdentifier, for: indexPath) as! ChoirNameTableViewCell
+            cell.nameLabel?.text = self.choirs[indexPath.row]["name"].stringValue
+            
+            let profileImage: UIImage = UIImage(named: "musicNotes")!
+            cell.pictureView.image = profileImage
+            cell.pictureView.clipsToBounds = true
             
             return cell
         }
