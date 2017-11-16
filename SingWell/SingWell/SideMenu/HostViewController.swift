@@ -9,8 +9,6 @@
 import UIKit
 import InteractiveSideMenu
 
-var FIRST_CONTROLLER = true
-
 class HostViewController: MenuContainerViewController {
 
     var controllerIdentifiers = [["Choir","Profile"]]

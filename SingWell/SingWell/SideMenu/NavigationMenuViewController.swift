@@ -72,6 +72,8 @@ class NavigationMenuViewController: MenuViewController {
     
 }
 
+var FIRST_CONTROLLER = true
+
 class SideItemNavigationViewController: AnimatableNavigationController, SideMenuItemContent {
     override func viewWillAppear(_ animated: Bool) {
         if FIRST_CONTROLLER == true {
