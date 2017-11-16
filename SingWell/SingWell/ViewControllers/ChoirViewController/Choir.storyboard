@@ -5,27 +5,115 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Choir Table View Controller-->
         <scene sceneID="7dF-JW-3QY">
             <objects>
                 <tableViewController id="f2c-tK-vhX" customClass="ChoirTableViewController" customModule="SingWell" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="QEd-Zh-4pc">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="QEd-Zh-4pc" customClass="AnimatableTableView" customModule="IBAnimatable">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="xKH-9R-kdH">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="BasicUpdateCell" rowHeight="147" id="xKH-9R-kdH" customClass="ChoirResourceInfoTableViewCell" customModule="SingWell" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="147"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xKH-9R-kdH" id="GZI-pu-5lV">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="147"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eh8-aL-4Jo" customClass="AnimatableView" customModule="IBAnimatable">
+                                            <rect key="frame" x="16" y="11" width="343" height="125"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fg6-SO-hAf" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                                    <rect key="frame" x="8" y="8" width="251" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="251" id="MV3-C7-0KP"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bEA-9a-g9Z" customClass="AnimatableTextView" customModule="IBAnimatable">
+                                                    <rect key="frame" x="8" y="39" width="327" height="78"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="78" id="IaS-lE-ZWC"/>
+                                                    </constraints>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 hour ago" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="sb6-Kk-oE4" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                                    <rect key="frame" x="267" y="8" width="68" height="17"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="bEA-9a-g9Z" firstAttribute="leading" secondItem="Eh8-aL-4Jo" secondAttribute="leading" constant="8" id="0vT-hM-dyY"/>
+                                                <constraint firstItem="bEA-9a-g9Z" firstAttribute="top" secondItem="Fg6-SO-hAf" secondAttribute="bottom" constant="7" id="44x-eE-Eek"/>
+                                                <constraint firstAttribute="bottom" secondItem="bEA-9a-g9Z" secondAttribute="bottom" constant="8" id="9uB-vv-xFB"/>
+                                                <constraint firstItem="sb6-Kk-oE4" firstAttribute="leading" secondItem="Fg6-SO-hAf" secondAttribute="trailing" constant="8" id="A9d-qv-kng"/>
+                                                <constraint firstItem="sb6-Kk-oE4" firstAttribute="top" secondItem="Fg6-SO-hAf" secondAttribute="top" id="Cmu-RR-r7R"/>
+                                                <constraint firstAttribute="trailing" secondItem="bEA-9a-g9Z" secondAttribute="trailing" constant="8" id="DK5-8k-UNq"/>
+                                                <constraint firstAttribute="trailing" secondItem="sb6-Kk-oE4" secondAttribute="trailing" constant="8" id="IfB-mp-hRx"/>
+                                                <constraint firstItem="Fg6-SO-hAf" firstAttribute="top" secondItem="Eh8-aL-4Jo" secondAttribute="topMargin" id="URS-Z9-IH5"/>
+                                                <constraint firstItem="Fg6-SO-hAf" firstAttribute="leading" secondItem="bEA-9a-g9Z" secondAttribute="leading" id="sOa-4v-TqR"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="3"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                    <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                    <real key="value" value="0.20000000000000001"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                    <real key="value" value="4"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
+                                                    <point key="value" x="4" y="4"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="Eh8-aL-4Jo" firstAttribute="top" secondItem="GZI-pu-5lV" secondAttribute="topMargin" id="6nl-Fz-MHl"/>
+                                        <constraint firstItem="Eh8-aL-4Jo" firstAttribute="leading" secondItem="GZI-pu-5lV" secondAttribute="leadingMargin" id="bMn-1J-tOb"/>
+                                        <constraint firstItem="Eh8-aL-4Jo" firstAttribute="bottom" secondItem="GZI-pu-5lV" secondAttribute="bottomMargin" id="bay-VM-bit"/>
+                                        <constraint firstItem="Eh8-aL-4Jo" firstAttribute="trailing" secondItem="GZI-pu-5lV" secondAttribute="trailingMargin" id="hDd-oB-hhG"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="removeSeparatorMargins" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="descriptionField" destination="bEA-9a-g9Z" id="ikE-fL-rk9"/>
+                                    <outlet property="timeLabel" destination="sb6-Kk-oE4" id="om3-5H-vbd"/>
+                                    <outlet property="titleLabel" destination="Fg6-SO-hAf" id="6e7-Kn-tGF"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="hasRefreshControl" value="NO"/>
+                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                <color key="value" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                         <connections>
                             <outlet property="dataSource" destination="f2c-tK-vhX" id="ioR-tb-JNl"/>
                             <outlet property="delegate" destination="f2c-tK-vhX" id="Efe-Lb-f5o"/>
@@ -49,7 +137,6 @@
         <!--Side Item Navigation View Controller-->
         <scene sceneID="LlO-JX-Wa0">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ESI-xp-a4y" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AZC-tz-RV9" customClass="SideItemNavigationViewController" customModule="SingWell" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dHf-qn-4I8">
@@ -61,6 +148,7 @@
                         <segue destination="f2c-tK-vhX" kind="relationship" relationship="rootViewController" id="bzK-wV-Ncx"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ESI-xp-a4y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-138" y="139"/>
         </scene>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1617DF941FB39EEB0094C474 /* ApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1617DF931FB39EEB0094C474 /* ApiHelper.swift */; };
+		16256EE51FBB827A00992B02 /* ChoirResourceInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16256EE41FBB827A00992B02 /* ChoirResourceInfoTableViewCell.swift */; };
 		162D98081FA65CD3006068BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162D98071FA65CD3006068BC /* AppDelegate.swift */; };
 		162D980F1FA65CD3006068BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 162D980E1FA65CD3006068BC /* Assets.xcassets */; };
 		162D98121FA65CD3006068BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 162D98101FA65CD3006068BC /* LaunchScreen.storyboard */; };
@@ -49,6 +50,7 @@
 /* Begin PBXFileReference section */
 		091858B7E57F4BDBB305B7A9 /* Pods-SingWellUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingWellUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SingWellUITests/Pods-SingWellUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1617DF931FB39EEB0094C474 /* ApiHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHelper.swift; sourceTree = "<group>"; };
+		16256EE41FBB827A00992B02 /* ChoirResourceInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoirResourceInfoTableViewCell.swift; sourceTree = "<group>"; };
 		162D98041FA65CD3006068BC /* SingWell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SingWell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		162D98071FA65CD3006068BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		162D980E1FA65CD3006068BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				1652FDAC1FB5016F00D921EB /* ChoirTableViewController.swift */,
+				16256EE41FBB827A00992B02 /* ChoirResourceInfoTableViewCell.swift */,
 				1652FDAE1FB5018000D921EB /* Choir.storyboard */,
 			);
 			path = ChoirViewController;
@@ -556,6 +559,7 @@
 				162D98081FA65CD3006068BC /* AppDelegate.swift in Sources */,
 				162D98421FA65DD1006068BC /* ChildViewController.swift in Sources */,
 				1652FDB31FB5039400D921EB /* NavigationMenuViewController.swift in Sources */,
+				16256EE51FBB827A00992B02 /* ChoirResourceInfoTableViewCell.swift in Sources */,
 				1617DF941FB39EEB0094C474 /* ApiHelper.swift in Sources */,
 				1652FDAD1FB5016F00D921EB /* ChoirTableViewController.swift in Sources */,
 			);
