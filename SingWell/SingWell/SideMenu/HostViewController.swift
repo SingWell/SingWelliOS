@@ -9,12 +9,16 @@
 import UIKit
 import InteractiveSideMenu
 
+var FIRST_CONTROLLER = true
+
 class HostViewController: MenuContainerViewController {
 
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
+    var controllerIdentifiers = [["Choir","Profile"]]
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
+    }
+
     override var prefersStatusBarHidden: Bool {
         return false
     }
@@ -32,12 +36,12 @@ class HostViewController: MenuContainerViewController {
         self.contentViewControllers = contentControllers()
         
         // Select initial content controller. It's needed even if the first view controller should be selected.
-        self.selectContentViewController(contentViewControllers.first!)
+        let firstVc = contentViewControllers.first!
+        self.selectContentViewController(firstVc)
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        
         /*
          Options to customize menu transition animation.
          */
@@ -51,16 +55,24 @@ class HostViewController: MenuContainerViewController {
         self.transitionOptions = options
     }
     
+    func setControllerIdentifiers(identifiers:[[String]]) {
+        controllerIdentifiers = identifiers
+        self.contentViewControllers = contentControllers()
+        
+        print("IDENTIFIERS: ",controllerIdentifiers)
+    }
+    
     private func contentControllers() -> [UIViewController] {
-        let controllersIdentifiers = ["Choir", "Profile"]
         var contentList = [UIViewController]()
         
         /*
          Instantiate items controllers from storyboard.
          */
-        for identifier in controllersIdentifiers {
-            if let viewController = AppStoryboard(rawValue: identifier)?.initialViewController() {
-                contentList.append(viewController)
+        for section in controllerIdentifiers {
+            for identifier in section {
+                if let viewController = AppStoryboard(rawValue: identifier)?.initialViewController() {
+                    contentList.append(viewController)
+                }
             }
         }
         

@@ -10,9 +10,21 @@ import UIKit
 import InteractiveSideMenu
 import IBAnimatable
 import IoniconsKit
+import SwiftyJSON
 
 class ChoirTableViewController: UITableViewController {
+    
+    let BACKGROUND_COLOR = UIColor.init(hexString: "eeeeee")
+    
+    var choirInfo:JSON = ["name":"Choir A"]
 
+    var choirUpdatesList:JSON = [
+        ["title":"Event Changed", "info":"The time for mass changed to 12:00pm-1:30pm.", "time":"1 hour ago"],
+        ["title":"New Event Added", "info":"There will be a mass on Sunday, November 22 from 10:30am-12:00pm.", "time":"2 days ago"]
+    ]
+    
+    
+    // SIDEBAR NAVIGATION
     @IBOutlet weak var menuItem: AnimatableBarButtonItem!
     
     @IBAction func openMenu(_ sender: Any) {
@@ -29,15 +41,37 @@ class ChoirTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Choir"
+        self.title = choirInfo["name"].stringValue
+        
+        
+        
+        self.tableView.backgroundColor = BACKGROUND_COLOR
+//        self.edgesForExtendedLayout = UIRectEdge
+//        self.extendedLayoutIncludesOpaqueBars = NO
+//        self.automaticallyAdjustsScrollViewInsets = NO
         
         setNavigationItems()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        self.view.frame = self.view.bounds
+        
+//        ApiHelper.getOrganizations() { response, error in
+//            print(response)
+//        }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+//        if FIRST_CONTROLLER == true {
+//            self.additionalSafeAreaInsets = UIEdgeInsetsMake(0,0,0,0)
+//            FIRST_CONTROLLER = false
+//            print("FIRST CONTROLLER")
+//        } else {
+//            self.additionalSafeAreaInsets = UIEdgeInsetsMake(20,0,0,0)
+//        }
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }  
     
 
     // MARK: - Table view data source
@@ -48,19 +82,19 @@ class ChoirTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return choirUpdatesList.arrayValue.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BasicUpdateCell", for: indexPath) as! ChoirResourceInfoTableViewCell
+        let info = choirUpdatesList[indexPath.row]
+        
+        cell.titleLabel.text = info["title"].stringValue
+        cell.descriptionField.text = info["info"].stringValue
 
-        // Configure the cell...
-
+        cell.contentView.backgroundColor = BACKGROUND_COLOR
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

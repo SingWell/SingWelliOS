@@ -13,7 +13,7 @@
         <!--Navigation Menu View Controller-->
         <scene sceneID="fDn-kL-63y">
             <objects>
-                <viewController storyboardIdentifier="NavigationMenu" id="e7s-m2-dEn" customClass="NavigationMenuViewController" customModule="Sample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NavigationMenu" id="e7s-m2-dEn" customClass="NavigationMenuViewController" customModule="SingWell" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ex7-Lh-Nd1"/>
                         <viewControllerLayoutGuide type="bottom" id="o3e-3d-oah"/>
@@ -26,7 +26,7 @@
                                 <rect key="frame" x="16" y="20" width="343" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuCell" id="JFW-Mk-PjH">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChoirNameCell" id="JFW-Mk-PjH">
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JFW-Mk-PjH" id="Z1d-Q5-M37">
@@ -61,7 +61,7 @@
         <!--Host View Controller-->
         <scene sceneID="zrW-f1-4LL">
             <objects>
-                <viewController id="cec-aG-p7w" customClass="HostViewController" customModule="Sample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cec-aG-p7w" customClass="HostViewController" customModule="SingWell" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fcg-fd-SWk"/>
                         <viewControllerLayoutGuide type="bottom" id="xXS-Ab-zYf"/>

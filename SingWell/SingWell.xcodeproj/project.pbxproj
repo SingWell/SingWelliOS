@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1617DF941FB39EEB0094C474 /* ApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1617DF931FB39EEB0094C474 /* ApiHelper.swift */; };
+		16256EE51FBB827A00992B02 /* ChoirResourceInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16256EE41FBB827A00992B02 /* ChoirResourceInfoTableViewCell.swift */; };
 		162D98081FA65CD3006068BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162D98071FA65CD3006068BC /* AppDelegate.swift */; };
 		162D980F1FA65CD3006068BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 162D980E1FA65CD3006068BC /* Assets.xcassets */; };
 		162D98121FA65CD3006068BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 162D98101FA65CD3006068BC /* LaunchScreen.storyboard */; };
@@ -23,6 +24,7 @@
 		1652FDB51FB5041600D921EB /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1652FDB41FB5041600D921EB /* SideMenu.storyboard */; };
 		521BCF2D1FB3A472000662F7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521BCF2C1FB3A472000662F7 /* ProfileViewController.swift */; };
 		521BCF2F1FB3A48A000662F7 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521BCF2E1FB3A48A000662F7 /* Profile.storyboard */; };
+		52218E171FB50C0400EC4DDA /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52218E161FB50C0400EC4DDA /* UIImageExtension.swift */; };
 		86F76E547079493C7DAADA22 /* Pods_SingWellTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5B7BEEE8800BC4F7098CCD /* Pods_SingWellTests.framework */; };
 		D0B4A43E772600F9DCBBBBEF /* Pods_SingWellUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56D8462546CB3640CFED1D64 /* Pods_SingWellUITests.framework */; };
 		DC314C3CF81F0D65E4D3B09F /* Pods_SingWell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9A2CC9F02AA47F953461F6 /* Pods_SingWell.framework */; };
@@ -48,6 +50,7 @@
 /* Begin PBXFileReference section */
 		091858B7E57F4BDBB305B7A9 /* Pods-SingWellUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingWellUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SingWellUITests/Pods-SingWellUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1617DF931FB39EEB0094C474 /* ApiHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHelper.swift; sourceTree = "<group>"; };
+		16256EE41FBB827A00992B02 /* ChoirResourceInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoirResourceInfoTableViewCell.swift; sourceTree = "<group>"; };
 		162D98041FA65CD3006068BC /* SingWell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SingWell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		162D98071FA65CD3006068BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		162D980E1FA65CD3006068BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,6 +73,7 @@
 		2CF3257DBA9274E82C0A0B81 /* Pods-SingWellTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingWellTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SingWellTests/Pods-SingWellTests.debug.xcconfig"; sourceTree = "<group>"; };
 		521BCF2C1FB3A472000662F7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		521BCF2E1FB3A48A000662F7 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		52218E161FB50C0400EC4DDA /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		56D8462546CB3640CFED1D64 /* Pods_SingWellUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SingWellUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A89585724F70104CBA47295 /* Pods-SingWell.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingWell.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SingWell/Pods-SingWell.debug.xcconfig"; sourceTree = "<group>"; };
 		BAD46F51B65E4DD47A9291FB /* Pods-SingWellTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingWellTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SingWellTests/Pods-SingWellTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -203,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				1652FDAC1FB5016F00D921EB /* ChoirTableViewController.swift */,
+				16256EE41FBB827A00992B02 /* ChoirResourceInfoTableViewCell.swift */,
 				1652FDAE1FB5018000D921EB /* Choir.storyboard */,
 			);
 			path = ChoirViewController;
@@ -236,6 +241,7 @@
 			children = (
 				521BCF2C1FB3A472000662F7 /* ProfileViewController.swift */,
 				521BCF2E1FB3A48A000662F7 /* Profile.storyboard */,
+				52218E161FB50C0400EC4DDA /* UIImageExtension.swift */,
 			);
 			path = ProfileViewController;
 			sourceTree = "<group>";
@@ -548,10 +554,12 @@
 			files = (
 				521BCF2D1FB3A472000662F7 /* ProfileViewController.swift in Sources */,
 				162D98371FA65D09006068BC /* Extensions.swift in Sources */,
+				52218E171FB50C0400EC4DDA /* UIImageExtension.swift in Sources */,
 				1652FDB11FB502D200D921EB /* HostViewController.swift in Sources */,
 				162D98081FA65CD3006068BC /* AppDelegate.swift in Sources */,
 				162D98421FA65DD1006068BC /* ChildViewController.swift in Sources */,
 				1652FDB31FB5039400D921EB /* NavigationMenuViewController.swift in Sources */,
+				16256EE51FBB827A00992B02 /* ChoirResourceInfoTableViewCell.swift in Sources */,
 				1617DF941FB39EEB0094C474 /* ApiHelper.swift in Sources */,
 				1652FDAD1FB5016F00D921EB /* ChoirTableViewController.swift in Sources */,
 			);
@@ -713,7 +721,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 788J8M5NBX;
+				DEVELOPMENT_TEAM = 59272Q867S;
 				INFOPLIST_FILE = SingWell/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.appcoda.tsiems.SingWell;
@@ -729,7 +737,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 788J8M5NBX;
+				DEVELOPMENT_TEAM = 59272Q867S;
 				INFOPLIST_FILE = SingWell/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.appcoda.tsiems.SingWell;
