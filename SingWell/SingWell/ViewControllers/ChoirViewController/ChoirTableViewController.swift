@@ -14,6 +14,8 @@ import SwiftyJSON
 
 class ChoirTableViewController: UITableViewController {
     
+    @IBOutlet weak var rightBarButtonItem: AnimatableBarButtonItem!
+    
     let BACKGROUND_COLOR = UIColor.init(hexString: "eeeeee")
     
     var choirInfo:JSON = ["name":"Choir A"]
@@ -39,34 +41,40 @@ class ChoirTableViewController: UITableViewController {
         menuItem.image = UIImage.ionicon(with: .navicon, textColor: UIColor.black, size: CGSize(width: 32, height: 32))
     }
     
+    
+    func setRightNavItem() {
+        rightBarButtonItem.title = ""
+        rightBarButtonItem.tintColor = .black
+        rightBarButtonItem.image = UIImage.ionicon(with: .iosBell, textColor: UIColor.black, size: CGSize(width: 32, height: 32))
+
+        // TODO: show a number label with the number of unread notifications
+    }
+    
+    @IBAction func viewNotifications(_ sender: Any) {
+        let nextVc = AppStoryboard.Notifications.initialViewController() as! NotificationsTableViewController
+        self.navigationController?.pushViewController(nextVc, animated: true)
+    }
+    
+    @IBAction func viewCalendar(_ sender: Any) {
+        let nextVc = AppStoryboard.Calendar.initialViewController() as! CalendarViewController
+        self.navigationController?.pushViewController(nextVc, animated: true)
+    }
+    
+    @IBAction func viewRoster(_ sender: Any) {
+        let nextVc = AppStoryboard.Roster.initialViewController() as! RosterTableViewController
+        self.navigationController?.pushViewController(nextVc, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = choirInfo["name"].stringValue
         
-        
-        
         self.tableView.backgroundColor = BACKGROUND_COLOR
-//        self.edgesForExtendedLayout = UIRectEdge
-//        self.extendedLayoutIncludesOpaqueBars = NO
-//        self.automaticallyAdjustsScrollViewInsets = NO
         
         setNavigationItems()
+        setRightNavItem()
         
         self.view.frame = self.view.bounds
-        
-//        ApiHelper.getOrganizations() { response, error in
-//            print(response)
-//        }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-//        if FIRST_CONTROLLER == true {
-//            self.additionalSafeAreaInsets = UIEdgeInsetsMake(0,0,0,0)
-//            FIRST_CONTROLLER = false
-//            print("FIRST CONTROLLER")
-//        } else {
-//            self.additionalSafeAreaInsets = UIEdgeInsetsMake(20,0,0,0)
-//        }
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -77,59 +85,55 @@ class ChoirTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return choirUpdatesList.arrayValue.count
+        switch section {
+        case 0: // choir info cell
+            return 1
+        default:
+            return choirUpdatesList.arrayValue.count
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.section {
+        case 0:
+            return 60.0
+        default:
+            return super.tableView(tableView, heightForRowAt: indexPath)
+        }
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BasicUpdateCell", for: indexPath) as! ChoirResourceInfoTableViewCell
-        let info = choirUpdatesList[indexPath.row]
+        switch indexPath.section {
+        case 0: // choir info cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ChoirInfoCell", for: indexPath) as! ChoirInfoTableViewCell
+            
+            cell.contentView.backgroundColor = BACKGROUND_COLOR
+
+            cell.calendarButton.addTarget(self, action: #selector(ChoirTableViewController.viewCalendar(_:)), for: UIControlEvents.touchUpInside)
+            cell.calendarButton.titleLabel?.font = UIFont.ionicon(of: 30)
+            cell.calendarButton.setTitle(String.ionicon(with:.calendar), for: .normal)
+            
+            cell.rosterButton.addTarget(self, action: #selector(ChoirTableViewController.viewRoster(_:)), for: UIControlEvents.touchUpInside)
+            cell.rosterButton.titleLabel?.font = UIFont.ionicon(of: 30)
+            cell.rosterButton.setTitle(String.ionicon(with:.iosPeople), for: .normal)
+            
+            return cell
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "BasicUpdateCell", for: indexPath) as! ChoirResourceInfoTableViewCell
+            let info = choirUpdatesList[indexPath.row]
+            
+            cell.titleLabel.text = info["title"].stringValue
+            cell.descriptionField.text = info["info"].stringValue
+            
+            cell.contentView.backgroundColor = BACKGROUND_COLOR
+            return cell
+        }
         
-        cell.titleLabel.text = info["title"].stringValue
-        cell.descriptionField.text = info["info"].stringValue
-
-        cell.contentView.backgroundColor = BACKGROUND_COLOR
-        return cell
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     /*
     // MARK: - Navigation

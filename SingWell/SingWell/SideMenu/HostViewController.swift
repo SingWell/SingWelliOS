@@ -11,7 +11,7 @@ import InteractiveSideMenu
 
 class HostViewController: MenuContainerViewController {
 
-    var controllerIdentifiers = [["Choir","Profile"]]
+    var controllerIdentifiers = [["Profile","Choir"]]
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .default
@@ -21,14 +21,23 @@ class HostViewController: MenuContainerViewController {
         return false
     }
     
+    func loadUserInfo() {
+        (self.menuViewController as! NavigationMenuViewController).refreshChoirs()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         
         let screenSize: CGRect = UIScreen.main.bounds
         self.transitionOptions = TransitionOptions(duration: 0.4, visibleContentWidth: screenSize.width / 6)
         
         // Instantiate menu view controller by identifier
         self.menuViewController = self.storyboard!.instantiateViewController(withIdentifier: "NavigationMenu") as! MenuViewController
+        
+        loadUserInfo()
         
         // Gather content items controllers
         self.contentViewControllers = contentControllers()

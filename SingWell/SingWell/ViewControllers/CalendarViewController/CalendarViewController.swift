@@ -1,18 +1,19 @@
 //
-//  ChildViewController.swift
+//  CalendarViewController.swift
 //  SingWell
 //
-//  Created by Travis Siems on 10/29/17.
+//  Created by Travis Siems on 11/20/17.
 //  Copyright © 2017 Travis Siems. All rights reserved.
 //
 
 import UIKit
 
-class ChildViewController: UIViewController {
+class CalendarViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Child"
+
+        self.title = "Calendar"
         // Do any additional setup after loading the view.
     }
 

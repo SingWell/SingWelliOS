@@ -15,8 +15,6 @@
 		162D981D1FA65CD3006068BC /* SingWellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162D981C1FA65CD3006068BC /* SingWellTests.swift */; };
 		162D98281FA65CD3006068BC /* SingWellUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162D98271FA65CD3006068BC /* SingWellUITests.swift */; };
 		162D98371FA65D09006068BC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162D98361FA65D09006068BC /* Extensions.swift */; };
-		162D98401FA65DB7006068BC /* Child.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 162D983F1FA65DB7006068BC /* Child.storyboard */; };
-		162D98421FA65DD1006068BC /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162D98411FA65DD1006068BC /* ChildViewController.swift */; };
 		1652FDAD1FB5016F00D921EB /* ChoirTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652FDAC1FB5016F00D921EB /* ChoirTableViewController.swift */; };
 		1652FDAF1FB5018000D921EB /* Choir.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1652FDAE1FB5018000D921EB /* Choir.storyboard */; };
 		1652FDB11FB502D200D921EB /* HostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652FDB01FB502D200D921EB /* HostViewController.swift */; };
@@ -24,6 +22,13 @@
 		1652FDB51FB5041600D921EB /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1652FDB41FB5041600D921EB /* SideMenu.storyboard */; };
 		16D2CFA01FBE423500FDFF4D /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2CF9F1FBE423500FDFF4D /* ProfileTableViewCell.swift */; };
 		16D2CFA21FBE424300FDFF4D /* ChoirNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2CFA11FBE424300FDFF4D /* ChoirNameTableViewCell.swift */; };
+		16E211921FC35122009969B1 /* ChoirInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E211911FC35122009969B1 /* ChoirInfoTableViewCell.swift */; };
+		16E211951FC35C5F009969B1 /* NotificationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E211941FC35C5F009969B1 /* NotificationsTableViewController.swift */; };
+		16E211971FC35C6B009969B1 /* Notifications.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16E211961FC35C6B009969B1 /* Notifications.storyboard */; };
+		16E2119A1FC35DD7009969B1 /* RosterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E211991FC35DD7009969B1 /* RosterTableViewController.swift */; };
+		16E2119C1FC35DDF009969B1 /* Roster.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16E2119B1FC35DDF009969B1 /* Roster.storyboard */; };
+		16E2119F1FC35DFB009969B1 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E2119E1FC35DFB009969B1 /* CalendarViewController.swift */; };
+		16E211A11FC35E06009969B1 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16E211A01FC35E06009969B1 /* Calendar.storyboard */; };
 		521BCF2D1FB3A472000662F7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521BCF2C1FB3A472000662F7 /* ProfileViewController.swift */; };
 		521BCF2F1FB3A48A000662F7 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521BCF2E1FB3A48A000662F7 /* Profile.storyboard */; };
 		52218E171FB50C0400EC4DDA /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52218E161FB50C0400EC4DDA /* UIImageExtension.swift */; };
@@ -65,8 +70,6 @@
 		162D98271FA65CD3006068BC /* SingWellUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingWellUITests.swift; sourceTree = "<group>"; };
 		162D98291FA65CD3006068BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		162D98361FA65D09006068BC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		162D983F1FA65DB7006068BC /* Child.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Child.storyboard; sourceTree = "<group>"; };
-		162D98411FA65DD1006068BC /* ChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
 		1652FDAC1FB5016F00D921EB /* ChoirTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoirTableViewController.swift; sourceTree = "<group>"; };
 		1652FDAE1FB5018000D921EB /* Choir.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Choir.storyboard; sourceTree = "<group>"; };
 		1652FDB01FB502D200D921EB /* HostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +77,13 @@
 		1652FDB41FB5041600D921EB /* SideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
 		16D2CF9F1FBE423500FDFF4D /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		16D2CFA11FBE424300FDFF4D /* ChoirNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoirNameTableViewCell.swift; sourceTree = "<group>"; };
+		16E211911FC35122009969B1 /* ChoirInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoirInfoTableViewCell.swift; sourceTree = "<group>"; };
+		16E211941FC35C5F009969B1 /* NotificationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewController.swift; sourceTree = "<group>"; };
+		16E211961FC35C6B009969B1 /* Notifications.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notifications.storyboard; sourceTree = "<group>"; };
+		16E211991FC35DD7009969B1 /* RosterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RosterTableViewController.swift; sourceTree = "<group>"; };
+		16E2119B1FC35DDF009969B1 /* Roster.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Roster.storyboard; sourceTree = "<group>"; };
+		16E2119E1FC35DFB009969B1 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		16E211A01FC35E06009969B1 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 		2CF3257DBA9274E82C0A0B81 /* Pods-SingWellTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingWellTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SingWellTests/Pods-SingWellTests.debug.xcconfig"; sourceTree = "<group>"; };
 		521BCF2C1FB3A472000662F7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		521BCF2E1FB3A48A000662F7 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -181,20 +191,13 @@
 		162D98381FA65D2E006068BC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				16E2119D1FC35DE5009969B1 /* CalendarViewController */,
 				1652FDAB1FB5012300D921EB /* ChoirViewController */,
+				16E211931FC35C3B009969B1 /* NotificationsViewController */,
 				521BCF2B1FB3A44A000662F7 /* ProfileViewController */,
-				162D983C1FA65D7E006068BC /* ChildViewController */,
+				16E211981FC35DC5009969B1 /* RosterViewController */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		162D983C1FA65D7E006068BC /* ChildViewController */ = {
-			isa = PBXGroup;
-			children = (
-				162D98411FA65DD1006068BC /* ChildViewController.swift */,
-				162D983F1FA65DB7006068BC /* Child.storyboard */,
-			);
-			path = ChildViewController;
 			sourceTree = "<group>";
 		};
 		1652FDAA1FB500FB00D921EB /* SideMenu */ = {
@@ -213,10 +216,38 @@
 			isa = PBXGroup;
 			children = (
 				1652FDAC1FB5016F00D921EB /* ChoirTableViewController.swift */,
-				16256EE41FBB827A00992B02 /* ChoirResourceInfoTableViewCell.swift */,
 				1652FDAE1FB5018000D921EB /* Choir.storyboard */,
+				16256EE41FBB827A00992B02 /* ChoirResourceInfoTableViewCell.swift */,
+				16E211911FC35122009969B1 /* ChoirInfoTableViewCell.swift */,
 			);
 			path = ChoirViewController;
+			sourceTree = "<group>";
+		};
+		16E211931FC35C3B009969B1 /* NotificationsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				16E211941FC35C5F009969B1 /* NotificationsTableViewController.swift */,
+				16E211961FC35C6B009969B1 /* Notifications.storyboard */,
+			);
+			path = NotificationsViewController;
+			sourceTree = "<group>";
+		};
+		16E211981FC35DC5009969B1 /* RosterViewController */ = {
+			isa = PBXGroup;
+			children = (
+				16E211991FC35DD7009969B1 /* RosterTableViewController.swift */,
+				16E2119B1FC35DDF009969B1 /* Roster.storyboard */,
+			);
+			path = RosterViewController;
+			sourceTree = "<group>";
+		};
+		16E2119D1FC35DE5009969B1 /* CalendarViewController */ = {
+			isa = PBXGroup;
+			children = (
+				16E2119E1FC35DFB009969B1 /* CalendarViewController.swift */,
+				16E211A01FC35E06009969B1 /* Calendar.storyboard */,
+			);
+			path = CalendarViewController;
 			sourceTree = "<group>";
 		};
 		1FCB8BA79C196CB62C7A05A4 /* Frameworks */ = {
@@ -368,12 +399,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16E211A11FC35E06009969B1 /* Calendar.storyboard in Resources */,
 				1652FDB51FB5041600D921EB /* SideMenu.storyboard in Resources */,
 				1652FDAF1FB5018000D921EB /* Choir.storyboard in Resources */,
 				162D98121FA65CD3006068BC /* LaunchScreen.storyboard in Resources */,
-				162D98401FA65DB7006068BC /* Child.storyboard in Resources */,
+				16E211971FC35C6B009969B1 /* Notifications.storyboard in Resources */,
 				521BCF2F1FB3A48A000662F7 /* Profile.storyboard in Resources */,
 				162D980F1FA65CD3006068BC /* Assets.xcassets in Resources */,
+				16E2119C1FC35DDF009969B1 /* Roster.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,16 +591,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16E2119F1FC35DFB009969B1 /* CalendarViewController.swift in Sources */,
 				16D2CFA21FBE424300FDFF4D /* ChoirNameTableViewCell.swift in Sources */,
 				521BCF2D1FB3A472000662F7 /* ProfileViewController.swift in Sources */,
 				162D98371FA65D09006068BC /* Extensions.swift in Sources */,
 				52218E171FB50C0400EC4DDA /* UIImageExtension.swift in Sources */,
 				16D2CFA01FBE423500FDFF4D /* ProfileTableViewCell.swift in Sources */,
 				1652FDB11FB502D200D921EB /* HostViewController.swift in Sources */,
+				16E211951FC35C5F009969B1 /* NotificationsTableViewController.swift in Sources */,
+				16E211921FC35122009969B1 /* ChoirInfoTableViewCell.swift in Sources */,
 				162D98081FA65CD3006068BC /* AppDelegate.swift in Sources */,
-				162D98421FA65DD1006068BC /* ChildViewController.swift in Sources */,
 				1652FDB31FB5039400D921EB /* NavigationMenuViewController.swift in Sources */,
 				16256EE51FBB827A00992B02 /* ChoirResourceInfoTableViewCell.swift in Sources */,
+				16E2119A1FC35DD7009969B1 /* RosterTableViewController.swift in Sources */,
 				1617DF941FB39EEB0094C474 /* ApiHelper.swift in Sources */,
 				1652FDAD1FB5016F00D921EB /* ChoirTableViewController.swift in Sources */,
 			);

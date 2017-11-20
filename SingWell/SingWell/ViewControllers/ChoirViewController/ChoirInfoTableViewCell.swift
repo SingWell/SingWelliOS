@@ -1,20 +1,18 @@
 //
-//  ChoirNameTableViewCell.swift
+//  ChoirInfoTableViewCell.swift
 //  SingWell
 //
-//  Created by Travis Siems on 11/16/17.
+//  Created by Travis Siems on 11/20/17.
 //  Copyright © 2017 Travis Siems. All rights reserved.
 //
 
 import UIKit
 import IBAnimatable
 
-class ChoirNameTableViewCell: UITableViewCell {
+class ChoirInfoTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var pictureView: AnimatableImageView!
-    @IBOutlet weak var nameLabel: AnimatableLabel!
-    @IBOutlet weak var orgNameLabel: AnimatableLabel!
-    
+    @IBOutlet weak var rosterButton: AnimatableButton!
+    @IBOutlet weak var calendarButton: AnimatableButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

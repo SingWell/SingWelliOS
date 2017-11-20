@@ -17,7 +17,7 @@ class NavigationMenuViewController: MenuViewController {
     let kChoirNameCellReuseIdentifier = "ChoirNameCell"
     
     var choirs:[JSON] = []
-//    var menuItems = ["Profile", "Choir A"]
+    var organizations:[JSON] = []
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -35,20 +35,20 @@ class NavigationMenuViewController: MenuViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func refreshChoirs() {
-        guard self.menuContainerViewController != nil else {
-            return
-        }
-        
-        ApiHelper.getOrganizations() { response, error in
-            if error == nil {
-                print(response!)
-                self.choirs = []
-                var contentViews = [["Profile"],[]]
-                
-                for organization in (response?.arrayValue)! {
+    func setOrgsForUser(orgIds:JSON) {
+        self.choirs = []
+        var contentViews = [["Profile"],[]]
+        var numberOfChoirRequests = 0
+        for orgId in orgIds.arrayValue {
+            ApiHelper.getOrganization(orgId: orgId.stringValue) { organization, error in
+                if error == nil {
+                    self.organizations.append(organization!)
+                        
                     // get choirs for each organization
-                    ApiHelper.getChoirs(orgId: organization["id"].stringValue) { response, error in
+                    numberOfChoirRequests += 1
+                    ApiHelper.getChoirs(orgId: organization!["id"].stringValue) { response, error in
+                        numberOfChoirRequests -= 1
+                        
                         if error == nil {
                             let responseChoirs = (response?.arrayValue)!
                             for choir in responseChoirs {
@@ -58,13 +58,62 @@ class NavigationMenuViewController: MenuViewController {
                             (self.menuContainerViewController as! HostViewController).setControllerIdentifiers(identifiers: contentViews)
                             print(self.choirs)
                             
-                            self.tableView.reloadData()
+                            if numberOfChoirRequests == 0 && self.tableView != nil {
+                                self.tableView.reloadData()
+                            }
                         } else {
                             print(error!)
                         }
                     }
-                    
+                } else {
+                    print(error!)
                 }
+            }
+        }
+//        ApiHelper.getOrganizations() { response, error in
+//            if error == nil {
+//                print(response!)
+//                self.choirs = []
+//                var contentViews = [["Profile"],[]]
+//
+//                for organization in (response?.arrayValue)! {
+//                    self.organizations.append(organization)
+//
+//                    // get choirs for each organization
+//                    ApiHelper.getChoirs(orgId: organization["id"].stringValue) { response, error in
+//                        if error == nil {
+//                            let responseChoirs = (response?.arrayValue)!
+//                            for choir in responseChoirs {
+//                                self.choirs.append(choir)
+//                                contentViews[1].append("Choir")
+//                            }
+//                            (self.menuContainerViewController as! HostViewController).setControllerIdentifiers(identifiers: contentViews)
+//                            print(self.choirs)
+//
+//                            if self.tableView != nil {
+//                                self.tableView.reloadData()
+//                            }
+//                        } else {
+//                            print(error!)
+//                        }
+//                    }
+//
+//                }
+//            } else {
+//                print(error!)
+//            }
+//        }
+    }
+    
+    func refreshChoirs() {
+        guard self.menuContainerViewController != nil else {
+            return
+        }
+        
+        ApiHelper.getUser() {
+            response, error in
+            if error == nil {
+                self.setOrgsForUser(orgIds: response!["owned_organizations"])
             } else {
                 print(error!)
             }
@@ -129,7 +178,18 @@ extension NavigationMenuViewController: UITableViewDelegate, UITableViewDataSour
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: kChoirNameCellReuseIdentifier, for: indexPath) as! ChoirNameTableViewCell
-            cell.nameLabel?.text = self.choirs[indexPath.row]["name"].stringValue
+            
+            let choir = self.choirs[indexPath.row]
+            cell.nameLabel?.text = choir["name"].stringValue
+
+            // get the organization that this choir is in
+            let orgs = organizations.filter({$0["id"] == choir["organization"]})
+            if orgs.count > 0 {
+                let org = orgs[0]
+                cell.orgNameLabel?.text = org["name"].stringValue
+            } else {
+                cell.orgNameLabel?.text = ""
+            }
             
             let profileImage: UIImage = UIImage(named: "musicNotes")!
             cell.pictureView.image = profileImage

@@ -23,8 +23,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rg1-S2-28V">
-                                <rect key="frame" x="16" y="20" width="343" height="647"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mkn-iY-EG8">
+                                <rect key="frame" x="16" y="20" width="343" height="48"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SingWell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SmQ-0W-cfU">
+                                        <rect key="frame" x="8" y="14" width="327" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="SmQ-0W-cfU" firstAttribute="trailing" secondItem="Mkn-iY-EG8" secondAttribute="trailingMargin" id="16G-hP-fSg"/>
+                                    <constraint firstItem="SmQ-0W-cfU" firstAttribute="leading" secondItem="Mkn-iY-EG8" secondAttribute="leadingMargin" id="Sh8-bA-8sf"/>
+                                    <constraint firstItem="SmQ-0W-cfU" firstAttribute="centerY" secondItem="Mkn-iY-EG8" secondAttribute="centerY" id="XgD-b4-mbK"/>
+                                    <constraint firstAttribute="height" constant="48" id="YNX-AN-oHa"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rg1-S2-28V" customClass="AnimatableTableView" customModule="IBAnimatable">
+                                <rect key="frame" x="16" y="76" width="343" height="583"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileCell" rowHeight="110" id="JFW-Mk-PjH" customClass="ProfileTableViewCell" customModule="SingWell" customModuleProvider="target">
@@ -108,22 +126,43 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPX-DC-mHz" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                                    <rect key="frame" x="111" y="68" width="217" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="16" id="l1G-CV-TwY"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="RhU-Ao-POl" firstAttribute="leading" secondItem="k38-tl-wDf" secondAttribute="trailing" constant="8" id="0b2-Mw-Bdv"/>
+                                                <constraint firstItem="qPX-DC-mHz" firstAttribute="trailing" secondItem="RhU-Ao-POl" secondAttribute="trailing" id="6CK-Jf-hga"/>
                                                 <constraint firstItem="RhU-Ao-POl" firstAttribute="centerY" secondItem="k38-tl-wDf" secondAttribute="centerY" id="DZg-3F-ROt"/>
+                                                <constraint firstItem="qPX-DC-mHz" firstAttribute="leading" secondItem="RhU-Ao-POl" secondAttribute="leading" id="EYR-AJ-y9D"/>
                                                 <constraint firstAttribute="bottom" secondItem="k38-tl-wDf" secondAttribute="bottom" constant="10.5" id="Pgx-2J-LMJ"/>
                                                 <constraint firstItem="k38-tl-wDf" firstAttribute="leading" secondItem="peY-64-Edn" secondAttribute="leading" constant="15" id="PiV-3B-DS2"/>
                                                 <constraint firstAttribute="trailing" secondItem="RhU-Ao-POl" secondAttribute="trailing" constant="15" id="SsA-Up-PbT"/>
+                                                <constraint firstItem="qPX-DC-mHz" firstAttribute="top" secondItem="RhU-Ao-POl" secondAttribute="bottom" constant="2" id="nwU-hk-qHe"/>
                                                 <constraint firstItem="k38-tl-wDf" firstAttribute="top" secondItem="peY-64-Edn" secondAttribute="top" constant="11" id="qzL-gA-KaI"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="nameLabel" destination="RhU-Ao-POl" id="fOv-NU-n72"/>
+                                            <outlet property="orgNameLabel" destination="qPX-DC-mHz" id="BA9-ty-Qsd"/>
                                             <outlet property="pictureView" destination="k38-tl-wDf" id="lgF-IL-gkh"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.39728428370329716" green="0.47698072769836541" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="opacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="e7s-m2-dEn" id="uMV-MH-Tu4"/>
                                     <outlet property="delegate" destination="e7s-m2-dEn" id="8Dw-Uf-lEX"/>
@@ -133,9 +172,12 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="Rg1-S2-28V" secondAttribute="trailing" id="6Un-Ej-T3Z"/>
-                            <constraint firstItem="Rg1-S2-28V" firstAttribute="top" secondItem="Ex7-Lh-Nd1" secondAttribute="bottom" id="EZc-f9-ttd"/>
-                            <constraint firstItem="o3e-3d-oah" firstAttribute="top" secondItem="Rg1-S2-28V" secondAttribute="bottom" id="Q34-WZ-boT"/>
+                            <constraint firstItem="Rg1-S2-28V" firstAttribute="top" secondItem="Mkn-iY-EG8" secondAttribute="bottom" constant="8" id="LTb-d1-OGH"/>
+                            <constraint firstItem="o3e-3d-oah" firstAttribute="top" secondItem="Rg1-S2-28V" secondAttribute="bottom" constant="8" id="Q34-WZ-boT"/>
                             <constraint firstItem="Rg1-S2-28V" firstAttribute="leading" secondItem="HFy-dc-wxy" secondAttribute="leadingMargin" id="Sy8-Vd-X9Z"/>
+                            <constraint firstItem="Mkn-iY-EG8" firstAttribute="top" secondItem="Ex7-Lh-Nd1" secondAttribute="bottom" id="Wd0-QT-8Ma"/>
+                            <constraint firstItem="vvp-Q0-mhz" firstAttribute="trailing" secondItem="Mkn-iY-EG8" secondAttribute="trailing" constant="16" id="Zqd-Fi-HyD"/>
+                            <constraint firstItem="Mkn-iY-EG8" firstAttribute="leading" secondItem="vvp-Q0-mhz" secondAttribute="leading" constant="16" id="caA-7D-2UC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vvp-Q0-mhz"/>
                     </view>

@@ -14,7 +14,7 @@ let PRODUCTION_ENV = "http://ec2-34-215-244-252.us-west-2.compute.amazonaws.com/
 
 
 class ApiHelper {
-    static var userId = ""
+    static var userId = "1"
     
     //TODO: Replace userID with actual userID value sent in body of request
     //Had to create new post method in order to save userID value
@@ -73,9 +73,19 @@ class ApiHelper {
     }
     
     
+    //this will get choirs for a specific organization
+    static func getUser(userId:String=userId, completionHandler: @escaping (JSON?, Error?) -> ()) {
+        makeGetCall("users/\(userId)/", completionHandler: completionHandler)
+    }
+    
     //this will get all organizations
     static func getOrganizations( completionHandler: @escaping (JSON?, Error?) -> ()) {
         makeGetCall("organizations", completionHandler: completionHandler)
+    }
+    
+    //this will get a specific organization
+    static func getOrganization(orgId:String, completionHandler: @escaping (JSON?, Error?) -> ()) {
+        makeGetCall("organizations/\(orgId)", completionHandler: completionHandler)
     }
     
     //this will get choirs for a specific organization
@@ -83,7 +93,7 @@ class ApiHelper {
         makeGetCall("organizations/\(orgId)/choirs", completionHandler: completionHandler)
     }
     
-    //this will get choirs for a specific organization
+    //this will get a specific choir
     static func getChoir(orgId:String, choirId:String, completionHandler: @escaping (JSON?, Error?) -> ()) {
         makeGetCall("organizations/\(orgId)/choirs/\(choirId)", completionHandler: completionHandler)
     }
