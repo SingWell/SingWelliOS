@@ -9,19 +9,37 @@
 import UIKit
 import IBAnimatable
 
-class ProfileTableViewCell: UITableViewCell {
+class ProfileTableViewCell: AnimatableTableViewCell {
 
     @IBOutlet weak var nameLabel: AnimatableLabel!
     @IBOutlet weak var pictureView: AnimatableImageView!
+    
+    var cellColor = UIColor.init(hexString: "#1BA0FC")
+    var highlightedColor = UIColor.init(hexString: "#1BA0FC").darkerColor()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
+        self.backgroundColor = cellColor
+        
+        if selected {
+            self.backgroundColor = UIColor.init(hexString: "cccccc")
+            UIView.animate(withDuration: 0.2, animations: {
+                self.backgroundColor = self.highlightedColor
+            })
+        }
+    }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        if highlighted {
+            self.backgroundColor = highlightedColor
+        } else {
+            self.backgroundColor = cellColor
+        }
     }
 
 }

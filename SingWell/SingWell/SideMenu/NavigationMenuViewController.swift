@@ -16,6 +16,7 @@ class NavigationMenuViewController: MenuViewController {
     let kProfileCellReuseIdentifier = "ProfileCell"
     let kChoirNameCellReuseIdentifier = "ChoirNameCell"
     
+    var username:String = "bob"
     var choirs:[JSON] = []
     var organizations:[JSON] = []
     
@@ -24,7 +25,7 @@ class NavigationMenuViewController: MenuViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        refreshChoirs()
+//        refreshChoirs()
 
         // Select the initial row
         tableView.selectRow(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: UITableViewScrollPosition.none)
@@ -113,7 +114,9 @@ class NavigationMenuViewController: MenuViewController {
         ApiHelper.getUser() {
             response, error in
             if error == nil {
+                self.username = response!["username"].stringValue
                 self.setOrgsForUser(orgIds: response!["owned_organizations"])
+                
             } else {
                 print(error!)
             }
@@ -170,7 +173,7 @@ extension NavigationMenuViewController: UITableViewDelegate, UITableViewDataSour
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: kProfileCellReuseIdentifier, for: indexPath) as! ProfileTableViewCell
-            cell.nameLabel?.text = "Profile"
+            cell.nameLabel?.text = username
             
             let profileImage: UIImage = UIImage(named: "profileImage")!
             cell.pictureView.image = profileImage
@@ -194,6 +197,8 @@ extension NavigationMenuViewController: UITableViewDelegate, UITableViewDataSour
             let profileImage: UIImage = UIImage(named: "musicNotes")!
             cell.pictureView.image = profileImage
             cell.pictureView.clipsToBounds = true
+            
+            cell.selectionStyle = .gray
             
             return cell
         }

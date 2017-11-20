@@ -9,7 +9,7 @@
 import UIKit
 import IBAnimatable
 
-class ChoirInfoTableViewCell: UITableViewCell {
+class ChoirInfoTableViewCell: AnimatableTableViewCell {
 
     @IBOutlet weak var rosterButton: AnimatableButton!
     @IBOutlet weak var calendarButton: AnimatableButton!

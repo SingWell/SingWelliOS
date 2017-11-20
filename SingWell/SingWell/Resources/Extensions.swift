@@ -36,3 +36,33 @@ extension UIViewController {
         return appStoryboard.viewController(viewControllerClass: self)
     }
 }
+
+// hex colors and lighter/darker colors
+extension UIColor {
+    
+    func lighterColor(percentage:CGFloat=1.3,withSaturation:CGFloat=1.0) -> UIColor
+    {
+        var h:CGFloat = 0.0
+        var s:CGFloat = 0.0
+        var b:CGFloat = 0.0
+        var a:CGFloat = 0.0
+        
+        if self.getHue(&h, saturation: &s, brightness: &b, alpha: &a) {
+            return UIColor.init(hue: h, saturation: min(s * withSaturation,1.0), brightness: min(b * percentage,1.0), alpha: a)
+        }
+        return self
+    }
+    
+    func darkerColor() -> UIColor
+    {
+        var h:CGFloat = 0.0
+        var s:CGFloat = 0.0
+        var b:CGFloat = 0.0
+        var a:CGFloat = 0.0
+        
+        if self.getHue(&h, saturation: &s, brightness: &b, alpha: &a) {
+            return UIColor.init(hue: h, saturation: s, brightness: b * 0.75, alpha: a)
+        }
+        return self
+    }
+}

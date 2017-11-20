@@ -9,11 +9,13 @@
 import UIKit
 import IBAnimatable
 
-class ChoirNameTableViewCell: UITableViewCell {
+class ChoirNameTableViewCell: AnimatableTableViewCell {
 
     @IBOutlet weak var pictureView: AnimatableImageView!
     @IBOutlet weak var nameLabel: AnimatableLabel!
     @IBOutlet weak var orgNameLabel: AnimatableLabel!
+    
+    var cellColor = UIColor.init(hexString: "#1BA0FC")
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,9 +23,23 @@ class ChoirNameTableViewCell: UITableViewCell {
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
+        self.backgroundColor = cellColor
+        
+        if selected {
+            self.backgroundColor = UIColor.init(hexString: "cccccc")
+            UIView.animate(withDuration: 0.2, animations: {
+                self.backgroundColor = self.cellColor.darkerColor()
+            })
+        }
+    }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        if highlighted {
+            self.backgroundColor = cellColor.darkerColor()
+        } else {
+            self.backgroundColor = cellColor
+        }
     }
 
 }

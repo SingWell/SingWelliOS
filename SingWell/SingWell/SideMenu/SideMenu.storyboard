@@ -10,6 +10,12 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AppleSDGothicNeo.ttc">
+            <string>AppleSDGothicNeo-Light</string>
+            <string>AppleSDGothicNeo-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Navigation Menu View Controller-->
         <scene sceneID="fDn-kL-63y">
@@ -23,33 +29,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mkn-iY-EG8">
-                                <rect key="frame" x="16" y="20" width="343" height="48"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mkn-iY-EG8" customClass="AnimatableView" customModule="IBAnimatable">
+                                <rect key="frame" x="0.0" y="20" width="375" height="57"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SingWell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SmQ-0W-cfU">
-                                        <rect key="frame" x="8" y="14" width="327" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SingWell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SmQ-0W-cfU" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                        <rect key="frame" x="17" y="15" width="327" height="26.5"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.0" green="0.3906222321069247" blue="0.80984295685279184" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="SmQ-0W-cfU" firstAttribute="trailing" secondItem="Mkn-iY-EG8" secondAttribute="trailingMargin" id="16G-hP-fSg"/>
-                                    <constraint firstItem="SmQ-0W-cfU" firstAttribute="leading" secondItem="Mkn-iY-EG8" secondAttribute="leadingMargin" id="Sh8-bA-8sf"/>
+                                    <constraint firstItem="SmQ-0W-cfU" firstAttribute="trailing" secondItem="Mkn-iY-EG8" secondAttribute="trailingMargin" constant="-23" id="16G-hP-fSg"/>
+                                    <constraint firstItem="SmQ-0W-cfU" firstAttribute="leading" secondItem="Mkn-iY-EG8" secondAttribute="leadingMargin" constant="9" id="Sh8-bA-8sf"/>
                                     <constraint firstItem="SmQ-0W-cfU" firstAttribute="centerY" secondItem="Mkn-iY-EG8" secondAttribute="centerY" id="XgD-b4-mbK"/>
-                                    <constraint firstAttribute="height" constant="48" id="YNX-AN-oHa"/>
+                                    <constraint firstAttribute="height" constant="57" id="YNX-AN-oHa"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rg1-S2-28V" customClass="AnimatableTableView" customModule="IBAnimatable">
-                                <rect key="frame" x="16" y="76" width="343" height="583"/>
+                                <rect key="frame" x="0.0" y="76" width="375" height="591"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileCell" rowHeight="110" id="JFW-Mk-PjH" customClass="ProfileTableViewCell" customModule="SingWell" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="110"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JFW-Mk-PjH" id="Z1d-Q5-M37">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="109.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FoY-rp-w7n" customClass="AnimatableImageView" customModule="IBAnimatable">
@@ -67,15 +73,18 @@
                                                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                             <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhU-RD-NIf" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                                    <rect key="frame" x="111" y="45" width="217" height="21"/>
+                                                    <rect key="frame" x="111" y="45" width="249" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="plI-bD-Wwt"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -88,16 +97,17 @@
                                                 <constraint firstAttribute="bottom" secondItem="FoY-rp-w7n" secondAttribute="bottom" constant="10.5" id="ryx-7N-pqY"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.0" green="0.62100949750000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="nameLabel" destination="EhU-RD-NIf" id="O9m-2e-lf3"/>
                                             <outlet property="pictureView" destination="FoY-rp-w7n" id="m79-Te-hh4"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChoirNameCell" rowHeight="110" id="EVy-de-6Wo" customClass="ChoirNameTableViewCell" customModule="SingWell" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="138" width="343" height="110"/>
+                                        <rect key="frame" x="0.0" y="138" width="375" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EVy-de-6Wo" id="peY-64-Edn">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="109.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k38-tl-wDf" customClass="AnimatableImageView" customModule="IBAnimatable">
@@ -115,31 +125,34 @@
                                                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                             <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RhU-Ao-POl" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                                    <rect key="frame" x="111" y="44" width="217" height="22"/>
+                                                    <rect key="frame" x="111" y="35" width="249" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="lfd-6x-6jC"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPX-DC-mHz" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                                    <rect key="frame" x="111" y="68" width="217" height="16"/>
+                                                    <rect key="frame" x="111" y="59" width="249" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16" id="l1G-CV-TwY"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="RhU-Ao-POl" firstAttribute="leading" secondItem="k38-tl-wDf" secondAttribute="trailing" constant="8" id="0b2-Mw-Bdv"/>
                                                 <constraint firstItem="qPX-DC-mHz" firstAttribute="trailing" secondItem="RhU-Ao-POl" secondAttribute="trailing" id="6CK-Jf-hga"/>
-                                                <constraint firstItem="RhU-Ao-POl" firstAttribute="centerY" secondItem="k38-tl-wDf" secondAttribute="centerY" id="DZg-3F-ROt"/>
+                                                <constraint firstItem="RhU-Ao-POl" firstAttribute="centerY" secondItem="k38-tl-wDf" secondAttribute="centerY" constant="-9" id="DZg-3F-ROt"/>
                                                 <constraint firstItem="qPX-DC-mHz" firstAttribute="leading" secondItem="RhU-Ao-POl" secondAttribute="leading" id="EYR-AJ-y9D"/>
                                                 <constraint firstAttribute="bottom" secondItem="k38-tl-wDf" secondAttribute="bottom" constant="10.5" id="Pgx-2J-LMJ"/>
                                                 <constraint firstItem="k38-tl-wDf" firstAttribute="leading" secondItem="peY-64-Edn" secondAttribute="leading" constant="15" id="PiV-3B-DS2"/>
@@ -148,6 +161,7 @@
                                                 <constraint firstItem="k38-tl-wDf" firstAttribute="top" secondItem="peY-64-Edn" secondAttribute="top" constant="11" id="qzL-gA-KaI"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.0" green="0.62100949750000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="nameLabel" destination="RhU-Ao-POl" id="fOv-NU-n72"/>
                                             <outlet property="orgNameLabel" destination="qPX-DC-mHz" id="BA9-ty-Qsd"/>
@@ -157,7 +171,7 @@
                                 </prototypes>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                        <color key="value" red="0.39728428370329716" green="0.47698072769836541" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.0" green="0.62100949750000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="opacity">
                                         <real key="value" value="1"/>
@@ -171,13 +185,13 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Rg1-S2-28V" secondAttribute="trailing" id="6Un-Ej-T3Z"/>
-                            <constraint firstItem="Rg1-S2-28V" firstAttribute="top" secondItem="Mkn-iY-EG8" secondAttribute="bottom" constant="8" id="LTb-d1-OGH"/>
-                            <constraint firstItem="o3e-3d-oah" firstAttribute="top" secondItem="Rg1-S2-28V" secondAttribute="bottom" constant="8" id="Q34-WZ-boT"/>
-                            <constraint firstItem="Rg1-S2-28V" firstAttribute="leading" secondItem="HFy-dc-wxy" secondAttribute="leadingMargin" id="Sy8-Vd-X9Z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Rg1-S2-28V" secondAttribute="trailing" constant="-16" id="6Un-Ej-T3Z"/>
+                            <constraint firstItem="Rg1-S2-28V" firstAttribute="top" secondItem="Mkn-iY-EG8" secondAttribute="bottom" constant="-1" id="LTb-d1-OGH"/>
+                            <constraint firstItem="o3e-3d-oah" firstAttribute="top" secondItem="Rg1-S2-28V" secondAttribute="bottom" id="Q34-WZ-boT"/>
+                            <constraint firstItem="Rg1-S2-28V" firstAttribute="leading" secondItem="HFy-dc-wxy" secondAttribute="leadingMargin" constant="-16" id="Sy8-Vd-X9Z"/>
                             <constraint firstItem="Mkn-iY-EG8" firstAttribute="top" secondItem="Ex7-Lh-Nd1" secondAttribute="bottom" id="Wd0-QT-8Ma"/>
-                            <constraint firstItem="vvp-Q0-mhz" firstAttribute="trailing" secondItem="Mkn-iY-EG8" secondAttribute="trailing" constant="16" id="Zqd-Fi-HyD"/>
-                            <constraint firstItem="Mkn-iY-EG8" firstAttribute="leading" secondItem="vvp-Q0-mhz" secondAttribute="leading" constant="16" id="caA-7D-2UC"/>
+                            <constraint firstItem="vvp-Q0-mhz" firstAttribute="trailing" secondItem="Mkn-iY-EG8" secondAttribute="trailing" id="Zqd-Fi-HyD"/>
+                            <constraint firstItem="Mkn-iY-EG8" firstAttribute="leading" secondItem="vvp-Q0-mhz" secondAttribute="leading" id="caA-7D-2UC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vvp-Q0-mhz"/>
                     </view>
