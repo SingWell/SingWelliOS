@@ -185,13 +185,13 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Rg1-S2-28V" secondAttribute="trailing" constant="-16" id="6Un-Ej-T3Z"/>
                             <constraint firstItem="Rg1-S2-28V" firstAttribute="top" secondItem="Mkn-iY-EG8" secondAttribute="bottom" constant="-1" id="LTb-d1-OGH"/>
                             <constraint firstItem="o3e-3d-oah" firstAttribute="top" secondItem="Rg1-S2-28V" secondAttribute="bottom" id="Q34-WZ-boT"/>
-                            <constraint firstItem="Rg1-S2-28V" firstAttribute="leading" secondItem="HFy-dc-wxy" secondAttribute="leadingMargin" constant="-16" id="Sy8-Vd-X9Z"/>
                             <constraint firstItem="Mkn-iY-EG8" firstAttribute="top" secondItem="Ex7-Lh-Nd1" secondAttribute="bottom" id="Wd0-QT-8Ma"/>
                             <constraint firstItem="vvp-Q0-mhz" firstAttribute="trailing" secondItem="Mkn-iY-EG8" secondAttribute="trailing" id="Zqd-Fi-HyD"/>
                             <constraint firstItem="Mkn-iY-EG8" firstAttribute="leading" secondItem="vvp-Q0-mhz" secondAttribute="leading" id="caA-7D-2UC"/>
+                            <constraint firstItem="Rg1-S2-28V" firstAttribute="leading" secondItem="vvp-Q0-mhz" secondAttribute="leading" id="pj8-36-T3a"/>
+                            <constraint firstItem="vvp-Q0-mhz" firstAttribute="trailing" secondItem="Rg1-S2-28V" secondAttribute="trailing" id="prG-15-Aea"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vvp-Q0-mhz"/>
                     </view>
