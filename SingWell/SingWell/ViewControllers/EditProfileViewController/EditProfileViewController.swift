@@ -19,12 +19,13 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nameLabel: AnimatableLabel!
     
     
-    @IBOutlet weak var phoneNumberTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var cityTextField: UITextField!
-    @IBOutlet weak var streetTextField: UITextField!
+    @IBOutlet weak var phoneNumberTextField: AnimatableTextField!
+    @IBOutlet weak var emailTextField: AnimatableTextField!
+    @IBOutlet weak var cityTextField: AnimatableTextField!
+    @IBOutlet weak var streetTextField: AnimatableTextField!
     @IBOutlet weak var biographyTextView: AnimatableTextView!
     
+    @IBOutlet weak var biographyView: AnimatableView!
     
     @IBOutlet weak var instrumentationIcon: AnimatableImageView!
     @IBOutlet weak var addressIcon: AnimatableImageView!
@@ -132,6 +133,8 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
         var profileImage: UIImage = UIImage(named: "profileImage")!
         profileImage = profileImage.circleMasked!
         profileImageView.image = profileImage
+    
+        profileImageView.animate(.pop(repeatCount: 1))
         
         let profileBackgroundImage: UIImage = UIImage(named: "profileBackground")!
         profileBackgroundImageView.image = profileBackgroundImage

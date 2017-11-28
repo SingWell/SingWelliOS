@@ -138,6 +138,10 @@
                                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
                                                         <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="squeeze(in, left)"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                                        <real key="value" value="0.29999999999999999"/>
+                                                    </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
                                                         <point key="value" x="3" y="3"/>
                                                     </userDefinedRuntimeAttribute>
@@ -224,6 +228,10 @@
                                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
                                                         <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="squeeze(in, left)"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                                        <real key="value" value="0.34999999999999998"/>
+                                                    </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
                                                         <point key="value" x="3" y="3"/>
                                                     </userDefinedRuntimeAttribute>
@@ -260,23 +268,27 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wDj-E7-WTY">
-                                                        <rect key="frame" x="87" y="35.5" width="150" height="30"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="150" id="d2A-Gx-G0t"/>
-                                                        </constraints>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="wDj-E7-WTY" customClass="AnimatableTextField" customModule="IBAnimatable">
+                                                        <rect key="frame" x="87" y="35.5" width="243" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="paddingSide">
+                                                                <real key="value" value="7"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hku-hY-7Ol">
-                                                        <rect key="frame" x="87" y="73.5" width="150" height="30"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="150" id="Kqg-Rs-9rn"/>
-                                                        </constraints>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Hku-hY-7Ol" customClass="AnimatableTextField" customModule="IBAnimatable">
+                                                        <rect key="frame" x="87" y="73.5" width="243" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="paddingSide">
+                                                                <real key="value" value="7"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -285,11 +297,13 @@
                                                     <constraint firstItem="Hku-hY-7Ol" firstAttribute="top" secondItem="wDj-E7-WTY" secondAttribute="bottom" constant="8" id="Tot-p5-a8C"/>
                                                     <constraint firstItem="wDj-E7-WTY" firstAttribute="top" secondItem="hAy-Dc-Nm7" secondAttribute="bottom" constant="7.5" id="WU6-aO-Ild"/>
                                                     <constraint firstItem="hAy-Dc-Nm7" firstAttribute="top" secondItem="MvD-zo-cD4" secondAttribute="top" constant="8" id="XFA-nR-3iJ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="wDj-E7-WTY" secondAttribute="trailing" constant="15" id="bde-f6-Bov"/>
                                                     <constraint firstAttribute="bottom" secondItem="nJg-SA-fGX" secondAttribute="bottom" constant="2" id="cs6-eL-F1Q"/>
                                                     <constraint firstItem="hAy-Dc-Nm7" firstAttribute="leading" secondItem="nJg-SA-fGX" secondAttribute="trailing" constant="18" id="gN5-4A-2Ai"/>
                                                     <constraint firstItem="Hku-hY-7Ol" firstAttribute="leading" secondItem="nJg-SA-fGX" secondAttribute="trailing" constant="15" id="gSc-gd-Rf5"/>
                                                     <constraint firstItem="yBO-r1-lUc" firstAttribute="leading" secondItem="MvD-zo-cD4" secondAttribute="leading" constant="20" id="jnC-Tu-XuT"/>
                                                     <constraint firstItem="wDj-E7-WTY" firstAttribute="leading" secondItem="nJg-SA-fGX" secondAttribute="trailing" constant="15" id="kyf-ls-0fz"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Hku-hY-7Ol" secondAttribute="trailing" constant="15" id="nO4-Pb-gRY"/>
                                                     <constraint firstItem="nJg-SA-fGX" firstAttribute="leading" secondItem="yBO-r1-lUc" secondAttribute="trailing" constant="15" id="v3C-qG-bnH"/>
                                                     <constraint firstItem="yBO-r1-lUc" firstAttribute="centerY" secondItem="MvD-zo-cD4" secondAttribute="centerY" id="xzg-Bj-rjk"/>
                                                     <constraint firstAttribute="height" constant="120" id="zOA-FG-eGd"/>
@@ -306,6 +320,10 @@
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
                                                         <point key="value" x="3" y="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="squeeze(in, left)"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                                        <real key="value" value="0.40000000000000002"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
@@ -380,6 +398,10 @@
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
                                                         <point key="value" x="3" y="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="squeeze(in, left)"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                                        <real key="value" value="0.45000000000000001"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
@@ -485,6 +507,7 @@
                         <outlet property="addressIcon" destination="yBO-r1-lUc" id="JFe-lh-oaV"/>
                         <outlet property="biographyIcon" destination="D1r-Jl-Oij" id="PR3-AD-MYo"/>
                         <outlet property="biographyTextView" destination="DcQ-t6-6jw" id="Sj0-cd-fDf"/>
+                        <outlet property="biographyView" destination="gbJ-am-Hal" id="Nhr-AV-V2d"/>
                         <outlet property="cancelButton" destination="s3j-W6-qx3" id="M9o-Qt-CeA"/>
                         <outlet property="cancelButtonImageView" destination="ZtN-mD-wlN" id="t7m-M1-bct"/>
                         <outlet property="cityTextField" destination="Hku-hY-7Ol" id="eDa-Pl-Bub"/>
