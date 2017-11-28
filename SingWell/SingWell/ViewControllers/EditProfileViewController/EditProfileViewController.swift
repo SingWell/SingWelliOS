@@ -18,7 +18,6 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var profileImageView: AnimatableImageView!
     @IBOutlet weak var nameLabel: AnimatableLabel!
     
-    
     @IBOutlet weak var phoneNumberTextField: AnimatableTextField!
     @IBOutlet weak var emailTextField: AnimatableTextField!
     @IBOutlet weak var cityTextField: AnimatableTextField!
@@ -139,7 +138,7 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
         let profileBackgroundImage: UIImage = UIImage(named: "profileBackground")!
         profileBackgroundImageView.image = profileBackgroundImage
         
-        var profileName = profileNamePassed
+        let profileName = profileNamePassed
         
         nameLabel.text = profileName
         
@@ -160,8 +159,6 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         
         NotificationCenter.default.addObserver(self, selector: #selector(EditProfileViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(EditProfileViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -211,18 +208,9 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-//    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-//        self.view.endEditing(true)
-//    }
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        setProfile()
-//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
