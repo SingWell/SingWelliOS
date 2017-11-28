@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -100,7 +101,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Xm-0M-aWP" userLabel="Bio Text View" customClass="AnimatableTextView" customModule="IBAnimatable">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Xm-0M-aWP" userLabel="Bio Text View" customClass="AnimatableTextView" customModule="IBAnimatable">
                                                         <rect key="frame" x="87" y="29.5" width="253" height="86.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <accessibility key="accessibilityConfiguration">
@@ -127,6 +128,7 @@
                                                     <constraint firstItem="PMf-wc-vR6" firstAttribute="leading" secondItem="gRo-MP-Esd" secondAttribute="trailing" constant="15" id="grE-0W-lk2"/>
                                                     <constraint firstItem="gRo-MP-Esd" firstAttribute="centerY" secondItem="x4b-bo-B84" secondAttribute="centerY" id="iVW-b0-gVA"/>
                                                     <constraint firstItem="EJQ-sk-xwd" firstAttribute="top" secondItem="x4b-bo-B84" secondAttribute="top" constant="8" id="o8X-7V-5q6"/>
+                                                    <constraint firstAttribute="width" secondItem="x4b-bo-B84" secondAttribute="height" multiplier="345:121" id="v5V-2Z-JvO"/>
                                                     <constraint firstItem="EJQ-sk-xwd" firstAttribute="leading" secondItem="PMf-wc-vR6" secondAttribute="trailing" constant="15" id="vgX-we-kKo"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
@@ -380,7 +382,6 @@
                                     <constraint firstAttribute="bottom" secondItem="EkE-z5-W7j" secondAttribute="bottom" constant="20" symbolic="YES" id="EPI-TU-ax9"/>
                                     <constraint firstItem="EkE-z5-W7j" firstAttribute="top" secondItem="mJJ-hg-0AP" secondAttribute="top" constant="10" id="OeD-aS-XHr"/>
                                     <constraint firstItem="x4b-bo-B84" firstAttribute="top" secondItem="mJJ-hg-0AP" secondAttribute="top" constant="10" id="bTT-1V-Jls"/>
-                                    <constraint firstItem="EkE-z5-W7j" firstAttribute="height" secondItem="mJJ-hg-0AP" secondAttribute="height" id="jpy-G4-fYE"/>
                                     <constraint firstItem="EkE-z5-W7j" firstAttribute="leading" secondItem="mJJ-hg-0AP" secondAttribute="leading" constant="15" id="lxL-7W-AQL"/>
                                     <constraint firstAttribute="trailing" secondItem="EkE-z5-W7j" secondAttribute="trailing" constant="15" id="mzD-e5-MmH"/>
                                     <constraint firstItem="EkE-z5-W7j" firstAttribute="centerX" secondItem="mJJ-hg-0AP" secondAttribute="centerX" id="wjY-Ms-ykB"/>

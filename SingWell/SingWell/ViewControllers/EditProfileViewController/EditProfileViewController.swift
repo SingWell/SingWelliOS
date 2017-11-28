@@ -44,6 +44,55 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
     var streetPassed = ""
     var cityPassed = ""
     
+    //Format Phone Number
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
+    {
+        if (textField == phoneNumberTextField)
+        {
+            let newString = (textField.text! as NSString).replacingCharacters(in: range, with: string)
+            let components = newString.components(separatedBy: CharacterSet.decimalDigits.inverted)
+            
+            let decimalString = components.joined(separator: "") as NSString
+            let length = decimalString.length
+            let hasLeadingOne = length > 0 && decimalString.character(at: 0) == (1 as unichar)
+            
+            if length == 0 || (length > 10 && !hasLeadingOne) || length > 11
+            {
+                let newLength = (textField.text! as NSString).length + (string as NSString).length - range.length as Int
+                
+                return (newLength > 10) ? false : true
+            }
+            var index = 0 as Int
+            let formattedString = NSMutableString()
+            
+            if hasLeadingOne
+            {
+                formattedString.append("1 ")
+                index += 1
+            }
+            if (length - index) > 3
+            {
+                let areaCode = decimalString.substring(with: NSMakeRange(index, 3))
+                formattedString.appendFormat("(%@)", areaCode)
+                index += 3
+            }
+            if length - index > 3
+            {
+                let prefix = decimalString.substring(with: NSMakeRange(index, 3))
+                formattedString.appendFormat("%@-", prefix)
+                index += 3
+            }
+            
+            let remainder = decimalString.substring(from: index)
+            formattedString.append(remainder)
+            textField.text = formattedString as String
+            return false
+        }
+        else
+        {
+            return true
+        }
+    }
     
     func setConfirmButton() {
         let size = CGSize(width:55, height: 55)
@@ -109,6 +158,8 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         NotificationCenter.default.addObserver(self, selector: #selector(EditProfileViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(EditProfileViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
 
@@ -157,6 +208,14 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+//    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//        self.view.endEditing(true)
+//    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
 //    override func viewWillAppear(_ animated: Bool) {
 //        super.viewWillAppear(animated)
 //        setProfile()
@@ -178,4 +237,52 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
     }
     */
 
+}
+
+extension String {
+    
+    //To check text field or String is blank or not
+    var isBlank: Bool {
+        get {
+            let trimmed = trimmingCharacters(in: CharacterSet.whitespaces)
+            return trimmed.isEmpty
+        }
+    }
+    
+    //Validate Email
+    
+    var isEmail: Bool {
+        do {
+            let regex = try NSRegularExpression(pattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}", options: .caseInsensitive)
+            return regex.firstMatch(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.count)) != nil
+        } catch {
+            return false
+        }
+    }
+    
+    var isAlphanumeric: Bool {
+        return !isEmpty && range(of: "[^a-zA-Z0-9]", options: .regularExpression) == nil
+    }
+    
+    //validate Password
+    var isValidPassword: Bool {
+        do {
+            let regex = try NSRegularExpression(pattern: "^[a-zA-Z_0-9\\-_,;.:#+*?=!§$%&/()@]+$", options: .caseInsensitive)
+            if(regex.firstMatch(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.count)) != nil){
+                
+                if(self.count>=6 && self.count<=20){
+                    return true
+                }else{
+                    return false
+                }
+            }else{
+                return false
+            }
+        } catch {
+            return false
+        }
+    }
+    
+    //validate PhoneNumber
+    
 }

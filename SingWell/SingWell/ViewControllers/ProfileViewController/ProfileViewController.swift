@@ -135,7 +135,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     func setProfile() {
         
         emailLabel.text = "example@gmail.com"
-        phoneNumberLabel.text = "999-999-9999"
+        phoneNumberLabel.text = "(999)999-9999"
         addressLabel.text = "123 ABC Street"
         cityLabel.text = "Dallas, TX 25206"
         
