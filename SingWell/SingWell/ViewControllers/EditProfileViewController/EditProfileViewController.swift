@@ -17,6 +17,7 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var profileBackgroundImageView: AnimatableImageView!
     @IBOutlet weak var profileImageView: AnimatableImageView!
     @IBOutlet weak var nameLabel: AnimatableLabel!
+    @IBOutlet weak var cameraButtonIcon: AnimatableButton!
     
     @IBOutlet weak var phoneNumberTextField: AnimatableTextField!
     @IBOutlet weak var emailTextField: AnimatableTextField!
@@ -137,6 +138,9 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
         
         let profileBackgroundImage: UIImage = UIImage(named: "profileBackground")!
         profileBackgroundImageView.image = profileBackgroundImage
+        
+        let cameraIcon = UIImage.ionicon(with: .camera, textColor: UIColor.white, size: CGSize(width: 35, height: 35))
+        cameraButtonIcon.setImage(cameraIcon, for: UIControlState.normal)
         
         let profileName = profileNamePassed
         

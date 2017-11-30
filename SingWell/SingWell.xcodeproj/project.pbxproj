@@ -36,11 +36,13 @@
 		16E2119C1FC35DDF009969B1 /* Roster.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16E2119B1FC35DDF009969B1 /* Roster.storyboard */; };
 		16E2119F1FC35DFB009969B1 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E2119E1FC35DFB009969B1 /* CalendarViewController.swift */; };
 		16E211A11FC35E06009969B1 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16E211A01FC35E06009969B1 /* Calendar.storyboard */; };
+		5209FE2E1FD092CE00DB9CE8 /* SettingsModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209FE2D1FD092CE00DB9CE8 /* SettingsModelViewController.swift */; };
 		521BCF2D1FB3A472000662F7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521BCF2C1FB3A472000662F7 /* ProfileViewController.swift */; };
 		521BCF2F1FB3A48A000662F7 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521BCF2E1FB3A48A000662F7 /* Profile.storyboard */; };
 		52218E171FB50C0400EC4DDA /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52218E161FB50C0400EC4DDA /* UIImageExtension.swift */; };
 		525EF4B71FC3A4BB00C8E822 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525EF4B61FC3A4BB00C8E822 /* EditProfileViewController.swift */; };
 		525EF4B91FC3A4C600C8E822 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 525EF4B81FC3A4C600C8E822 /* EditProfile.storyboard */; };
+		526F5D5C1FCE13F9002F7D27 /* SettingsModal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 526F5D5B1FCE13F9002F7D27 /* SettingsModal.storyboard */; };
 		86F76E547079493C7DAADA22 /* Pods_SingWellTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5B7BEEE8800BC4F7098CCD /* Pods_SingWellTests.framework */; };
 		D0B4A43E772600F9DCBBBBEF /* Pods_SingWellUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56D8462546CB3640CFED1D64 /* Pods_SingWellUITests.framework */; };
 		DC314C3CF81F0D65E4D3B09F /* Pods_SingWell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9A2CC9F02AA47F953461F6 /* Pods_SingWell.framework */; };
@@ -101,11 +103,13 @@
 		16E2119E1FC35DFB009969B1 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		16E211A01FC35E06009969B1 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 		2CF3257DBA9274E82C0A0B81 /* Pods-SingWellTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingWellTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SingWellTests/Pods-SingWellTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5209FE2D1FD092CE00DB9CE8 /* SettingsModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModelViewController.swift; sourceTree = "<group>"; };
 		521BCF2C1FB3A472000662F7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		521BCF2E1FB3A48A000662F7 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		52218E161FB50C0400EC4DDA /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		525EF4B61FC3A4BB00C8E822 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		525EF4B81FC3A4C600C8E822 /* EditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
+		526F5D5B1FCE13F9002F7D27 /* SettingsModal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsModal.storyboard; sourceTree = "<group>"; };
 		56D8462546CB3640CFED1D64 /* Pods_SingWellUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SingWellUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A89585724F70104CBA47295 /* Pods-SingWell.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingWell.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SingWell/Pods-SingWell.debug.xcconfig"; sourceTree = "<group>"; };
 		BAD46F51B65E4DD47A9291FB /* Pods-SingWellTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingWellTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SingWellTests/Pods-SingWellTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -329,6 +333,8 @@
 				521BCF2C1FB3A472000662F7 /* ProfileViewController.swift */,
 				521BCF2E1FB3A48A000662F7 /* Profile.storyboard */,
 				52218E161FB50C0400EC4DDA /* UIImageExtension.swift */,
+				526F5D5B1FCE13F9002F7D27 /* SettingsModal.storyboard */,
+				5209FE2D1FD092CE00DB9CE8 /* SettingsModelViewController.swift */,
 			);
 			path = ProfileViewController;
 			sourceTree = "<group>";
@@ -470,6 +476,7 @@
 				164A51461FCFA9A50026D7DE /* Song.storyboard in Resources */,
 				162D980F1FA65CD3006068BC /* Assets.xcassets in Resources */,
 				16E2119C1FC35DDF009969B1 /* Roster.storyboard in Resources */,
+				526F5D5C1FCE13F9002F7D27 /* SettingsModal.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -663,6 +670,7 @@
 				162D98371FA65D09006068BC /* Extensions.swift in Sources */,
 				16A7A3291FCE13E000B32491 /* EventViewController.swift in Sources */,
 				52218E171FB50C0400EC4DDA /* UIImageExtension.swift in Sources */,
+				5209FE2E1FD092CE00DB9CE8 /* SettingsModelViewController.swift in Sources */,
 				16D2CFA01FBE423500FDFF4D /* ProfileTableViewCell.swift in Sources */,
 				1652FDB11FB502D200D921EB /* HostViewController.swift in Sources */,
 				16E211951FC35C5F009969B1 /* NotificationsTableViewController.swift in Sources */,
