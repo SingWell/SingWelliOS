@@ -15,6 +15,8 @@
 		162D981D1FA65CD3006068BC /* SingWellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162D981C1FA65CD3006068BC /* SingWellTests.swift */; };
 		162D98281FA65CD3006068BC /* SingWellUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162D98271FA65CD3006068BC /* SingWellUITests.swift */; };
 		162D98371FA65D09006068BC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162D98361FA65D09006068BC /* Extensions.swift */; };
+		164A51441FCFA99A0026D7DE /* SongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164A51431FCFA99A0026D7DE /* SongViewController.swift */; };
+		164A51461FCFA9A50026D7DE /* Song.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 164A51451FCFA9A50026D7DE /* Song.storyboard */; };
 		1652FDAD1FB5016F00D921EB /* ChoirTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652FDAC1FB5016F00D921EB /* ChoirTableViewController.swift */; };
 		1652FDAF1FB5018000D921EB /* Choir.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1652FDAE1FB5018000D921EB /* Choir.storyboard */; };
 		1652FDB11FB502D200D921EB /* HostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652FDB01FB502D200D921EB /* HostViewController.swift */; };
@@ -77,6 +79,8 @@
 		162D98271FA65CD3006068BC /* SingWellUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingWellUITests.swift; sourceTree = "<group>"; };
 		162D98291FA65CD3006068BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		162D98361FA65D09006068BC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		164A51431FCFA99A0026D7DE /* SongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongViewController.swift; sourceTree = "<group>"; };
+		164A51451FCFA9A50026D7DE /* Song.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Song.storyboard; sourceTree = "<group>"; };
 		1652FDAC1FB5016F00D921EB /* ChoirTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoirTableViewController.swift; sourceTree = "<group>"; };
 		1652FDAE1FB5018000D921EB /* Choir.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Choir.storyboard; sourceTree = "<group>"; };
 		1652FDB01FB502D200D921EB /* HostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 		162D98381FA65D2E006068BC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				164A51421FCFA9830026D7DE /* SongViewController */,
 				16A7A3271FCE13B400B32491 /* EventViewController */,
 				16A7A3201FCE0C4F00B32491 /* MusicLibraryViewController */,
 				525EF4B51FC3A49C00C8E822 /* EditProfileViewController */,
@@ -215,6 +220,15 @@
 				16E211981FC35DC5009969B1 /* RosterViewController */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		164A51421FCFA9830026D7DE /* SongViewController */ = {
+			isa = PBXGroup;
+			children = (
+				164A51431FCFA99A0026D7DE /* SongViewController.swift */,
+				164A51451FCFA9A50026D7DE /* Song.storyboard */,
+			);
+			path = SongViewController;
 			sourceTree = "<group>";
 		};
 		1652FDAA1FB500FB00D921EB /* SideMenu */ = {
@@ -453,6 +467,7 @@
 				16E211971FC35C6B009969B1 /* Notifications.storyboard in Resources */,
 				521BCF2F1FB3A48A000662F7 /* Profile.storyboard in Resources */,
 				525EF4B91FC3A4C600C8E822 /* EditProfile.storyboard in Resources */,
+				164A51461FCFA9A50026D7DE /* Song.storyboard in Resources */,
 				162D980F1FA65CD3006068BC /* Assets.xcassets in Resources */,
 				16E2119C1FC35DDF009969B1 /* Roster.storyboard in Resources */,
 			);
@@ -658,6 +673,7 @@
 				16256EE51FBB827A00992B02 /* ChoirResourceInfoTableViewCell.swift in Sources */,
 				16A7A3221FCE0C8B00B32491 /* MusicLibraryTableViewController.swift in Sources */,
 				16E2119A1FC35DD7009969B1 /* RosterTableViewController.swift in Sources */,
+				164A51441FCFA99A0026D7DE /* SongViewController.swift in Sources */,
 				1617DF941FB39EEB0094C474 /* ApiHelper.swift in Sources */,
 				1652FDAD1FB5016F00D921EB /* ChoirTableViewController.swift in Sources */,
 			);

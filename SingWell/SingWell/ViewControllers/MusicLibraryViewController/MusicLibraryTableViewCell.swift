@@ -14,7 +14,7 @@ class MusicLibraryTableViewCell: UITableViewCell {
     
     @IBOutlet weak var composerNameLabel: AnimatableLabel!
     
-    @IBOutlet weak var partsLabel: AnimatableLabel!
+    @IBOutlet weak var instrumentationLabel: AnimatableLabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -17,17 +17,17 @@ class MusicLibraryTableViewController: UITableViewController {
         [
             "name":"Prelude",
             "composer":"J.S. Bach",
-            "parts":"SATB"
+            "instrumentation":"SATB"
         ],
         [
             "name":"Song 2",
             "composer":"J.S. Bach",
-            "parts":"SATB"
+            "instrumentation":"SATB"
         ],
         [
             "name":"My Favorite Things",
             "composer":"John Coltrane",
-            "parts":"SATB"
+            "instrumentation":"SATB"
         ]
     ]
     
@@ -81,7 +81,7 @@ class MusicLibraryTableViewController: UITableViewController {
         
         cell.songNameLabel.text = song["name"].stringValue
         cell.composerNameLabel.text = song["composer"].stringValue
-        cell.partsLabel.text = song["parts"].stringValue
+        cell.instrumentationLabel.text = song["instrumentation"].stringValue
         
 
         return cell
@@ -89,6 +89,19 @@ class MusicLibraryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80.0
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let songInfo: JSON
+        if isFiltering() {
+            songInfo = filteredMusicLibrary[indexPath.row]
+        } else {
+            songInfo = musicLibrary[indexPath.row]
+        }
+        
+        let nextVc = AppStoryboard.Song.initialViewController() as! SongViewController
+        nextVc.songInfo = songInfo
+        self.navigationController?.pushViewController(nextVc, animated: true)
     }
     
     
@@ -103,7 +116,7 @@ class MusicLibraryTableViewController: UITableViewController {
         filteredMusicLibrary = musicLibrary.filter({( song : JSON) -> Bool in
             return song["name"].stringValue.lowercased().contains(searchText.lowercased()) ||
                 song["composer"].stringValue.lowercased().contains(searchText.lowercased()) ||
-                song["parts"].stringValue.lowercased().contains(searchText.lowercased())
+                song["instrumentation"].stringValue.lowercased().contains(searchText.lowercased())
         })
         
         tableView.reloadData()
