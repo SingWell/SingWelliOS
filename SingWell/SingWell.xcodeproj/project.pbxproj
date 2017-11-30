@@ -15,11 +15,18 @@
 		162D981D1FA65CD3006068BC /* SingWellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162D981C1FA65CD3006068BC /* SingWellTests.swift */; };
 		162D98281FA65CD3006068BC /* SingWellUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162D98271FA65CD3006068BC /* SingWellUITests.swift */; };
 		162D98371FA65D09006068BC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162D98361FA65D09006068BC /* Extensions.swift */; };
+		164A51441FCFA99A0026D7DE /* SongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164A51431FCFA99A0026D7DE /* SongViewController.swift */; };
+		164A51461FCFA9A50026D7DE /* Song.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 164A51451FCFA9A50026D7DE /* Song.storyboard */; };
 		1652FDAD1FB5016F00D921EB /* ChoirTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652FDAC1FB5016F00D921EB /* ChoirTableViewController.swift */; };
 		1652FDAF1FB5018000D921EB /* Choir.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1652FDAE1FB5018000D921EB /* Choir.storyboard */; };
 		1652FDB11FB502D200D921EB /* HostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652FDB01FB502D200D921EB /* HostViewController.swift */; };
 		1652FDB31FB5039400D921EB /* NavigationMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652FDB21FB5039400D921EB /* NavigationMenuViewController.swift */; };
 		1652FDB51FB5041600D921EB /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1652FDB41FB5041600D921EB /* SideMenu.storyboard */; };
+		16A7A3221FCE0C8B00B32491 /* MusicLibraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A3211FCE0C8B00B32491 /* MusicLibraryTableViewController.swift */; };
+		16A7A3241FCE0C9600B32491 /* MusicLibrary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16A7A3231FCE0C9600B32491 /* MusicLibrary.storyboard */; };
+		16A7A3261FCE0CB800B32491 /* MusicLibraryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A3251FCE0CB800B32491 /* MusicLibraryTableViewCell.swift */; };
+		16A7A3291FCE13E000B32491 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A3281FCE13E000B32491 /* EventViewController.swift */; };
+		16A7A32B1FCE13E900B32491 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16A7A32A1FCE13E900B32491 /* Event.storyboard */; };
 		16D2CFA01FBE423500FDFF4D /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2CF9F1FBE423500FDFF4D /* ProfileTableViewCell.swift */; };
 		16D2CFA21FBE424300FDFF4D /* ChoirNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2CFA11FBE424300FDFF4D /* ChoirNameTableViewCell.swift */; };
 		16E211921FC35122009969B1 /* ChoirInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E211911FC35122009969B1 /* ChoirInfoTableViewCell.swift */; };
@@ -74,11 +81,18 @@
 		162D98271FA65CD3006068BC /* SingWellUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingWellUITests.swift; sourceTree = "<group>"; };
 		162D98291FA65CD3006068BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		162D98361FA65D09006068BC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		164A51431FCFA99A0026D7DE /* SongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongViewController.swift; sourceTree = "<group>"; };
+		164A51451FCFA9A50026D7DE /* Song.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Song.storyboard; sourceTree = "<group>"; };
 		1652FDAC1FB5016F00D921EB /* ChoirTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoirTableViewController.swift; sourceTree = "<group>"; };
 		1652FDAE1FB5018000D921EB /* Choir.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Choir.storyboard; sourceTree = "<group>"; };
 		1652FDB01FB502D200D921EB /* HostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
 		1652FDB21FB5039400D921EB /* NavigationMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationMenuViewController.swift; sourceTree = "<group>"; };
 		1652FDB41FB5041600D921EB /* SideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
+		16A7A3211FCE0C8B00B32491 /* MusicLibraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicLibraryTableViewController.swift; sourceTree = "<group>"; };
+		16A7A3231FCE0C9600B32491 /* MusicLibrary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MusicLibrary.storyboard; sourceTree = "<group>"; };
+		16A7A3251FCE0CB800B32491 /* MusicLibraryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicLibraryTableViewCell.swift; sourceTree = "<group>"; };
+		16A7A3281FCE13E000B32491 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		16A7A32A1FCE13E900B32491 /* Event.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
 		16D2CF9F1FBE423500FDFF4D /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		16D2CFA11FBE424300FDFF4D /* ChoirNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoirNameTableViewCell.swift; sourceTree = "<group>"; };
 		16E211911FC35122009969B1 /* ChoirInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoirInfoTableViewCell.swift; sourceTree = "<group>"; };
@@ -199,6 +213,9 @@
 		162D98381FA65D2E006068BC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				164A51421FCFA9830026D7DE /* SongViewController */,
+				16A7A3271FCE13B400B32491 /* EventViewController */,
+				16A7A3201FCE0C4F00B32491 /* MusicLibraryViewController */,
 				525EF4B51FC3A49C00C8E822 /* EditProfileViewController */,
 				16E2119D1FC35DE5009969B1 /* CalendarViewController */,
 				1652FDAB1FB5012300D921EB /* ChoirViewController */,
@@ -207,6 +224,15 @@
 				16E211981FC35DC5009969B1 /* RosterViewController */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		164A51421FCFA9830026D7DE /* SongViewController */ = {
+			isa = PBXGroup;
+			children = (
+				164A51431FCFA99A0026D7DE /* SongViewController.swift */,
+				164A51451FCFA9A50026D7DE /* Song.storyboard */,
+			);
+			path = SongViewController;
 			sourceTree = "<group>";
 		};
 		1652FDAA1FB500FB00D921EB /* SideMenu */ = {
@@ -230,6 +256,25 @@
 				16E211911FC35122009969B1 /* ChoirInfoTableViewCell.swift */,
 			);
 			path = ChoirViewController;
+			sourceTree = "<group>";
+		};
+		16A7A3201FCE0C4F00B32491 /* MusicLibraryViewController */ = {
+			isa = PBXGroup;
+			children = (
+				16A7A3211FCE0C8B00B32491 /* MusicLibraryTableViewController.swift */,
+				16A7A3251FCE0CB800B32491 /* MusicLibraryTableViewCell.swift */,
+				16A7A3231FCE0C9600B32491 /* MusicLibrary.storyboard */,
+			);
+			path = MusicLibraryViewController;
+			sourceTree = "<group>";
+		};
+		16A7A3271FCE13B400B32491 /* EventViewController */ = {
+			isa = PBXGroup;
+			children = (
+				16A7A3281FCE13E000B32491 /* EventViewController.swift */,
+				16A7A32A1FCE13E900B32491 /* Event.storyboard */,
+			);
+			path = EventViewController;
 			sourceTree = "<group>";
 		};
 		16E211931FC35C3B009969B1 /* NotificationsViewController */ = {
@@ -419,13 +464,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16A7A3241FCE0C9600B32491 /* MusicLibrary.storyboard in Resources */,
 				16E211A11FC35E06009969B1 /* Calendar.storyboard in Resources */,
 				1652FDB51FB5041600D921EB /* SideMenu.storyboard in Resources */,
+				16A7A32B1FCE13E900B32491 /* Event.storyboard in Resources */,
 				1652FDAF1FB5018000D921EB /* Choir.storyboard in Resources */,
 				162D98121FA65CD3006068BC /* LaunchScreen.storyboard in Resources */,
 				16E211971FC35C6B009969B1 /* Notifications.storyboard in Resources */,
 				521BCF2F1FB3A48A000662F7 /* Profile.storyboard in Resources */,
 				525EF4B91FC3A4C600C8E822 /* EditProfile.storyboard in Resources */,
+				164A51461FCFA9A50026D7DE /* Song.storyboard in Resources */,
 				162D980F1FA65CD3006068BC /* Assets.xcassets in Resources */,
 				16E2119C1FC35DDF009969B1 /* Roster.storyboard in Resources */,
 				526F5D5C1FCE13F9002F7D27 /* SettingsModal.storyboard in Resources */,
@@ -460,6 +508,7 @@
 				"${BUILT_PRODUCTS_DIR}/IBAnimatable/IBAnimatable.framework",
 				"${BUILT_PRODUCTS_DIR}/InteractiveSideMenu/InteractiveSideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/IoniconsKit/IoniconsKit.framework",
+				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/PDFReader/PDFReader.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
@@ -469,6 +518,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IBAnimatable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InteractiveSideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IoniconsKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PDFReader.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -618,16 +668,20 @@
 				16D2CFA21FBE424300FDFF4D /* ChoirNameTableViewCell.swift in Sources */,
 				521BCF2D1FB3A472000662F7 /* ProfileViewController.swift in Sources */,
 				162D98371FA65D09006068BC /* Extensions.swift in Sources */,
+				16A7A3291FCE13E000B32491 /* EventViewController.swift in Sources */,
 				52218E171FB50C0400EC4DDA /* UIImageExtension.swift in Sources */,
 				5209FE2E1FD092CE00DB9CE8 /* SettingsModelViewController.swift in Sources */,
 				16D2CFA01FBE423500FDFF4D /* ProfileTableViewCell.swift in Sources */,
 				1652FDB11FB502D200D921EB /* HostViewController.swift in Sources */,
 				16E211951FC35C5F009969B1 /* NotificationsTableViewController.swift in Sources */,
+				16A7A3261FCE0CB800B32491 /* MusicLibraryTableViewCell.swift in Sources */,
 				16E211921FC35122009969B1 /* ChoirInfoTableViewCell.swift in Sources */,
 				162D98081FA65CD3006068BC /* AppDelegate.swift in Sources */,
 				1652FDB31FB5039400D921EB /* NavigationMenuViewController.swift in Sources */,
 				16256EE51FBB827A00992B02 /* ChoirResourceInfoTableViewCell.swift in Sources */,
+				16A7A3221FCE0C8B00B32491 /* MusicLibraryTableViewController.swift in Sources */,
 				16E2119A1FC35DD7009969B1 /* RosterTableViewController.swift in Sources */,
+				164A51441FCFA99A0026D7DE /* SongViewController.swift in Sources */,
 				1617DF941FB39EEB0094C474 /* ApiHelper.swift in Sources */,
 				1652FDAD1FB5016F00D921EB /* ChoirTableViewController.swift in Sources */,
 			);

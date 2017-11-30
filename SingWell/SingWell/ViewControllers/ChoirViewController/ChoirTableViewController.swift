@@ -20,9 +20,35 @@ class ChoirTableViewController: UITableViewController {
     
     var choirInfo:JSON = ["name":"Choir A"]
 
+//    var choirUpdatesList:JSON = [
+//        ["title":"Event Changed", "info":"The time for mass changed to 12:00pm-1:30pm.", "time":"1 hour ago"],
+//        ["title":"New Event Added", "info":"There will be a mass on Sunday, November 22 from 10:30am-12:00pm.", "time":"2 days ago"]
+//    ]
+    
     var choirUpdatesList:JSON = [
-        ["title":"Event Changed", "info":"The time for mass changed to 12:00pm-1:30pm.", "time":"1 hour ago"],
-        ["title":"New Event Added", "info":"There will be a mass on Sunday, November 22 from 10:30am-12:00pm.", "time":"2 days ago"]
+        [
+            "id": 1,
+            "name": "11/26 Mass",
+            "date": "2017-11-26",
+            "time": "23:00:00",
+            "location": "Chapel",
+            "choirs": [
+                1,
+                3
+            ],
+                "organization": 1
+        ],
+        [
+            "id": 2,
+            "name": "11/12 Mass",
+            "date": "2017-11-12",
+            "time": "11:30:00",
+            "location": "Worship Room",
+            "choirs": [
+                1
+            ],
+            "organization": 1
+        ]
     ]
     
     
@@ -65,6 +91,11 @@ class ChoirTableViewController: UITableViewController {
         self.navigationController?.pushViewController(nextVc, animated: true)
     }
     
+    @IBAction func viewMusicLibrary(_ sender: Any) {
+        let nextVc = AppStoryboard.MusicLibrary.initialViewController() as! MusicLibraryTableViewController
+        self.navigationController?.pushViewController(nextVc, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = choirInfo["name"].stringValue
@@ -100,7 +131,7 @@ class ChoirTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
-            return 60.0
+            return 147.0
         default:
             return super.tableView(tableView, heightForRowAt: indexPath)
         }
@@ -113,26 +144,65 @@ class ChoirTableViewController: UITableViewController {
             
             cell.contentView.backgroundColor = BACKGROUND_COLOR
 
+            // CALENDAR BUTTON
             cell.calendarButton.addTarget(self, action: #selector(ChoirTableViewController.viewCalendar(_:)), for: UIControlEvents.touchUpInside)
             cell.calendarButton.titleLabel?.font = UIFont.ionicon(of: 30)
             cell.calendarButton.setTitle(String.ionicon(with:.calendar), for: .normal)
             
+            // ROSTER BUTTON
             cell.rosterButton.addTarget(self, action: #selector(ChoirTableViewController.viewRoster(_:)), for: UIControlEvents.touchUpInside)
             cell.rosterButton.titleLabel?.font = UIFont.ionicon(of: 30)
             cell.rosterButton.setTitle(String.ionicon(with:.iosPeople), for: .normal)
+            
+            // MUSIC LIBRARY BUTTON
+            cell.musicLibraryButton.addTarget(self, action: #selector(ChoirTableViewController.viewMusicLibrary(_:)), for: UIControlEvents.touchUpInside)
+            cell.musicLibraryButton.titleLabel?.font = UIFont.ionicon(of: 30)
+            cell.musicLibraryButton.setTitle(String.ionicon(with:.musicNote), for: .normal)
             
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "BasicUpdateCell", for: indexPath) as! ChoirResourceInfoTableViewCell
             let info = choirUpdatesList[indexPath.row]
             
-            cell.titleLabel.text = info["title"].stringValue
-            cell.descriptionField.text = info["info"].stringValue
-            
+            cell.titleLabel.text = info["name"].stringValue
+            cell.descriptionField.text = info["location"].stringValue
+            cell.descriptionField.isUserInteractionEnabled = false
+//            [
+//                {
+//                    "id": 1,
+//                    "name": "11/26 Mass",
+//                    "date": "2017-11-26",
+//                    "time": "23:00:00",
+//                    "location": "Chapel",
+//                    "choirs": [
+//                    1,
+//                    3
+//                    ],
+//                    "organization": 1
             cell.contentView.backgroundColor = BACKGROUND_COLOR
             return cell
         }
         
+    }
+    
+    func viewEvent(row:Int) {
+        let nextVc = AppStoryboard.Event.initialViewController() as! EventViewController
+        nextVc.eventInfo = choirUpdatesList[row]
+        self.navigationController?.pushViewController(nextVc, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        switch indexPath.section {
+        case 0:
+            print("Do nothing!")
+        default:
+            print(indexPath.row)
+//            let cell = tableView.cellForRow(at: indexPath) as! ChoirResourceInfoTableViewCell
+//            cell.cardView.animate(.pop(repeatCount: 1), duration: 0.3)
+//            cell.cardView.animate(.shake(repeatCount: 1), duration: 0.5)
+            viewEvent(row: indexPath.row)
+        }
     }
 
     /*

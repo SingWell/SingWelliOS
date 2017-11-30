@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EM0-h2-7Oi">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Music Library Table View Controller-->
+        <scene sceneID="V0w-aB-hte">
+            <objects>
+                <tableViewController id="EM0-h2-7Oi" customClass="MusicLibraryTableViewController" customModule="SingWell" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="n0F-ET-TpE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="songInfoCell" rowHeight="97" id="cEC-72-LZZ" customClass="MusicLibraryTableViewCell" customModule="SingWell" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="97"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cEC-72-LZZ" id="6zU-Mt-rLc">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="96.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrx-5m-lmJ" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                            <rect key="frame" x="20" y="11" width="560" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="3NB-DN-YZ4"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXq-qy-sIe" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                            <rect key="frame" x="236" y="65" width="344" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uus-zZ-ZKU" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                            <rect key="frame" x="20" y="65" width="208" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="208" id="ejK-L6-f4p"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Uus-zZ-ZKU" firstAttribute="bottom" secondItem="6zU-Mt-rLc" secondAttribute="bottomMargin" id="2I6-59-u4E"/>
+                                        <constraint firstItem="Uus-zZ-ZKU" firstAttribute="leading" secondItem="hrx-5m-lmJ" secondAttribute="leading" id="2pV-I1-nPy"/>
+                                        <constraint firstItem="kXq-qy-sIe" firstAttribute="leading" secondItem="Uus-zZ-ZKU" secondAttribute="trailing" constant="8" symbolic="YES" id="7Hw-aG-seg"/>
+                                        <constraint firstItem="kXq-qy-sIe" firstAttribute="firstBaseline" secondItem="Uus-zZ-ZKU" secondAttribute="firstBaseline" id="NYI-0i-aLI"/>
+                                        <constraint firstItem="kXq-qy-sIe" firstAttribute="trailing" secondItem="hrx-5m-lmJ" secondAttribute="trailing" id="aqm-cT-hT6"/>
+                                        <constraint firstItem="hrx-5m-lmJ" firstAttribute="leading" secondItem="6zU-Mt-rLc" secondAttribute="leadingMargin" id="hDF-nN-Cah"/>
+                                        <constraint firstItem="hrx-5m-lmJ" firstAttribute="trailing" secondItem="6zU-Mt-rLc" secondAttribute="trailingMargin" id="mfy-NS-H5B"/>
+                                        <constraint firstItem="hrx-5m-lmJ" firstAttribute="top" secondItem="6zU-Mt-rLc" secondAttribute="topMargin" id="rR4-EM-d3B"/>
+                                        <constraint firstItem="kXq-qy-sIe" firstAttribute="baseline" secondItem="Uus-zZ-ZKU" secondAttribute="baseline" id="xcp-AC-xXU"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="composerNameLabel" destination="Uus-zZ-ZKU" id="Tqi-0K-KkX"/>
+                                    <outlet property="instrumentationLabel" destination="kXq-qy-sIe" id="uuN-iI-f40"/>
+                                    <outlet property="songNameLabel" destination="hrx-5m-lmJ" id="e4e-pX-JLa"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="EM0-h2-7Oi" id="90H-gW-dsz"/>
+                            <outlet property="delegate" destination="EM0-h2-7Oi" id="DrQ-hN-yvT"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n2M-me-iWe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-106.40000000000001" y="106.59670164917542"/>
+        </scene>
+    </scenes>
+</document>
