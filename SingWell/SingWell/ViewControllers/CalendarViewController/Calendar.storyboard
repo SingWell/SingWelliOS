@@ -5,9 +5,16 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AppleSDGothicNeo.ttc">
+            <string>AppleSDGothicNeo-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Calendar View Controller-->
         <scene sceneID="Toa-ka-La8">
@@ -16,13 +23,78 @@
                     <view key="view" contentMode="scaleToFill" id="28V-s5-Uaf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="usw-Ja-ud2" customClass="JTAppleCalendarView" customModule="JTAppleCalendar">
+                                <rect key="frame" x="16" y="20" width="343" height="276"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="276" id="qDY-mO-9GO"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PkU-Az-Kum">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CalenderCell" id="Ik8-kt-3KD" customClass="CalendarCell" customModule="SingWell" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I7c-Vo-jFT" customClass="AnimatableView" customModule="IBAnimatable">
+                                                    <rect key="frame" x="6" y="6" width="38" height="38"/>
+                                                    <color key="backgroundColor" red="0.533416575367752" green="0.78523420573025327" blue="0.88042645874967429" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="I7c-Vo-jFT" secondAttribute="height" multiplier="1:1" id="V3i-iD-tCa"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="17"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccQ-U0-7DL" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                                    <rect key="frame" x="0.0" y="15" width="50" height="21"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="I7c-Vo-jFT" firstAttribute="top" secondItem="Ik8-kt-3KD" secondAttribute="top" constant="6" id="2Yy-lE-mCG"/>
+                                            <constraint firstItem="ccQ-U0-7DL" firstAttribute="centerX" secondItem="I7c-Vo-jFT" secondAttribute="centerX" id="6Ta-PB-zMx"/>
+                                            <constraint firstAttribute="trailing" secondItem="ccQ-U0-7DL" secondAttribute="trailing" id="EfI-sC-cqp"/>
+                                            <constraint firstItem="ccQ-U0-7DL" firstAttribute="centerY" secondItem="Ik8-kt-3KD" secondAttribute="centerY" id="FhB-uD-d7a"/>
+                                            <constraint firstItem="ccQ-U0-7DL" firstAttribute="centerY" secondItem="I7c-Vo-jFT" secondAttribute="centerY" id="Glc-jX-WON"/>
+                                            <constraint firstItem="ccQ-U0-7DL" firstAttribute="leading" secondItem="Ik8-kt-3KD" secondAttribute="leading" id="qAc-qX-g1Q"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="ccQ-U0-7DL" id="XIo-LV-DK5"/>
+                                            <outlet property="selectedView" destination="I7c-Vo-jFT" id="1TI-vI-TlQ"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="usw-Ja-ud2" firstAttribute="top" secondItem="c5i-bs-hBj" secondAttribute="top" id="TTl-40-e6c"/>
+                            <constraint firstItem="usw-Ja-ud2" firstAttribute="leading" secondItem="28V-s5-Uaf" secondAttribute="leadingMargin" id="elU-bn-PYL"/>
+                            <constraint firstItem="usw-Ja-ud2" firstAttribute="trailing" secondItem="28V-s5-Uaf" secondAttribute="trailingMargin" id="r69-bg-W6N"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="c5i-bs-hBj"/>
                     </view>
+                    <connections>
+                        <outlet property="calendarView" destination="usw-Ja-ud2" id="xv6-D5-f51"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Myo-C8-53Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="271" y="152"/>
+            <point key="canvasLocation" x="269.60000000000002" y="151.57421289355324"/>
         </scene>
     </scenes>
 </document>

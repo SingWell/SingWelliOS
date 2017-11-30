@@ -6,6 +6,7 @@ target 'SingWell' do
 	pod 'IBAnimatable'
 	pod 'InteractiveSideMenu'
 	pod 'IoniconsKit'
+	pod 'JTAppleCalendar'
 
 	use_frameworks!
 

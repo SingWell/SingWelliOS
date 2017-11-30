@@ -7,30 +7,140 @@
 //
 
 import UIKit
+import JTAppleCalendar
+import IBAnimatable
 
 class CalendarViewController: UIViewController {
 
+    @IBOutlet weak var calendarView: JTAppleCalendarView!
+    
+    lazy var dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        dateFormatter.dateFormat = "hh:mm"
+        return dateFormatter
+    }()
+    
+    let persianDateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.calendar = Calendar(identifier: .persian)
+        dateFormatter.dateFormat = "yyyy/MM/dd"
+        return dateFormatter
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = "Calendar"
-        // Do any additional setup after loading the view.
+        
+        setupCalendarView()
+        calendarView.calendarDataSource = self
+        calendarView.calendarDelegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func handleCellSelected(cell: JTAppleCell?, cellState: CellState){
+        guard let validCell = cell as? CalendarCell else { return }
+        if validCell.isSelected {
+            validCell.selectedView.isHidden = false
+        } else {
+            validCell.selectedView.isHidden = true
+        }
     }
-    */
+    
+    func handleCellTextColor(cell: JTAppleCell?, cellState: CellState){
+        guard let validCell = cell as? CalendarCell else { return }
+        if validCell.isSelected {
+            validCell.dateLabel.textColor = UIColor.white
+        } else {
+            let today = Date()
+            persianDateFormatter.dateFormat = "yyyy MM dd"
+            let todayDateStr = persianDateFormatter.string(from: today)
+            dateFormatter.dateFormat = "yyyy MM dd"
+            let cellDateStr = dateFormatter.string(from: cellState.date)
+            
+            if todayDateStr == cellDateStr {
+                validCell.dateLabel.textColor = UIColor.yellow
+            } else {
+                if cellState.dateBelongsTo == .thisMonth {
+                    validCell.dateLabel.textColor = UIColor.white
+                } else { //i.e. case it belongs to inDate or outDate
+                    validCell.dateLabel.textColor = UIColor.gray
+                }
+            }
+        }
+    }
+    
+    
+    func setupCalendarView(){
+        //Setup calendar spacing
+        calendarView.minimumLineSpacing = 0
+        calendarView.minimumInteritemSpacing = 0
+        
+    }
 
+}
+
+extension CalendarViewController: JTAppleCalendarViewDataSource {
+    func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
+        
+//        let myCalendar = Calendar(identifier: .iso8601)
+        let persianCalendar = Calendar(identifier: .persian)
+        
+        let testFormatter = DateFormatter()
+        testFormatter.dateFormat = "yyyy/MM/dd"
+        testFormatter.timeZone = persianCalendar.timeZone
+        testFormatter.locale = persianCalendar.locale
+        
+        let startDate = testFormatter.date(from: "2017/01/01")!
+        let endDate = testFormatter.date(from: "2017/09/30")!
+        
+        
+        let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate, numberOfRows: nil, calendar: persianCalendar, generateInDates: nil, generateOutDates: nil, firstDayOfWeek: nil, hasStrictBoundaries: nil)
+        return parameters
+    }
+}
+
+extension CalendarViewController: JTAppleCalendarViewDelegate {
+    func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
+        
+        let cell = cell as! CalendarCell
+        cell.dateLabel.text = cellState.text
+        
+        handleCellSelected(cell: cell, cellState: cellState)
+        handleCellTextColor(cell: cell, cellState: cellState)
+    }
+    
+    func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
+        let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "CalenderCell", for: indexPath) as! CalendarCell
+        cell.dateLabel.text = cellState.text
+        
+        handleCellSelected(cell: cell, cellState: cellState)
+        handleCellTextColor(cell: cell, cellState: cellState)
+        
+        return cell
+    }
+    
+    
+    func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+        print(cellState.dateBelongsTo)
+        handleCellSelected(cell: cell, cellState: cellState)
+        handleCellTextColor(cell: cell, cellState: cellState)
+    }
+    
+    func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+        handleCellSelected(cell: cell, cellState: cellState)
+        handleCellTextColor(cell: cell, cellState: cellState)
+    }
+    
+    
+}
+
+class CalendarCell: JTAppleCell {
+    @IBOutlet weak var dateLabel: AnimatableLabel!
+    @IBOutlet weak var selectedView: AnimatableView!
 }
