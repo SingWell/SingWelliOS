@@ -205,6 +205,22 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     }
     
+    @IBAction func goToSettings(_ sender: Any) {
+        
+//        let presentingVC = AppStoryboard.SettingsModal.initialViewController()
+        
+//        SettingsModelViewController.contextFrameForPresentation = presentingVC.view.frame
+//        SettingsModelViewController.present(presentingVC, animated: true)
+        
+//        let storyboard = UIStoryboard(name: "Presentations", bundle: nil)
+        let presentingVC = AppStoryboard.SettingsModal.initialViewController()
+        if let presentedViewController = presentingVC as? AnimatableModalViewController {
+//            setupModal(for: presentedViewController)
+            present(presentedViewController, animated: true, completion: nil)
+        }
+        
+    }
+    
     func getUser() {
         ApiHelper.getUser(userId: "1") { response, error in
             if error == nil {

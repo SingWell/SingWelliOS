@@ -11,7 +11,7 @@ import UIKit
 
 enum AppStoryboard : String {
     
-    case Profile, EditProfile, Choir, SideMenu, Notifications, Calendar, Roster
+    case Profile, EditProfile, Choir, SideMenu, Notifications, Calendar, Roster, SettingsModal
     
     var instance : UIStoryboard {
         return UIStoryboard(name: self.rawValue, bundle: Bundle.main)

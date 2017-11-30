@@ -45,6 +45,7 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="adk-vL-qdh" userLabel="Profile Image View" customClass="AnimatableImageView" customModule="IBAnimatable">
                                 <rect key="frame" x="137" y="46" width="100" height="100"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="VRM-kl-kzH"/>
                                     <constraint firstAttribute="width" constant="100" id="jua-Nj-Bm2"/>
@@ -56,8 +57,22 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="circle"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="toneColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="toneOpacity">
+                                        <real key="value" value="0.69999999999999996"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wE4-iA-s85" userLabel="Camera Button" customClass="AnimatableButton" customModule="IBAnimatable">
+                                <rect key="frame" x="172" y="81" width="30" height="30"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xS1-oo-CrD" userLabel="Name Label" customClass="AnimatableLabel" customModule="IBAnimatable">
                                 <rect key="frame" x="144" y="154" width="86" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -479,6 +494,7 @@
                             <constraint firstItem="s3j-W6-qx3" firstAttribute="centerX" secondItem="ZtN-mD-wlN" secondAttribute="centerX" constant="-0.5" id="9od-5y-lIL"/>
                             <constraint firstItem="HKU-xV-vfT" firstAttribute="baseline" secondItem="s3j-W6-qx3" secondAttribute="baseline" id="ELT-CU-dip"/>
                             <constraint firstItem="xS1-oo-CrD" firstAttribute="top" secondItem="adk-vL-qdh" secondAttribute="bottom" constant="8" symbolic="YES" id="Fee-co-g9T"/>
+                            <constraint firstItem="wE4-iA-s85" firstAttribute="centerX" secondItem="xS1-oo-CrD" secondAttribute="centerX" id="Fio-kg-y6i"/>
                             <constraint firstAttribute="trailing" secondItem="TvK-E7-vpY" secondAttribute="trailing" id="Jaq-QL-DFZ"/>
                             <constraint firstItem="HKU-xV-vfT" firstAttribute="top" secondItem="s3j-W6-qx3" secondAttribute="top" id="Jp4-op-zd0"/>
                             <constraint firstItem="TvK-E7-vpY" firstAttribute="centerX" secondItem="5PV-vD-jry" secondAttribute="centerX" id="NPu-TQ-RNM"/>
@@ -498,6 +514,7 @@
                             <constraint firstItem="HKU-xV-vfT" firstAttribute="centerX" secondItem="Nnz-qT-7xo" secondAttribute="centerX" constant="-0.5" id="f9l-fh-efK"/>
                             <constraint firstItem="xS1-oo-CrD" firstAttribute="centerX" secondItem="adk-vL-qdh" secondAttribute="centerX" id="fJJ-nL-Ju6"/>
                             <constraint firstItem="Ghl-CG-go2" firstAttribute="leading" secondItem="TvK-E7-vpY" secondAttribute="leading" id="kBM-8Q-jpE"/>
+                            <constraint firstItem="wE4-iA-s85" firstAttribute="centerY" secondItem="adk-vL-qdh" secondAttribute="centerY" id="tbj-eD-ozM"/>
                             <constraint firstItem="ZtN-mD-wlN" firstAttribute="leading" secondItem="Nnz-qT-7xo" secondAttribute="trailing" constant="21" id="uM6-PV-2jL"/>
                             <constraint firstItem="ZtN-mD-wlN" firstAttribute="top" secondItem="5PV-vD-jry" secondAttribute="top" constant="178" id="ujl-F6-nnK"/>
                         </constraints>
@@ -508,6 +525,7 @@
                         <outlet property="biographyIcon" destination="D1r-Jl-Oij" id="PR3-AD-MYo"/>
                         <outlet property="biographyTextView" destination="DcQ-t6-6jw" id="Sj0-cd-fDf"/>
                         <outlet property="biographyView" destination="gbJ-am-Hal" id="Nhr-AV-V2d"/>
+                        <outlet property="cameraButtonIcon" destination="wE4-iA-s85" id="PFy-TQ-Zgd"/>
                         <outlet property="cancelButton" destination="s3j-W6-qx3" id="M9o-Qt-CeA"/>
                         <outlet property="cancelButtonImageView" destination="ZtN-mD-wlN" id="t7m-M1-bct"/>
                         <outlet property="cityTextField" destination="Hku-hY-7Ol" id="eDa-Pl-Bub"/>
