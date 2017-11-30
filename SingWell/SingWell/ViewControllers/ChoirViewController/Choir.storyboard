@@ -38,6 +38,11 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <state key="normal" title="Roster"/>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6AG-Rc-lcB" customClass="AnimatableButton" customModule="IBAnimatable">
+                                                    <rect key="frame" x="121" y="99" width="134" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                    <state key="normal" title="Music Library"/>
+                                                </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfl-y8-TGK" customClass="AnimatableButton" customModule="IBAnimatable">
                                                     <rect key="frame" x="18" y="99" width="91" height="40"/>
                                                     <constraints>
@@ -46,13 +51,33 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <state key="normal" title="Calendar"/>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Directed by John Smith" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="No4-bX-sT1">
+                                                    <rect key="frame" x="18" y="8" width="339" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meets Tuesdays 6pm-8pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yev-bf-bBC">
+                                                    <rect key="frame" x="18" y="37" width="339" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
+                                                <constraint firstItem="6AG-Rc-lcB" firstAttribute="baseline" secondItem="b5n-pK-DhO" secondAttribute="baseline" id="1hm-Rt-DXi"/>
                                                 <constraint firstItem="bfl-y8-TGK" firstAttribute="bottom" secondItem="Eh8-aL-4Jo" secondAttribute="bottomMargin" id="HHa-zn-YIP"/>
+                                                <constraint firstItem="yev-bf-bBC" firstAttribute="trailing" secondItem="No4-bX-sT1" secondAttribute="trailing" id="OGb-yS-xJC"/>
                                                 <constraint firstItem="b5n-pK-DhO" firstAttribute="baseline" secondItem="bfl-y8-TGK" secondAttribute="baseline" id="OJz-Wh-vSR"/>
+                                                <constraint firstItem="6AG-Rc-lcB" firstAttribute="centerX" secondItem="Eh8-aL-4Jo" secondAttribute="centerX" id="SA9-ja-cyq"/>
+                                                <constraint firstItem="No4-bX-sT1" firstAttribute="trailing" secondItem="b5n-pK-DhO" secondAttribute="trailing" id="dV0-9M-OsD"/>
                                                 <constraint firstAttribute="trailing" secondItem="b5n-pK-DhO" secondAttribute="trailing" constant="18" id="gjc-pF-Q6W"/>
+                                                <constraint firstItem="No4-bX-sT1" firstAttribute="leading" secondItem="bfl-y8-TGK" secondAttribute="leading" id="ic8-fC-FVo"/>
+                                                <constraint firstItem="yev-bf-bBC" firstAttribute="top" secondItem="No4-bX-sT1" secondAttribute="bottom" constant="8" symbolic="YES" id="qGU-P8-WRn"/>
                                                 <constraint firstItem="bfl-y8-TGK" firstAttribute="leading" secondItem="Eh8-aL-4Jo" secondAttribute="leadingMargin" constant="10" id="sw2-Z3-m4P"/>
+                                                <constraint firstItem="yev-bf-bBC" firstAttribute="leading" secondItem="No4-bX-sT1" secondAttribute="leading" id="tmb-XE-rEQ"/>
+                                                <constraint firstItem="No4-bX-sT1" firstAttribute="top" secondItem="Eh8-aL-4Jo" secondAttribute="topMargin" id="xkl-bc-mm8"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
@@ -83,6 +108,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="calendarButton" destination="bfl-y8-TGK" id="QRy-lR-VEn"/>
+                                    <outlet property="musicLibraryButton" destination="6AG-Rc-lcB" id="cJN-wT-DdG"/>
                                     <outlet property="rosterButton" destination="b5n-pK-DhO" id="1FF-Co-rch"/>
                                 </connections>
                             </tableViewCell>
@@ -165,6 +191,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="removeSeparatorMargins" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <outlet property="cardView" destination="BYs-cE-79M" id="QgR-RX-Wbr"/>
                                     <outlet property="descriptionField" destination="aod-Am-eFO" id="dCG-PO-xWA"/>
                                     <outlet property="timeLabel" destination="DuC-b3-uet" id="pDt-Vm-ef4"/>
                                     <outlet property="titleLabel" destination="LOE-7c-Eu2" id="8w9-y6-xbJ"/>
