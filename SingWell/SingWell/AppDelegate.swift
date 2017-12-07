@@ -8,6 +8,8 @@
 
 import UIKit
 
+let KToken = "AUTH_TOKEN"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,6 +17,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        // TODO: check if this token is valid
+        if let token = UserDefaults.standard.value(forKey: KToken) as? String {
+            // Token stored in NSUserDefaults.
+            print("USER already logged in")
+            ApiHelper.AUTH_TOKEN = token
+        } else {
+            // Have to login
+            ApiHelper.login( "kenton", "password123") { response, error in
+                if error == nil {
+                    print("LOGGED IN")
+                    ApiHelper.AUTH_TOKEN = response!["token"].stringValue
+                    
+                    // save value in user defaults
+                    UserDefaults.standard.setValue(ApiHelper.AUTH_TOKEN, forKey: KToken)
+                    UserDefaults.standard.synchronize()
+                } else {
+                    print("ERROR Logging in:",error as Any)
+                }
+            }
+        }
+        
         // Override point for customization after application launch.
         return true
     }
