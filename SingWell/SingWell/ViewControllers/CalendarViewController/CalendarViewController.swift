@@ -194,7 +194,7 @@ extension CalendarViewController: JTAppleCalendarViewDataSource {
         testFormatter.locale = persianCalendar.locale
         
         let startDate = testFormatter.date(from: "2017/01/01")!
-        let endDate = testFormatter.date(from: "2017/12/31")!
+        let endDate = testFormatter.date(from: "2018/12/31")!
         
 //        let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate, calendar:persianCalendar)
         
@@ -243,6 +243,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
 }
 
 extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -265,6 +266,12 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 106.0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let nextVc = AppStoryboard.Event.initialViewController() as! EventViewController
+        nextVc.eventInfo = selectedEvents[indexPath.row]
+        self.navigationController?.pushViewController(nextVc, animated: true)
     }
     
     

@@ -184,7 +184,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyt-10-xrb" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                                    <rect key="frame" x="12" y="0.0" width="349" height="21"/>
+                                                    <rect key="frame" x="13" y="11" width="349" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="l3N-RW-UYB"/>
                                                     </constraints>
@@ -193,13 +193,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEG-Fd-rkh" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                                    <rect key="frame" x="15" y="22" width="345" height="20"/>
+                                                    <rect key="frame" x="13" y="33" width="348" height="20"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgG-uO-TNs" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                                    <rect key="frame" x="15" y="54" width="345" height="20"/>
+                                                    <rect key="frame" x="13" y="57" width="345" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="d6Z-mf-QqF"/>
                                                     </constraints>
@@ -208,7 +208,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvq-Da-ToY" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                                    <rect key="frame" x="15" y="72" width="345" height="20"/>
+                                                    <rect key="frame" x="13" y="75" width="345" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="Ljg-nq-eLR"/>
                                                     </constraints>
@@ -218,18 +218,18 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="mgG-uO-TNs" firstAttribute="top" secondItem="vEG-Fd-rkh" secondAttribute="bottom" constant="12" id="1et-oz-cad"/>
-                                                <constraint firstItem="cvq-Da-ToY" firstAttribute="leading" secondItem="Ezr-I3-S1q" secondAttribute="leading" constant="15" id="4m5-5X-JXq"/>
+                                                <constraint firstItem="mgG-uO-TNs" firstAttribute="top" secondItem="vEG-Fd-rkh" secondAttribute="bottom" constant="4" id="1et-oz-cad"/>
+                                                <constraint firstItem="cvq-Da-ToY" firstAttribute="leading" secondItem="Ezr-I3-S1q" secondAttribute="leading" constant="13" id="4m5-5X-JXq"/>
                                                 <constraint firstItem="cvq-Da-ToY" firstAttribute="top" secondItem="mgG-uO-TNs" secondAttribute="bottom" constant="-2" id="DP2-2B-QZ5"/>
-                                                <constraint firstAttribute="trailing" secondItem="cvq-Da-ToY" secondAttribute="trailing" constant="15" id="EwN-4Z-Maw"/>
-                                                <constraint firstItem="cyt-10-xrb" firstAttribute="leading" secondItem="Ezr-I3-S1q" secondAttribute="leadingMargin" constant="-3" id="FlY-hR-9X5"/>
-                                                <constraint firstItem="mgG-uO-TNs" firstAttribute="leading" secondItem="Ezr-I3-S1q" secondAttribute="leading" constant="15" id="Lbw-Kn-CBo"/>
-                                                <constraint firstAttribute="trailing" secondItem="mgG-uO-TNs" secondAttribute="trailing" constant="15" id="SZN-95-rfh"/>
-                                                <constraint firstItem="cyt-10-xrb" firstAttribute="top" secondItem="Ezr-I3-S1q" secondAttribute="top" id="Xg2-Uj-h3H"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="cyt-10-xrb" secondAttribute="trailing" constant="-1" id="buM-FS-GND"/>
-                                                <constraint firstItem="vEG-Fd-rkh" firstAttribute="leading" secondItem="Ezr-I3-S1q" secondAttribute="leading" constant="15" id="gQz-lC-WZb"/>
+                                                <constraint firstAttribute="trailing" secondItem="cvq-Da-ToY" secondAttribute="trailing" constant="17" id="EwN-4Z-Maw"/>
+                                                <constraint firstItem="mgG-uO-TNs" firstAttribute="leading" secondItem="Ezr-I3-S1q" secondAttribute="leading" constant="13" id="Lbw-Kn-CBo"/>
+                                                <constraint firstAttribute="trailing" secondItem="mgG-uO-TNs" secondAttribute="trailing" constant="17" id="SZN-95-rfh"/>
+                                                <constraint firstItem="cyt-10-xrb" firstAttribute="top" secondItem="Ezr-I3-S1q" secondAttribute="top" constant="11" id="Xg2-Uj-h3H"/>
+                                                <constraint firstItem="cyt-10-xrb" firstAttribute="leading" secondItem="Ezr-I3-S1q" secondAttribute="leading" constant="13" id="b2a-ch-4kO"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="cyt-10-xrb" secondAttribute="trailing" constant="-2" id="buM-FS-GND"/>
+                                                <constraint firstItem="vEG-Fd-rkh" firstAttribute="leading" secondItem="Ezr-I3-S1q" secondAttribute="leading" constant="13" id="gQz-lC-WZb"/>
                                                 <constraint firstItem="vEG-Fd-rkh" firstAttribute="top" secondItem="cyt-10-xrb" secondAttribute="bottom" constant="1" id="hzV-O5-nhs"/>
-                                                <constraint firstAttribute="trailing" secondItem="vEG-Fd-rkh" secondAttribute="trailing" constant="15" id="rNR-fD-k37"/>
+                                                <constraint firstAttribute="trailing" secondItem="vEG-Fd-rkh" secondAttribute="trailing" constant="14" id="rNR-fD-k37"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

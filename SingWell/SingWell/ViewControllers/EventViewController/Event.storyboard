@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RRv-DK-kuU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RRv-DK-kuU">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AppleSDGothicNeo.ttc">
+            <string>AppleSDGothicNeo-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Event View Controller-->
         <scene sceneID="ers-qg-RnC">
@@ -16,13 +22,58 @@
                     <view key="view" contentMode="scaleToFill" id="D4T-si-5QJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8p-Ok-LLM" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                <rect key="frame" x="16" y="20" width="343" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="uHQ-of-0VQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNT-wp-rrV" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                <rect key="frame" x="16" y="73" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="gKN-Jw-6LG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xk-jw-H1n" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                <rect key="frame" x="16" y="102" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="qgY-hZ-Uy8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0xk-jw-H1n" firstAttribute="trailing" secondItem="G8p-Ok-LLM" secondAttribute="trailing" id="DtU-qV-PPT"/>
+                            <constraint firstItem="G8p-Ok-LLM" firstAttribute="trailing" secondItem="D4T-si-5QJ" secondAttribute="trailingMargin" id="I5U-UI-aew"/>
+                            <constraint firstItem="LNT-wp-rrV" firstAttribute="top" secondItem="G8p-Ok-LLM" secondAttribute="bottom" constant="27" id="Oyz-7d-bmp"/>
+                            <constraint firstItem="0xk-jw-H1n" firstAttribute="top" secondItem="LNT-wp-rrV" secondAttribute="bottom" constant="8" symbolic="YES" id="RwP-cj-p9K"/>
+                            <constraint firstItem="G8p-Ok-LLM" firstAttribute="leading" secondItem="D4T-si-5QJ" secondAttribute="leadingMargin" id="ShW-Db-Seh"/>
+                            <constraint firstItem="0xk-jw-H1n" firstAttribute="leading" secondItem="G8p-Ok-LLM" secondAttribute="leading" id="glB-te-xpy"/>
+                            <constraint firstItem="0xk-jw-H1n" firstAttribute="leading" secondItem="LNT-wp-rrV" secondAttribute="leading" id="iD5-Bz-3Eg"/>
+                            <constraint firstItem="0xk-jw-H1n" firstAttribute="trailing" secondItem="LNT-wp-rrV" secondAttribute="trailing" id="qtj-Ma-hdA"/>
+                            <constraint firstItem="G8p-Ok-LLM" firstAttribute="top" secondItem="S8z-lE-iTE" secondAttribute="top" id="yuG-Ae-CGI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="S8z-lE-iTE"/>
                     </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="LNT-wp-rrV" id="2AH-Yi-q3s"/>
+                        <outlet property="locationLabel" destination="G8p-Ok-LLM" id="jT4-bV-N5T"/>
+                        <outlet property="timeLabel" destination="0xk-jw-H1n" id="iq2-EZ-mMj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d9m-9Z-CRC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="89" y="124"/>
+            <point key="canvasLocation" x="88.799999999999997" y="123.68815592203899"/>
         </scene>
     </scenes>
 </document>

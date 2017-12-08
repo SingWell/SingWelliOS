@@ -83,6 +83,7 @@ class ChoirTableViewController: UITableViewController {
     
     @IBAction func viewCalendar(_ sender: Any) {
         let nextVc = AppStoryboard.Calendar.initialViewController() as! CalendarViewController
+        nextVc.orgId = choirInfo["organization"].stringValue
         self.navigationController?.pushViewController(nextVc, animated: true)
     }
     
