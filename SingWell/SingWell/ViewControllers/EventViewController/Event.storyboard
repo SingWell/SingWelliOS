@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8p-Ok-LLM" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                <rect key="frame" x="16" y="20" width="343" height="26"/>
+                                <rect key="frame" x="16" y="34" width="343" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="uHQ-of-0VQ"/>
                                 </constraints>
@@ -33,7 +33,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNT-wp-rrV" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                <rect key="frame" x="16" y="73" width="343" height="21"/>
+                                <rect key="frame" x="16" y="87" width="343" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="gKN-Jw-6LG"/>
                                 </constraints>
@@ -42,7 +42,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xk-jw-H1n" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                <rect key="frame" x="16" y="102" width="343" height="21"/>
+                                <rect key="frame" x="16" y="116" width="343" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="qgY-hZ-Uy8"/>
                                 </constraints>
@@ -61,7 +61,7 @@
                             <constraint firstItem="0xk-jw-H1n" firstAttribute="leading" secondItem="G8p-Ok-LLM" secondAttribute="leading" id="glB-te-xpy"/>
                             <constraint firstItem="0xk-jw-H1n" firstAttribute="leading" secondItem="LNT-wp-rrV" secondAttribute="leading" id="iD5-Bz-3Eg"/>
                             <constraint firstItem="0xk-jw-H1n" firstAttribute="trailing" secondItem="LNT-wp-rrV" secondAttribute="trailing" id="qtj-Ma-hdA"/>
-                            <constraint firstItem="G8p-Ok-LLM" firstAttribute="top" secondItem="S8z-lE-iTE" secondAttribute="top" id="yuG-Ae-CGI"/>
+                            <constraint firstItem="G8p-Ok-LLM" firstAttribute="top" secondItem="S8z-lE-iTE" secondAttribute="top" constant="14" id="yuG-Ae-CGI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="S8z-lE-iTE"/>
                     </view>

@@ -11,6 +11,17 @@ import JTAppleCalendar
 import IBAnimatable
 import SwiftyJSON
 
+// MARK: CALENDAR THEME VARIABLES
+let CALENDAR_BACKGROUND_COLOR = UIColor(hexString: "#30BAEB")
+let EVENT_SELECTED_COLOR = UIColor.white
+let EVENT_SELECTED_SHADOW_COLOR = UIColor(hexString: "#444476")
+//let EVENT_SELECTED_TEXT_COLOR = UIColor(hexString: "#4981BC")
+let EVENT_SELECTED_TEXT_COLOR = CALENDAR_BACKGROUND_COLOR
+let CALENDAR_TEXT_COLOR = UIColor.white
+//UIColor(hexString: "#516AAC")
+let CELL_BORDER_COLOR = UIColor.white
+
+
 class CalendarCell: JTAppleCell {
     @IBOutlet weak var dateLabel: AnimatableLabel!
     @IBOutlet weak var eventDotView: AnimatableView!
@@ -62,9 +73,8 @@ class CalendarViewController: UIViewController {
         
         getEvents()
         
-        setupTableView()
-        
         setupCalendarView()
+        setupTableView()
     }
     
     func getEvents() {
@@ -87,8 +97,12 @@ class CalendarViewController: UIViewController {
     func handleCellSelected(cell: JTAppleCell?, cellState: CellState){
         guard let validCell = cell as? CalendarCell else { return }
         if validCell.isSelected {
+            validCell.selectedView.backgroundColor = EVENT_SELECTED_COLOR
+            validCell.selectedView.shadowColor = EVENT_SELECTED_SHADOW_COLOR
             validCell.selectedView.isHidden = false
             validCell.selectedView.layer.zPosition = -1
+            
+            validCell.dateLabel.textColor = EVENT_SELECTED_TEXT_COLOR
             
             // set table view
             if let selectedDate = eventDict[cellState.date] {
@@ -108,21 +122,13 @@ class CalendarViewController: UIViewController {
         if validCell.isSelected {
             validCell.dateLabel.textColor = UIColor.white
         } else {
-            let today = Date()
-            persianDateFormatter.dateFormat = "yyyy MM dd"
-            let todayDateStr = persianDateFormatter.string(from: today)
-            formatter.dateFormat = "yyyy MM dd"
-            let cellDateStr = formatter.string(from: cellState.date)
             
-            if todayDateStr == cellDateStr {
-                validCell.dateLabel.textColor = UIColor.yellow
-            } else {
-                if cellState.dateBelongsTo == .thisMonth {
-                    validCell.dateLabel.textColor = UIColor.white
-                } else { //i.e. case it belongs to inDate or outDate
-                    validCell.dateLabel.textColor = UIColor.gray
-                }
+            if cellState.dateBelongsTo == .thisMonth {
+                validCell.dateLabel.textColor = CALENDAR_TEXT_COLOR
+            } else { //i.e. case it belongs to inDate or outDate
+                validCell.dateLabel.textColor = UIColor.gray
             }
+            
         }
     }
     
@@ -132,8 +138,10 @@ class CalendarViewController: UIViewController {
     }
     
     func handleCellDisplay(cell: JTAppleCell?, cellState: CellState){
-        handleCellSelected(cell: cell, cellState: cellState)
+        cell?.layer.borderColor = CELL_BORDER_COLOR.cgColor
+        cell?.layer.borderWidth = 0.5
         handleCellTextColor(cell: cell, cellState: cellState)
+        handleCellSelected(cell: cell, cellState: cellState)
         handleCellEvents(cell: cell, cellState: cellState)
     }
     
@@ -158,9 +166,13 @@ class CalendarViewController: UIViewController {
             self.monthLabel.text = self.formatter.string(from: date!)
         }
         
-        calendarView.scrollToDate( Date() )
+        calendarView.scrollToDate( Date(), animateScroll: false)
+        
         calendarView.calendarDataSource = self
         calendarView.calendarDelegate = self
+        calendarView.selectDates( [Date()] )
+        
+        calendarView.backgroundColor = CALENDAR_BACKGROUND_COLOR
     }
     
     func parseEvents(events:[JSON]) -> [Date:[JSON]] {
@@ -223,7 +235,6 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
     
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
-        print(cellState.date)
         handleCellDisplay(cell: cell, cellState: cellState)
     }
     

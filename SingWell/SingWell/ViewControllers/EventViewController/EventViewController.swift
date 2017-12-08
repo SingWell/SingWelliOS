@@ -44,16 +44,16 @@ class EventViewController: UIViewController {
         formatter.locale = .current
         
         formatter.dateFormat = "yyyy-MM-dd"
-        let eventDate = formatter.date(from: eventInfo["date"].stringValue)
+        if let eventDate = formatter.date(from: eventInfo["date"].stringValue) {
+            formatter.dateFormat = "EEEE, MMM d, yyyy"
+            self.dateLabel.text = formatter.string(from: eventDate)
+        }
         
-        formatter.dateFormat = "EEEE, MMM d, yyyy"
-        self.dateLabel.text = formatter.string(from: eventDate!)
-        
-        formatter.dateFormat = "hh:mm:ss"
-        let eventTime = formatter.date(from: eventInfo["time"].stringValue)
-        
-        formatter.dateFormat = "h:mm a"
-        self.timeLabel.text = formatter.string(from: eventTime!)
+        formatter.dateFormat = "HH:mm:ss"
+        if let eventTime = formatter.date(from: eventInfo["time"].stringValue) {
+            formatter.dateFormat = "h:mm a"
+            self.timeLabel.text = formatter.string(from: eventTime)
+        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -14,7 +14,7 @@ let PRODUCTION_ENV = "http://ec2-34-215-244-252.us-west-2.compute.amazonaws.com/
 
 
 class ApiHelper {
-    static var userId = "1"
+    static var userId = "4"
     static var AUTH_TOKEN = ""
     
     //Had to create new post method in order to save userID value
@@ -106,10 +106,14 @@ class ApiHelper {
     }
     
     //this will get events for a organization
-    static func getEvents(userId:String=userId, orgId:String, completionHandler: @escaping (JSON?, Error?) -> ()) {
+    static func getEvents(orgId:String, completionHandler: @escaping (JSON?, Error?) -> ()) {
         makeGetCall("organizations/\(orgId)/events", completionHandler: completionHandler)
     }
     
+    //this will get musicRecords for a organization
+    static func getMusicRecords(orgId:String, completionHandler: @escaping (JSON?, Error?) -> ()) {
+        makeGetCall("organizations/\(orgId)/musicRecords", completionHandler: completionHandler)
+    }
     
     
 }

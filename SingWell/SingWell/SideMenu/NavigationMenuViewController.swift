@@ -127,14 +127,35 @@ class NavigationMenuViewController: MenuViewController {
 
 var FIRST_CONTROLLER = true
 
+// TODO: FIX THIS FROM BEING A HACK TO BEING A REAL FIX
 class SideItemNavigationViewController: AnimatableNavigationController, SideMenuItemContent {
     override func viewWillAppear(_ animated: Bool) {
-        if FIRST_CONTROLLER == true {
-            self.additionalSafeAreaInsets = UIEdgeInsetsMake(0,0,0,0)
-            FIRST_CONTROLLER = false
-        } else {
-            self.additionalSafeAreaInsets = UIEdgeInsetsMake(20,0,0,0)
+        
+        let screenSize = UIScreen.main.bounds
+        
+        // DETERMINE IF WE NEED EXTRA SAFE AREA INSETS BASED ON PHONE MODEL
+        switch screenSize.height {
+        case 812.0: // iPhone X
+            if FIRST_CONTROLLER == true {
+                self.additionalSafeAreaInsets = UIEdgeInsetsMake(0,0,0,0)
+                FIRST_CONTROLLER = false
+            } else {
+                self.additionalSafeAreaInsets = UIEdgeInsetsMake(44,0,0,0)
+            }
+            break
+        case 667.0: // iPhone 7/8
+            if FIRST_CONTROLLER == true {
+                self.additionalSafeAreaInsets = UIEdgeInsetsMake(0,0,0,0)
+                FIRST_CONTROLLER = false
+            } else {
+                self.additionalSafeAreaInsets = UIEdgeInsetsMake(20,0,0,0)
+            }
+            break
+        default:
+            break //do nothing for all other models
         }
+        
+        
     }
 }
 

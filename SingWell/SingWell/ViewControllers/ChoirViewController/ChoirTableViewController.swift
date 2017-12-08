@@ -94,6 +94,7 @@ class ChoirTableViewController: UITableViewController {
     
     @IBAction func viewMusicLibrary(_ sender: Any) {
         let nextVc = AppStoryboard.MusicLibrary.initialViewController() as! MusicLibraryTableViewController
+        nextVc.orgId = choirInfo["organization"].stringValue
         self.navigationController?.pushViewController(nextVc, animated: true)
     }
     
