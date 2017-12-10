@@ -98,4 +98,9 @@ class ApiHelper {
         makeGetCall("organizations/\(orgId)/choirs/\(choirId)", completionHandler: completionHandler)
     }
     
+    //this will get a roster for a specific choir
+    static func getRoster(orgId:String, choirId:String, completionHandler: @escaping (JSON?, Error?) -> ()) {
+        makeGetCall("organizations/\(orgId)/choirs/\(choirId)/roster", completionHandler: completionHandler)
+    }
+    
 }

@@ -43,6 +43,9 @@
 		525EF4B71FC3A4BB00C8E822 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525EF4B61FC3A4BB00C8E822 /* EditProfileViewController.swift */; };
 		525EF4B91FC3A4C600C8E822 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 525EF4B81FC3A4C600C8E822 /* EditProfile.storyboard */; };
 		526F5D5C1FCE13F9002F7D27 /* SettingsModal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 526F5D5B1FCE13F9002F7D27 /* SettingsModal.storyboard */; };
+		52DA23DE1FD0B7B8004CD9E0 /* RosterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA23DD1FD0B7B8004CD9E0 /* RosterTableViewCell.swift */; };
+		52FD88401FDDD05700958AAE /* NewEditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD883F1FDDD05700958AAE /* NewEditProfileViewController.swift */; };
+		52FD88421FDDD06600958AAE /* NewEditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52FD88411FDDD06600958AAE /* NewEditProfile.storyboard */; };
 		86F76E547079493C7DAADA22 /* Pods_SingWellTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5B7BEEE8800BC4F7098CCD /* Pods_SingWellTests.framework */; };
 		D0B4A43E772600F9DCBBBBEF /* Pods_SingWellUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56D8462546CB3640CFED1D64 /* Pods_SingWellUITests.framework */; };
 		DC314C3CF81F0D65E4D3B09F /* Pods_SingWell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9A2CC9F02AA47F953461F6 /* Pods_SingWell.framework */; };
@@ -110,6 +113,9 @@
 		525EF4B61FC3A4BB00C8E822 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		525EF4B81FC3A4C600C8E822 /* EditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
 		526F5D5B1FCE13F9002F7D27 /* SettingsModal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsModal.storyboard; sourceTree = "<group>"; };
+		52DA23DD1FD0B7B8004CD9E0 /* RosterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RosterTableViewCell.swift; sourceTree = "<group>"; };
+		52FD883F1FDDD05700958AAE /* NewEditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEditProfileViewController.swift; sourceTree = "<group>"; };
+		52FD88411FDDD06600958AAE /* NewEditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewEditProfile.storyboard; sourceTree = "<group>"; };
 		56D8462546CB3640CFED1D64 /* Pods_SingWellUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SingWellUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A89585724F70104CBA47295 /* Pods-SingWell.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingWell.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SingWell/Pods-SingWell.debug.xcconfig"; sourceTree = "<group>"; };
 		BAD46F51B65E4DD47A9291FB /* Pods-SingWellTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingWellTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SingWellTests/Pods-SingWellTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -213,6 +219,7 @@
 		162D98381FA65D2E006068BC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				52FD883E1FDDD01900958AAE /* NewEditProfileViewController */,
 				164A51421FCFA9830026D7DE /* SongViewController */,
 				16A7A3271FCE13B400B32491 /* EventViewController */,
 				16A7A3201FCE0C4F00B32491 /* MusicLibraryViewController */,
@@ -291,6 +298,7 @@
 			children = (
 				16E211991FC35DD7009969B1 /* RosterTableViewController.swift */,
 				16E2119B1FC35DDF009969B1 /* Roster.storyboard */,
+				52DA23DD1FD0B7B8004CD9E0 /* RosterTableViewCell.swift */,
 			);
 			path = RosterViewController;
 			sourceTree = "<group>";
@@ -346,6 +354,15 @@
 				525EF4B81FC3A4C600C8E822 /* EditProfile.storyboard */,
 			);
 			path = EditProfileViewController;
+			sourceTree = "<group>";
+		};
+		52FD883E1FDDD01900958AAE /* NewEditProfileViewController */ = {
+			isa = PBXGroup;
+			children = (
+				52FD883F1FDDD05700958AAE /* NewEditProfileViewController.swift */,
+				52FD88411FDDD06600958AAE /* NewEditProfile.storyboard */,
+			);
+			path = NewEditProfileViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -477,6 +494,7 @@
 				162D980F1FA65CD3006068BC /* Assets.xcassets in Resources */,
 				16E2119C1FC35DDF009969B1 /* Roster.storyboard in Resources */,
 				526F5D5C1FCE13F9002F7D27 /* SettingsModal.storyboard in Resources */,
+				52FD88421FDDD06600958AAE /* NewEditProfile.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -673,6 +691,7 @@
 				5209FE2E1FD092CE00DB9CE8 /* SettingsModelViewController.swift in Sources */,
 				16D2CFA01FBE423500FDFF4D /* ProfileTableViewCell.swift in Sources */,
 				1652FDB11FB502D200D921EB /* HostViewController.swift in Sources */,
+				52DA23DE1FD0B7B8004CD9E0 /* RosterTableViewCell.swift in Sources */,
 				16E211951FC35C5F009969B1 /* NotificationsTableViewController.swift in Sources */,
 				16A7A3261FCE0CB800B32491 /* MusicLibraryTableViewCell.swift in Sources */,
 				16E211921FC35122009969B1 /* ChoirInfoTableViewCell.swift in Sources */,
@@ -684,6 +703,7 @@
 				164A51441FCFA99A0026D7DE /* SongViewController.swift in Sources */,
 				1617DF941FB39EEB0094C474 /* ApiHelper.swift in Sources */,
 				1652FDAD1FB5016F00D921EB /* ChoirTableViewController.swift in Sources */,
+				52FD88401FDDD05700958AAE /* NewEditProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

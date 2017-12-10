@@ -7,20 +7,50 @@
 //
 
 import UIKit
+import Foundation
 import SwiftyJSON
 
 class RosterTableViewController: UITableViewController {
+    
+    let kRosterCellReuseIdentifier = "RosterCell"
+    var rosterTest:JSON = []
 
     var roster:[JSON] = [
-        ["name":"Jane Doe"],
-        ["name":"Susan B. Anthony"],
-        ["name":"Zachary Johnson"]
+        ["id": 1, "name":"Jane Doe", "email":"test1@gmail.com"],
+        ["id": 2, "name":"Susan B. Anthony", "email":"test2@gmail.com"],
+        ["id": 3, "name":"Zachary Johnson", "email":"test3@gmail.com"]
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        getRoster()
+        
         self.title = "Roster"
+    }
+    
+    func getRoster() {
+        ApiHelper.getRoster(orgId: "16", choirId: "1") { response, error in
+            if error == nil {
+                self.rosterTest = response!
+                
+                self.reloadView()
+            } else {
+                print(error!)
+            }
+        }
+    }
+    
+    func reloadView() {
+//        var profileName = ""
+//        if(self.user != []){
+//            profileName = self.user["username"].stringValue
+//        }
+//
+//        profileNameLabel.text = profileName
+        
+        print(self.rosterTest)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,6 +63,16 @@ class RosterTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.section {
+        case 0:
+            return 80.0
+        default:
+            return 80.0
+        }
+        
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -40,12 +80,17 @@ class RosterTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath)
-
-        cell.textLabel?.text = roster[indexPath.row]["name"].stringValue
         
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: kRosterCellReuseIdentifier, for: indexPath) as! RosterTableViewCell
+        cell.rosterCellName?.text = roster[indexPath.row]["name"].stringValue
+        cell.rosterCellEmail?.text = roster[indexPath.row]["email"].stringValue
+        
+        var profileImage: UIImage = UIImage(named: "profileImage")!
+        profileImage = profileImage.circleMasked!
+        cell.rosterCellImageView.image = profileImage
+        
         return cell
+    
     }
  
 

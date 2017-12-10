@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Edit Profile View Controller-->
+        <scene sceneID="9xV-6V-0KD">
+            <objects>
+                <viewController id="6RR-4o-91f" customClass="EditProfileViewController" customModule="SingWell" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XRA-Wb-Xd9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7ik-lD-yIz" userLabel="Background Image View" customClass="AnimatableImageView" customModule="IBAnimatable">
+                                <rect key="frame" x="0.0" y="20" width="375" height="209"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="209" id="7pm-yK-tPN"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
+                                        <point key="value" x="10" y="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="blurOpacity">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="26s-Wx-DoA" userLabel="Profile Image View" customClass="AnimatableImageView" customModule="IBAnimatable">
+                                <rect key="frame" x="137" y="46" width="100" height="100"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="2qt-iH-KdI"/>
+                                    <constraint firstAttribute="height" constant="100" id="H38-hc-IXF"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="circle"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="toneColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="toneOpacity">
+                                        <real key="value" value="0.69999999999999996"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6u-ed-neQ" userLabel="Camera Button" customClass="AnimatableButton" customModule="IBAnimatable">
+                                <rect key="frame" x="172" y="81" width="30" height="30"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBn-q6-q69" userLabel="Name Label" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                <rect key="frame" x="144" y="154" width="86" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" red="1" green="0.98955004950000003" blue="0.9863711838" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aGj-j1-eCw">
+                                <rect key="frame" x="0.0" y="229" width="375" height="438"/>
+                            </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yPw-2h-gqB" userLabel="Cancel Button Image View" customClass="AnimatableImageView" customModule="IBAnimatable">
+                                <rect key="frame" x="295" y="198" width="55" height="55"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.93086308179999999" green="0.93086308179999999" blue="0.93086308179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
+                                        <point key="value" x="0.0" y="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3a-yq-Quc" userLabel="Cancel Button" customClass="AnimatableButton" customModule="IBAnimatable">
+                                <rect key="frame" x="307" y="210" width="30" height="30"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0N7-3J-W7t" userLabel="Confirm Button Image View" customClass="AnimatableImageView" customModule="IBAnimatable">
+                                <rect key="frame" x="219" y="198" width="55" height="55"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.93086308179999999" green="0.93086308179999999" blue="0.93086308179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
+                                        <point key="value" x="0.0" y="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oEz-Ku-jBW" userLabel="Confirm Button" customClass="AnimatableButton" customModule="IBAnimatable">
+                                <rect key="frame" x="231" y="210" width="30" height="30"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aGj-j1-eCw" firstAttribute="bottom" secondItem="mTA-n9-yLs" secondAttribute="bottom" id="30c-eu-VwK"/>
+                            <constraint firstItem="y6u-ed-neQ" firstAttribute="centerY" secondItem="26s-Wx-DoA" secondAttribute="centerY" id="3Cn-Ww-a9v"/>
+                            <constraint firstItem="26s-Wx-DoA" firstAttribute="centerX" secondItem="mTA-n9-yLs" secondAttribute="centerX" id="3gc-LB-wtl"/>
+                            <constraint firstItem="7ik-lD-yIz" firstAttribute="centerX" secondItem="mTA-n9-yLs" secondAttribute="centerX" id="3wn-zY-Ksc"/>
+                            <constraint firstItem="oEz-Ku-jBW" firstAttribute="centerY" secondItem="0N7-3J-W7t" secondAttribute="centerY" constant="-0.5" id="HAd-sH-Krq"/>
+                            <constraint firstItem="yPw-2h-gqB" firstAttribute="top" secondItem="mTA-n9-yLs" secondAttribute="top" constant="178" id="KaO-p9-qG9"/>
+                            <constraint firstItem="fBn-q6-q69" firstAttribute="top" secondItem="26s-Wx-DoA" secondAttribute="bottom" constant="8" symbolic="YES" id="PYi-e4-IWG"/>
+                            <constraint firstItem="oEz-Ku-jBW" firstAttribute="leading" secondItem="mTA-n9-yLs" secondAttribute="leading" constant="231" id="QRL-fo-N5V"/>
+                            <constraint firstItem="s3a-yq-Quc" firstAttribute="top" secondItem="mTA-n9-yLs" secondAttribute="top" constant="190" id="RKF-Qz-tdd"/>
+                            <constraint firstItem="yPw-2h-gqB" firstAttribute="leading" secondItem="mTA-n9-yLs" secondAttribute="trailing" constant="-80" id="SkH-HB-hxC"/>
+                            <constraint firstItem="7ik-lD-yIz" firstAttribute="top" secondItem="mTA-n9-yLs" secondAttribute="top" id="UoO-Zv-Igz"/>
+                            <constraint firstItem="oEz-Ku-jBW" firstAttribute="firstBaseline" secondItem="s3a-yq-Quc" secondAttribute="firstBaseline" id="Z7U-DO-NUv"/>
+                            <constraint firstAttribute="trailing" secondItem="7ik-lD-yIz" secondAttribute="trailing" id="cMw-yc-7fT"/>
+                            <constraint firstItem="aGj-j1-eCw" firstAttribute="leading" secondItem="7ik-lD-yIz" secondAttribute="leading" id="eYP-Gr-Giq"/>
+                            <constraint firstItem="26s-Wx-DoA" firstAttribute="top" secondItem="mTA-n9-yLs" secondAttribute="top" constant="26" id="gEQ-kH-Lot"/>
+                            <constraint firstItem="oEz-Ku-jBW" firstAttribute="top" secondItem="s3a-yq-Quc" secondAttribute="top" id="gHn-LR-bXS"/>
+                            <constraint firstItem="y6u-ed-neQ" firstAttribute="centerX" secondItem="fBn-q6-q69" secondAttribute="centerX" id="iUg-U2-hei"/>
+                            <constraint firstItem="aGj-j1-eCw" firstAttribute="trailing" secondItem="7ik-lD-yIz" secondAttribute="trailing" id="k9w-Bu-IVU"/>
+                            <constraint firstItem="oEz-Ku-jBW" firstAttribute="centerX" secondItem="0N7-3J-W7t" secondAttribute="centerX" constant="-0.5" id="moK-69-uBF"/>
+                            <constraint firstItem="aGj-j1-eCw" firstAttribute="top" secondItem="7ik-lD-yIz" secondAttribute="bottom" id="nLA-47-3Z2"/>
+                            <constraint firstItem="0N7-3J-W7t" firstAttribute="top" secondItem="yPw-2h-gqB" secondAttribute="top" id="nsa-dK-uSe"/>
+                            <constraint firstItem="fBn-q6-q69" firstAttribute="centerX" secondItem="26s-Wx-DoA" secondAttribute="centerX" id="q4I-aR-XMF"/>
+                            <constraint firstItem="oEz-Ku-jBW" firstAttribute="baseline" secondItem="s3a-yq-Quc" secondAttribute="baseline" id="qfd-XA-cuN"/>
+                            <constraint firstItem="s3a-yq-Quc" firstAttribute="centerX" secondItem="yPw-2h-gqB" secondAttribute="centerX" constant="-0.5" id="rmc-6D-CtJ"/>
+                            <constraint firstItem="s3a-yq-Quc" firstAttribute="centerY" secondItem="yPw-2h-gqB" secondAttribute="centerY" constant="-0.5" id="sjK-En-po2"/>
+                            <constraint firstItem="7ik-lD-yIz" firstAttribute="leading" secondItem="XRA-Wb-Xd9" secondAttribute="leading" id="uhi-rH-hKv"/>
+                            <constraint firstItem="s3a-yq-Quc" firstAttribute="leading" secondItem="7ik-lD-yIz" secondAttribute="trailing" constant="-68" id="whC-EZ-6qq"/>
+                            <constraint firstItem="yPw-2h-gqB" firstAttribute="leading" secondItem="0N7-3J-W7t" secondAttribute="trailing" constant="21" id="wuC-8r-gFr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mTA-n9-yLs"/>
+                    </view>
+                    <connections>
+                        <outlet property="cameraButtonIcon" destination="y6u-ed-neQ" id="DjR-61-31C"/>
+                        <outlet property="cancelButton" destination="s3a-yq-Quc" id="TZS-JP-dfY"/>
+                        <outlet property="cancelButtonImageView" destination="yPw-2h-gqB" id="MoE-fR-lO1"/>
+                        <outlet property="confirmButton" destination="oEz-Ku-jBW" id="47h-Y2-LzK"/>
+                        <outlet property="confirmButtonImageView" destination="0N7-3J-W7t" id="ZxT-Dw-Pjk"/>
+                        <outlet property="nameLabel" destination="fBn-q6-q69" id="794-tz-Vtp"/>
+                        <outlet property="profileBackgroundImageView" destination="7ik-lD-yIz" id="TBe-Tn-DMH"/>
+                        <outlet property="profileImageView" destination="26s-Wx-DoA" id="qbN-9O-Txx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kdr-tK-jdA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="184.80000000000001" y="105.69715142428787"/>
+        </scene>
+    </scenes>
+</document>
