@@ -11,21 +11,23 @@ import SwiftyJSON
 
 class MusicLibraryTableViewController: UITableViewController {
     
+    var orgId = "1"
+    
     var filteredMusicLibrary = [JSON]()
 
     var musicLibrary:[JSON] = [
         [
-            "name":"Prelude",
+            "title":"Prelude",
             "composer":"J.S. Bach",
             "instrumentation":"SATB"
         ],
         [
-            "name":"Song 2",
+            "title":"Song 2",
             "composer":"J.S. Bach",
             "instrumentation":"SATB"
         ],
         [
-            "name":"My Favorite Things",
+            "title":"My Favorite Things",
             "composer":"John Coltrane",
             "instrumentation":"SATB"
         ]
@@ -38,6 +40,8 @@ class MusicLibraryTableViewController: UITableViewController {
         
         print("SONG:",musicLibrary[0].stringValue)
         
+        self.getMusicLibrary()
+        
         self.title = "Music Library"
         
         // Setup the Search Controller
@@ -46,6 +50,17 @@ class MusicLibraryTableViewController: UITableViewController {
         searchController.searchBar.placeholder = "Search Music"
         navigationItem.searchController = searchController
         definesPresentationContext = true
+    }
+    
+    func getMusicLibrary() {
+        ApiHelper.getMusicRecords(orgId: self.orgId) { response, error in
+            if error == nil {
+                self.musicLibrary = response!.arrayValue
+                self.tableView.reloadData()
+            } else {
+                print("Error getting musicRecords: ",error as Any)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -79,7 +94,7 @@ class MusicLibraryTableViewController: UITableViewController {
             song = musicLibrary[indexPath.row]
         }
         
-        cell.songNameLabel.text = song["name"].stringValue
+        cell.songNameLabel.text = song["title"].stringValue
         cell.composerNameLabel.text = song["composer"].stringValue
         cell.instrumentationLabel.text = song["instrumentation"].stringValue
         

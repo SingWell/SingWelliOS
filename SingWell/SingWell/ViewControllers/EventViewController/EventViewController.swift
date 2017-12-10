@@ -8,29 +8,56 @@
 
 import UIKit
 import SwiftyJSON
+import IBAnimatable
 
 class EventViewController: UIViewController {
-
-    var eventInfo:JSON = []
+    
+    @IBOutlet weak var locationLabel: AnimatableLabel!
+    @IBOutlet weak var dateLabel: AnimatableLabel!
+    @IBOutlet weak var timeLabel: AnimatableLabel!
+    
+    var eventInfo:JSON = [
+        "id": 1,
+        "name": "Event Name",
+        "date": "2017-11-26",
+        "time": "23:00:00",
+        "location": "Chapel",
+        "choirs": [
+            1,
+            3
+        ],
+        "organization": 1
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Event Name"
+        self.title = eventInfo["name"].stringValue
+        self.locationLabel.text = eventInfo["location"].stringValue
+        
+        print(eventInfo)
+        setupDateTimeLabels()
+    }
+    
+    func setupDateTimeLabels() {
+        let formatter = DateFormatter()
+        formatter.timeZone = .current
+        formatter.locale = .current
+        
+        formatter.dateFormat = "yyyy-MM-dd"
+        if let eventDate = formatter.date(from: eventInfo["date"].stringValue) {
+            formatter.dateFormat = "EEEE, MMM d, yyyy"
+            self.dateLabel.text = formatter.string(from: eventDate)
+        }
+        
+        formatter.dateFormat = "HH:mm:ss"
+        if let eventTime = formatter.date(from: eventInfo["time"].stringValue) {
+            formatter.dateFormat = "h:mm a"
+            self.timeLabel.text = formatter.string(from: eventTime)
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
