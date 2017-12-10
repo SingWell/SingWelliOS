@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Oa7-p6-V1T">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Song View Controller-->
+        <scene sceneID="TzM-VM-dzr">
+            <objects>
+                <viewController id="Oa7-p6-V1T" customClass="SongViewController" customModule="SingWell" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1dH-0b-OXd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yrw-Sy-cno" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                <rect key="frame" x="16" y="20" width="343" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="llG-9h-IRg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSK-c1-SBP" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                <rect key="frame" x="16" y="65" width="188" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="lOp-Mo-aJX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQm-Wr-TK4" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                <rect key="frame" x="212" y="65" width="147" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="147" id="uuw-qE-DSs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SSK-c1-SBP" firstAttribute="leading" secondItem="Yrw-Sy-cno" secondAttribute="leading" id="0ZV-1v-tF3"/>
+                            <constraint firstItem="EQm-Wr-TK4" firstAttribute="top" secondItem="Yrw-Sy-cno" secondAttribute="bottom" constant="8" symbolic="YES" id="46a-DA-ugk"/>
+                            <constraint firstItem="Yrw-Sy-cno" firstAttribute="leading" secondItem="1dH-0b-OXd" secondAttribute="leadingMargin" id="C5b-69-b0d"/>
+                            <constraint firstItem="SSK-c1-SBP" firstAttribute="top" secondItem="EQm-Wr-TK4" secondAttribute="top" id="Gbl-0O-q5d"/>
+                            <constraint firstItem="Yrw-Sy-cno" firstAttribute="top" secondItem="b7z-ab-Pig" secondAttribute="top" id="IIj-Sc-Lkw"/>
+                            <constraint firstItem="EQm-Wr-TK4" firstAttribute="leading" secondItem="SSK-c1-SBP" secondAttribute="trailing" constant="8" symbolic="YES" id="IgZ-Hs-CS0"/>
+                            <constraint firstItem="SSK-c1-SBP" firstAttribute="bottom" secondItem="EQm-Wr-TK4" secondAttribute="bottom" id="MSW-iL-1bW"/>
+                            <constraint firstItem="Yrw-Sy-cno" firstAttribute="trailing" secondItem="1dH-0b-OXd" secondAttribute="trailingMargin" id="URj-53-LzL"/>
+                            <constraint firstItem="EQm-Wr-TK4" firstAttribute="trailing" secondItem="Yrw-Sy-cno" secondAttribute="trailing" id="vga-yy-nNo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="b7z-ab-Pig"/>
+                    </view>
+                    <connections>
+                        <outlet property="composerLabel" destination="SSK-c1-SBP" id="8qg-pn-odt"/>
+                        <outlet property="instrumentationLabel" destination="EQm-Wr-TK4" id="rug-pV-I61"/>
+                        <outlet property="nameLabel" destination="Yrw-Sy-cno" id="b8A-hu-fpU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rzQ-84-TwT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="229.59999999999999" y="114.69265367316342"/>
+        </scene>
+    </scenes>
+</document>

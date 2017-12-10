@@ -135,7 +135,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     func setProfile() {
         
         emailLabel.text = "example@gmail.com"
-        phoneNumberLabel.text = "999-999-9999"
+        phoneNumberLabel.text = "(999)999-9999"
         addressLabel.text = "123 ABC Street"
         cityLabel.text = "Dallas, TX 25206"
         
@@ -191,18 +191,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     @IBAction func editProfile(_ sender: Any) {
-        
-//        let nextViewController = AppStoryboard.EditProfile.initialViewController()!
-        
-//        self.navigationController?.pushViewController(nextViewController, animated: true)
-        
-        // Instantiate SecondViewController
-//        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "EditProfileViewController") as! EditProfileViewController
-        
-        // Set "Hello World" as a value to myStringValue
-//        secondViewController.myStringValue = myTextField.text
-        
-//        let nextVc = AppStoryboard.EditProfile.initialViewController() as! EditProfileViewController
+    
         let nextVc = AppStoryboard.EditProfile.initialViewController() as! EditProfileViewController
         
         nextVc.profileNamePassed = profileNameLabel.text!
@@ -213,8 +202,22 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         nextVc.phoneNumberPassed = phoneNumberLabel.text!
         
         self.navigationController?.pushViewController(nextVc, animated: true)
-        // Take user to SecondViewController
-//        self.navigationController?.pushViewController(secondViewController, animated: true)
+    
+    }
+    
+    @IBAction func goToSettings(_ sender: Any) {
+        
+//        let presentingVC = AppStoryboard.SettingsModal.initialViewController()
+        
+//        SettingsModelViewController.contextFrameForPresentation = presentingVC.view.frame
+//        SettingsModelViewController.present(presentingVC, animated: true)
+        
+//        let storyboard = UIStoryboard(name: "Presentations", bundle: nil)
+        let presentingVC = AppStoryboard.SettingsModal.initialViewController()
+        if let presentedViewController = presentingVC as? AnimatableModalViewController {
+//            setupModal(for: presentedViewController)
+            present(presentedViewController, animated: true, completion: nil)
+        }
         
     }
     

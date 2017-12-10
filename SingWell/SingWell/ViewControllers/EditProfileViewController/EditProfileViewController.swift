@@ -17,14 +17,15 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var profileBackgroundImageView: AnimatableImageView!
     @IBOutlet weak var profileImageView: AnimatableImageView!
     @IBOutlet weak var nameLabel: AnimatableLabel!
+    @IBOutlet weak var cameraButtonIcon: AnimatableButton!
     
-    
-    @IBOutlet weak var phoneNumberTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var cityTextField: UITextField!
-    @IBOutlet weak var streetTextField: UITextField!
+    @IBOutlet weak var phoneNumberTextField: AnimatableTextField!
+    @IBOutlet weak var emailTextField: AnimatableTextField!
+    @IBOutlet weak var cityTextField: AnimatableTextField!
+    @IBOutlet weak var streetTextField: AnimatableTextField!
     @IBOutlet weak var biographyTextView: AnimatableTextView!
     
+    @IBOutlet weak var biographyView: AnimatableView!
     
     @IBOutlet weak var instrumentationIcon: AnimatableImageView!
     @IBOutlet weak var addressIcon: AnimatableImageView!
@@ -44,6 +45,55 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
     var streetPassed = ""
     var cityPassed = ""
     
+    //Format Phone Number
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
+    {
+        if (textField == phoneNumberTextField)
+        {
+            let newString = (textField.text! as NSString).replacingCharacters(in: range, with: string)
+            let components = newString.components(separatedBy: CharacterSet.decimalDigits.inverted)
+            
+            let decimalString = components.joined(separator: "") as NSString
+            let length = decimalString.length
+            let hasLeadingOne = length > 0 && decimalString.character(at: 0) == (1 as unichar)
+            
+            if length == 0 || (length > 10 && !hasLeadingOne) || length > 11
+            {
+                let newLength = (textField.text! as NSString).length + (string as NSString).length - range.length as Int
+                
+                return (newLength > 10) ? false : true
+            }
+            var index = 0 as Int
+            let formattedString = NSMutableString()
+            
+            if hasLeadingOne
+            {
+                formattedString.append("1 ")
+                index += 1
+            }
+            if (length - index) > 3
+            {
+                let areaCode = decimalString.substring(with: NSMakeRange(index, 3))
+                formattedString.appendFormat("(%@)", areaCode)
+                index += 3
+            }
+            if length - index > 3
+            {
+                let prefix = decimalString.substring(with: NSMakeRange(index, 3))
+                formattedString.appendFormat("%@-", prefix)
+                index += 3
+            }
+            
+            let remainder = decimalString.substring(from: index)
+            formattedString.append(remainder)
+            textField.text = formattedString as String
+            return false
+        }
+        else
+        {
+            return true
+        }
+    }
     
     func setConfirmButton() {
         let size = CGSize(width:55, height: 55)
@@ -83,11 +133,16 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
         var profileImage: UIImage = UIImage(named: "profileImage")!
         profileImage = profileImage.circleMasked!
         profileImageView.image = profileImage
+    
+        profileImageView.animate(.pop(repeatCount: 1))
         
         let profileBackgroundImage: UIImage = UIImage(named: "profileBackground")!
         profileBackgroundImageView.image = profileBackgroundImage
         
-        var profileName = profileNamePassed
+        let cameraIcon = UIImage.ionicon(with: .camera, textColor: UIColor.white, size: CGSize(width: 35, height: 35))
+        cameraButtonIcon.setImage(cameraIcon, for: UIControlState.normal)
+        
+        let profileName = profileNamePassed
         
         nameLabel.text = profileName
         
@@ -157,10 +212,9 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        setProfile()
-//    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -178,4 +232,52 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
     }
     */
 
+}
+
+extension String {
+    
+    //To check text field or String is blank or not
+    var isBlank: Bool {
+        get {
+            let trimmed = trimmingCharacters(in: CharacterSet.whitespaces)
+            return trimmed.isEmpty
+        }
+    }
+    
+    //Validate Email
+    
+    var isEmail: Bool {
+        do {
+            let regex = try NSRegularExpression(pattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}", options: .caseInsensitive)
+            return regex.firstMatch(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.count)) != nil
+        } catch {
+            return false
+        }
+    }
+    
+    var isAlphanumeric: Bool {
+        return !isEmpty && range(of: "[^a-zA-Z0-9]", options: .regularExpression) == nil
+    }
+    
+    //validate Password
+    var isValidPassword: Bool {
+        do {
+            let regex = try NSRegularExpression(pattern: "^[a-zA-Z_0-9\\-_,;.:#+*?=!§$%&/()@]+$", options: .caseInsensitive)
+            if(regex.firstMatch(in: self, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.count)) != nil){
+                
+                if(self.count>=6 && self.count<=20){
+                    return true
+                }else{
+                    return false
+                }
+            }else{
+                return false
+            }
+        } catch {
+            return false
+        }
+    }
+    
+    //validate PhoneNumber
+    
 }
