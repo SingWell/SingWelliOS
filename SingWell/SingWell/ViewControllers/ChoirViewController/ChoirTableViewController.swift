@@ -25,7 +25,7 @@ class ChoirTableViewController: UITableViewController {
 //        ["title":"New Event Added", "info":"There will be a mass on Sunday, November 22 from 10:30am-12:00pm.", "time":"2 days ago"]
 //    ]
     
-    var choirUpdatesList:JSON = [
+    var choirEvents:[JSON] = [
         [
             "id": 1,
             "name": "11/26 Mass",
@@ -106,13 +106,25 @@ class ChoirTableViewController: UITableViewController {
         
         setNavigationItems()
         setRightNavItem()
+        getChoirEvents()
         
         self.view.frame = self.view.bounds
     }
     
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }  
+    func getChoirEvents() {
+        ApiHelper.getEvents(orgId: choirInfo["organization"].stringValue) { response, error in
+            if error == nil {
+                self.choirEvents = response!.arrayValue
+                self.tableView.reloadData()
+            } else {
+                print("Error getting events: ",error as Any)
+            }
+        }
+    }
+    
+//    override var prefersStatusBarHidden: Bool {
+//        return true
+//    }
     
 
     // MARK: - Table view data source
@@ -126,7 +138,7 @@ class ChoirTableViewController: UITableViewController {
         case 0: // choir info cell
             return 1
         default:
-            return choirUpdatesList.arrayValue.count
+            return choirEvents.count
         }
     }
     
@@ -163,25 +175,39 @@ class ChoirTableViewController: UITableViewController {
             
             return cell
         default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "BasicUpdateCell", for: indexPath) as! ChoirResourceInfoTableViewCell
-            let info = choirUpdatesList[indexPath.row]
+            //let cell = tableView.dequeueReusableCell(withIdentifier: "BasicUpdateCell", for: indexPath) as! ChoirResourceInfoTableViewCell
+            //let info = choirUpdatesList[indexPath.row]
             
-            cell.titleLabel.text = info["name"].stringValue
-            cell.descriptionField.text = info["location"].stringValue
-            cell.descriptionField.isUserInteractionEnabled = false
-//            [
-//                {
-//                    "id": 1,
-//                    "name": "11/26 Mass",
-//                    "date": "2017-11-26",
-//                    "time": "23:00:00",
-//                    "location": "Chapel",
-//                    "choirs": [
-//                    1,
-//                    3
-//                    ],
-//                    "organization": 1
-            cell.contentView.backgroundColor = BACKGROUND_COLOR
+            //cell.titleLabel.text = info["name"].stringValue
+            //cell.descriptionField.text = info["location"].stringValue
+            //cell.descriptionField.isUserInteractionEnabled = false
+            //cell.contentView.backgroundColor = BACKGROUND_COLOR
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "UpcomingEventCell", for: indexPath) as! EventCell
+            let event = choirEvents[indexPath.row]
+            
+            cell.eventNameLabel.text = event["name"].stringValue
+            cell.locationLabel.text = event["location"].stringValue
+            
+            let formatter = DateFormatter()
+            formatter.timeZone = .current
+            formatter.locale = .current
+            
+            formatter.dateFormat = "yyyy-MM-dd"
+            if let eventDate = formatter.date(from: event["date"].stringValue) {
+                formatter.dateFormat = "EEEE, MMM d, yyyy"
+                cell.dateLabel.text = formatter.string(from: eventDate)
+            }
+            
+            formatter.dateFormat = "HH:mm:ss"
+            if let eventTime = formatter.date(from: event["time"].stringValue) {
+                formatter.dateFormat = "h:mm a"
+                //cell.timeLabel.text = formatter.string(from: eventTime)
+                
+                // ADD TIME TO EVENT NAME
+                cell.timeLabel.text = ""
+                cell.eventNameLabel.text = cell.eventNameLabel.text! + " at " + formatter.string(from: eventTime)
+            }
             return cell
         }
         
@@ -189,7 +215,7 @@ class ChoirTableViewController: UITableViewController {
     
     func viewEvent(row:Int) {
         let nextVc = AppStoryboard.Event.initialViewController() as! EventViewController
-        nextVc.eventInfo = choirUpdatesList[row]
+        nextVc.eventInfo = choirEvents[row]
         self.navigationController?.pushViewController(nextVc, animated: true)
     }
     

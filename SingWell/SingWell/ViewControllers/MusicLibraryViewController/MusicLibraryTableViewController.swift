@@ -70,8 +70,12 @@ class MusicLibraryTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+        if musicLibrary.count > 0 {
+            return 1
+        } else {
+            TableViewHelper.EmptyMessage(message: "This organization does not have any public music records yet.\n", viewController: self)
+            return 0
+        }
     }
     
     func isFiltering() -> Bool {
