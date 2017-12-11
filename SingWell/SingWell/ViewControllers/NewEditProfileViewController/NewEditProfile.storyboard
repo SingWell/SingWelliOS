@@ -163,6 +163,9 @@
                                             </view>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IRt-bn-jhK" userLabel="Email text field" customClass="AnimatableTextField" customModule="IBAnimatable">
                                                 <rect key="frame" x="0.0" y="110" width="355" height="50"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                                </accessibility>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Bz4-iu-Nr8"/>
                                                 </constraints>
@@ -403,6 +406,10 @@
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="cancelUpdate:" destination="eAb-Jj-3Iy" eventType="touchUpInside" id="Bf8-rr-y2F"/>
+                                    <action selector="cancelUpdate:" destination="6RR-4o-91f" eventType="touchUpInside" id="WAO-l9-uUm"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0N7-3J-W7t" userLabel="Confirm Button Image View" customClass="AnimatableImageView" customModule="IBAnimatable">
                                 <rect key="frame" x="218" y="148" width="56" height="55"/>
@@ -427,6 +434,10 @@
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="updateProfile:" destination="eAb-Jj-3Iy" eventType="touchUpInside" id="M1m-Lw-qdf"/>
+                                    <action selector="updateProfile:" destination="6RR-4o-91f" eventType="touchUpInside" id="MQg-jm-Q28"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -463,6 +474,7 @@
                     <connections>
                         <outlet property="biographyImageView" destination="Opq-ff-nrW" id="70S-ar-wVL"/>
                         <outlet property="biographyTextView" destination="2o7-1c-Vow" id="l3k-05-Odk"/>
+                        <outlet property="biographyView" destination="VGE-ep-4lT" id="gKW-yQ-Qfi"/>
                         <outlet property="cameraButtonIcon" destination="y6u-ed-neQ" id="DjR-61-31C"/>
                         <outlet property="cancelButton" destination="s3a-yq-Quc" id="TZS-JP-dfY"/>
                         <outlet property="cancelButtonImageView" destination="yPw-2h-gqB" id="MoE-fR-lO1"/>
@@ -480,6 +492,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kdr-tK-jdA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="eAb-Jj-3Iy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="184.80000000000001" y="105.69715142428787"/>
         </scene>

@@ -14,6 +14,8 @@ import SwiftyJSON
 
 class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    var userId = ""
+    
     @IBOutlet weak var contactView: AnimatableView!
     @IBOutlet weak var biographyView: AnimatableView!
     @IBOutlet weak var addressView: AnimatableView!
@@ -231,6 +233,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         setNavigationItems()
         setEditButton()
         setNotificationButton()
+        
         setInstrumentItems()
         setProfile()
 
@@ -243,6 +246,28 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         addressIcon.image = UIImage.ionicon(with: .location, textColor: UIColor.gray, size: CGSize(width: 35, height: 35))
         
         instrumentationButton.image = UIImage.ionicon(with: .headphone, textColor: UIColor.gray, size: CGSize(width: 35, height: 35))
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if userId != "" {
+//            Hide Navigation items
+            
+//            Hide Edit and Notification Buttons
+            notificationImageView.isHidden = true
+            notificationButton.isHidden = true
+            editButton.isHidden = true
+            editImageView.isHidden = true
+        }
+        else {
+//            Hide Navigation items
+            
+//            View Edit and Notification Buttons
+            notificationImageView.isHidden = false
+            notificationButton.isHidden = false
+            editButton.isHidden = false
+            editImageView.isHidden = false
+        }
+        userId = ""
     }
 
     override func didReceiveMemoryWarning() {
@@ -283,7 +308,14 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func getUser() {
-        ApiHelper.getUser() { response, error in
+        var curUser = ""
+        if userId == "" {
+            curUser = "4"
+        }
+        else{
+            curUser = userId
+        }
+        ApiHelper.getUser(userId: curUser) { response, error in
             if error == nil {
                 self.user = response!
                 print(self.user)

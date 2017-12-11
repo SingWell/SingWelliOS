@@ -526,6 +526,7 @@
         <!--Side Item Navigation View Controller-->
         <scene sceneID="pF7-pu-BF8">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YIf-HH-KzR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vox-kd-i40" customClass="SideItemNavigationViewController" customModule="SingWell" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Eq8-xe-x3D">
@@ -537,7 +538,6 @@
                         <segue destination="L3Z-2C-S4K" kind="relationship" relationship="rootViewController" id="BqI-fH-w60"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YIf-HH-KzR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-479" y="106"/>
         </scene>

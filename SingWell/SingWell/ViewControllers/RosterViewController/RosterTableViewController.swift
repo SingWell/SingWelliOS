@@ -13,7 +13,7 @@ import SwiftyJSON
 class RosterTableViewController: UITableViewController {
     
     let kRosterCellReuseIdentifier = "RosterCell"
-    var rosterTest:JSON = []
+    var rosterTest = [JSON]()
 
     var roster:[JSON] = [
         ["id": 1, "name":"Jane Doe", "email":"test1@gmail.com"],
@@ -30,27 +30,15 @@ class RosterTableViewController: UITableViewController {
     }
     
     func getRoster() {
-        ApiHelper.getRoster(orgId: "16", choirId: "1") { response, error in
+        ApiHelper.getRoster(orgId: "16", choirId: "18") { response, error in
             if error == nil {
-                self.rosterTest = response!
+                self.rosterTest = response!.arrayValue
                 
-                self.reloadView()
+                self.tableView.reloadData()
             } else {
                 print(error!)
             }
         }
-    }
-    
-    func reloadView() {
-//        var profileName = ""
-//        if(self.user != []){
-//            profileName = self.user["username"].stringValue
-//        }
-//
-//        profileNameLabel.text = profileName
-        
-        print(self.rosterTest)
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -76,21 +64,56 @@ class RosterTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return roster.count
+        return rosterTest.count
     }
 
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//
+//        let cell = tableView.dequeueReusableCell(withIdentifier: kRosterCellReuseIdentifier, for: indexPath) as! RosterTableViewCell
+//        cell.rosterCellName?.text = roster[indexPath.row]["name"].stringValue
+//        cell.rosterCellEmail?.text = roster[indexPath.row]["email"].stringValue
+//
+//        var profileImage: UIImage = UIImage(named: "profileImage")!
+//        profileImage = profileImage.circleMasked!
+//        cell.rosterCellImageView.image = profileImage
+//
+//        return cell
+//
+//    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: kRosterCellReuseIdentifier, for: indexPath) as! RosterTableViewCell
-        cell.rosterCellName?.text = roster[indexPath.row]["name"].stringValue
-        cell.rosterCellEmail?.text = roster[indexPath.row]["email"].stringValue
+        let user:JSON
+        user = rosterTest[indexPath.row]
+        
+        var fullName = ""
+        fullName += user["first_name"].stringValue
+        fullName += " "
+        fullName += user["last_name"].stringValue
+        
+        cell.rosterCellName.text = fullName
+        cell.rosterCellEmail.text = user["email"].stringValue
         
         var profileImage: UIImage = UIImage(named: "profileImage")!
         profileImage = profileImage.circleMasked!
         cell.rosterCellImageView.image = profileImage
         
+        
         return cell
+    }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let user:JSON
+        user = rosterTest[indexPath.row]
+        
+        let navCon = AppStoryboard.Profile.initialViewController() as! SideItemNavigationViewController
+        let nextVc = navCon.topViewController as! ProfileViewController
+        
+        nextVc.userId = user["id"].stringValue
+        
+        self.navigationController?.pushViewController(nextVc, animated: true)
+        
     }
  
 

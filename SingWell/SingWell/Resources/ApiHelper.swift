@@ -57,6 +57,45 @@ class ApiHelper {
         }
     }
     
+    static func makePostCall(_ section: String, environment:String=PRODUCTION_ENV, _ parameters: Parameters, completionHandler: @escaping (JSON?, Error?) -> ()) {
+        //let params = ["consumer_key":"key", "consumer_secret":"secret"]
+        //TODO: NEED PARAMS AS FUNCTION PARAMETER
+        let headers = ["Authorization": "Basic \(AUTH_TOKEN)"]
+        Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = 10
+        print("\(parameters)")
+        
+        Alamofire.request(environment+"\(section)", method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            .responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    
+                    completionHandler(JSON(value), nil)
+                case .failure(let error):
+                    completionHandler(nil, error)
+                }
+        }
+    }
+    
+    static func makePutCall(_ section: String, environment:String=PRODUCTION_ENV, _ parameters: Parameters, completionHandler: @escaping (JSON?, Error?) -> ()) {
+        //let params = ["consumer_key":"key", "consumer_secret":"secret"]
+        //TODO: NEED PARAMS AS FUNCTION PARAMETER
+        let headers = ["Authorization": "Basic \(AUTH_TOKEN)"]
+        Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = 10
+        print("\(parameters)")
+        
+        Alamofire.request(environment+"\(section)", method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+            .responseString { response in
+                switch response.result {
+                case .success(let value):
+                    print("VALUE FOR \(section)",value)
+                    completionHandler(JSON(value), nil)
+                case .failure(let error):
+                    print("ERROR FOR \(section)",error)
+                    completionHandler(nil, error)
+                }
+        }
+    }
+    
     static func makeDeleteCall(_ section: String, environment:String=PRODUCTION_ENV, completionHandler: @escaping (JSON?, Error?) -> ()) {
         
         print("\(section)")
@@ -75,9 +114,14 @@ class ApiHelper {
     }
     
     
-    //this will get choirs for a specific organization
+    //this will get user for a specific id
     static func getUser(userId:String=userId, completionHandler: @escaping (JSON?, Error?) -> ()) {
         makeGetCall("users/\(userId)/", completionHandler: completionHandler)
+    }
+    
+    //this will edit user for a specific id
+    static func editUser(userId:String=userId, parameters: Parameters, completionHandler: @escaping (JSON?, Error?) -> ()) {
+        makePutCall("profile", parameters, completionHandler: completionHandler)
     }
     
     //this will get all organizations
@@ -112,7 +156,7 @@ class ApiHelper {
     
     //this will get a roster for a specific choir
     static func getRoster(orgId:String, choirId:String, completionHandler: @escaping (JSON?, Error?) -> ()) {
-        makeGetCall("organizations/\(orgId)/choirs/\(choirId)/roster", completionHandler: completionHandler)
+        makeGetCall("organizations/\(orgId)/choirs/\(choirId)/roster/", completionHandler: completionHandler)
     }
     
     //this will get musicRecords for a organization
