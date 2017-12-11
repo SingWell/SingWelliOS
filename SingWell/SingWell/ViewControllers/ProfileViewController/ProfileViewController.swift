@@ -14,6 +14,10 @@ import SwiftyJSON
 
 class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var contactView: AnimatableView!
+    @IBOutlet weak var biographyView: AnimatableView!
+    @IBOutlet weak var addressView: AnimatableView!
+    
     @IBOutlet weak var phoneNumberLabel: AnimatableLabel!
     @IBOutlet weak var emailLabel: AnimatableLabel!
     @IBOutlet weak var addressLabel: UILabel!
@@ -134,10 +138,66 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     func setProfile() {
         
-        emailLabel.text = "example@gmail.com"
-        phoneNumberLabel.text = "(999)999-9999"
-        addressLabel.text = "123 ABC Street"
-        cityLabel.text = "Dallas, TX 25206"
+        if(self.user["bio"].exists()){
+            biographyView.isHidden = false
+            biographyTextView.text = self.user["bio"].stringValue
+        }
+        else{
+            biographyView.isHidden = true
+        }
+        
+        if(self.user["email"].exists()){
+            emailLabel.text = self.user["email"].stringValue
+            emailLabel.isHidden = false
+        }
+        else {
+            emailLabel.isHidden = true
+        }
+        if(self.user["phone_number"].exists()){
+            phoneNumberLabel.text = self.user["phone_number"].stringValue
+            phoneNumberLabel.isHidden = false
+        }
+        else {
+            phoneNumberLabel.isHidden = true
+        }
+        
+        if(!self.user["email"].exists() && !self.user["phone_number"].exists()){
+            contactView.isHidden = true
+        }
+        else {
+            contactView.isHidden = false
+        }
+        
+        if(self.user["address"].exists()){
+            addressView.isHidden = false
+            addressLabel.text = self.user["address"].stringValue
+            addressLabel.isHidden = false
+        }
+        else {
+            addressLabel.isHidden = true
+        }
+        
+        if(self.user["city"].exists()){
+            addressView.isHidden = false
+            var tempAddLabel = self.user["city"].stringValue
+            if(self.user["zip_code"].exists()){
+                let tempZip = self.user["zip_code"].stringValue
+                tempAddLabel += ", "
+                tempAddLabel += tempZip
+            }
+            cityLabel.text = tempAddLabel
+            cityLabel.isHidden = false
+        }
+        else {
+            cityLabel.isHidden = true
+        }
+        
+        if(!self.user["address"].exists() && !self.user["city"].exists()){
+            addressView.isHidden = true
+        }
+        else {
+            addressView.isHidden = false
+        }
         
         var profileImage: UIImage = UIImage(named: "profileImage")!
         profileImage = profileImage.circleMasked!
@@ -178,7 +238,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         contactIcon.image = UIImage.ionicon(with: .chatbubble, textColor: UIColor.gray, size: CGSize(width: 35, height: 35))
         
-        bioIcon.image = UIImage.ionicon(with: .person, textColor: UIColor.gray, size: CGSize(width: 35, height: 35))
+        bioIcon.image = UIImage.ionicon(with: .iosPaperOutline, textColor: UIColor.gray, size: CGSize(width: 35, height: 35))
         
         addressIcon.image = UIImage.ionicon(with: .location, textColor: UIColor.gray, size: CGSize(width: 35, height: 35))
         
@@ -192,7 +252,8 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     @IBAction func editProfile(_ sender: Any) {
     
-        let nextVc = AppStoryboard.EditProfile.initialViewController() as! EditProfileViewController
+//        let nextVc = AppStoryboard.EditProfile.initialViewController() as! EditProfileViewController
+        let nextVc = AppStoryboard.NewEditProfile.initialViewController() as! NewEditProfileViewController
         
         nextVc.profileNamePassed = profileNameLabel.text!
         nextVc.biographyPassed = biographyTextView.text!
@@ -222,26 +283,28 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func getUser() {
-        ApiHelper.getUser(userId: "1") { response, error in
+        ApiHelper.getUser() { response, error in
             if error == nil {
                 self.user = response!
+                print(self.user)
                 
-                self.reloadView()
+                self.setProfile()
             } else {
                 print(error!)
             }
         }
     }
     
-    func reloadView() {
-        var profileName = ""
-        if(self.user != []){
-            profileName = self.user["username"].stringValue
-        }
-        
-        profileNameLabel.text = profileName
-
-    }
+//    func reloadView() {
+//        setProfile()
+////        var profileName = ""
+////        if(self.user != []){
+////            profileName = self.user["username"].stringValue
+////        }
+////
+////        profileNameLabel.text = profileName
+//
+//    }
     
 
     /*

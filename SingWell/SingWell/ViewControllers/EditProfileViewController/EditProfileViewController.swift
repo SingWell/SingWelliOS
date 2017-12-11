@@ -14,6 +14,8 @@ import SwiftyJSON
 
 class EditProfileViewController: UIViewController, UITextFieldDelegate {
 
+
+    
     @IBOutlet weak var profileBackgroundImageView: AnimatableImageView!
     @IBOutlet weak var profileImageView: AnimatableImageView!
     @IBOutlet weak var nameLabel: AnimatableLabel!

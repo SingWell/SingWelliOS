@@ -68,7 +68,7 @@
                                 <rect key="frame" x="0.0" y="273" width="375" height="394"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="EkE-z5-W7j" customClass="AnimatableStackView" customModule="IBAnimatable">
-                                        <rect key="frame" x="15" y="10" width="345" height="394"/>
+                                        <rect key="frame" x="15" y="15" width="345" height="394"/>
                                         <subviews>
                                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="x4b-bo-B84" userLabel="Bio Info View" customClass="AnimatableView" customModule="IBAnimatable">
                                                 <rect key="frame" x="0.0" y="0.0" width="345" height="121"/>
@@ -107,7 +107,6 @@
                                                         <accessibility key="accessibilityConfiguration">
                                                             <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                                         </accessibility>
-                                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -175,8 +174,8 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fakeuser@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foL-d7-Tz4" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                                        <rect key="frame" x="87" y="48" width="134.5" height="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foL-d7-Tz4" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                                        <rect key="frame" x="87" y="65" width="0.0" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -187,8 +186,8 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999-999-9999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbA-DT-hPx" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                                        <rect key="frame" x="87" y="32" width="101" height="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbA-DT-hPx" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                                        <rect key="frame" x="87" y="32" width="0.0" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -259,14 +258,14 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234 Abc St." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4n-Qv-iq0">
-                                                        <rect key="frame" x="90" y="32" width="83" height="18"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4n-Qv-iq0">
+                                                        <rect key="frame" x="90" y="32" width="0.0" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dallas, TX 75205" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J67-ei-xK7">
-                                                        <rect key="frame" x="90" y="55" width="110.5" height="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J67-ei-xK7">
+                                                        <rect key="frame" x="90" y="72" width="0.0" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -396,8 +395,8 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="EkE-z5-W7j" secondAttribute="bottom" constant="20" symbolic="YES" id="EPI-TU-ax9"/>
-                                    <constraint firstItem="EkE-z5-W7j" firstAttribute="top" secondItem="mJJ-hg-0AP" secondAttribute="top" constant="10" id="OeD-aS-XHr"/>
-                                    <constraint firstItem="x4b-bo-B84" firstAttribute="top" secondItem="mJJ-hg-0AP" secondAttribute="top" constant="10" id="bTT-1V-Jls"/>
+                                    <constraint firstItem="EkE-z5-W7j" firstAttribute="top" secondItem="mJJ-hg-0AP" secondAttribute="top" constant="15" id="OeD-aS-XHr"/>
+                                    <constraint firstItem="x4b-bo-B84" firstAttribute="top" secondItem="mJJ-hg-0AP" secondAttribute="top" constant="15" id="bTT-1V-Jls"/>
                                     <constraint firstItem="EkE-z5-W7j" firstAttribute="leading" secondItem="mJJ-hg-0AP" secondAttribute="leading" constant="15" id="lxL-7W-AQL"/>
                                     <constraint firstAttribute="trailing" secondItem="EkE-z5-W7j" secondAttribute="trailing" constant="15" id="mzD-e5-MmH"/>
                                     <constraint firstItem="EkE-z5-W7j" firstAttribute="centerX" secondItem="mJJ-hg-0AP" secondAttribute="centerX" id="wjY-Ms-ykB"/>
@@ -499,10 +498,13 @@
                     <connections>
                         <outlet property="addressIcon" destination="OAK-a9-Sl3" id="jeO-Gi-n9E"/>
                         <outlet property="addressLabel" destination="Y4n-Qv-iq0" id="arQ-Bg-x2d"/>
+                        <outlet property="addressView" destination="pdH-lj-vTj" id="tkz-Mw-fVV"/>
                         <outlet property="bioIcon" destination="gRo-MP-Esd" id="4s3-rB-prW"/>
                         <outlet property="biographyTextView" destination="4Xm-0M-aWP" id="TwW-u8-abC"/>
+                        <outlet property="biographyView" destination="x4b-bo-B84" id="Dol-Ok-SbT"/>
                         <outlet property="cityLabel" destination="J67-ei-xK7" id="j5o-6x-ESR"/>
                         <outlet property="contactIcon" destination="uVy-uC-3bm" id="Gpp-Fk-Vf0"/>
+                        <outlet property="contactView" destination="DO8-eJ-mVh" id="hUC-8b-m4s"/>
                         <outlet property="editButton" destination="Nnx-ix-0M9" id="Pvu-U4-Dd4"/>
                         <outlet property="editImageView" destination="tjl-4U-GKY" id="mti-4D-4HN"/>
                         <outlet property="emailLabel" destination="foL-d7-Tz4" id="MFD-Yd-RZK"/>
