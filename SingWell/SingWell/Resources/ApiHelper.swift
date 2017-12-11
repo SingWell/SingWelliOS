@@ -41,7 +41,7 @@ class ApiHelper {
     static func makeGetCall(_ section: String, environment:String=PRODUCTION_ENV, completionHandler: @escaping (JSON?, Error?) -> ()) {
         
         print("\(section)")
-        let headers = ["Authorization": "Basic \(AUTH_TOKEN)"]
+        let headers = ["Authorization": "Token \(AUTH_TOKEN)"]
         Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = 10
         
         Alamofire.request(environment+"\(section)", headers:headers)
