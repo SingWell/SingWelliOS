@@ -66,3 +66,20 @@ extension UIColor {
         return self
     }
 }
+
+
+class TableViewHelper {
+    
+    class func EmptyMessage(message:String, viewController:UITableViewController) {
+        let messageLabel = UILabel(frame: CGRect.init(x: 8, y: 0, width: viewController.view.bounds.size.width-16, height: viewController.view.bounds.size.height))
+        messageLabel.text = message
+        messageLabel.textColor = .black
+        messageLabel.numberOfLines = 0;
+        messageLabel.textAlignment = .center;
+        messageLabel.font = UIFont(name: "Apple SD Gothic Neo", size: 20)
+        messageLabel.sizeToFit()
+        
+        viewController.tableView.backgroundView = messageLabel;
+        viewController.tableView.separatorStyle = .none;
+    }
+}
