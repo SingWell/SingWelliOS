@@ -84,14 +84,28 @@ class ApiHelper {
         print("\(parameters)")
         
         Alamofire.request(environment+"\(section)", method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+//            .responseString { response in
+//                switch response.result {
+//                case .success(let value):
+//                    print("VALUE FOR \(section)",value)
+//                    completionHandler(JSON(value), nil)
+//                case .failure(let error):
+//                    print("ERROR FOR \(section)",error)
+//                    completionHandler(nil, error)
+//                }
+//        }
             .responseString { response in
-                switch response.result {
-                case .success(let value):
-                    print("VALUE FOR \(section)",value)
-                    completionHandler(JSON(value), nil)
-                case .failure(let error):
-                    print("ERROR FOR \(section)",error)
-                    completionHandler(nil, error)
+                guard response.result.error == nil else {
+                    // got an error in getting the data, need to handle it
+                    print("error calling PUT on /profile")
+                    print(response.result.error!)
+                    return
+                }
+                // make sure we got some JSON since that's what we expect
+                guard (response.result.value as? [String: Any]) != nil else {
+                    print("didn't get todo object as JSON from API")
+                    print("Error: \(String(describing: response.result.error))")
+                    return
                 }
         }
     }

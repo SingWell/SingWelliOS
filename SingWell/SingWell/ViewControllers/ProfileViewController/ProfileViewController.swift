@@ -104,6 +104,10 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
     }
     
+    @IBAction func unwindToSaveProfile(_ sender: UIStoryboardSegue) {
+        // Refresh data
+    }
+    
     func setNavigationItems() {
         menuItem.title = ""
         menuItem.tintColor = .black
@@ -157,10 +161,11 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
         if(self.user["phone_number"].exists()){
             phoneNumberLabel.text = self.user["phone_number"].stringValue
-            phoneNumberLabel.isHidden = false
+//            phoneNumberLabel.isHidden = false
         }
         else {
-            phoneNumberLabel.isHidden = true
+            phoneNumberLabel.text = "No Phone Number"
+//            phoneNumberLabel.isHidden = true
         }
         
         if(!self.user["email"].exists() && !self.user["phone_number"].exists()){
@@ -374,6 +379,8 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         return newImage!
     }
+    
+
 
 }
 

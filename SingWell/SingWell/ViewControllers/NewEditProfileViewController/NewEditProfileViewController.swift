@@ -9,12 +9,17 @@
 import UIKit
 import IBAnimatable
 import IoniconsKit
+import ImageIO
 
 class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     let scrollView = UIScrollView()
     
+//    @IBOutlet weak var cameraButton: AnimatableButton!
+
+    @IBOutlet weak var birthdayTextField: AnimatableTextField!
     @IBOutlet weak var profileBackgroundImageView: AnimatableImageView!
     @IBOutlet weak var profileImageView: AnimatableImageView!
+    @IBOutlet weak var birthdayIcon: AnimatableImageView!
     @IBOutlet weak var cameraButtonIcon: AnimatableButton!
     
     @IBOutlet weak var biographyImageView: AnimatableImageView!
@@ -90,6 +95,36 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
             return true
         }
     }
+    
+    @IBAction func changePicture(_ sender: Any) {
+        // Show options for the source picker only if the camera is available.
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+            presentPhotoPicker(sourceType: .photoLibrary)
+            return
+        }
+        
+        let photoSourcePicker = UIAlertController()
+        let takePhoto = UIAlertAction(title: "Take Photo", style: .default) { [unowned self] _ in
+            self.presentPhotoPicker(sourceType: .camera)
+        }
+        let choosePhoto = UIAlertAction(title: "Choose Photo", style: .default) { [unowned self] _ in
+            self.presentPhotoPicker(sourceType: .photoLibrary)
+        }
+        
+        photoSourcePicker.addAction(takePhoto)
+        photoSourcePicker.addAction(choosePhoto)
+        photoSourcePicker.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(photoSourcePicker, animated: true)
+    }
+    
+    func presentPhotoPicker(sourceType: UIImagePickerControllerSourceType) {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.sourceType = sourceType
+        present(picker, animated: true)
+    }
+    
     
     func setConfirmButton() {
         let size = CGSize(width:55, height: 55)
@@ -183,6 +218,33 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
         zipCodeTextField.leftImageLeftPadding = 10
         
     }
+    
+    func setDate() {
+        
+        
+        let dateIcon = UIImage.ionicon(with: .iosCalendarOutline, textColor: UIColor.gray, size: CGSize(width: 25, height: 25))
+        
+        birthdayTextField.leftImage = dateIcon
+        birthdayTextField.leftImageLeftPadding = 10
+    }
+    
+//    @IBAction func dateField(sender: UITextField) {
+//        
+//        var datePickerView  : UIDatePicker = UIDatePicker()
+//        datePickerView.datePickerMode = UIDatePickerMode.time
+//        sender.inputView = datePickerView
+//        datePickerView.addTarget(self, action: Selector("handleDatePicker:"), for: UIControlEvents.valueChanged)
+//        
+//    }
+//    
+//    func handleDatePicker(sender: UIDatePicker) {
+//        var timeFormatter = DateFormatter()
+//        birthdayTextField.text = timeFormatter.string(from: sender.date)
+//    }
+//    
+//    @IBAction func DoneButton(sender: UIButton) {
+//        birthdayTextField.resignFirstResponder()
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -197,6 +259,7 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
         setConfirmButton()
         setProfile()
         setIcons()
+        setDate()
         
         // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(noti:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -225,7 +288,7 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
             phoneNumber += number
         }
         
-        let email = emailTextField.text
+//        let email = emailTextField.text
         var biography = ""
         if(biographyTextView.text != "Add a short biography here"){
             biography = biographyTextView.text
@@ -235,25 +298,77 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
         let state = stateTextField.text
         let zipCode = zipCodeTextField.text
         
-        let parameters: [String: String] = [ "email": email!, "phone_Number": phoneNumber, "address": address!, "bio": biography, "city": city!,"zip_code": zipCode!, "state": state!]
-
+        let parameters: [String: AnyObject] = [ "phone_number": phoneNumber as AnyObject, "address": address! as AnyObject, "bio": biography as AnyObject, "city": city! as AnyObject,"zip_code": zipCode! as AnyObject, "state": state! as AnyObject, "date_of_birth": "" as AnyObject]
+        
         ApiHelper.editUser(parameters: parameters) { response, error in
             if error == nil {
-                print("Successful post")
+                print("No error")
             } else {
                 print(error!)
             }
         }
         
-        let navCon = AppStoryboard.Profile.initialViewController() as! SideItemNavigationViewController
-        let nextVc = navCon.topViewController as! ProfileViewController
+//        let navCon = AppStoryboard.Profile.initialViewController() as! SideItemNavigationViewController
+//        let nextVc = navCon.topViewController as! ProfileViewController
+//
+//        self.navigationController?.pushViewController(nextVc, animated: true)
         
-        self.navigationController?.pushViewController(nextVc, animated: true)
-        
+        // do unwindToSaveProfileSegue
+        self.performSegue(withIdentifier: "unwindToSaveProfileSegue", sender: self)
     }
     
+//    func editUser() {
+//        let delimiter = " "
+//        let fullName = nameTextField.text
+//        var name = fullName?.components(separatedBy: delimiter)
+//        let firstName = name![0]
+//        var lastName = ""
+//        if(name?.count == 2){
+//            lastName = name![1]
+//        }
+//
+//        let phoneDelimiter = CharacterSet.init(charactersIn: "()-")
+//        let tmpNumber = phoneNumberTextField.text
+//        let phone = tmpNumber?.components(separatedBy: phoneDelimiter)
+//        var phoneNumber = ""
+//        for number in phone!{
+//            phoneNumber += number
+//        }
+//
+//        let email = emailTextField.text
+//        var biography = ""
+//        if(biographyTextView.text != "Add a short biography here"){
+//            biography = biographyTextView.text
+//        }
+//        let city = cityTextField.text
+//        let address = streetTextField.text
+//        let state = stateTextField.text
+//        let zipCode = zipCodeTextField.text
+//
+//        let parameters: [String: AnyObject] = [ "email": email! as AnyObject, "phone_number": phoneNumber as AnyObject, "address": address! as AnyObject, "bio": biography as AnyObject, "city": city! as AnyObject,"zip_code": zipCode! as AnyObject, "state": state! as AnyObject, "date_of_birth": "" as AnyObject]
+//
+//        ApiHelper.editUser(parameters: parameters) { response, error in
+//            if error == nil {
+//                print("Successful post")
+//            } else {
+//                print(error!)
+//            }
+//        }
+//
+//        let navCon = AppStoryboard.Profile.initialViewController() as! SideItemNavigationViewController
+//        let nextVc = navCon.topViewController as! ProfileViewController
+//
+//        self.navigationController?.pushViewController(nextVc, animated: true)
+//
+//    }
+    
     @IBAction func cancelUpdate(_ sender: Any) {
+//        let navCon = AppStoryboard.Profile.initialViewController() as! SideItemNavigationViewController
+//        let nextVc = navCon.topViewController as! ProfileViewController
+//
+//        self.navigationController?.pushViewController(nextVc, animated: true)
         
+        self.performSegue(withIdentifier: "unwindToSaveProfileSegue", sender: self)
     }
     
     @objc func keyboardWillHide(noti: Notification) {
@@ -329,4 +444,15 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
     }
     */
 
+}
+
+extension NewEditProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    // MARK: - Handling Image Picker Selection
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
+        picker.dismiss(animated: true)
+        
+        // We always expect `imagePickerController(:didFinishPickingMediaWithInfo:)` to supply the original image.
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        profileImageView.image = image
+    }
 }
