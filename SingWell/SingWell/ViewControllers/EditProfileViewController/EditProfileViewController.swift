@@ -14,6 +14,8 @@ import SwiftyJSON
 
 class EditProfileViewController: UIViewController, UITextFieldDelegate {
 
+
+    
     @IBOutlet weak var profileBackgroundImageView: AnimatableImageView!
     @IBOutlet weak var profileImageView: AnimatableImageView!
     @IBOutlet weak var nameLabel: AnimatableLabel!
@@ -224,8 +226,7 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
 
     /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
@@ -277,6 +278,7 @@ extension String {
             return false
         }
     }
+    
     
     //validate PhoneNumber
     
