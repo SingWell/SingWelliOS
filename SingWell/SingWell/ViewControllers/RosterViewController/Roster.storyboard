@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -12,18 +13,54 @@
         <scene sceneID="Xw9-pd-5pt">
             <objects>
                 <tableViewController id="Srg-a1-tRb" customClass="RosterTableViewController" customModule="SingWell" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="W2L-Jo-ad0">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="W2L-Jo-ad0" customClass="AnimatableTableView" customModule="IBAnimatable">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="personCell" id="oF9-kG-7Ck">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RosterCell" rowHeight="100" id="oF9-kG-7Ck" userLabel="RosterCell" customClass="RosterTableViewCell" customModule="SingWell" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oF9-kG-7Ck" id="RFO-cH-d14">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oF9-kG-7Ck" id="RFO-cH-d14">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Gq-SE-rr4" customClass="AnimatableImageView" customModule="IBAnimatable">
+                                            <rect key="frame" x="21" y="27.5" width="45" height="45"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="45" id="PUv-UP-9Aq"/>
+                                                <constraint firstAttribute="height" constant="45" id="sSd-d1-CJ9"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awY-la-Txs" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                            <rect key="frame" x="74" y="27.5" width="285" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0O-jQ-p7b" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                            <rect key="frame" x="74" y="51.5" width="285" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="R0O-jQ-p7b" firstAttribute="bottom" secondItem="7Gq-SE-rr4" secondAttribute="bottom" id="5e7-lf-w7C"/>
+                                        <constraint firstItem="7Gq-SE-rr4" firstAttribute="leading" secondItem="RFO-cH-d14" secondAttribute="leadingMargin" constant="5" id="6de-BF-zYX"/>
+                                        <constraint firstItem="awY-la-Txs" firstAttribute="top" secondItem="7Gq-SE-rr4" secondAttribute="top" id="8hY-0t-J8J"/>
+                                        <constraint firstItem="awY-la-Txs" firstAttribute="leading" secondItem="7Gq-SE-rr4" secondAttribute="trailing" constant="8" symbolic="YES" id="Eea-uo-YXJ"/>
+                                        <constraint firstItem="R0O-jQ-p7b" firstAttribute="trailing" secondItem="awY-la-Txs" secondAttribute="trailing" id="INi-94-9bn"/>
+                                        <constraint firstItem="awY-la-Txs" firstAttribute="trailing" secondItem="RFO-cH-d14" secondAttribute="trailingMargin" id="eYg-fk-08h"/>
+                                        <constraint firstItem="7Gq-SE-rr4" firstAttribute="centerY" secondItem="RFO-cH-d14" secondAttribute="centerY" id="n6W-qt-vMW"/>
+                                        <constraint firstItem="R0O-jQ-p7b" firstAttribute="leading" secondItem="awY-la-Txs" secondAttribute="leading" id="wW0-gV-X38"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="rosterCellEmail" destination="R0O-jQ-p7b" id="2tw-kA-XU3"/>
+                                    <outlet property="rosterCellImageView" destination="7Gq-SE-rr4" id="ouG-Nu-MFv"/>
+                                    <outlet property="rosterCellName" destination="awY-la-Txs" id="n1e-DV-EYs"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -34,7 +71,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FZw-dq-uGq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="474" y="-170"/>
+            <point key="canvasLocation" x="472.80000000000001" y="-170.46476761619192"/>
         </scene>
     </scenes>
 </document>
