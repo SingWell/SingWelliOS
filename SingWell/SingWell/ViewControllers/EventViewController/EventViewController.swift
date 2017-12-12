@@ -12,6 +12,7 @@ import IBAnimatable
 
 class EventViewController: UIViewController {
     
+    @IBOutlet weak var nameLabel: AnimatableLabel!
     @IBOutlet weak var locationLabel: AnimatableLabel!
     @IBOutlet weak var dateLabel: AnimatableLabel!
     @IBOutlet weak var timeLabel: AnimatableLabel!
@@ -31,7 +32,7 @@ class EventViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = eventInfo["name"].stringValue
+        self.nameLabel.text = eventInfo["name"].stringValue
         self.locationLabel.text = eventInfo["location"].stringValue
         
         print(eventInfo)
