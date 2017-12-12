@@ -253,6 +253,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
     }
 }
 
+
 extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -281,6 +282,10 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
             formatter.dateFormat = "h:mm a"
             cell.timeLabel.text = formatter.string(from: eventTime)
         }
+        
+        // animate
+        let delay = Double(indexPath.row) * 0.5
+        cell.animate(.slide(way: .in, direction: .left)).delay( delay )
         
         return cell
     }

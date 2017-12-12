@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8p-Ok-LLM" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                <rect key="frame" x="16" y="34" width="343" height="26"/>
+                                <rect key="frame" x="16" y="74" width="343" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="uHQ-of-0VQ"/>
                                 </constraints>
@@ -32,8 +32,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="bdG-66-Bfc" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                <rect key="frame" x="16" y="31" width="343" height="41"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNT-wp-rrV" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                <rect key="frame" x="16" y="87" width="343" height="21"/>
+                                <rect key="frame" x="16" y="127" width="343" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="gKN-Jw-6LG"/>
                                 </constraints>
@@ -42,7 +48,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xk-jw-H1n" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                <rect key="frame" x="16" y="116" width="343" height="21"/>
+                                <rect key="frame" x="16" y="156" width="343" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="qgY-hZ-Uy8"/>
                                 </constraints>
@@ -53,21 +59,25 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="G8p-Ok-LLM" firstAttribute="top" secondItem="bdG-66-Bfc" secondAttribute="bottom" constant="2" id="1Qo-lI-LEH"/>
                             <constraint firstItem="0xk-jw-H1n" firstAttribute="trailing" secondItem="G8p-Ok-LLM" secondAttribute="trailing" id="DtU-qV-PPT"/>
                             <constraint firstItem="G8p-Ok-LLM" firstAttribute="trailing" secondItem="D4T-si-5QJ" secondAttribute="trailingMargin" id="I5U-UI-aew"/>
                             <constraint firstItem="LNT-wp-rrV" firstAttribute="top" secondItem="G8p-Ok-LLM" secondAttribute="bottom" constant="27" id="Oyz-7d-bmp"/>
                             <constraint firstItem="0xk-jw-H1n" firstAttribute="top" secondItem="LNT-wp-rrV" secondAttribute="bottom" constant="8" symbolic="YES" id="RwP-cj-p9K"/>
                             <constraint firstItem="G8p-Ok-LLM" firstAttribute="leading" secondItem="D4T-si-5QJ" secondAttribute="leadingMargin" id="ShW-Db-Seh"/>
+                            <constraint firstItem="bdG-66-Bfc" firstAttribute="top" secondItem="S8z-lE-iTE" secondAttribute="top" constant="11" id="Vvy-h9-ohU"/>
                             <constraint firstItem="0xk-jw-H1n" firstAttribute="leading" secondItem="G8p-Ok-LLM" secondAttribute="leading" id="glB-te-xpy"/>
                             <constraint firstItem="0xk-jw-H1n" firstAttribute="leading" secondItem="LNT-wp-rrV" secondAttribute="leading" id="iD5-Bz-3Eg"/>
                             <constraint firstItem="0xk-jw-H1n" firstAttribute="trailing" secondItem="LNT-wp-rrV" secondAttribute="trailing" id="qtj-Ma-hdA"/>
-                            <constraint firstItem="G8p-Ok-LLM" firstAttribute="top" secondItem="S8z-lE-iTE" secondAttribute="top" constant="14" id="yuG-Ae-CGI"/>
+                            <constraint firstItem="bdG-66-Bfc" firstAttribute="leading" secondItem="G8p-Ok-LLM" secondAttribute="leading" id="u1T-sB-ep7"/>
+                            <constraint firstItem="bdG-66-Bfc" firstAttribute="trailing" secondItem="G8p-Ok-LLM" secondAttribute="trailing" id="zlv-fp-QXv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="S8z-lE-iTE"/>
                     </view>
                     <connections>
                         <outlet property="dateLabel" destination="LNT-wp-rrV" id="2AH-Yi-q3s"/>
                         <outlet property="locationLabel" destination="G8p-Ok-LLM" id="jT4-bV-N5T"/>
+                        <outlet property="nameLabel" destination="bdG-66-Bfc" id="z0B-Sh-C21"/>
                         <outlet property="timeLabel" destination="0xk-jw-H1n" id="iq2-EZ-mMj"/>
                     </connections>
                 </viewController>

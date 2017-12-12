@@ -28,10 +28,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="usw-Ja-ud2" customClass="JTAppleCalendarView" customModule="JTAppleCalendar">
-                                <rect key="frame" x="0.0" y="114" width="375" height="269"/>
+                                <rect key="frame" x="0.0" y="114" width="375" height="295"/>
                                 <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="269" id="bPq-Nk-SPm"/>
+                                    <constraint firstAttribute="height" constant="295" id="bPq-Nk-SPm"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PkU-Az-Kum">
                                     <size key="itemSize" width="50" height="50"/>
@@ -48,7 +48,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccQ-U0-7DL" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                                    <rect key="frame" x="0.0" y="10" width="50" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="11" width="50" height="20.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="fFS-9B-WBv"/>
                                                     </constraints>
@@ -57,7 +57,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hpl-EJ-RnH" customClass="AnimatableView" customModule="IBAnimatable">
-                                                    <rect key="frame" x="22" y="34" width="6" height="6"/>
+                                                    <rect key="frame" x="22" y="37" width="6" height="6"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="6" id="ErT-5l-xcL"/>
@@ -73,7 +73,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I7c-Vo-jFT" customClass="AnimatableView" customModule="IBAnimatable">
-                                                    <rect key="frame" x="10" y="3" width="30" height="30"/>
+                                                    <rect key="frame" x="10" y="4" width="30" height="30"/>
                                                     <color key="backgroundColor" red="0.533416575367752" green="0.78523420573025327" blue="0.88042645874967429" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="8ij-fc-Q8B"/>
@@ -93,15 +93,15 @@
                                                             <point key="value" x="1" y="2"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                            <real key="value" value="0.29999999999999999"/>
+                                                            <real key="value" value="0.0"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="Hpl-EJ-RnH" firstAttribute="top" secondItem="I7c-Vo-jFT" secondAttribute="bottom" constant="1" id="8Vf-WU-dej"/>
-                                            <constraint firstItem="I7c-Vo-jFT" firstAttribute="top" secondItem="Ik8-kt-3KD" secondAttribute="top" constant="3" id="LvC-SS-Ulp"/>
+                                            <constraint firstItem="Hpl-EJ-RnH" firstAttribute="top" secondItem="I7c-Vo-jFT" secondAttribute="bottom" constant="3" id="8Vf-WU-dej"/>
+                                            <constraint firstItem="I7c-Vo-jFT" firstAttribute="top" secondItem="Ik8-kt-3KD" secondAttribute="top" constant="4" id="LvC-SS-Ulp"/>
                                             <constraint firstItem="ccQ-U0-7DL" firstAttribute="centerX" secondItem="Ik8-kt-3KD" secondAttribute="centerX" id="MLa-G6-IeM"/>
                                             <constraint firstItem="Hpl-EJ-RnH" firstAttribute="centerX" secondItem="Ik8-kt-3KD" secondAttribute="centerX" id="QdF-Vb-MMB"/>
                                             <constraint firstItem="I7c-Vo-jFT" firstAttribute="centerY" secondItem="ccQ-U0-7DL" secondAttribute="centerY" constant="-2" id="R0b-L9-e4N"/>
@@ -184,18 +184,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="106" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8DJ-AT-ldh" customClass="AnimatableTableView" customModule="IBAnimatable">
-                                <rect key="frame" x="0.0" y="391" width="375" height="276"/>
+                                <rect key="frame" x="0.0" y="417" width="375" height="250"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventCell" rowHeight="106" id="dbT-S7-6N5" customClass="EventCell" customModule="SingWell" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventCell" rowHeight="106" id="dbT-S7-6N5" customClass="EventCell" customModule="SingWell" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dbT-S7-6N5" id="Ezr-I3-S1q">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="105.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="105.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyt-10-xrb" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                                    <rect key="frame" x="13" y="11" width="349" height="21"/>
+                                                    <rect key="frame" x="13" y="11" width="323" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="l3N-RW-UYB"/>
                                                     </constraints>
@@ -204,13 +204,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEG-Fd-rkh" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                                    <rect key="frame" x="13" y="33" width="348" height="20"/>
+                                                    <rect key="frame" x="13" y="33" width="315" height="20"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgG-uO-TNs" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                                    <rect key="frame" x="13" y="57" width="345" height="20"/>
+                                                    <rect key="frame" x="13" y="57" width="312" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="d6Z-mf-QqF"/>
                                                     </constraints>
@@ -219,7 +219,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvq-Da-ToY" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                                    <rect key="frame" x="13" y="75" width="345" height="20"/>
+                                                    <rect key="frame" x="13" y="75" width="312" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="Ljg-nq-eLR"/>
                                                     </constraints>
@@ -243,6 +243,9 @@
                                                 <constraint firstAttribute="trailing" secondItem="vEG-Fd-rkh" secondAttribute="trailing" constant="14" id="rNR-fD-k37"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="slide(in, left)"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="dateLabel" destination="mgG-uO-TNs" id="gRH-bm-uK1"/>
                                             <outlet property="eventNameLabel" destination="cyt-10-xrb" id="lSN-H5-Dvy"/>

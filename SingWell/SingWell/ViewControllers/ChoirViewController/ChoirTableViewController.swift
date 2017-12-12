@@ -115,6 +115,7 @@ class ChoirTableViewController: UITableViewController {
         ApiHelper.getEvents(orgId: choirInfo["organization"].stringValue) { response, error in
             if error == nil {
                 self.choirEvents = response!.arrayValue
+                self.choirEvents = self.choirEvents.sorted {$0["date"].stringValue < $1["date"].stringValue}
                 self.tableView.reloadData()
             } else {
                 print("Error getting events: ",error as Any)
@@ -195,8 +196,14 @@ class ChoirTableViewController: UITableViewController {
             
             formatter.dateFormat = "yyyy-MM-dd"
             if let eventDate = formatter.date(from: event["date"].stringValue) {
-                formatter.dateFormat = "EEEE, MMM d, yyyy"
+//                formatter.dateFormat = "EEEE, MMM d, yyyy"
+                formatter.dateFormat = "d"
                 cell.dateLabel.text = formatter.string(from: eventDate)
+                
+                cell.dateLabel.textColor = CALENDAR_BACKGROUND_COLOR
+                
+                formatter.dateFormat = "MMM"
+                cell.timeLabel.text = formatter.string(from: eventDate)
             }
             
             formatter.dateFormat = "HH:mm:ss"
@@ -205,9 +212,14 @@ class ChoirTableViewController: UITableViewController {
                 //cell.timeLabel.text = formatter.string(from: eventTime)
                 
                 // ADD TIME TO EVENT NAME
-                cell.timeLabel.text = ""
+//                cell.timeLabel.text = ""
                 cell.eventNameLabel.text = cell.eventNameLabel.text! + " at " + formatter.string(from: eventTime)
             }
+            
+            // animate
+//            let delay = Double(indexPath.row + 1) * 0.5
+//            cell.animate(.slide(way: .in, direction: .left)).delay( delay )
+            
             return cell
         }
         
