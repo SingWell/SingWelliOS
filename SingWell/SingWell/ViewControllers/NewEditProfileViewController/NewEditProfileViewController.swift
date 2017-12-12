@@ -15,7 +15,6 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
     let scrollView = UIScrollView()
     
 //    @IBOutlet weak var cameraButton: AnimatableButton!
-
     @IBOutlet weak var birthdayTextField: AnimatableTextField!
     @IBOutlet weak var profileBackgroundImageView: AnimatableImageView!
     @IBOutlet weak var profileImageView: AnimatableImageView!
