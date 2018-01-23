@@ -26,29 +26,29 @@ class ChoirTableViewController: UITableViewController {
 //    ]
     
     var choirEvents:[JSON] = [
-        [
-            "id": 1,
-            "name": "11/26 Mass",
-            "date": "2017-11-26",
-            "time": "23:00:00",
-            "location": "Chapel",
-            "choirs": [
-                1,
-                3
-            ],
-                "organization": 1
-        ],
-        [
-            "id": 2,
-            "name": "11/12 Mass",
-            "date": "2017-11-12",
-            "time": "11:30:00",
-            "location": "Worship Room",
-            "choirs": [
-                1
-            ],
-            "organization": 1
-        ]
+//        [
+//            "id": 1,
+//            "name": "11/26 Mass",
+//            "date": "2017-11-26",
+//            "time": "23:00:00",
+//            "location": "Chapel",
+//            "choirs": [
+//                1,
+//                3
+//            ],
+//                "organization": 1
+//        ],
+//        [
+//            "id": 2,
+//            "name": "11/12 Mass",
+//            "date": "2017-11-12",
+//            "time": "11:30:00",
+//            "location": "Worship Room",
+//            "choirs": [
+//                1
+//            ],
+//            "organization": 1
+//        ]
     ]
     
     
@@ -216,9 +216,11 @@ class ChoirTableViewController: UITableViewController {
                 cell.eventNameLabel.text = cell.eventNameLabel.text! + " at " + formatter.string(from: eventTime)
             }
             
+            cell.autoRun = true
+            
             // animate
-//            let delay = Double(indexPath.row + 1) * 0.5
-//            cell.animate(.slide(way: .in, direction: .left)).delay( delay )
+            let delay = Double(indexPath.row) * 0.5
+            cell.animate(.slide(way: .in, direction: .left)).delay( delay )
             
             return cell
         }

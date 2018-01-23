@@ -164,7 +164,7 @@
                                                 <userDefinedRuntimeAttribute type="string" keyPath="_borderType" value="solid"/>
                                             </userDefinedRuntimeAttributes>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W57-dE-slz" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="W57-dE-slz" customClass="AnimatableLabel" customModule="IBAnimatable">
                                             <rect key="frame" x="78" y="20" width="283" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="3Qh-6s-3Rh"/>
@@ -193,6 +193,9 @@
                                         <constraint firstItem="fNc-jH-I9c" firstAttribute="leading" secondItem="HWY-W7-Vpe" secondAttribute="trailing" constant="8" id="stn-Ba-piS"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="slide(in, left)"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dateLabel" destination="Cvt-Gy-tkw" id="Vap-YL-zkZ"/>
                                     <outlet property="eventNameLabel" destination="W57-dE-slz" id="miN-cM-JPR"/>
