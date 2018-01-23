@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
 
 enum AppStoryboard : String {
     
@@ -64,6 +65,40 @@ extension UIColor {
             return UIColor.init(hue: h, saturation: s, brightness: b * 0.75, alpha: a)
         }
         return self
+    }
+}
+
+extension JSON {
+    static let formatter = DateFormatter()
+    static let kDate = "date"
+    static let kTime = "time"
+    
+    static let ascendingDateStrings: (JSON, JSON) -> Bool = {
+        if $0[kDate].stringValue != $1[kDate].stringValue {
+            return $0[kDate].stringValue < $1[kDate].stringValue
+        } else {
+            return $0[kTime].stringValue < $1[kTime].stringValue
+        }
+    }
+    
+    static let descendingDateStrings: (JSON, JSON) -> Bool = {
+        if $0[kDate].stringValue != $1[kDate].stringValue {
+            return $0[kDate].stringValue > $1[kDate].stringValue
+        } else {
+            return $0[kTime].stringValue > $1[kTime].stringValue
+        }
+    }
+    
+    static let pastDateStrings: (JSON) -> Bool = {
+        formatter.timeZone = .current
+        formatter.locale = .current
+        return $0[kDate].stringValue > formatter.string(from: Date())
+    }
+    
+    static let futureDateStrings: (JSON) -> Bool = {
+        formatter.timeZone = .current
+        formatter.locale = .current
+        return $0[kDate].stringValue <= formatter.string(from: Date())
     }
 }
 
