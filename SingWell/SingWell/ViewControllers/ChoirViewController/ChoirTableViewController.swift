@@ -18,6 +18,8 @@ class ChoirTableViewController: UITableViewController {
     
     let BACKGROUND_COLOR = UIColor.init(hexString: "eeeeee")
     
+    let formatter = DateFormatter()
+    
     var choirInfo:JSON = ["name":"Choir A"]
 
 //    var choirUpdatesList:JSON = [
@@ -25,31 +27,8 @@ class ChoirTableViewController: UITableViewController {
 //        ["title":"New Event Added", "info":"There will be a mass on Sunday, November 22 from 10:30am-12:00pm.", "time":"2 days ago"]
 //    ]
     
-    var choirEvents:[JSON] = [
-        [
-            "id": 1,
-            "name": "11/26 Mass",
-            "date": "2017-11-26",
-            "time": "23:00:00",
-            "location": "Chapel",
-            "choirs": [
-                1,
-                3
-            ],
-                "organization": 1
-        ],
-        [
-            "id": 2,
-            "name": "11/12 Mass",
-            "date": "2017-11-12",
-            "time": "11:30:00",
-            "location": "Worship Room",
-            "choirs": [
-                1
-            ],
-            "organization": 1
-        ]
-    ]
+    var upcomingChoirEvents:[JSON] = []
+    var pastChoirEvents:[JSON] = []
     
     
     // SIDEBAR NAVIGATION
@@ -100,6 +79,10 @@ class ChoirTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        formatter.timeZone = .current
+        formatter.locale = .current
+        
         self.title = choirInfo["name"].stringValue
         
         self.tableView.backgroundColor = BACKGROUND_COLOR
@@ -114,8 +97,14 @@ class ChoirTableViewController: UITableViewController {
     func getChoirEvents() {
         ApiHelper.getEvents(orgId: choirInfo["organization"].stringValue) { response, error in
             if error == nil {
-                self.choirEvents = response!.arrayValue
-                self.choirEvents = self.choirEvents.sorted {$0["date"].stringValue < $1["date"].stringValue}
+                let events = response!.arrayValue
+                
+                self.upcomingChoirEvents = events.filter( JSON.futureDateStrings )
+                self.pastChoirEvents = events.filter( JSON.pastDateStrings )
+
+                self.upcomingChoirEvents = self.upcomingChoirEvents.sorted(by: JSON.ascendingDateStrings )
+                self.pastChoirEvents = self.pastChoirEvents.sorted(by: JSON.descendingDateStrings )
+                
                 self.tableView.reloadData()
             } else {
                 print("Error getting events: ",error as Any)
@@ -123,23 +112,21 @@ class ChoirTableViewController: UITableViewController {
         }
     }
     
-//    override var prefersStatusBarHidden: Bool {
-//        return true
-//    }
-    
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0: // choir info cell
             return 1
+        case 1:
+            return upcomingChoirEvents.count
         default:
-            return choirEvents.count
+            return pastChoirEvents.count
         }
     }
     
@@ -176,27 +163,15 @@ class ChoirTableViewController: UITableViewController {
             
             return cell
         default:
-            //let cell = tableView.dequeueReusableCell(withIdentifier: "BasicUpdateCell", for: indexPath) as! ChoirResourceInfoTableViewCell
-            //let info = choirUpdatesList[indexPath.row]
-            
-            //cell.titleLabel.text = info["name"].stringValue
-            //cell.descriptionField.text = info["location"].stringValue
-            //cell.descriptionField.isUserInteractionEnabled = false
-            //cell.contentView.backgroundColor = BACKGROUND_COLOR
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "UpcomingEventCell", for: indexPath) as! EventCell
-            let event = choirEvents[indexPath.row]
+            let event = indexPath.section == 1 ? upcomingChoirEvents[indexPath.row] : pastChoirEvents[indexPath.row]
             
             cell.eventNameLabel.text = event["name"].stringValue
             cell.locationLabel.text = event["location"].stringValue
             
-            let formatter = DateFormatter()
-            formatter.timeZone = .current
-            formatter.locale = .current
-            
             formatter.dateFormat = "yyyy-MM-dd"
-            if let eventDate = formatter.date(from: event["date"].stringValue) {
-//                formatter.dateFormat = "EEEE, MMM d, yyyy"
+            if let eventDate = formatter.date(from: event[JSON.kDate].stringValue) {
                 formatter.dateFormat = "d"
                 cell.dateLabel.text = formatter.string(from: eventDate)
                 
@@ -207,27 +182,25 @@ class ChoirTableViewController: UITableViewController {
             }
             
             formatter.dateFormat = "HH:mm:ss"
-            if let eventTime = formatter.date(from: event["time"].stringValue) {
+            if let eventTime = formatter.date(from: event[JSON.kTime].stringValue) {
                 formatter.dateFormat = "h:mm a"
-                //cell.timeLabel.text = formatter.string(from: eventTime)
-                
-                // ADD TIME TO EVENT NAME
-//                cell.timeLabel.text = ""
                 cell.eventNameLabel.text = cell.eventNameLabel.text! + " at " + formatter.string(from: eventTime)
             }
             
+            cell.autoRun = true
+            
             // animate
-//            let delay = Double(indexPath.row + 1) * 0.5
-//            cell.animate(.slide(way: .in, direction: .left)).delay( delay )
+            let delay = Double(indexPath.row) * 0.5
+            cell.animate(.slide(way: .in, direction: .left)).delay( delay )
             
             return cell
         }
         
     }
     
-    func viewEvent(row:Int) {
+    func viewEvent(indexPath:IndexPath) {
         let nextVc = AppStoryboard.Event.initialViewController() as! EventViewController
-        nextVc.eventInfo = choirEvents[row]
+        nextVc.eventInfo = indexPath.section == 1 ? upcomingChoirEvents[indexPath.row] : pastChoirEvents[indexPath.row]
         self.navigationController?.pushViewController(nextVc, animated: true)
     }
     
@@ -241,18 +214,19 @@ class ChoirTableViewController: UITableViewController {
 //            let cell = tableView.cellForRow(at: indexPath) as! ChoirResourceInfoTableViewCell
 //            cell.cardView.animate(.pop(repeatCount: 1), duration: 0.3)
 //            cell.cardView.animate(.shake(repeatCount: 1), duration: 0.5)
-            viewEvent(row: indexPath.row)
+            viewEvent(indexPath: indexPath)
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return ""
+        case 1:
+            return "Upcoming Events"
+        default:
+            return "Past Events"
+        }
     }
-    */
 
 }
