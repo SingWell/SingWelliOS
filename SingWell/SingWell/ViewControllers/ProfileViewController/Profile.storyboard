@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vox-kd-i40">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vox-kd-i40">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -488,13 +488,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oOl-tH-M13"/>
                     </view>
-                    <navigationItem key="navigationItem" id="O6c-yg-7dK">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="Hfe-fd-4gl" customClass="AnimatableBarButtonItem" customModule="IBAnimatable">
-                            <connections>
-                                <action selector="openMenu:" destination="L3Z-2C-S4K" id="5xY-ul-OTP"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="O6c-yg-7dK"/>
                     <connections>
                         <outlet property="addressIcon" destination="OAK-a9-Sl3" id="jeO-Gi-n9E"/>
                         <outlet property="addressLabel" destination="Y4n-Qv-iq0" id="arQ-Bg-x2d"/>
@@ -510,7 +504,6 @@
                         <outlet property="emailLabel" destination="foL-d7-Tz4" id="MFD-Yd-RZK"/>
                         <outlet property="instrumentCollectionView" destination="Oys-kw-yeh" id="L3H-3w-ifI"/>
                         <outlet property="instrumentationButton" destination="l1L-PJ-5oV" id="yhg-gA-Hla"/>
-                        <outlet property="menuItem" destination="Hfe-fd-4gl" id="0Sy-Xb-DaU"/>
                         <outlet property="notificationButton" destination="Gd8-De-epS" id="KOE-VZ-qTW"/>
                         <outlet property="notificationImageView" destination="iPg-ZZ-uLi" id="LhW-0h-4U9"/>
                         <outlet property="phoneNumberLabel" destination="qbA-DT-hPx" id="wo0-d3-eM8"/>
@@ -526,7 +519,6 @@
         <!--Side Item Navigation View Controller-->
         <scene sceneID="pF7-pu-BF8">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YIf-HH-KzR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vox-kd-i40" customClass="SideItemNavigationViewController" customModule="SingWell" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Eq8-xe-x3D">
@@ -538,6 +530,7 @@
                         <segue destination="L3Z-2C-S4K" kind="relationship" relationship="rootViewController" id="BqI-fH-w60"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YIf-HH-KzR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-479" y="106"/>
         </scene>

@@ -235,7 +235,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         instrumentCollectionView.dataSource = (self as UICollectionViewDataSource)
         
         self.title = "Profile"
-        setNavigationItems()
+//        setNavigationItems()
         setEditButton()
         setNotificationButton()
         
@@ -257,6 +257,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         if userId != "" {
 //            Hide Navigation items
             
+            
 //            Hide Edit and Notification Buttons
             notificationImageView.isHidden = true
             notificationButton.isHidden = true
@@ -264,7 +265,17 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             editImageView.isHidden = true
         }
         else {
-//            Hide Navigation items
+//            View Navigation items
+            // Add Menu button on navigation bar programmatically
+            var menuBtn = AnimatableButton(type: .custom)
+            menuBtn.setTitle("", for: .normal)
+            menuBtn.tintColor = .black
+            menuBtn.setImage(UIImage.ionicon(with: .navicon, textColor: UIColor.black, size: CGSize(width: 35, height: 35)), for: .normal)
+            menuBtn.addTarget(self, action: #selector(ProfileViewController.openMenu(_:)), for: .touchUpInside)
+            
+            let menuItem = AnimatableBarButtonItem(customView: menuBtn)
+            
+            self.navigationItem.leftBarButtonItem = menuItem
             
 //            View Edit and Notification Buttons
             notificationImageView.isHidden = false
@@ -331,18 +342,6 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             }
         }
     }
-    
-//    func reloadView() {
-//        setProfile()
-////        var profileName = ""
-////        if(self.user != []){
-////            profileName = self.user["username"].stringValue
-////        }
-////
-////        profileNameLabel.text = profileName
-//
-//    }
-    
 
     /*
     // MARK: - Navigation
