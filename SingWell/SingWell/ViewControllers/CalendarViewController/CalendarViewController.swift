@@ -75,6 +75,8 @@ class CalendarViewController: UIViewController {
         
         setupCalendarView()
         setupTableView()
+        
+        print("FIRST CALENDAR SAFEAREA INSETS",self.additionalSafeAreaInsets)
     }
     
     func getEvents() {
