@@ -172,8 +172,6 @@ class SideItemNavigationViewController: AnimatableNavigationController, SideMenu
             break
         }
         
-        print("FIRST VIEW",self.additionalSafeAreaInsets)
-        
         
     }
 }
