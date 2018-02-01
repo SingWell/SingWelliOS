@@ -28,6 +28,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     var instruments = ["trumpet", "drum", "piano", "guitar"]
     var user:JSON = []
+    var rosterUser:JSON = []
     
 //    @IBOutlet weak var cellImageView: UIImageView!
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -142,25 +143,25 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         notificationButton.setImage( notificationImage, for: UIControlState.normal)
     }
     
-    func setProfile() {
+    func setProfile(user:JSON) {
         
-        if(self.user["bio"].exists()){
+        if(user["bio"].exists()){
             biographyView.isHidden = false
-            biographyTextView.text = self.user["bio"].stringValue
+            biographyTextView.text = user["bio"].stringValue
         }
         else{
             biographyView.isHidden = true
         }
         
-        if(self.user["email"].exists()){
-            emailLabel.text = self.user["email"].stringValue
+        if(user["email"].exists()){
+            emailLabel.text = user["email"].stringValue
             emailLabel.isHidden = false
         }
         else {
             emailLabel.isHidden = true
         }
-        if(self.user["phone_number"].exists()){
-            phoneNumberLabel.text = self.user["phone_number"].stringValue
+        if(user["phone_number"].exists()){
+            phoneNumberLabel.text = user["phone_number"].stringValue
 //            phoneNumberLabel.isHidden = false
         }
         else {
@@ -168,7 +169,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
 //            phoneNumberLabel.isHidden = true
         }
         
-        if(!self.user["email"].exists() && !self.user["phone_number"].exists()){
+        if(!user["email"].exists() && !user["phone_number"].exists()){
             contactView.isHidden = true
         }
         else {
@@ -177,19 +178,24 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         if(self.user["address"].exists()){
             addressView.isHidden = false
-            addressLabel.text = self.user["address"].stringValue
+            addressLabel.text = user["address"].stringValue
             addressLabel.isHidden = false
         }
         else {
             addressLabel.isHidden = true
         }
         
-        if(self.user["city"].exists()){
+        if(user["city"].exists()){
             addressView.isHidden = false
-            var tempAddLabel = self.user["city"].stringValue
-            if(self.user["zip_code"].exists()){
-                let tempZip = self.user["zip_code"].stringValue
+            var tempAddLabel = user["city"].stringValue
+            if(user["state"].exists()){
+                let tempState = user["state"].stringValue
                 tempAddLabel += ", "
+                tempAddLabel += tempState
+            }
+            if(user["zip_code"].exists()){
+                let tempZip = user["zip_code"].stringValue
+                tempAddLabel += " "
                 tempAddLabel += tempZip
             }
             cityLabel.text = tempAddLabel
@@ -199,7 +205,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             cityLabel.isHidden = true
         }
         
-        if(!self.user["address"].exists() && !self.user["city"].exists()){
+        if(!user["address"].exists() && !user["city"].exists()){
             addressView.isHidden = true
         }
         else {
@@ -212,11 +218,10 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         let profileBackgroundImage: UIImage = UIImage(named: "profileBackground")!
         profileBackgroundImageView.image = profileBackgroundImage
-        //        print(self.user)
         
         var profileName = ""
-        if(self.user != []){
-            profileName = self.user["username"].stringValue
+        if(user != []){
+            profileName = user["username"].stringValue
         }
         
         profileNameLabel.text = profileName
@@ -229,7 +234,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getUser()
+        getProfile()
         
         instrumentCollectionView.delegate = (self as UICollectionViewDelegate)
         instrumentCollectionView.dataSource = (self as UICollectionViewDataSource)
@@ -240,7 +245,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         setNotificationButton()
         
         setInstrumentItems()
-        setProfile()
+        setProfile(user: self.user)
 
         // Do any additional setup after loading the view.
         
@@ -257,6 +262,8 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         if userId != "" {
 //            Hide Navigation items
             
+            //get user information
+            getUser()
             
 //            Hide Edit and Notification Buttons
             notificationImageView.isHidden = true
@@ -266,6 +273,10 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
         else {
 //            View Navigation items
+            
+            //get user information
+            getProfile()
+            
             // Add Menu button on navigation bar programmatically
             var menuBtn = AnimatableButton(type: .custom)
             menuBtn.setTitle("", for: .normal)
@@ -323,6 +334,26 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         
     }
     
+    func getProfile() {
+        var curUser = ""
+        if userId == "" {
+            curUser = "4"
+        }
+        else{
+            curUser = userId
+        }
+        ApiHelper.getProfile(userId: curUser) { response, error in
+            if error == nil {
+                self.user = response!
+                print(self.user)
+                
+                self.setProfile(user:self.user)
+            } else {
+                print(error!)
+            }
+        }
+    }
+    
     func getUser() {
         var curUser = ""
         if userId == "" {
@@ -333,10 +364,10 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
         ApiHelper.getUser(userId: curUser) { response, error in
             if error == nil {
-                self.user = response!
-                print(self.user)
+                self.rosterUser = response!
+                print(self.rosterUser)
                 
-                self.setProfile()
+                self.setProfile(user: self.rosterUser)
             } else {
                 print(error!)
             }

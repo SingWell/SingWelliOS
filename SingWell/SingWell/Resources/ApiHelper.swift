@@ -76,14 +76,14 @@ class ApiHelper {
         }
     }
     
-    static func makePutCall(_ section: String, environment:String=PRODUCTION_ENV, _ parameters: Parameters, completionHandler: @escaping (JSON?, Error?) -> ()) {
-        //let params = ["consumer_key":"key", "consumer_secret":"secret"]
-        //TODO: NEED PARAMS AS FUNCTION PARAMETER
-        let headers = ["Authorization": "Basic \(AUTH_TOKEN)"]
-        Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = 10
-        print("\(parameters)")
-        
-        Alamofire.request(environment+"\(section)", method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+//    static func makePutCall(_ section: String, environment:String=PRODUCTION_ENV, _ parameters: Parameters, completionHandler: @escaping (JSON?, Error?) -> ()) {
+//        //let params = ["consumer_key":"key", "consumer_secret":"secret"]
+//        //TODO: NEED PARAMS AS FUNCTION PARAMETER
+//        let headers = ["Authorization": "Basic \(AUTH_TOKEN)"]
+//        Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = 10
+//        print("\(parameters)")
+//
+//        Alamofire.request(environment+"\(section)", method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
 //            .responseString { response in
 //                switch response.result {
 //                case .success(let value):
@@ -94,18 +94,38 @@ class ApiHelper {
 //                    completionHandler(nil, error)
 //                }
 //        }
+////            .responseString { response in
+////                guard response.result.error == nil else {
+////                    // got an error in getting the data, need to handle it
+////                    print("error calling PUT on /profile")
+////                    print(response.result.error!)
+////                    return
+////                }
+////                // make sure we got some JSON since that's what we expect
+////                guard (response.result.value as? [String: Any]) != nil else {
+////                    print("didn't get todo object as JSON from API")
+////                    print("Error: \(String(describing: response.result.error))")
+////                    return
+////                }
+////        }
+//    }
+    
+    static func makePutCall(_ section: String, environment:String=PRODUCTION_ENV, _ parameters: Parameters, completionHandler: @escaping (JSON?, Error?) -> ()) {
+        //let params = ["consumer_key":"key", "consumer_secret":"secret"]
+        //TODO: NEED PARAMS AS FUNCTION PARAMETER
+        let headers = ["Content-Type": "application/json", "Authorization" : "Token \(AUTH_TOKEN)"]
+        Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = 10
+        print("\(parameters)")
+        
+        Alamofire.request(environment+"\(section)", method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
             .responseString { response in
-                guard response.result.error == nil else {
-                    // got an error in getting the data, need to handle it
-                    print("error calling PUT on /profile")
-                    print(response.result.error!)
-                    return
-                }
-                // make sure we got some JSON since that's what we expect
-                guard (response.result.value as? [String: Any]) != nil else {
-                    print("didn't get todo object as JSON from API")
-                    print("Error: \(String(describing: response.result.error))")
-                    return
+                switch response.result {
+                case .success(let value):
+                    print("VALUE FOR \(section)",value)
+                    completionHandler(JSON(value), nil)
+                case .failure(let error):
+                    print("ERROR FOR \(section)",error)
+                    completionHandler(nil, error)
                 }
         }
     }
@@ -136,6 +156,11 @@ class ApiHelper {
     //this will edit user for a specific id
     static func editUser(userId:String=userId, parameters: Parameters, completionHandler: @escaping (JSON?, Error?) -> ()) {
         makePutCall("profile", parameters, completionHandler: completionHandler)
+    }
+    
+    //this is for testing edit user TO BE DELETED later
+    static func getProfile(userId:String=userId, completionHandler: @escaping (JSON?, Error?) -> ()) {
+        makeGetCall("profile",completionHandler: completionHandler)
     }
     
     //this will get all organizations
