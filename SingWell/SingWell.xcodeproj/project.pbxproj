@@ -15,6 +15,10 @@
 		162D981D1FA65CD3006068BC /* SingWellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162D981C1FA65CD3006068BC /* SingWellTests.swift */; };
 		162D98281FA65CD3006068BC /* SingWellUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162D98271FA65CD3006068BC /* SingWellUITests.swift */; };
 		162D98371FA65D09006068BC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162D98361FA65D09006068BC /* Extensions.swift */; };
+		162E430120212BCA0036B897 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162E430020212BCA0036B897 /* LoginViewController.swift */; };
+		162E430320212BD70036B897 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162E430220212BD70036B897 /* RegisterViewController.swift */; };
+		162E430520212BE50036B897 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 162E430420212BE50036B897 /* Login.storyboard */; };
+		162E430720212BEF0036B897 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 162E430620212BEF0036B897 /* Register.storyboard */; };
 		164A51441FCFA99A0026D7DE /* SongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164A51431FCFA99A0026D7DE /* SongViewController.swift */; };
 		164A51461FCFA9A50026D7DE /* Song.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 164A51451FCFA9A50026D7DE /* Song.storyboard */; };
 		1652FDAD1FB5016F00D921EB /* ChoirTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652FDAC1FB5016F00D921EB /* ChoirTableViewController.swift */; };
@@ -84,6 +88,10 @@
 		162D98271FA65CD3006068BC /* SingWellUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingWellUITests.swift; sourceTree = "<group>"; };
 		162D98291FA65CD3006068BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		162D98361FA65D09006068BC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		162E430020212BCA0036B897 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		162E430220212BD70036B897 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		162E430420212BE50036B897 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		162E430620212BEF0036B897 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		164A51431FCFA99A0026D7DE /* SongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongViewController.swift; sourceTree = "<group>"; };
 		164A51451FCFA9A50026D7DE /* Song.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Song.storyboard; sourceTree = "<group>"; };
 		1652FDAC1FB5016F00D921EB /* ChoirTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoirTableViewController.swift; sourceTree = "<group>"; };
@@ -219,6 +227,8 @@
 		162D98381FA65D2E006068BC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				162E42FF20212BAC0036B897 /* RegisterViewController */,
+				162E42FE20212B9C0036B897 /* LoginViewController */,
 				52FD883E1FDDD01900958AAE /* NewEditProfileViewController */,
 				164A51421FCFA9830026D7DE /* SongViewController */,
 				16A7A3271FCE13B400B32491 /* EventViewController */,
@@ -231,6 +241,24 @@
 				16E211981FC35DC5009969B1 /* RosterViewController */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		162E42FE20212B9C0036B897 /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				162E430020212BCA0036B897 /* LoginViewController.swift */,
+				162E430420212BE50036B897 /* Login.storyboard */,
+			);
+			path = LoginViewController;
+			sourceTree = "<group>";
+		};
+		162E42FF20212BAC0036B897 /* RegisterViewController */ = {
+			isa = PBXGroup;
+			children = (
+				162E430220212BD70036B897 /* RegisterViewController.swift */,
+				162E430620212BEF0036B897 /* Register.storyboard */,
+			);
+			path = RegisterViewController;
 			sourceTree = "<group>";
 		};
 		164A51421FCFA9830026D7DE /* SongViewController */ = {
@@ -489,12 +517,14 @@
 				162D98121FA65CD3006068BC /* LaunchScreen.storyboard in Resources */,
 				16E211971FC35C6B009969B1 /* Notifications.storyboard in Resources */,
 				521BCF2F1FB3A48A000662F7 /* Profile.storyboard in Resources */,
+				162E430520212BE50036B897 /* Login.storyboard in Resources */,
 				525EF4B91FC3A4C600C8E822 /* EditProfile.storyboard in Resources */,
 				164A51461FCFA9A50026D7DE /* Song.storyboard in Resources */,
 				162D980F1FA65CD3006068BC /* Assets.xcassets in Resources */,
 				16E2119C1FC35DDF009969B1 /* Roster.storyboard in Resources */,
 				526F5D5C1FCE13F9002F7D27 /* SettingsModal.storyboard in Resources */,
 				52FD88421FDDD06600958AAE /* NewEditProfile.storyboard in Resources */,
+				162E430720212BEF0036B897 /* Register.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +553,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SingWell/Pods-SingWell-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DTTextField/DTTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/IBAnimatable/IBAnimatable.framework",
 				"${BUILT_PRODUCTS_DIR}/InteractiveSideMenu/InteractiveSideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/IoniconsKit/IoniconsKit.framework",
@@ -533,6 +564,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DTTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IBAnimatable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InteractiveSideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IoniconsKit.framework",
@@ -693,9 +725,11 @@
 				1652FDB11FB502D200D921EB /* HostViewController.swift in Sources */,
 				52DA23DE1FD0B7B8004CD9E0 /* RosterTableViewCell.swift in Sources */,
 				16E211951FC35C5F009969B1 /* NotificationsTableViewController.swift in Sources */,
+				162E430120212BCA0036B897 /* LoginViewController.swift in Sources */,
 				16A7A3261FCE0CB800B32491 /* MusicLibraryTableViewCell.swift in Sources */,
 				16E211921FC35122009969B1 /* ChoirInfoTableViewCell.swift in Sources */,
 				162D98081FA65CD3006068BC /* AppDelegate.swift in Sources */,
+				162E430320212BD70036B897 /* RegisterViewController.swift in Sources */,
 				1652FDB31FB5039400D921EB /* NavigationMenuViewController.swift in Sources */,
 				16256EE51FBB827A00992B02 /* ChoirResourceInfoTableViewCell.swift in Sources */,
 				16A7A3221FCE0C8B00B32491 /* MusicLibraryTableViewController.swift in Sources */,

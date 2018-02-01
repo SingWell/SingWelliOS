@@ -7,6 +7,7 @@ target 'SingWell' do
 	pod 'InteractiveSideMenu'
 	pod 'IoniconsKit'
 	pod 'JTAppleCalendar'
+	pod 'DTTextField'
 
 	use_frameworks!
 
