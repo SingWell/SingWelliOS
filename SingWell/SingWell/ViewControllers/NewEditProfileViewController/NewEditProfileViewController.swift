@@ -44,6 +44,8 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
     var emailPassed = ""
     var streetPassed = ""
     var cityPassed = ""
+    var statePassed = ""
+    var zipPassed = ""
     
     //Format Phone Number
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
@@ -173,6 +175,10 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
         cityTextField.text = cityPassed
         
         streetTextField.text = streetPassed
+        
+        stateTextField.text = statePassed
+        
+        zipCodeTextField.text = zipPassed
         
         emailTextField.text = emailPassed
         

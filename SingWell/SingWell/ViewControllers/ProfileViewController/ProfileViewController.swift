@@ -309,7 +309,10 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         nextVc.profileNamePassed = profileNameLabel.text!
         nextVc.biographyPassed = biographyTextView.text!
-        nextVc.cityPassed = cityLabel.text!
+        nextVc.cityPassed = self.user["city"].stringValue
+        nextVc.statePassed = self.user["state"].stringValue
+        nextVc.zipPassed = self.user["zip_code"].stringValue
+        
         nextVc.streetPassed = addressLabel.text!
         nextVc.emailPassed = emailLabel.text!
         nextVc.phoneNumberPassed = phoneNumberLabel.text!
