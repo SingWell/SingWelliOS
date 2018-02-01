@@ -127,8 +127,26 @@ class NavigationMenuViewController: MenuViewController {
 
 var FIRST_CONTROLLER = true
 
+var CLASS_INSETS:[String] = []
+
+
 // TODO: FIX THIS FROM BEING A HACK TO BEING A REAL FIX
 class SideItemNavigationViewController: AnimatableNavigationController, SideMenuItemContent {
+    override func viewDidLoad() {
+        let screenSize = UIScreen.main.bounds
+        if screenSize.height == 736.0 {
+            let vcClass = String(describing: self.childViewControllers.first?.classForCoder)
+            if !CLASS_INSETS.contains(vcClass) {
+                self.additionalSafeAreaInsets = UIEdgeInsetsMake(0,0,0,0)
+                CLASS_INSETS.append(vcClass)
+//                print("First controller! (iphone 7/8 Plus)")
+            } else {
+                self.additionalSafeAreaInsets = UIEdgeInsetsMake(20,0,0,0)
+                
+//                print("Not first controller! (iphone 7/8 Plus)")
+            }
+        }
+    }
     override func viewWillAppear(_ animated: Bool) {
         
         let screenSize = UIScreen.main.bounds
@@ -139,19 +157,36 @@ class SideItemNavigationViewController: AnimatableNavigationController, SideMenu
             if FIRST_CONTROLLER == true {
                 self.additionalSafeAreaInsets = UIEdgeInsetsMake(0,0,0,0)
                 FIRST_CONTROLLER = false
+//                print("First controller! (iphone X)")
             } else {
                 self.additionalSafeAreaInsets = UIEdgeInsetsMake(44,0,0,0)
+//                print("Not first controller! (iphone X)")
             }
             break
         case 667.0: // iPhone 7/8
             if FIRST_CONTROLLER == true {
                 self.additionalSafeAreaInsets = UIEdgeInsetsMake(0,0,0,0)
                 FIRST_CONTROLLER = false
+//                print("First controller! (iphone 7/8)")
             } else {
                 self.additionalSafeAreaInsets = UIEdgeInsetsMake(20,0,0,0)
+//                print("Not first controller! (iphone 7/8)")
+            }
+            break
+        case 736.0: // iPhone 7/8 Plus
+            if FIRST_CONTROLLER == true {
+                self.additionalSafeAreaInsets = UIEdgeInsetsMake(0,0,0,0)
+                FIRST_CONTROLLER = false
+//                print("First controller! (iphone 7/8)")
+            } else {
+//                self.additionalSafeAreaInsets = UIEdgeInsetsMake(20,0,0,0)
+                
+//                print("Not first controller! (iphone 7/8)")
             }
             break
         default:
+//            print("Any other phone", screenSize.height)
+            self.additionalSafeAreaInsets = UIEdgeInsetsMake(0,0,0,0)
             break //do nothing for all other models
         }
         
