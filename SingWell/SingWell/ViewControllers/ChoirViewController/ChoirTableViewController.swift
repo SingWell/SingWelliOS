@@ -12,7 +12,14 @@ import IBAnimatable
 import IoniconsKit
 import SwiftyJSON
 
+let kChoirInfo = "Choir Info"
+let kUpcomingEvents = "Upcoming Events"
+let kPastEvents = "Past Events"
+
 class ChoirTableViewController: UITableViewController {
+
+    
+    let SECTIONS:[String] = [kChoirInfo, kUpcomingEvents, kPastEvents]
     
     @IBOutlet weak var rightBarButtonItem: AnimatableBarButtonItem!
     
@@ -53,6 +60,16 @@ class ChoirTableViewController: UITableViewController {
         rightBarButtonItem.image = UIImage.ionicon(with: .iosBell, textColor: UIColor.black, size: CGSize(width: 32, height: 32))
 
         // TODO: show a number label with the number of unread notifications
+    }
+    
+    @IBAction func viewDirectorProfile(_ sender: Any) {
+        let navCon = AppStoryboard.Profile.initialViewController() as! SideItemNavigationViewController
+        let nextVc = navCon.topViewController as! ProfileViewController
+        
+        // TODO: make dynamic
+        nextVc.userId = "1"
+        
+        self.navigationController?.pushViewController(nextVc, animated: true)
     }
     
     @IBAction func viewNotifications(_ sender: Any) {
@@ -120,19 +137,21 @@ class ChoirTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0: // choir info cell
+        switch SECTIONS[section] {
+        case kChoirInfo: // choir info cell
             return 1
-        case 1:
+        case kUpcomingEvents:
             return upcomingChoirEvents.count
-        default:
+        case kPastEvents:
             return pastChoirEvents.count
+        default:
+            return 0
         }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.section {
-        case 0:
+        switch SECTIONS[indexPath.section] {
+        case kChoirInfo:
             return 147.0
         default:
             return super.tableView(tableView, heightForRowAt: indexPath)
@@ -140,11 +159,16 @@ class ChoirTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section {
-        case 0: // choir info cell
+        switch SECTIONS[indexPath.section] {
+        case kChoirInfo: // choir info cell
             let cell = tableView.dequeueReusableCell(withIdentifier: "ChoirInfoCell", for: indexPath) as! ChoirInfoTableViewCell
             
             cell.contentView.backgroundColor = BACKGROUND_COLOR
+            
+            //DIRECTOR NAME BUTTON
+            cell.directorNameButton.addTarget(self, action: #selector(ChoirTableViewController.viewDirectorProfile(_:)), for: UIControlEvents.touchUpInside)
+            // TODO: make dynamic
+            cell.directorNameButton.setTitle("Bob Johnson", for: .normal)
 
             // CALENDAR BUTTON
             cell.calendarButton.addTarget(self, action: #selector(ChoirTableViewController.viewCalendar(_:)), for: UIControlEvents.touchUpInside)
@@ -206,8 +230,8 @@ class ChoirTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        switch indexPath.section {
-        case 0:
+        switch SECTIONS[indexPath.section] {
+        case kChoirInfo:
             print("Do nothing!")
         default:
             print(indexPath.row)
@@ -219,13 +243,15 @@ class ChoirTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-        case 0:
+        switch SECTIONS[section] {
+        case kChoirInfo:
             return ""
-        case 1:
-            return "Upcoming Events"
+        case kUpcomingEvents:
+            return kUpcomingEvents
+        case kPastEvents:
+            return kPastEvents
         default:
-            return "Past Events"
+            return ""
         }
     }
 
