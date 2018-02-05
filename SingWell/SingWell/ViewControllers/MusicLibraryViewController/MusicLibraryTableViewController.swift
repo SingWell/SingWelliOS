@@ -45,11 +45,7 @@ class MusicLibraryTableViewController: UITableViewController {
         self.title = "Music Library"
         
         // Setup the Search Controller
-        searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Music"
-        navigationItem.searchController = searchController
-        definesPresentationContext = true
+        self.setupSearchController()
     }
     
     func getMusicLibrary() {
@@ -76,10 +72,6 @@ class MusicLibraryTableViewController: UITableViewController {
             TableViewHelper.EmptyMessage(message: "This organization does not have any public music records yet.\n", viewController: self)
             return 0
         }
-    }
-    
-    func isFiltering() -> Bool {
-        return searchController.isActive && !searchBarIsEmpty()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -122,9 +114,26 @@ class MusicLibraryTableViewController: UITableViewController {
         nextVc.songInfo = songInfo
         self.navigationController?.pushViewController(nextVc, animated: true)
     }
+}
+
+extension MusicLibraryTableViewController: UISearchResultsUpdating {
     
+    func setupSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Music"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+    }
     
-    // MARK: - Private instance methods
+    // MARK: - UISearchResultsUpdating Delegate
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
+    
+    func isFiltering() -> Bool {
+        return searchController.isActive && !searchBarIsEmpty()
+    }
     
     func searchBarIsEmpty() -> Bool {
         // Returns true if the text is empty or nil
@@ -139,15 +148,5 @@ class MusicLibraryTableViewController: UITableViewController {
         })
         
         tableView.reloadData()
-    }
-    
-
-
-}
-
-extension MusicLibraryTableViewController: UISearchResultsUpdating {
-    // MARK: - UISearchResultsUpdating Delegate
-    func updateSearchResults(for searchController: UISearchController) {
-        filterContentForSearchText(searchController.searchBar.text!)
     }
 }

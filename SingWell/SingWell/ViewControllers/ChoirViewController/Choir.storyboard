@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AZC-tz-RV9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AZC-tz-RV9">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -56,33 +56,46 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <state key="normal" title="Calendar"/>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Directed by John Smith" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="No4-bX-sT1">
-                                                    <rect key="frame" x="18" y="8" width="339" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Directed by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="No4-bX-sT1" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                                    <rect key="frame" x="18" y="12" width="93.5" height="23"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="93.5" id="S44-Lz-qil"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meets Tuesdays 6pm-8pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yev-bf-bBC">
-                                                    <rect key="frame" x="18" y="37" width="339" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meets Tuesdays 6pm-8pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yev-bf-bBC" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                                    <rect key="frame" x="18" y="43" width="339" height="23"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NC3-qe-oZv" customClass="AnimatableButton" customModule="IBAnimatable">
+                                                    <rect key="frame" x="119" y="8" width="238" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="91K-yJ-NtQ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="19"/>
+                                                    <state key="normal" title="John Smith"/>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
+                                                <constraint firstItem="b5n-pK-DhO" firstAttribute="trailing" secondItem="NC3-qe-oZv" secondAttribute="trailing" id="1Go-m5-FPY"/>
                                                 <constraint firstItem="6AG-Rc-lcB" firstAttribute="baseline" secondItem="b5n-pK-DhO" secondAttribute="baseline" id="1hm-Rt-DXi"/>
+                                                <constraint firstItem="NC3-qe-oZv" firstAttribute="leading" secondItem="No4-bX-sT1" secondAttribute="trailing" constant="7.5" id="Gbq-WU-PIJ"/>
                                                 <constraint firstItem="bfl-y8-TGK" firstAttribute="bottom" secondItem="Eh8-aL-4Jo" secondAttribute="bottomMargin" id="HHa-zn-YIP"/>
-                                                <constraint firstItem="yev-bf-bBC" firstAttribute="trailing" secondItem="No4-bX-sT1" secondAttribute="trailing" id="OGb-yS-xJC"/>
                                                 <constraint firstItem="b5n-pK-DhO" firstAttribute="baseline" secondItem="bfl-y8-TGK" secondAttribute="baseline" id="OJz-Wh-vSR"/>
                                                 <constraint firstItem="6AG-Rc-lcB" firstAttribute="centerX" secondItem="Eh8-aL-4Jo" secondAttribute="centerX" id="SA9-ja-cyq"/>
-                                                <constraint firstItem="No4-bX-sT1" firstAttribute="trailing" secondItem="b5n-pK-DhO" secondAttribute="trailing" id="dV0-9M-OsD"/>
                                                 <constraint firstAttribute="trailing" secondItem="b5n-pK-DhO" secondAttribute="trailing" constant="18" id="gjc-pF-Q6W"/>
+                                                <constraint firstItem="NC3-qe-oZv" firstAttribute="centerY" secondItem="No4-bX-sT1" secondAttribute="centerY" id="gov-Vr-odU"/>
                                                 <constraint firstItem="No4-bX-sT1" firstAttribute="leading" secondItem="bfl-y8-TGK" secondAttribute="leading" id="ic8-fC-FVo"/>
+                                                <constraint firstItem="NC3-qe-oZv" firstAttribute="trailing" secondItem="yev-bf-bBC" secondAttribute="trailing" id="kO8-GO-UjX"/>
                                                 <constraint firstItem="yev-bf-bBC" firstAttribute="top" secondItem="No4-bX-sT1" secondAttribute="bottom" constant="8" symbolic="YES" id="qGU-P8-WRn"/>
                                                 <constraint firstItem="bfl-y8-TGK" firstAttribute="leading" secondItem="Eh8-aL-4Jo" secondAttribute="leadingMargin" constant="10" id="sw2-Z3-m4P"/>
                                                 <constraint firstItem="yev-bf-bBC" firstAttribute="leading" secondItem="No4-bX-sT1" secondAttribute="leading" id="tmb-XE-rEQ"/>
-                                                <constraint firstItem="No4-bX-sT1" firstAttribute="top" secondItem="Eh8-aL-4Jo" secondAttribute="topMargin" id="xkl-bc-mm8"/>
+                                                <constraint firstItem="No4-bX-sT1" firstAttribute="top" secondItem="Eh8-aL-4Jo" secondAttribute="topMargin" constant="4" id="xkl-bc-mm8"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
@@ -113,6 +126,9 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="calendarButton" destination="bfl-y8-TGK" id="QRy-lR-VEn"/>
+                                    <outlet property="descriptionLabel" destination="yev-bf-bBC" id="DHt-Vx-uhZ"/>
+                                    <outlet property="directedByLabel" destination="No4-bX-sT1" id="iHo-tx-B8S"/>
+                                    <outlet property="directorNameButton" destination="NC3-qe-oZv" id="bwu-Mp-nlJ"/>
                                     <outlet property="musicLibraryButton" destination="6AG-Rc-lcB" id="cJN-wT-DdG"/>
                                     <outlet property="rosterButton" destination="b5n-pK-DhO" id="1FF-Co-rch"/>
                                 </connections>

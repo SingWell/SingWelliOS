@@ -38,6 +38,31 @@ class ApiHelper {
         }
     }
     
+    //Had to create new post method in order to save userID value
+    static func register(email: String, firstname: String, lastname: String, password: String, environment:String=PRODUCTION_ENV, completionHandler: @escaping (JSON?, Error?) -> ()){
+        let parameters = [
+            "username": "",
+            "email": email,
+            "first_name":firstname,
+            "last_name":lastname,
+            "password": password
+        ]
+        
+        Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = 10
+        Alamofire.request(environment + "register", method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            .responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    completionHandler(JSON(value), nil)
+                    print("REGISTER VALUE:", value)
+//                    AUTH_TOKEN = JSON(value)["token"].stringValue
+                case .failure(let error):
+                    print("ERROR REGISTERING!", error)
+                    completionHandler(nil, error)
+                }
+        }
+    }
+    
     static func makeGetCall(_ section: String, environment:String=PRODUCTION_ENV, completionHandler: @escaping (JSON?, Error?) -> ()) {
         
         print("\(section)")
