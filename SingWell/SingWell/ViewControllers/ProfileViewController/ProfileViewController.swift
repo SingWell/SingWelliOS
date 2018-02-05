@@ -14,6 +14,8 @@ import SwiftyJSON
 import MessageUI
 
 class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, MFMessageComposeViewControllerDelegate {
+    
+    
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
         //... handle sms screen actions
         self.dismiss(animated: true, completion: nil)
@@ -23,21 +25,21 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     var userId = ""
     
-    @IBAction func phoneNumberTap(_ sender: Any) {
-        print("handleTap")
-        if (MFMessageComposeViewController.canSendText()) {
-            let controller = MFMessageComposeViewController()
-            controller.body = "Message Body"
-            controller.recipients = [phoneNumberLabel.text!]
-            controller.messageComposeDelegate = self
-            self.present(controller, animated: true, completion: nil)
-        }
-    }
+//    @IBAction func phoneNumberTap(_ sender: Any) {
+//        print("handleTap")
+//        if (MFMessageComposeViewController.canSendText()) {
+//            let controller = MFMessageComposeViewController()
+//            controller.body = "Message Body"
+//            controller.recipients = [phoneNumberButton.]
+//            controller.messageComposeDelegate = self
+//            self.present(controller, animated: true, completion: nil)
+//        }
+//    }
     @IBOutlet weak var contactView: AnimatableView!
     @IBOutlet weak var biographyView: AnimatableView!
     @IBOutlet weak var addressView: AnimatableView!
     
-    @IBOutlet weak var phoneNumberLabel: AnimatableLabel!
+    @IBOutlet weak var phoneNumberButton: AnimatableButton!
     @IBOutlet weak var emailLabel: AnimatableLabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
@@ -47,7 +49,18 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     var user:JSON = []
     var rosterUser:JSON = []
     
-//    @IBOutlet weak var cellImageView: UIImageView!
+    @IBAction func phoneNumberTap(_ sender: Any) {
+        print("tapped Number")
+        
+        if (MFMessageComposeViewController.canSendText()) {
+                        let controller = MFMessageComposeViewController()
+                        controller.body = "Message Body"
+            controller.recipients = [phoneNumberButton.title(for: .normal)!]
+                        controller.messageComposeDelegate = self
+                        self.present(controller, animated: true, completion: nil)
+                    }
+    }
+    //    @IBOutlet weak var cellImageView: UIImageView!
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         
@@ -178,11 +191,13 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             emailLabel.isHidden = true
         }
         if(user["phone_number"].exists()){
-            phoneNumberLabel.text = user["phone_number"].stringValue
+            phoneNumberButton.setTitle(user["phone_number"].stringValue, for: .normal)
+//                = user["phone_number"].stringValue
 //            phoneNumberLabel.isHidden = false
         }
         else {
-            phoneNumberLabel.text = "9999999999"
+            phoneNumberButton.setTitle("9999999999", for: .normal)
+//            phoneNumberButton.titleLabel?.text = "9999999999"
 //            phoneNumberLabel.isHidden = true
         }
         
@@ -266,12 +281,6 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         setInstrumentItems()
         setProfile(user: self.user)
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ProfileViewController.myviewTapped(_:)))
-        tapGesture.numberOfTapsRequired = 1
-        tapGesture.numberOfTouchesRequired = 1
-        
-    self.phoneNumberLabel.addGestureRecognizer(tapGesture)
 
         // Do any additional setup after loading the view.
         
@@ -284,16 +293,16 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         instrumentationButton.image = UIImage.ionicon(with: .headphone, textColor: UIColor.gray, size: CGSize(width: 35, height: 35))
     }
     
-    func handleTap(gestureRecognizer: UIGestureRecognizer) {
-        print("handleTap")
-        if (MFMessageComposeViewController.canSendText()) {
-            let controller = MFMessageComposeViewController()
-            controller.body = "Message Body"
-            controller.recipients = [phoneNumberLabel.text!]
-            controller.messageComposeDelegate = self
-            self.present(controller, animated: true, completion: nil)
-        }
-    }
+//    func handleTap(gestureRecognizer: UIGestureRecognizer) {
+//        print("handleTap")
+//        if (MFMessageComposeViewController.canSendText()) {
+//            let controller = MFMessageComposeViewController()
+//            controller.body = "Message Body"
+//            controller.recipients = [phoneNumberButton.titleLabel!]
+//            controller.messageComposeDelegate = self
+//            self.present(controller, animated: true, completion: nil)
+//        }
+//    }
     
     override func viewWillAppear(_ animated: Bool) {
         if userId != "" {
@@ -331,17 +340,8 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             editButton.isHidden = false
             editImageView.isHidden = false
             
-//            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ProfileViewController.myviewTapped(_:)))
-//            tapGesture.numberOfTapsRequired = 1
-//            tapGesture.numberOfTouchesRequired = 1
-//            let gestureRecognizer = UITapGestureRecognizer(target: self, action:#selector(self.handleTap(_:)))
-//            self.phoneNumberLabel.addGestureRecognizer(tapGesture)
         }
         userId = ""
-    }
-
-    @objc func myviewTapped(_ sender: UITapGestureRecognizer) {
-        print("tapped label")
     }
     
     override func didReceiveMemoryWarning() {
@@ -362,7 +362,8 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         nextVc.streetPassed = addressLabel.text!
         nextVc.emailPassed = emailLabel.text!
-        nextVc.phoneNumberPassed = phoneNumberLabel.text!
+        nextVc.phoneNumberPassed = phoneNumberButton.title(for: .normal)!
+//            (phoneNumberButton.titleLabel?.text!)!
         
         self.navigationController?.pushViewController(nextVc, animated: true)
     
