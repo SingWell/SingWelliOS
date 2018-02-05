@@ -16,6 +16,10 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
     
 //    @IBOutlet weak var cameraButton: AnimatableButton!
     @IBOutlet weak var birthdayTextField: AnimatableTextField!
+    
+    //UIDatePicker
+    let datePicker = UIDatePicker()
+    
     @IBOutlet weak var profileBackgroundImageView: AnimatableImageView!
     @IBOutlet weak var profileImageView: AnimatableImageView!
     @IBOutlet weak var birthdayIcon: AnimatableImageView!
@@ -44,6 +48,8 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
     var emailPassed = ""
     var streetPassed = ""
     var cityPassed = ""
+    var statePassed = ""
+    var zipPassed = ""
     
     //Format Phone Number
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
@@ -124,6 +130,15 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
         present(picker, animated: true)
     }
     
+//    @IBAction func birthdayEdit(_ sender: AnimatableTextField) {
+//        let datePickerView:UIDatePicker = UIDatePicker()
+//        
+//        datePickerView.datePickerMode = UIDatePickerMode.date
+//        
+//        sender.inputView = datePickerView
+//        
+//        datePickerView.addTarget(self, action: #selector(NewEditProfileViewController.datePickerValueChanged), for: UIControlEvents.ValueChanged)
+//    }
     
     func setConfirmButton() {
         let size = CGSize(width:55, height: 55)
@@ -173,6 +188,10 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
         cityTextField.text = cityPassed
         
         streetTextField.text = streetPassed
+        
+        stateTextField.text = statePassed
+        
+        zipCodeTextField.text = zipPassed
         
         emailTextField.text = emailPassed
         
@@ -244,9 +263,13 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
 //    @IBAction func DoneButton(sender: UIButton) {
 //        birthdayTextField.resignFirstResponder()
 //    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //show date picker
+//        showDatePicker()
         
         emailTextField.delegate = self
         phoneNumberTextField.delegate = self
@@ -297,10 +320,21 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
         let state = stateTextField.text
         let zipCode = zipCodeTextField.text
         
-        let parameters: [String: AnyObject] = [ "phone_number": phoneNumber as AnyObject, "address": address! as AnyObject, "bio": biography as AnyObject, "city": city! as AnyObject,"zip_code": zipCode! as AnyObject, "state": state! as AnyObject, "date_of_birth": "" as AnyObject]
+//        let parameters: [String: AnyObject] = [ "phone_number": phoneNumber as AnyObject, "address": address! as AnyObject, "bio": biography as AnyObject, "city": city! as AnyObject,"zip_code": zipCode! as AnyObject, "state": state! as AnyObject, "date_of_birth": "" as AnyObject]
+        
+        let parameters: [String: String] = [ "phone_number": phoneNumber, "address": address!, "bio": biography, "city": city!,"zip_code": zipCode!, "state": state!, "date_of_birth": "2018-01-30"]
         
         ApiHelper.editUser(parameters: parameters) { response, error in
             if error == nil {
+                print("No error")
+            } else {
+                print(error!)
+            }
+        }
+        
+        ApiHelper.getProfile() { response, error in
+            if error == nil {
+                print(response)
                 print("No error")
             } else {
                 print(error!)
