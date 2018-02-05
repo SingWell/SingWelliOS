@@ -18,6 +18,7 @@ class LoginViewController: AnimatableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
     }
     
     @IBAction func signInPressed(_ sender: Any) {
@@ -74,5 +75,16 @@ class LoginViewController: AnimatableViewController {
 
         
         return true
+    }
+    
+    // MARK: Tap to hide
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }

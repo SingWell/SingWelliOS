@@ -19,26 +19,26 @@ class RegisterViewController: AnimatableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
     }
 
     @IBAction func signUpPressed(_ sender: Any) {
         guard validateData() else { return }
         
         // TODO: REGISTER USER
-        ApiHelper.login(emailField.text!, passwordField.text!) { response, error in
+        ApiHelper.register(email: emailField.text!, firstname:firstNameField.text!, lastname: lastNameField.text!, password:  passwordField.text!) { response, error in
             
-            print("RESPONSE LOGIN: ", response?.stringValue)
-            print("Error login: ", error)
+            print("RESPONSE REGISTER: ", response?.stringValue)
+            print("Error register: ", error)
             if error == nil {
-                //                print
-                // LOGIN SUCCESSFUL
-                let alert = UIAlertController(title: "Login Successful", message: response?.stringValue, preferredStyle: .alert)
+                // REGISTER SUCCESSFUL
+                let alert = UIAlertController(title: "Register Successful", message: response?.stringValue, preferredStyle: .alert)
                 alert.addAction( UIAlertAction(title: "OK", style: .cancel) )
                 
                 self.present(alert, animated: true, completion: nil)
             } else {
-                // LOGIN FAILED
-                let alert = UIAlertController(title: "Login Failed", message: "Your email and password were not recognized.", preferredStyle: .alert)
+                // REGISTER FAILED
+                let alert = UIAlertController(title: "Register Failed", message: "", preferredStyle: .alert)
                 alert.addAction( UIAlertAction(title: "OK", style: .cancel) )
                 
                 self.present(alert, animated: true, completion: nil)
@@ -81,5 +81,16 @@ class RegisterViewController: AnimatableViewController {
         
         
         return true
+    }
+    
+    // MARK: Tap to hide
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
