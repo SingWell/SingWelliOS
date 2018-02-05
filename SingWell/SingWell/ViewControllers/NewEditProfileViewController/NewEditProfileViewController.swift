@@ -16,6 +16,10 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
     
 //    @IBOutlet weak var cameraButton: AnimatableButton!
     @IBOutlet weak var birthdayTextField: AnimatableTextField!
+    
+    //UIDatePicker
+    let datePicker = UIDatePicker()
+    
     @IBOutlet weak var profileBackgroundImageView: AnimatableImageView!
     @IBOutlet weak var profileImageView: AnimatableImageView!
     @IBOutlet weak var birthdayIcon: AnimatableImageView!
@@ -126,6 +130,15 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
         present(picker, animated: true)
     }
     
+//    @IBAction func birthdayEdit(_ sender: AnimatableTextField) {
+//        let datePickerView:UIDatePicker = UIDatePicker()
+//        
+//        datePickerView.datePickerMode = UIDatePickerMode.date
+//        
+//        sender.inputView = datePickerView
+//        
+//        datePickerView.addTarget(self, action: #selector(NewEditProfileViewController.datePickerValueChanged), for: UIControlEvents.ValueChanged)
+//    }
     
     func setConfirmButton() {
         let size = CGSize(width:55, height: 55)
@@ -250,9 +263,13 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
 //    @IBAction func DoneButton(sender: UIButton) {
 //        birthdayTextField.resignFirstResponder()
 //    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //show date picker
+//        showDatePicker()
         
         emailTextField.delegate = self
         phoneNumberTextField.delegate = self

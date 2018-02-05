@@ -11,11 +11,28 @@ import InteractiveSideMenu
 import IBAnimatable
 import IoniconsKit
 import SwiftyJSON
+import MessageUI
 
-class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, MFMessageComposeViewControllerDelegate {
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        //... handle sms screen actions
+        self.dismiss(animated: true, completion: nil)
+
+    }
+    
     
     var userId = ""
     
+    @IBAction func phoneNumberTap(_ sender: Any) {
+        print("handleTap")
+        if (MFMessageComposeViewController.canSendText()) {
+            let controller = MFMessageComposeViewController()
+            controller.body = "Message Body"
+            controller.recipients = [phoneNumberLabel.text!]
+            controller.messageComposeDelegate = self
+            self.present(controller, animated: true, completion: nil)
+        }
+    }
     @IBOutlet weak var contactView: AnimatableView!
     @IBOutlet weak var biographyView: AnimatableView!
     @IBOutlet weak var addressView: AnimatableView!
@@ -165,7 +182,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
 //            phoneNumberLabel.isHidden = false
         }
         else {
-            phoneNumberLabel.text = "No Phone Number"
+            phoneNumberLabel.text = "9999999999"
 //            phoneNumberLabel.isHidden = true
         }
         
@@ -223,6 +240,9 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         if(user != []){
             profileName = user["username"].stringValue
         }
+        if(profileName == ""){
+            profileName = "Kenton Kravig"
+        }
         
         profileNameLabel.text = profileName
     }
@@ -246,6 +266,12 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         setInstrumentItems()
         setProfile(user: self.user)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ProfileViewController.myviewTapped(_:)))
+        tapGesture.numberOfTapsRequired = 1
+        tapGesture.numberOfTouchesRequired = 1
+        
+    self.phoneNumberLabel.addGestureRecognizer(tapGesture)
 
         // Do any additional setup after loading the view.
         
@@ -256,6 +282,17 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         addressIcon.image = UIImage.ionicon(with: .location, textColor: UIColor.gray, size: CGSize(width: 35, height: 35))
         
         instrumentationButton.image = UIImage.ionicon(with: .headphone, textColor: UIColor.gray, size: CGSize(width: 35, height: 35))
+    }
+    
+    func handleTap(gestureRecognizer: UIGestureRecognizer) {
+        print("handleTap")
+        if (MFMessageComposeViewController.canSendText()) {
+            let controller = MFMessageComposeViewController()
+            controller.body = "Message Body"
+            controller.recipients = [phoneNumberLabel.text!]
+            controller.messageComposeDelegate = self
+            self.present(controller, animated: true, completion: nil)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -293,10 +330,20 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             notificationButton.isHidden = false
             editButton.isHidden = false
             editImageView.isHidden = false
+            
+//            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ProfileViewController.myviewTapped(_:)))
+//            tapGesture.numberOfTapsRequired = 1
+//            tapGesture.numberOfTouchesRequired = 1
+//            let gestureRecognizer = UITapGestureRecognizer(target: self, action:#selector(self.handleTap(_:)))
+//            self.phoneNumberLabel.addGestureRecognizer(tapGesture)
         }
         userId = ""
     }
 
+    @objc func myviewTapped(_ sender: UITapGestureRecognizer) {
+        print("tapped label")
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
