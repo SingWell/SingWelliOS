@@ -180,12 +180,12 @@ class ApiHelper {
     
     //this will edit user for a specific id
     static func editUser(userId:String=userId, parameters: Parameters, completionHandler: @escaping (JSON?, Error?) -> ()) {
-        makePutCall("profile", parameters, completionHandler: completionHandler)
+        makePutCall("profile/", parameters, completionHandler: completionHandler)
     }
     
     //this is for testing edit user TO BE DELETED later
     static func getProfile(userId:String=userId, completionHandler: @escaping (JSON?, Error?) -> ()) {
-        makeGetCall("profile",completionHandler: completionHandler)
+        makeGetCall("profile/",completionHandler: completionHandler)
     }
     
     //this will get all organizations
@@ -195,12 +195,12 @@ class ApiHelper {
     
     //this will get a specific organization
     static func getOrganization(orgId:String, completionHandler: @escaping (JSON?, Error?) -> ()) {
-        makeGetCall("organizations/\(orgId)", completionHandler: completionHandler)
+        makeGetCall("organizations/\(orgId)/", completionHandler: completionHandler)
     }
     
     //this will get choirs for a specific organization
     static func getChoirs(orgId:String, completionHandler: @escaping (JSON?, Error?) -> ()) {
-        makeGetCall("organizations/\(orgId)/choirs", completionHandler: completionHandler)
+        makeGetCall("choirs/", completionHandler: completionHandler)
     }
     
     //this will get choirs for a user
@@ -210,17 +210,17 @@ class ApiHelper {
     
     //this will get a specific choir
     static func getChoir(orgId:String, choirId:String, completionHandler: @escaping (JSON?, Error?) -> ()) {
-        makeGetCall("organizations/\(orgId)/choirs/\(choirId)", completionHandler: completionHandler)
+        makeGetCall("choirs/\(choirId)/", completionHandler: completionHandler)
     }
     
     //this will get events for a organization
     static func getEvents(orgId:String, completionHandler: @escaping (JSON?, Error?) -> ()) {
-        makeGetCall("organizations/\(orgId)/events", completionHandler: completionHandler)
+        makeGetCall("organizations/\(orgId)/events/", completionHandler: completionHandler)
     }
     
     //this will get a roster for a specific choir
     static func getRoster(orgId:String, choirId:String, completionHandler: @escaping (JSON?, Error?) -> ()) {
-        makeGetCall("organizations/\(orgId)/choirs/\(choirId)/roster/", completionHandler: completionHandler)
+        makeGetCall("choirs/\(choirId)/roster/", completionHandler: completionHandler)
     }
     
     //this will get musicRecords for a organization

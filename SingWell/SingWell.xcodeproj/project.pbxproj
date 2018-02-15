@@ -43,6 +43,7 @@
 		5209FE2E1FD092CE00DB9CE8 /* SettingsModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209FE2D1FD092CE00DB9CE8 /* SettingsModelViewController.swift */; };
 		521BCF2D1FB3A472000662F7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521BCF2C1FB3A472000662F7 /* ProfileViewController.swift */; };
 		521BCF2F1FB3A48A000662F7 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521BCF2E1FB3A48A000662F7 /* Profile.storyboard */; };
+		52216587202A609E0024FAD4 /* Allegri Miserere Full.mid in Resources */ = {isa = PBXBuildFile; fileRef = 52216586202A609E0024FAD4 /* Allegri Miserere Full.mid */; };
 		52218E171FB50C0400EC4DDA /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52218E161FB50C0400EC4DDA /* UIImageExtension.swift */; };
 		525EF4B71FC3A4BB00C8E822 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525EF4B61FC3A4BB00C8E822 /* EditProfileViewController.swift */; };
 		525EF4B91FC3A4C600C8E822 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 525EF4B81FC3A4C600C8E822 /* EditProfile.storyboard */; };
@@ -117,6 +118,7 @@
 		5209FE2D1FD092CE00DB9CE8 /* SettingsModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModelViewController.swift; sourceTree = "<group>"; };
 		521BCF2C1FB3A472000662F7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		521BCF2E1FB3A48A000662F7 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		52216586202A609E0024FAD4 /* Allegri Miserere Full.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "Allegri Miserere Full.mid"; sourceTree = "<group>"; };
 		52218E161FB50C0400EC4DDA /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		525EF4B61FC3A4BB00C8E822 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		525EF4B81FC3A4C600C8E822 /* EditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 		162D98351FA65CF6006068BC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				52216586202A609E0024FAD4 /* Allegri Miserere Full.mid */,
 				1617DF931FB39EEB0094C474 /* ApiHelper.swift */,
 				162D98361FA65D09006068BC /* Extensions.swift */,
 			);
@@ -471,6 +474,11 @@
 					162D98031FA65CD3006068BC = {
 						CreatedOnToolsVersion = 9.0.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					162D98171FA65CD3006068BC = {
 						CreatedOnToolsVersion = 9.0.1;
@@ -523,6 +531,7 @@
 				162D980F1FA65CD3006068BC /* Assets.xcassets in Resources */,
 				16E2119C1FC35DDF009969B1 /* Roster.storyboard in Resources */,
 				526F5D5C1FCE13F9002F7D27 /* SettingsModal.storyboard in Resources */,
+				52216587202A609E0024FAD4 /* Allegri Miserere Full.mid in Resources */,
 				52FD88421FDDD06600958AAE /* NewEditProfile.storyboard in Resources */,
 				162E430720212BEF0036B897 /* Register.storyboard in Resources */,
 			);
@@ -553,6 +562,8 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SingWell/Pods-SingWell-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${PODS_ROOT}/AudioKit/iOS/AudioKit.framework",
+				"${PODS_ROOT}/AudioKit/iOS/AudioKitUI.framework",
 				"${BUILT_PRODUCTS_DIR}/DTTextField/DTTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/IBAnimatable/IBAnimatable.framework",
 				"${BUILT_PRODUCTS_DIR}/InteractiveSideMenu/InteractiveSideMenu.framework",
@@ -564,6 +575,8 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AudioKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AudioKitUI.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DTTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IBAnimatable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InteractiveSideMenu.framework",
