@@ -110,7 +110,7 @@ class MusicLibraryTableViewController: UITableViewController {
             songInfo = musicLibrary[indexPath.row]
         }
         
-        let nextVc = AppStoryboard.Song.initialViewController() as! SongViewController
+        let nextVc = AppStoryboard.Song.initialViewController() as! SongTableViewController
         nextVc.songInfo = songInfo
         self.navigationController?.pushViewController(nextVc, animated: true)
     }

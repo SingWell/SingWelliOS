@@ -322,7 +322,7 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
         
 //        let parameters: [String: AnyObject] = [ "phone_number": phoneNumber as AnyObject, "address": address! as AnyObject, "bio": biography as AnyObject, "city": city! as AnyObject,"zip_code": zipCode! as AnyObject, "state": state! as AnyObject, "date_of_birth": "" as AnyObject]
         
-        let parameters: [String: String] = [ "phone_number": phoneNumber, "address": address!, "bio": biography, "city": city!,"zip_code": zipCode!, "state": state!, "date_of_birth": "2018-01-30"]
+        let parameters: [String: String] = [ "phone_number": phoneNumber, "address": address!, "bio": biography, "city": city!,"zip_code": zipCode!, "state": state!, "date_of_birth": "01-30"]
         
         ApiHelper.editUser(parameters: parameters) { response, error in
             if error == nil {

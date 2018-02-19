@@ -13,7 +13,7 @@ import IoniconsKit
 import SwiftyJSON
 import MessageUI
 
-class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, MFMessageComposeViewControllerDelegate {
+class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate{
     
     
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
@@ -25,22 +25,12 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     var userId = ""
     
-//    @IBAction func phoneNumberTap(_ sender: Any) {
-//        print("handleTap")
-//        if (MFMessageComposeViewController.canSendText()) {
-//            let controller = MFMessageComposeViewController()
-//            controller.body = "Message Body"
-//            controller.recipients = [phoneNumberButton.]
-//            controller.messageComposeDelegate = self
-//            self.present(controller, animated: true, completion: nil)
-//        }
-//    }
     @IBOutlet weak var contactView: AnimatableView!
     @IBOutlet weak var biographyView: AnimatableView!
     @IBOutlet weak var addressView: AnimatableView!
     
     @IBOutlet weak var phoneNumberButton: AnimatableButton!
-    @IBOutlet weak var emailLabel: AnimatableLabel!
+    @IBOutlet weak var emailButton: AnimatableButton!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var biographyTextView: AnimatableTextView!
@@ -52,14 +42,43 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     @IBAction func phoneNumberTap(_ sender: Any) {
         print("tapped Number")
         
-        if (MFMessageComposeViewController.canSendText()) {
-                        let controller = MFMessageComposeViewController()
-                        controller.body = "Message Body"
-            controller.recipients = [phoneNumberButton.title(for: .normal)!]
-                        controller.messageComposeDelegate = self
-                        self.present(controller, animated: true, completion: nil)
-                    }
+        if (MFMessageComposeViewController.canSendText() == true) {
+//                        let controller = MFMessageComposeViewController()
+//                        controller.body = "Message Body"
+//            controller.recipients = [phoneNumberButton.title(for: .normal)!]
+//                        controller.messageComposeDelegate = self
+//                        self.present(controller, animated: true, completion: nil)
+//                    }
+            let recipients:[String] = [phoneNumberButton.title(for: .normal)!]
+            let messageController = MFMessageComposeViewController()
+            messageController.messageComposeDelegate  = self
+            messageController.recipients = recipients
+            messageController.body = ""
+            self.present(messageController, animated: true, completion: nil)
+        } else {
+            //handle text messaging not available
+        }
     }
+    
+    @IBAction func launchEmail(sender: AnyObject) {
+        print("Tapped Email")
+        var emailTitle = "Feedback"
+        var messageBody = "Feature request or bug report?"
+        var toRecipents = ["friend@stackoverflow.com"]
+        let recipients:[String] = [emailButton.title(for: .normal)!]
+        var mc: MFMailComposeViewController = MFMailComposeViewController()
+        mc.mailComposeDelegate = self
+        mc.setSubject(emailTitle)
+        mc.setMessageBody(messageBody, isHTML: false)
+        mc.setToRecipients(toRecipents)
+        
+        self.present(mc, animated: true, completion: nil)
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
+    }
+    
     //    @IBOutlet weak var cellImageView: UIImageView!
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -184,11 +203,11 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
         
         if(user["email"].exists()){
-            emailLabel.text = user["email"].stringValue
-            emailLabel.isHidden = false
+            emailButton.setTitle(user["email"].stringValue, for: .normal)
+            emailButton.isHidden = false
         }
         else {
-            emailLabel.isHidden = true
+            emailButton.isHidden = true
         }
         if(user["phone_number"].exists()){
             phoneNumberButton.setTitle(user["phone_number"].stringValue, for: .normal)
@@ -293,17 +312,6 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         instrumentationButton.image = UIImage.ionicon(with: .headphone, textColor: UIColor.gray, size: CGSize(width: 35, height: 35))
     }
     
-//    func handleTap(gestureRecognizer: UIGestureRecognizer) {
-//        print("handleTap")
-//        if (MFMessageComposeViewController.canSendText()) {
-//            let controller = MFMessageComposeViewController()
-//            controller.body = "Message Body"
-//            controller.recipients = [phoneNumberButton.titleLabel!]
-//            controller.messageComposeDelegate = self
-//            self.present(controller, animated: true, completion: nil)
-//        }
-//    }
-    
     override func viewWillAppear(_ animated: Bool) {
         if userId != "" {
 //            Hide Navigation items
@@ -361,7 +369,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         nextVc.zipPassed = self.user["zip_code"].stringValue
         
         nextVc.streetPassed = addressLabel.text!
-        nextVc.emailPassed = emailLabel.text!
+        nextVc.emailPassed = emailButton.title(for: .normal)!
         nextVc.phoneNumberPassed = phoneNumberButton.title(for: .normal)!
 //            (phoneNumberButton.titleLabel?.text!)!
         

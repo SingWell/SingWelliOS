@@ -1,74 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Oa7-p6-V1T">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AIi-7i-QmG">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AppleSDGothicNeo.ttc">
+            <string>AppleSDGothicNeo-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--Song View Controller-->
-        <scene sceneID="TzM-VM-dzr">
+        <!--Song Table View Controller-->
+        <scene sceneID="mkV-pL-ccY">
             <objects>
-                <viewController id="Oa7-p6-V1T" customClass="SongViewController" customModule="SingWell" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1dH-0b-OXd">
+                <tableViewController id="AIi-7i-QmG" customClass="SongTableViewController" customModule="SingWell" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="w84-40-7uL" customClass="AnimatableTableView" customModule="IBAnimatable">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yrw-Sy-cno" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                <rect key="frame" x="16" y="20" width="343" height="37"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="llG-9h-IRg"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSK-c1-SBP" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                <rect key="frame" x="16" y="65" width="188" height="37"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="lOp-Mo-aJX"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQm-Wr-TK4" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                <rect key="frame" x="212" y="65" width="147" height="37"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="147" id="uuw-qE-DSs"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="SSK-c1-SBP" firstAttribute="leading" secondItem="Yrw-Sy-cno" secondAttribute="leading" id="0ZV-1v-tF3"/>
-                            <constraint firstItem="EQm-Wr-TK4" firstAttribute="top" secondItem="Yrw-Sy-cno" secondAttribute="bottom" constant="8" symbolic="YES" id="46a-DA-ugk"/>
-                            <constraint firstItem="Yrw-Sy-cno" firstAttribute="leading" secondItem="1dH-0b-OXd" secondAttribute="leadingMargin" id="C5b-69-b0d"/>
-                            <constraint firstItem="SSK-c1-SBP" firstAttribute="top" secondItem="EQm-Wr-TK4" secondAttribute="top" id="Gbl-0O-q5d"/>
-                            <constraint firstItem="Yrw-Sy-cno" firstAttribute="top" secondItem="b7z-ab-Pig" secondAttribute="top" id="IIj-Sc-Lkw"/>
-                            <constraint firstItem="EQm-Wr-TK4" firstAttribute="leading" secondItem="SSK-c1-SBP" secondAttribute="trailing" constant="8" symbolic="YES" id="IgZ-Hs-CS0"/>
-                            <constraint firstItem="SSK-c1-SBP" firstAttribute="bottom" secondItem="EQm-Wr-TK4" secondAttribute="bottom" id="MSW-iL-1bW"/>
-                            <constraint firstItem="Yrw-Sy-cno" firstAttribute="trailing" secondItem="1dH-0b-OXd" secondAttribute="trailingMargin" id="URj-53-LzL"/>
-                            <constraint firstItem="EQm-Wr-TK4" firstAttribute="trailing" secondItem="Yrw-Sy-cno" secondAttribute="trailing" id="vga-yy-nNo"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="b7z-ab-Pig"/>
-                    </view>
-                    <connections>
-                        <outlet property="composerLabel" destination="SSK-c1-SBP" id="8qg-pn-odt"/>
-                        <outlet property="instrumentationLabel" destination="EQm-Wr-TK4" id="rug-pV-I61"/>
-                        <outlet property="nameLabel" destination="Yrw-Sy-cno" id="b8A-hu-fpU"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rzQ-84-TwT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongInfoCell" id="uOw-EI-bfx" userLabel="SongInfoCell" customClass="SongInfoTableViewCell" customModule="SingWell" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uOw-EI-bfx" id="ffG-Jy-P9B">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kwy-15-Ldk" customClass="AnimatableView" customModule="IBAnimatable">
+                                            <rect key="frame" x="0.0" y="11" width="375" height="21"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Directed by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lzk-oB-aRv" userLabel="SongNameLabel" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                                    <rect key="frame" x="10" y="12" width="94" height="23"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="93.5" id="k7k-we-FCu"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="19"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meets Tuesdays 6pm-8pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqc-5a-J30" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                                    <rect key="frame" x="10" y="43" width="214" height="23"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="19"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="Lzk-oB-aRv" firstAttribute="leading" secondItem="Kwy-15-Ldk" secondAttribute="leading" constant="10" id="Ej6-Hr-F5n"/>
+                                                <constraint firstItem="Lzk-oB-aRv" firstAttribute="top" secondItem="Kwy-15-Ldk" secondAttribute="topMargin" constant="4" id="JYN-aC-SNb"/>
+                                                <constraint firstItem="rqc-5a-J30" firstAttribute="top" secondItem="Lzk-oB-aRv" secondAttribute="bottom" constant="8" id="Rgr-Pf-p8S"/>
+                                                <constraint firstItem="rqc-5a-J30" firstAttribute="top" secondItem="Lzk-oB-aRv" secondAttribute="bottom" constant="8" symbolic="YES" id="XTZ-Dr-lIJ"/>
+                                                <constraint firstItem="rqc-5a-J30" firstAttribute="leading" secondItem="Lzk-oB-aRv" secondAttribute="leading" id="rha-d1-Gk7"/>
+                                                <constraint firstItem="rqc-5a-J30" firstAttribute="top" secondItem="Lzk-oB-aRv" secondAttribute="bottom" constant="8" symbolic="YES" id="txO-V0-rAM"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                    <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                    <real key="value" value="0.20000000000000001"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                    <real key="value" value="4"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
+                                                    <point key="value" x="4" y="4"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Kwy-15-Ldk" firstAttribute="top" secondItem="ffG-Jy-P9B" secondAttribute="topMargin" id="UCE-sJ-tEn"/>
+                                        <constraint firstItem="Kwy-15-Ldk" firstAttribute="leading" secondItem="ffG-Jy-P9B" secondAttribute="leading" id="WbO-GA-VCe"/>
+                                        <constraint firstItem="Kwy-15-Ldk" firstAttribute="centerX" secondItem="ffG-Jy-P9B" secondAttribute="centerX" id="jLj-79-zH8"/>
+                                        <constraint firstItem="Kwy-15-Ldk" firstAttribute="centerY" secondItem="ffG-Jy-P9B" secondAttribute="centerY" id="snT-VP-kFR"/>
+                                        <constraint firstAttribute="trailing" secondItem="Kwy-15-Ldk" secondAttribute="trailing" id="wha-Lf-IDr"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="songNameLabel" destination="Lzk-oB-aRv" id="BrJ-A1-GS8"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="HhZ-4s-43I" userLabel="SongResourceCell">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HhZ-4s-43I" id="eEO-RL-BvA">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                <color key="value" red="0.84103957139999996" green="0.84103957139999996" blue="0.84103957139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="hasRefreshControl" value="NO"/>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="dataSource" destination="AIi-7i-QmG" id="Mua-SJ-D93"/>
+                            <outlet property="delegate" destination="AIi-7i-QmG" id="P2g-ZU-ZFL"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ej8-Io-mpE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="229.59999999999999" y="114.69265367316342"/>
+            <point key="canvasLocation" x="509.60000000000002" y="-71.514242878560722"/>
         </scene>
     </scenes>
 </document>
