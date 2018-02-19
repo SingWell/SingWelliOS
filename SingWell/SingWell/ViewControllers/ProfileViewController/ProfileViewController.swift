@@ -181,6 +181,17 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         editButton.setImage( editImage, for: UIControlState.normal)
     }
     
+    func setEmailButton() {
+        let size = CGSize(width:55, height: 55)
+        var backImage: UIImage = UIImage(named: "editButtonBackground")!
+        backImage = backImage.resizeImageWith(newSize: size)
+        backImage = backImage.circleMasked!
+        editImageView.image = backImage
+        
+        let editImage = UIImage.ionicon(with: .iosEmail, textColor: UIColor.white, size: CGSize(width: 25, height: 25))
+        editButton.setImage( editImage, for: UIControlState.normal)
+    }
+    
     func setNotificationButton() {
         let size = CGSize(width:55, height: 55)
         var backImage: UIImage = UIImage(named: "editButtonBackground2")!
@@ -189,6 +200,17 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         notificationImageView.image = backImage
         
         let notificationImage = UIImage.ionicon(with: .gearA, textColor: UIColor.white, size: CGSize(width: 25, height: 25))
+        notificationButton.setImage( notificationImage, for: UIControlState.normal)
+    }
+    
+    func setTextButton() {
+        let size = CGSize(width:55, height: 55)
+        var backImage: UIImage = UIImage(named: "editButtonBackground2")!
+        backImage = backImage.resizeImageWith(newSize: size)
+        backImage = backImage.circleMasked!
+        notificationImageView.image = backImage
+        
+        let notificationImage = UIImage.ionicon(with: .iosTelephone, textColor: UIColor.white, size: CGSize(width: 25, height: 25))
         notificationButton.setImage( notificationImage, for: UIControlState.normal)
     }
     
@@ -320,10 +342,12 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             getUser()
             
 //            Hide Edit and Notification Buttons
-            notificationImageView.isHidden = true
-            notificationButton.isHidden = true
-            editButton.isHidden = true
-            editImageView.isHidden = true
+//            notificationImageView.isHidden = true
+//            notificationButton.isHidden = true
+//            editButton.isHidden = true
+//            editImageView.isHidden = true
+            setEmailButton()
+            setTextButton()
         }
         else {
 //            View Navigation items
@@ -343,10 +367,13 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             self.navigationItem.leftBarButtonItem = menuItem
             
 //            View Edit and Notification Buttons
-            notificationImageView.isHidden = false
-            notificationButton.isHidden = false
-            editButton.isHidden = false
-            editImageView.isHidden = false
+//            notificationImageView.isHidden = false
+//            notificationButton.isHidden = false
+//            editButton.isHidden = false
+//            editImageView.isHidden = false
+            
+            setEditButton()
+            setNotificationButton()
             
         }
         userId = ""

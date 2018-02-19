@@ -27,6 +27,8 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Use to take picture</string>
+	<key>NSMainNibFile</key>
+	<string></string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Add picture to library</string>
 	<key>NSPhotoLibraryUsageDescription</key>
