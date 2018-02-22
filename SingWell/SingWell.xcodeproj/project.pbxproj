@@ -136,7 +136,6 @@
 		16B6DD02202E5A390043300D /* SeeScoreLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 16B6DCFF202E5A190043300D /* SeeScoreLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		16D2CFA01FBE423500FDFF4D /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2CF9F1FBE423500FDFF4D /* ProfileTableViewCell.swift */; };
 		16D2CFA21FBE424300FDFF4D /* ChoirNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2CFA11FBE424300FDFF4D /* ChoirNameTableViewCell.swift */; };
-		16D9964E203B47BB007CCB18 /* AveVerumMozart.mxl in Resources */ = {isa = PBXBuildFile; fileRef = 16D9964D203B47BB007CCB18 /* AveVerumMozart.mxl */; };
 		16E211921FC35122009969B1 /* ChoirInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E211911FC35122009969B1 /* ChoirInfoTableViewCell.swift */; };
 		16E211951FC35C5F009969B1 /* NotificationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E211941FC35C5F009969B1 /* NotificationsTableViewController.swift */; };
 		16E211971FC35C6B009969B1 /* Notifications.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16E211961FC35C6B009969B1 /* Notifications.storyboard */; };
@@ -154,8 +153,9 @@
 		525EF4B71FC3A4BB00C8E822 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525EF4B61FC3A4BB00C8E822 /* EditProfileViewController.swift */; };
 		525EF4B91FC3A4C600C8E822 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 525EF4B81FC3A4C600C8E822 /* EditProfile.storyboard */; };
 		526F5D5C1FCE13F9002F7D27 /* SettingsModal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 526F5D5B1FCE13F9002F7D27 /* SettingsModal.storyboard */; };
+		52AF5C7E203F715A009B12FB /* SongPDFTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AF5C7D203F715A009B12FB /* SongPDFTableViewCell.swift */; };
 		52DA23DE1FD0B7B8004CD9E0 /* RosterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA23DD1FD0B7B8004CD9E0 /* RosterTableViewCell.swift */; };
-		52EEFDCF203B3B9300E71045 /* SongResourceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EEFDCE203B3B9300E71045 /* SongResourceTableViewCell.swift */; };
+		52EEFDCF203B3B9300E71045 /* SongYouTubeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EEFDCE203B3B9300E71045 /* SongYouTubeTableViewCell.swift */; };
 		52FD88401FDDD05700958AAE /* NewEditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD883F1FDDD05700958AAE /* NewEditProfileViewController.swift */; };
 		52FD88421FDDD06600958AAE /* NewEditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52FD88411FDDD06600958AAE /* NewEditProfile.storyboard */; };
 		86F76E547079493C7DAADA22 /* Pods_SingWellTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5B7BEEE8800BC4F7098CCD /* Pods_SingWellTests.framework */; };
@@ -337,7 +337,6 @@
 		16B6DCFF202E5A190043300D /* SeeScoreLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SeeScoreLib.framework; sourceTree = SOURCE_ROOT; };
 		16D2CF9F1FBE423500FDFF4D /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		16D2CFA11FBE424300FDFF4D /* ChoirNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoirNameTableViewCell.swift; sourceTree = "<group>"; };
-		16D9964D203B47BB007CCB18 /* AveVerumMozart.mxl */ = {isa = PBXFileReference; lastKnownFileType = file; path = AveVerumMozart.mxl; sourceTree = "<group>"; };
 		16E211911FC35122009969B1 /* ChoirInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoirInfoTableViewCell.swift; sourceTree = "<group>"; };
 		16E211941FC35C5F009969B1 /* NotificationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewController.swift; sourceTree = "<group>"; };
 		16E211961FC35C6B009969B1 /* Notifications.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notifications.storyboard; sourceTree = "<group>"; };
@@ -356,8 +355,9 @@
 		525EF4B61FC3A4BB00C8E822 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		525EF4B81FC3A4C600C8E822 /* EditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
 		526F5D5B1FCE13F9002F7D27 /* SettingsModal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsModal.storyboard; sourceTree = "<group>"; };
+		52AF5C7D203F715A009B12FB /* SongPDFTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongPDFTableViewCell.swift; sourceTree = "<group>"; };
 		52DA23DD1FD0B7B8004CD9E0 /* RosterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RosterTableViewCell.swift; sourceTree = "<group>"; };
-		52EEFDCE203B3B9300E71045 /* SongResourceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongResourceTableViewCell.swift; sourceTree = "<group>"; };
+		52EEFDCE203B3B9300E71045 /* SongYouTubeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongYouTubeTableViewCell.swift; sourceTree = "<group>"; };
 		52FD883F1FDDD05700958AAE /* NewEditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEditProfileViewController.swift; sourceTree = "<group>"; };
 		52FD88411FDDD06600958AAE /* NewEditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewEditProfile.storyboard; sourceTree = "<group>"; };
 		56D8462546CB3640CFED1D64 /* Pods_SingWellUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SingWellUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -489,7 +489,8 @@
 				1626ADDD202E60970028C7F7 /* Piano.mf.107.m4a */,
 				1626ADDE202E60970028C7F7 /* Piano.mf.108.m4a */,
 			);
-			path = piano_samples;
+			name = piano_samples;
+			path = "synth-samples/piano-samples";
 			sourceTree = "<group>";
 		};
 		162D97FB1FA65CD3006068BC = {
@@ -550,7 +551,6 @@
 		162D98351FA65CF6006068BC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				16D9964D203B47BB007CCB18 /* AveVerumMozart.mxl */,
 				1626ADD8202E60840028C7F7 /* piano_samples */,
 				166DF11E202E5F4C00C71B00 /* TestMXL.mxl */,
 				166DF119202E5DF300C71B00 /* Airfont_340.dls */,
@@ -608,7 +608,8 @@
 				164A51451FCFA9A50026D7DE /* Song.storyboard */,
 				523E97EB203514780034C6C2 /* SongTableViewController.swift */,
 				523E97ED203519BA0034C6C2 /* SongInfoTableViewCell.swift */,
-				52EEFDCE203B3B9300E71045 /* SongResourceTableViewCell.swift */,
+				52EEFDCE203B3B9300E71045 /* SongYouTubeTableViewCell.swift */,
+				52AF5C7D203F715A009B12FB /* SongPDFTableViewCell.swift */,
 			);
 			path = SongViewController;
 			sourceTree = "<group>";
@@ -656,8 +657,7 @@
 				16B6DCE4202E58390043300D /* SSScrollView.m */,
 				166DF116202E5D2100C71B00 /* evaluation_key.c */,
 			);
-			name = SeeScoreFiles;
-			path = ../PracticeViewController/SeeScoreFiles;
+			path = SeeScoreFiles;
 			sourceTree = "<group>";
 		};
 		16A7A3201FCE0C4F00B32491 /* MusicLibraryViewController */ = {
@@ -948,7 +948,6 @@
 				1626AE43202E609E0028C7F7 /* Piano.mf.30.m4a in Resources */,
 				1626AE48202E609E0028C7F7 /* Piano.mf.61.m4a in Resources */,
 				1626AE36202E609E0028C7F7 /* Piano.mf.45.m4a in Resources */,
-				16D9964E203B47BB007CCB18 /* AveVerumMozart.mxl in Resources */,
 				1626AE5A202E609E0028C7F7 /* Piano.mf.50.m4a in Resources */,
 				1626AE78202E609E0028C7F7 /* Piano.mf.86.m4a in Resources */,
 				1626AE3A202E609E0028C7F7 /* Piano.mf.59.m4a in Resources */,
@@ -1205,6 +1204,7 @@
 				52218E171FB50C0400EC4DDA /* UIImageExtension.swift in Sources */,
 				166DF115202E5D0B00C71B00 /* SSPlayLoopGraphics.m in Sources */,
 				5209FE2E1FD092CE00DB9CE8 /* SettingsModelViewController.swift in Sources */,
+				52AF5C7E203F715A009B12FB /* SongPDFTableViewCell.swift in Sources */,
 				16D2CFA01FBE423500FDFF4D /* ProfileTableViewCell.swift in Sources */,
 				1652FDB11FB502D200D921EB /* HostViewController.swift in Sources */,
 				52DA23DE1FD0B7B8004CD9E0 /* RosterTableViewCell.swift in Sources */,
@@ -1221,7 +1221,7 @@
 				16B6DCEE202E58390043300D /* Platform.swift in Sources */,
 				162E430320212BD70036B897 /* RegisterViewController.swift in Sources */,
 				1652FDB31FB5039400D921EB /* NavigationMenuViewController.swift in Sources */,
-				52EEFDCF203B3B9300E71045 /* SongResourceTableViewCell.swift in Sources */,
+				52EEFDCF203B3B9300E71045 /* SongYouTubeTableViewCell.swift in Sources */,
 				16256EE51FBB827A00992B02 /* ChoirResourceInfoTableViewCell.swift in Sources */,
 				16A7A3221FCE0C8B00B32491 /* MusicLibraryTableViewController.swift in Sources */,
 				16B6DCF3202E58390043300D /* Intonation.swift in Sources */,

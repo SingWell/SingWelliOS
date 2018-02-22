@@ -12,11 +12,13 @@ import SwiftyJSON
 import IoniconsKit
 
 let kSongInfo = "Song Info"
-let kSongResources = "Song Resources"
+//let kSongResources = "Song Resources"
+let kSongYouTubeLink = "Song YouTube Link"
+let kSongPDFResource = "Song PDF Resource"
 
 class SongTableViewController: UITableViewController {
     
-    let SECTIONS:[String] = [kSongInfo, kSongResources]
+    let SECTIONS:[String] = [kSongInfo, kSongYouTubeLink, kSongPDFResource]
     
 //    @IBOutlet weak var wv: UIWebView!
     
@@ -52,15 +54,17 @@ class SongTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 2
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch SECTIONS[section] {
         case kSongInfo: // choir info cell
             return 1
-        case kSongResources:
+        case kSongYouTubeLink:
             return 1
+        case kSongPDFResource:
+            return 0
         default:
             return 0
         }
@@ -70,6 +74,10 @@ class SongTableViewController: UITableViewController {
         switch SECTIONS[indexPath.section] {
         case kSongInfo:
             return 147.0
+        case kSongYouTubeLink:
+            return 175.0
+        case kSongPDFResource:
+            return 200.0
         default:
             return 175.0
         }
@@ -94,8 +102,8 @@ class SongTableViewController: UITableViewController {
 //            cell.practiceButton. = UIImage.ionicon(with: .androidMicrophone, textColor: UIColor.black, size: CGSize(width: 35, height: 35))
             
             return cell
-        case kSongResources: // song resource cell
-            let cell = tableView.dequeueReusableCell(withIdentifier: "SongResourceCell", for: indexPath) as! SongResourceTableViewCell
+        case kSongYouTubeLink: // song resource cell - youtube link
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SongYouTubeCell", for: indexPath) as! SongYouTubeTableViewCell
             
             let youtubeURL = NSURL(string: "https://www.youtube.com/embed/MLS6qZt9WLQ")
             
@@ -104,6 +112,12 @@ class SongTableViewController: UITableViewController {
             cell.wv.loadRequest(URLRequest(url: youtubeURL! as URL))
             
             return cell
+            
+        case kSongPDFResource: // song resource cell - pdf resource
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SongPDFCell", for: indexPath) as! SongPDFTableViewCell
+            
+            return cell
+            
         default:
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "ResourceCell", for: indexPath) as! EventCell

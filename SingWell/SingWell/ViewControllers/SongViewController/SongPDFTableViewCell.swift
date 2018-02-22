@@ -1,22 +1,18 @@
 //
-//  SongResourceTableViewCell.swift
+//  SongPDFTableViewCell.swift
 //  SingWell
 //
-//  Created by Elena Sharp on 2/19/18.
+//  Created by Elena Sharp on 2/22/18.
 //  Copyright © 2018 Travis Siems. All rights reserved.
 //
 
 import UIKit
 import IBAnimatable
 
-class SongYouTubeTableViewCell: AnimatableTableViewCell {
-    
-    @IBOutlet weak var wv: UIWebView!
+class SongPDFTableViewCell: AnimatableTableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-//        let youtubeURL = URL(string: "https://www.youtube.com/embed/MLS6qZt9WLQ")
-//        wv.loadRequest(URLRequest(url: youtubeURL!))
         // Initialization code
     }
 
