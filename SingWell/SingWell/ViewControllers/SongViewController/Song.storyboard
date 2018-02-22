@@ -92,7 +92,7 @@
                                     <outlet property="songNameLabel" destination="Lzk-oB-aRv" id="BrJ-A1-GS8"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongResourceCell" id="HhZ-4s-43I" userLabel="SongResourceCell" customClass="SongResourceTableViewCell" customModule="SingWell" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongYouTubeCell" id="HhZ-4s-43I" userLabel="SongYouTubeCell" customClass="SongYouTubeTableViewCell" customModule="SingWell" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="179" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HhZ-4s-43I" id="eEO-RL-BvA">
@@ -113,6 +113,29 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="wv" destination="VsQ-mY-0xm" id="hkD-Qd-l5d"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongPDFCell" id="HBe-cW-HkN" userLabel="SongPDFCell" customClass="SongPDFTableViewCell" customModule="SingWell" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="223" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HBe-cW-HkN" id="gJy-iT-zIY">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qJO-L5-CZb">
+                                            <rect key="frame" x="0.0" y="-1" width="375" height="44"/>
+                                            <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </webView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="qJO-L5-CZb" firstAttribute="height" secondItem="gJy-iT-zIY" secondAttribute="height" id="KQf-QV-OOy"/>
+                                        <constraint firstItem="qJO-L5-CZb" firstAttribute="centerX" secondItem="gJy-iT-zIY" secondAttribute="centerX" id="bN2-5l-u0s"/>
+                                        <constraint firstItem="qJO-L5-CZb" firstAttribute="centerY" secondItem="gJy-iT-zIY" secondAttribute="centerY" id="dYw-wN-uEB"/>
+                                        <constraint firstItem="qJO-L5-CZb" firstAttribute="width" secondItem="gJy-iT-zIY" secondAttribute="width" id="gga-vL-TWL"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="wv" destination="qJO-L5-CZb" id="Dqb-uq-T2I"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
