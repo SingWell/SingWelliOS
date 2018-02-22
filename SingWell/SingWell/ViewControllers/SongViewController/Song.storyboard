@@ -45,8 +45,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUi-Zs-kPx" userLabel="PracticeButton" customClass="AnimatableButton" customModule="IBAnimatable">
-                                                    <rect key="frame" x="309" y="25" width="46" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUi-Zs-kPx" userLabel="PracticeButton" customClass="AnimatableButton" customModule="IBAnimatable">
+                                                    <rect key="frame" x="304" y="88.5" width="61" height="30"/>
                                                     <state key="normal" title="Practice "/>
                                                 </button>
                                             </subviews>
