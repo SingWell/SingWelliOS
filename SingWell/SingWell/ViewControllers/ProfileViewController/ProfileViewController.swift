@@ -60,23 +60,23 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
     }
     
+    // Mail only works if the native Mail apple app is installed and set up with acount
     @IBAction func launchEmail(sender: AnyObject) {
         print("Tapped Email")
-        var emailTitle = "Feedback"
-        var messageBody = "Feature request or bug report?"
-        var toRecipents = ["friend@stackoverflow.com"]
-        let recipients:[String] = [emailButton.title(for: .normal)!]
-        var mc: MFMailComposeViewController = MFMailComposeViewController()
-        mc.mailComposeDelegate = self
-        mc.setSubject(emailTitle)
-        mc.setMessageBody(messageBody, isHTML: false)
-        mc.setToRecipients(toRecipents)
         
-        self.present(mc, animated: true, completion: nil)
+        if MFMailComposeViewController.canSendMail()
+        {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients([emailButton.title(for: .normal)!])
+            mail.setSubject("")
+            mail.setMessageBody("", isHTML: false)
+            self.present(mail, animated: true, completion: nil)
+        }
     }
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        controller.dismiss(animated: true)
+        controller.dismiss(animated: true, completion:nil)
     }
     
     //    @IBOutlet weak var cellImageView: UIImageView!

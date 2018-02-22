@@ -13,6 +13,9 @@ class SongInfoTableViewCell: AnimatableTableViewCell {
 
     @IBOutlet weak var songNameLabel: AnimatableLabel!
     
+    @IBOutlet weak var practiceButton: AnimatableButton!
+    
+    @IBOutlet weak var composerNameLabel: AnimatableLabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

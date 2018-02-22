@@ -51,6 +51,7 @@
 		525EF4B91FC3A4C600C8E822 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 525EF4B81FC3A4C600C8E822 /* EditProfile.storyboard */; };
 		526F5D5C1FCE13F9002F7D27 /* SettingsModal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 526F5D5B1FCE13F9002F7D27 /* SettingsModal.storyboard */; };
 		52DA23DE1FD0B7B8004CD9E0 /* RosterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA23DD1FD0B7B8004CD9E0 /* RosterTableViewCell.swift */; };
+		52EEFDCF203B3B9300E71045 /* SongResourceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EEFDCE203B3B9300E71045 /* SongResourceTableViewCell.swift */; };
 		52FD88401FDDD05700958AAE /* NewEditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD883F1FDDD05700958AAE /* NewEditProfileViewController.swift */; };
 		52FD88421FDDD06600958AAE /* NewEditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52FD88411FDDD06600958AAE /* NewEditProfile.storyboard */; };
 		86F76E547079493C7DAADA22 /* Pods_SingWellTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5B7BEEE8800BC4F7098CCD /* Pods_SingWellTests.framework */; };
@@ -128,6 +129,7 @@
 		525EF4B81FC3A4C600C8E822 /* EditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
 		526F5D5B1FCE13F9002F7D27 /* SettingsModal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsModal.storyboard; sourceTree = "<group>"; };
 		52DA23DD1FD0B7B8004CD9E0 /* RosterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RosterTableViewCell.swift; sourceTree = "<group>"; };
+		52EEFDCE203B3B9300E71045 /* SongResourceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongResourceTableViewCell.swift; sourceTree = "<group>"; };
 		52FD883F1FDDD05700958AAE /* NewEditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEditProfileViewController.swift; sourceTree = "<group>"; };
 		52FD88411FDDD06600958AAE /* NewEditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewEditProfile.storyboard; sourceTree = "<group>"; };
 		56D8462546CB3640CFED1D64 /* Pods_SingWellUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SingWellUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -275,6 +277,7 @@
 				164A51451FCFA9A50026D7DE /* Song.storyboard */,
 				523E97EB203514780034C6C2 /* SongTableViewController.swift */,
 				523E97ED203519BA0034C6C2 /* SongInfoTableViewCell.swift */,
+				52EEFDCE203B3B9300E71045 /* SongResourceTableViewCell.swift */,
 			);
 			path = SongViewController;
 			sourceTree = "<group>";
@@ -752,6 +755,7 @@
 				162D98081FA65CD3006068BC /* AppDelegate.swift in Sources */,
 				162E430320212BD70036B897 /* RegisterViewController.swift in Sources */,
 				1652FDB31FB5039400D921EB /* NavigationMenuViewController.swift in Sources */,
+				52EEFDCF203B3B9300E71045 /* SongResourceTableViewCell.swift in Sources */,
 				16256EE51FBB827A00992B02 /* ChoirResourceInfoTableViewCell.swift in Sources */,
 				16A7A3221FCE0C8B00B32491 /* MusicLibraryTableViewController.swift in Sources */,
 				16E2119A1FC35DD7009969B1 /* RosterTableViewController.swift in Sources */,

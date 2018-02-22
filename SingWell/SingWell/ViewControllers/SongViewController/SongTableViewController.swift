@@ -9,6 +9,7 @@
 import UIKit
 import IBAnimatable
 import SwiftyJSON
+import IoniconsKit
 
 let kSongInfo = "Song Info"
 let kSongResources = "Song Resources"
@@ -16,6 +17,8 @@ let kSongResources = "Song Resources"
 class SongTableViewController: UITableViewController {
     
     let SECTIONS:[String] = [kSongInfo, kSongResources]
+    
+//    @IBOutlet weak var wv: UIWebView!
     
     var songInfo:JSON = [
         "name":"My Favorite Things",
@@ -27,6 +30,9 @@ class SongTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        let youtubeURL = URL(string: "https://www.youtube.com/embed/MLS6qZt9WLQ")
+//        wv.loadRequest(URLRequest(url: youtubeURL!))
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -52,7 +58,7 @@ class SongTableViewController: UITableViewController {
         case kSongInfo: // choir info cell
             return 1
         case kSongResources:
-            return 0
+            return 1
         default:
             return 0
         }
@@ -63,16 +69,37 @@ class SongTableViewController: UITableViewController {
         case kSongInfo:
             return 147.0
         default:
-            return super.tableView(tableView, heightForRowAt: indexPath)
+            return 175.0
         }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch SECTIONS[indexPath.section] {
-        case kSongInfo: // choir info cell
+        case kSongInfo: // song info cell
             let cell = tableView.dequeueReusableCell(withIdentifier: "SongInfoCell", for: indexPath) as! SongInfoTableViewCell
             
             cell.contentView.backgroundColor = BACKGROUND_COLOR
+            
+            cell.songNameLabel.text = songInfo["title"].stringValue
+            cell.songNameLabel.font = cell.songNameLabel.font.withSize(20)
+            cell.composerNameLabel.text = songInfo["composer"].stringValue
+            
+            
+            let practiceImage = UIImage.ionicon(with: .androidMicrophone, textColor: UIColor.white, size: CGSize(width: 25, height: 25))
+            cell.practiceButton.setImage( practiceImage, for: UIControlState.normal)
+            cell.practiceButton.semanticContentAttribute = .forceRightToLeft
+            
+//            cell.practiceButton. = UIImage.ionicon(with: .androidMicrophone, textColor: UIColor.black, size: CGSize(width: 35, height: 35))
+            
+            return cell
+        case kSongResources: // song resource cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SongResourceCell", for: indexPath) as! SongResourceTableViewCell
+            
+            let youtubeURL = NSURL(string: "https://www.youtube.com/embed/MLS6qZt9WLQ")
+            
+            let requestObject = URLRequest(url: youtubeURL! as URL)
+            
+            cell.wv.loadRequest(URLRequest(url: youtubeURL! as URL))
             
             return cell
         default:
@@ -83,6 +110,13 @@ class SongTableViewController: UITableViewController {
         }
         
     }
+    
+//    func loadYoutube(videoID:String) {
+//        guard
+//            let youtubeURL = URL(string: "https://www.youtube.com/embed/\(videoID)")
+//            else { return }
+//        wv.loadRequest( URLRequest(url: youtubeURL) )
+//    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
