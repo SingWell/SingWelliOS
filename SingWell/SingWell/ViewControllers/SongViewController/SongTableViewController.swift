@@ -42,10 +42,12 @@ class SongTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func goToPracticePage(_ sender: Any) {
+        let nextVc = AppStoryboard.Practice.initialViewController() as! PracticeViewController
+        nextVc.filename = "TestMXL.mxl" // TODO: Download file!!
+        
+        self.navigationController?.pushViewController(nextVc, animated: true)
     }
 
     // MARK: - Table view data source
@@ -96,7 +98,7 @@ class SongTableViewController: UITableViewController {
             let practiceImage = UIImage.ionicon(with: .androidMicrophone, textColor: UIColor.white, size: CGSize(width: 25, height: 25))
             cell.practiceButton.setImage( practiceImage, for: UIControlState.normal)
             cell.practiceButton.semanticContentAttribute = .forceRightToLeft
-            
+            cell.practiceButton.addTarget(self, action: #selector(goToPracticePage(_:)), for: .touchUpInside)
 //            cell.practiceButton. = UIImage.ionicon(with: .androidMicrophone, textColor: UIColor.black, size: CGSize(width: 35, height: 35))
             
             return cell

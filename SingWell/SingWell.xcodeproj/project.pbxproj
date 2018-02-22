@@ -9,6 +9,92 @@
 /* Begin PBXBuildFile section */
 		1617DF941FB39EEB0094C474 /* ApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1617DF931FB39EEB0094C474 /* ApiHelper.swift */; };
 		16256EE51FBB827A00992B02 /* ChoirResourceInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16256EE41FBB827A00992B02 /* ChoirResourceInfoTableViewCell.swift */; };
+		1626AE2F202E609E0028C7F7 /* Piano.mf.78.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADD9202E60970028C7F7 /* Piano.mf.78.m4a */; };
+		1626AE30202E609E0028C7F7 /* Piano.mf.96.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADDA202E60970028C7F7 /* Piano.mf.96.m4a */; };
+		1626AE31202E609E0028C7F7 /* Piano.mf.97.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADDB202E60970028C7F7 /* Piano.mf.97.m4a */; };
+		1626AE32202E609E0028C7F7 /* Piano.mf.103.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADDC202E60970028C7F7 /* Piano.mf.103.m4a */; };
+		1626AE33202E609E0028C7F7 /* Piano.mf.107.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADDD202E60970028C7F7 /* Piano.mf.107.m4a */; };
+		1626AE34202E609E0028C7F7 /* Piano.mf.108.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADDE202E60970028C7F7 /* Piano.mf.108.m4a */; };
+		1626AE35202E609E0028C7F7 /* Piano.mf.83.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADDF202E60970028C7F7 /* Piano.mf.83.m4a */; };
+		1626AE36202E609E0028C7F7 /* Piano.mf.45.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADE0202E60980028C7F7 /* Piano.mf.45.m4a */; };
+		1626AE37202E609E0028C7F7 /* Piano.mf.100.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADE1202E60980028C7F7 /* Piano.mf.100.m4a */; };
+		1626AE38202E609E0028C7F7 /* Piano.mf.95.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADE2202E60980028C7F7 /* Piano.mf.95.m4a */; };
+		1626AE39202E609E0028C7F7 /* Piano.mf.79.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADE3202E60980028C7F7 /* Piano.mf.79.m4a */; };
+		1626AE3A202E609E0028C7F7 /* Piano.mf.59.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADE4202E60980028C7F7 /* Piano.mf.59.m4a */; };
+		1626AE3B202E609E0028C7F7 /* Piano.mf.85.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADE5202E60980028C7F7 /* Piano.mf.85.m4a */; };
+		1626AE3C202E609E0028C7F7 /* Piano.mf.84.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADE6202E60980028C7F7 /* Piano.mf.84.m4a */; };
+		1626AE3D202E609E0028C7F7 /* Piano.mf.39.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADE7202E60980028C7F7 /* Piano.mf.39.m4a */; };
+		1626AE3E202E609E0028C7F7 /* Piano.mf.74.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADE8202E60980028C7F7 /* Piano.mf.74.m4a */; };
+		1626AE3F202E609E0028C7F7 /* Piano.mf.33.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADE9202E60980028C7F7 /* Piano.mf.33.m4a */; };
+		1626AE40202E609E0028C7F7 /* Piano.mf.76.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADEA202E60980028C7F7 /* Piano.mf.76.m4a */; };
+		1626AE41202E609E0028C7F7 /* Piano.mf.54.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADEB202E60980028C7F7 /* Piano.mf.54.m4a */; };
+		1626AE42202E609E0028C7F7 /* Piano.mf.44.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADEC202E60980028C7F7 /* Piano.mf.44.m4a */; };
+		1626AE43202E609E0028C7F7 /* Piano.mf.30.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADED202E60980028C7F7 /* Piano.mf.30.m4a */; };
+		1626AE44202E609E0028C7F7 /* Piano.mf.40.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADEE202E60990028C7F7 /* Piano.mf.40.m4a */; };
+		1626AE45202E609E0028C7F7 /* Piano.mf.46.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADEF202E60990028C7F7 /* Piano.mf.46.m4a */; };
+		1626AE46202E609E0028C7F7 /* Piano.mf.36.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADF0202E60990028C7F7 /* Piano.mf.36.m4a */; };
+		1626AE47202E609E0028C7F7 /* Piano.mf.25.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADF1202E60990028C7F7 /* Piano.mf.25.m4a */; };
+		1626AE48202E609E0028C7F7 /* Piano.mf.61.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADF2202E60990028C7F7 /* Piano.mf.61.m4a */; };
+		1626AE49202E609E0028C7F7 /* Piano.mf.52.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADF3202E60990028C7F7 /* Piano.mf.52.m4a */; };
+		1626AE4A202E609E0028C7F7 /* Piano.mf.42.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADF4202E60990028C7F7 /* Piano.mf.42.m4a */; };
+		1626AE4B202E609E0028C7F7 /* Piano.mf.102.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADF5202E60990028C7F7 /* Piano.mf.102.m4a */; };
+		1626AE4C202E609E0028C7F7 /* Piano.mf.47.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADF6202E60990028C7F7 /* Piano.mf.47.m4a */; };
+		1626AE4D202E609E0028C7F7 /* Piano.mf.69.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADF7202E60990028C7F7 /* Piano.mf.69.m4a */; };
+		1626AE4E202E609E0028C7F7 /* Piano.mf.81.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADF8202E60990028C7F7 /* Piano.mf.81.m4a */; };
+		1626AE4F202E609E0028C7F7 /* Piano.mf.24.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADF9202E609A0028C7F7 /* Piano.mf.24.m4a */; };
+		1626AE50202E609E0028C7F7 /* Piano.mf.106.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADFA202E609A0028C7F7 /* Piano.mf.106.m4a */; };
+		1626AE51202E609E0028C7F7 /* Piano.mf.80.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADFB202E609A0028C7F7 /* Piano.mf.80.m4a */; };
+		1626AE52202E609E0028C7F7 /* Piano.mf.62.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADFC202E609A0028C7F7 /* Piano.mf.62.m4a */; };
+		1626AE53202E609E0028C7F7 /* Piano.mf.68.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADFD202E609A0028C7F7 /* Piano.mf.68.m4a */; };
+		1626AE54202E609E0028C7F7 /* Piano.mf.28.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADFE202E609A0028C7F7 /* Piano.mf.28.m4a */; };
+		1626AE55202E609E0028C7F7 /* Piano.mf.35.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626ADFF202E609A0028C7F7 /* Piano.mf.35.m4a */; };
+		1626AE56202E609E0028C7F7 /* Piano.mf.53.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE00202E609A0028C7F7 /* Piano.mf.53.m4a */; };
+		1626AE57202E609E0028C7F7 /* Piano.mf.77.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE01202E609A0028C7F7 /* Piano.mf.77.m4a */; };
+		1626AE58202E609E0028C7F7 /* Piano.mf.93.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE02202E609A0028C7F7 /* Piano.mf.93.m4a */; };
+		1626AE59202E609E0028C7F7 /* Piano.mf.64.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE03202E609A0028C7F7 /* Piano.mf.64.m4a */; };
+		1626AE5A202E609E0028C7F7 /* Piano.mf.50.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE04202E609B0028C7F7 /* Piano.mf.50.m4a */; };
+		1626AE5B202E609E0028C7F7 /* Piano.mf.99.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE05202E609B0028C7F7 /* Piano.mf.99.m4a */; };
+		1626AE5C202E609E0028C7F7 /* Piano.mf.57.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE06202E609B0028C7F7 /* Piano.mf.57.m4a */; };
+		1626AE5D202E609E0028C7F7 /* Piano.mf.94.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE07202E609B0028C7F7 /* Piano.mf.94.m4a */; };
+		1626AE5E202E609E0028C7F7 /* Piano.mf.67.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE08202E609B0028C7F7 /* Piano.mf.67.m4a */; };
+		1626AE5F202E609E0028C7F7 /* Piano.mf.91.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE09202E609B0028C7F7 /* Piano.mf.91.m4a */; };
+		1626AE60202E609E0028C7F7 /* Piano.mf.32.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE0A202E609B0028C7F7 /* Piano.mf.32.m4a */; };
+		1626AE61202E609E0028C7F7 /* Piano.mf.92.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE0B202E609B0028C7F7 /* Piano.mf.92.m4a */; };
+		1626AE62202E609E0028C7F7 /* Piano.mf.82.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE0C202E609B0028C7F7 /* Piano.mf.82.m4a */; };
+		1626AE63202E609E0028C7F7 /* Piano.mf.31.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE0D202E609B0028C7F7 /* Piano.mf.31.m4a */; };
+		1626AE64202E609E0028C7F7 /* Piano.mf.27.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE0E202E609B0028C7F7 /* Piano.mf.27.m4a */; };
+		1626AE65202E609E0028C7F7 /* Piano.mf.60.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE0F202E609C0028C7F7 /* Piano.mf.60.m4a */; };
+		1626AE66202E609E0028C7F7 /* Piano.mf.70.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE10202E609C0028C7F7 /* Piano.mf.70.m4a */; };
+		1626AE67202E609E0028C7F7 /* Piano.mf.26.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE11202E609C0028C7F7 /* Piano.mf.26.m4a */; };
+		1626AE68202E609E0028C7F7 /* Piano.mf.34.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE12202E609C0028C7F7 /* Piano.mf.34.m4a */; };
+		1626AE69202E609E0028C7F7 /* Piano.mf.73.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE13202E609C0028C7F7 /* Piano.mf.73.m4a */; };
+		1626AE6A202E609E0028C7F7 /* Piano.mf.56.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE14202E609C0028C7F7 /* Piano.mf.56.m4a */; };
+		1626AE6B202E609E0028C7F7 /* Piano.mf.87.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE15202E609C0028C7F7 /* Piano.mf.87.m4a */; };
+		1626AE6C202E609E0028C7F7 /* Piano.mf.88.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE16202E609C0028C7F7 /* Piano.mf.88.m4a */; };
+		1626AE6D202E609E0028C7F7 /* Piano.mf.49.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE17202E609C0028C7F7 /* Piano.mf.49.m4a */; };
+		1626AE6E202E609E0028C7F7 /* Piano.mf.72.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE18202E609C0028C7F7 /* Piano.mf.72.m4a */; };
+		1626AE6F202E609E0028C7F7 /* Piano.mf.89.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE19202E609C0028C7F7 /* Piano.mf.89.m4a */; };
+		1626AE70202E609E0028C7F7 /* Piano.mf.51.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE1A202E609C0028C7F7 /* Piano.mf.51.m4a */; };
+		1626AE71202E609E0028C7F7 /* Piano.mf.65.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE1B202E609D0028C7F7 /* Piano.mf.65.m4a */; };
+		1626AE72202E609E0028C7F7 /* Piano.mf.66.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE1C202E609D0028C7F7 /* Piano.mf.66.m4a */; };
+		1626AE73202E609E0028C7F7 /* Piano.mf.90.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE1D202E609D0028C7F7 /* Piano.mf.90.m4a */; };
+		1626AE74202E609E0028C7F7 /* Piano.mf.48.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE1E202E609D0028C7F7 /* Piano.mf.48.m4a */; };
+		1626AE75202E609E0028C7F7 /* Piano.mf.38.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE1F202E609D0028C7F7 /* Piano.mf.38.m4a */; };
+		1626AE76202E609E0028C7F7 /* Piano.mf.63.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE20202E609D0028C7F7 /* Piano.mf.63.m4a */; };
+		1626AE77202E609E0028C7F7 /* Piano.mf.104.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE21202E609D0028C7F7 /* Piano.mf.104.m4a */; };
+		1626AE78202E609E0028C7F7 /* Piano.mf.86.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE22202E609D0028C7F7 /* Piano.mf.86.m4a */; };
+		1626AE79202E609E0028C7F7 /* Piano.mf.105.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE23202E609D0028C7F7 /* Piano.mf.105.m4a */; };
+		1626AE7A202E609E0028C7F7 /* Piano.mf.98.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE24202E609D0028C7F7 /* Piano.mf.98.m4a */; };
+		1626AE7B202E609E0028C7F7 /* Piano.mf.23.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE25202E609D0028C7F7 /* Piano.mf.23.m4a */; };
+		1626AE7C202E609E0028C7F7 /* Piano.mf.75.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE26202E609E0028C7F7 /* Piano.mf.75.m4a */; };
+		1626AE7D202E609E0028C7F7 /* Piano.mf.37.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE27202E609E0028C7F7 /* Piano.mf.37.m4a */; };
+		1626AE7E202E609E0028C7F7 /* Piano.mf.55.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE28202E609E0028C7F7 /* Piano.mf.55.m4a */; };
+		1626AE7F202E609E0028C7F7 /* Piano.mf.58.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE29202E609E0028C7F7 /* Piano.mf.58.m4a */; };
+		1626AE80202E609E0028C7F7 /* Piano.mf.29.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE2A202E609E0028C7F7 /* Piano.mf.29.m4a */; };
+		1626AE81202E609E0028C7F7 /* Piano.mf.101.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE2B202E609E0028C7F7 /* Piano.mf.101.m4a */; };
+		1626AE82202E609E0028C7F7 /* Piano.mf.41.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE2C202E609E0028C7F7 /* Piano.mf.41.m4a */; };
+		1626AE83202E609E0028C7F7 /* Piano.mf.71.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE2D202E609E0028C7F7 /* Piano.mf.71.m4a */; };
+		1626AE84202E609E0028C7F7 /* Piano.mf.43.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 1626AE2E202E609E0028C7F7 /* Piano.mf.43.m4a */; };
 		162D98081FA65CD3006068BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162D98071FA65CD3006068BC /* AppDelegate.swift */; };
 		162D980F1FA65CD3006068BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 162D980E1FA65CD3006068BC /* Assets.xcassets */; };
 		162D98121FA65CD3006068BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 162D98101FA65CD3006068BC /* LaunchScreen.storyboard */; };
@@ -26,13 +112,31 @@
 		1652FDB11FB502D200D921EB /* HostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652FDB01FB502D200D921EB /* HostViewController.swift */; };
 		1652FDB31FB5039400D921EB /* NavigationMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652FDB21FB5039400D921EB /* NavigationMenuViewController.swift */; };
 		1652FDB51FB5041600D921EB /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1652FDB41FB5041600D921EB /* SideMenu.storyboard */; };
+		166228EB2033A46A008219B3 /* PracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166228EA2033A46A008219B3 /* PracticeViewController.swift */; };
+		166DF112202E5CEC00C71B00 /* SSSystemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 166DF110202E5CEB00C71B00 /* SSSystemView.m */; };
+		166DF115202E5D0B00C71B00 /* SSPlayLoopGraphics.m in Sources */ = {isa = PBXBuildFile; fileRef = 166DF114202E5D0B00C71B00 /* SSPlayLoopGraphics.m */; };
+		166DF117202E5D2100C71B00 /* evaluation_key.c in Sources */ = {isa = PBXBuildFile; fileRef = 166DF116202E5D2100C71B00 /* evaluation_key.c */; };
+		166DF11A202E5DF300C71B00 /* Bach Crucifixus_soprano.mid in Resources */ = {isa = PBXBuildFile; fileRef = 166DF118202E5DF300C71B00 /* Bach Crucifixus_soprano.mid */; };
+		166DF11B202E5DF300C71B00 /* Airfont_340.dls in Resources */ = {isa = PBXBuildFile; fileRef = 166DF119202E5DF300C71B00 /* Airfont_340.dls */; };
+		166DF11F202E5F4C00C71B00 /* TestMXL.mxl in Resources */ = {isa = PBXBuildFile; fileRef = 166DF11E202E5F4C00C71B00 /* TestMXL.mxl */; };
 		16A7A3221FCE0C8B00B32491 /* MusicLibraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A3211FCE0C8B00B32491 /* MusicLibraryTableViewController.swift */; };
 		16A7A3241FCE0C9600B32491 /* MusicLibrary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16A7A3231FCE0C9600B32491 /* MusicLibrary.storyboard */; };
 		16A7A3261FCE0CB800B32491 /* MusicLibraryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A3251FCE0CB800B32491 /* MusicLibraryTableViewCell.swift */; };
 		16A7A3291FCE13E000B32491 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A3281FCE13E000B32491 /* EventViewController.swift */; };
 		16A7A32B1FCE13E900B32491 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16A7A32A1FCE13E900B32491 /* Event.storyboard */; };
+		16B6DCEE202E58390043300D /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B6DCDF202E58390043300D /* Platform.swift */; };
+		16B6DCEF202E58390043300D /* SSBarControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 16B6DCE0202E58390043300D /* SSBarControl.m */; };
+		16B6DCF0202E58390043300D /* SingWell-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 16B6DCE1202E58390043300D /* SingWell-Bridging-Header.h */; };
+		16B6DCF1202E58390043300D /* Platform.m in Sources */ = {isa = PBXBuildFile; fileRef = 16B6DCE2202E58390043300D /* Platform.m */; };
+		16B6DCF2202E58390043300D /* SSScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16B6DCE4202E58390043300D /* SSScrollView.m */; };
+		16B6DCF3202E58390043300D /* Intonation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B6DCE7202E58390043300D /* Intonation.swift */; };
+		16B6DCF4202E58390043300D /* Practice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16B6DCE9202E58390043300D /* Practice.storyboard */; };
+		16B6DD00202E5A190043300D /* SeeScoreLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16B6DCFF202E5A190043300D /* SeeScoreLib.framework */; };
+		16B6DD01202E5A390043300D /* SeeScoreLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16B6DCFF202E5A190043300D /* SeeScoreLib.framework */; };
+		16B6DD02202E5A390043300D /* SeeScoreLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 16B6DCFF202E5A190043300D /* SeeScoreLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		16D2CFA01FBE423500FDFF4D /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2CF9F1FBE423500FDFF4D /* ProfileTableViewCell.swift */; };
 		16D2CFA21FBE424300FDFF4D /* ChoirNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2CFA11FBE424300FDFF4D /* ChoirNameTableViewCell.swift */; };
+		16D9964E203B47BB007CCB18 /* AveVerumMozart.mxl in Resources */ = {isa = PBXBuildFile; fileRef = 16D9964D203B47BB007CCB18 /* AveVerumMozart.mxl */; };
 		16E211921FC35122009969B1 /* ChoirInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E211911FC35122009969B1 /* ChoirInfoTableViewCell.swift */; };
 		16E211951FC35C5F009969B1 /* NotificationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E211941FC35C5F009969B1 /* NotificationsTableViewController.swift */; };
 		16E211971FC35C6B009969B1 /* Notifications.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16E211961FC35C6B009969B1 /* Notifications.storyboard */; };
@@ -77,10 +181,110 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		16B6DD03202E5A390043300D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				16B6DD02202E5A390043300D /* SeeScoreLib.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		091858B7E57F4BDBB305B7A9 /* Pods-SingWellUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingWellUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SingWellUITests/Pods-SingWellUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1617DF931FB39EEB0094C474 /* ApiHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHelper.swift; sourceTree = "<group>"; };
 		16256EE41FBB827A00992B02 /* ChoirResourceInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoirResourceInfoTableViewCell.swift; sourceTree = "<group>"; };
+		1626ADD9202E60970028C7F7 /* Piano.mf.78.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.78.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.78.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADDA202E60970028C7F7 /* Piano.mf.96.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.96.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.96.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADDB202E60970028C7F7 /* Piano.mf.97.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.97.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.97.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADDC202E60970028C7F7 /* Piano.mf.103.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.103.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.103.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADDD202E60970028C7F7 /* Piano.mf.107.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.107.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.107.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADDE202E60970028C7F7 /* Piano.mf.108.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.108.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.108.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADDF202E60970028C7F7 /* Piano.mf.83.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.83.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.83.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADE0202E60980028C7F7 /* Piano.mf.45.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.45.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.45.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADE1202E60980028C7F7 /* Piano.mf.100.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.100.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.100.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADE2202E60980028C7F7 /* Piano.mf.95.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.95.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.95.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADE3202E60980028C7F7 /* Piano.mf.79.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.79.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.79.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADE4202E60980028C7F7 /* Piano.mf.59.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.59.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.59.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADE5202E60980028C7F7 /* Piano.mf.85.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.85.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.85.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADE6202E60980028C7F7 /* Piano.mf.84.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.84.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.84.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADE7202E60980028C7F7 /* Piano.mf.39.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.39.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.39.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADE8202E60980028C7F7 /* Piano.mf.74.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.74.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.74.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADE9202E60980028C7F7 /* Piano.mf.33.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.33.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.33.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADEA202E60980028C7F7 /* Piano.mf.76.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.76.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.76.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADEB202E60980028C7F7 /* Piano.mf.54.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.54.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.54.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADEC202E60980028C7F7 /* Piano.mf.44.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.44.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.44.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADED202E60980028C7F7 /* Piano.mf.30.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.30.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.30.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADEE202E60990028C7F7 /* Piano.mf.40.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.40.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.40.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADEF202E60990028C7F7 /* Piano.mf.46.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.46.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.46.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADF0202E60990028C7F7 /* Piano.mf.36.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.36.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.36.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADF1202E60990028C7F7 /* Piano.mf.25.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.25.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.25.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADF2202E60990028C7F7 /* Piano.mf.61.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.61.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.61.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADF3202E60990028C7F7 /* Piano.mf.52.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.52.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.52.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADF4202E60990028C7F7 /* Piano.mf.42.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.42.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.42.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADF5202E60990028C7F7 /* Piano.mf.102.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.102.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.102.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADF6202E60990028C7F7 /* Piano.mf.47.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.47.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.47.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADF7202E60990028C7F7 /* Piano.mf.69.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.69.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.69.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADF8202E60990028C7F7 /* Piano.mf.81.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.81.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.81.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADF9202E609A0028C7F7 /* Piano.mf.24.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.24.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.24.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADFA202E609A0028C7F7 /* Piano.mf.106.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.106.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.106.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADFB202E609A0028C7F7 /* Piano.mf.80.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.80.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.80.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADFC202E609A0028C7F7 /* Piano.mf.62.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.62.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.62.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADFD202E609A0028C7F7 /* Piano.mf.68.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.68.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.68.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADFE202E609A0028C7F7 /* Piano.mf.28.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.28.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.28.m4a"; sourceTree = SOURCE_ROOT; };
+		1626ADFF202E609A0028C7F7 /* Piano.mf.35.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.35.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.35.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE00202E609A0028C7F7 /* Piano.mf.53.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.53.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.53.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE01202E609A0028C7F7 /* Piano.mf.77.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.77.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.77.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE02202E609A0028C7F7 /* Piano.mf.93.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.93.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.93.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE03202E609A0028C7F7 /* Piano.mf.64.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.64.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.64.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE04202E609B0028C7F7 /* Piano.mf.50.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.50.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.50.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE05202E609B0028C7F7 /* Piano.mf.99.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.99.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.99.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE06202E609B0028C7F7 /* Piano.mf.57.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.57.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.57.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE07202E609B0028C7F7 /* Piano.mf.94.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.94.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.94.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE08202E609B0028C7F7 /* Piano.mf.67.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.67.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.67.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE09202E609B0028C7F7 /* Piano.mf.91.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.91.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.91.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE0A202E609B0028C7F7 /* Piano.mf.32.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.32.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.32.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE0B202E609B0028C7F7 /* Piano.mf.92.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.92.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.92.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE0C202E609B0028C7F7 /* Piano.mf.82.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.82.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.82.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE0D202E609B0028C7F7 /* Piano.mf.31.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.31.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.31.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE0E202E609B0028C7F7 /* Piano.mf.27.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.27.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.27.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE0F202E609C0028C7F7 /* Piano.mf.60.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.60.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.60.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE10202E609C0028C7F7 /* Piano.mf.70.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.70.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.70.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE11202E609C0028C7F7 /* Piano.mf.26.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.26.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.26.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE12202E609C0028C7F7 /* Piano.mf.34.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.34.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.34.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE13202E609C0028C7F7 /* Piano.mf.73.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.73.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.73.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE14202E609C0028C7F7 /* Piano.mf.56.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.56.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.56.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE15202E609C0028C7F7 /* Piano.mf.87.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.87.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.87.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE16202E609C0028C7F7 /* Piano.mf.88.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.88.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.88.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE17202E609C0028C7F7 /* Piano.mf.49.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.49.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.49.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE18202E609C0028C7F7 /* Piano.mf.72.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.72.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.72.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE19202E609C0028C7F7 /* Piano.mf.89.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.89.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.89.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE1A202E609C0028C7F7 /* Piano.mf.51.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.51.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.51.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE1B202E609D0028C7F7 /* Piano.mf.65.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.65.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.65.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE1C202E609D0028C7F7 /* Piano.mf.66.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.66.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.66.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE1D202E609D0028C7F7 /* Piano.mf.90.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.90.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.90.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE1E202E609D0028C7F7 /* Piano.mf.48.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.48.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.48.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE1F202E609D0028C7F7 /* Piano.mf.38.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.38.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.38.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE20202E609D0028C7F7 /* Piano.mf.63.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.63.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.63.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE21202E609D0028C7F7 /* Piano.mf.104.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.104.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.104.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE22202E609D0028C7F7 /* Piano.mf.86.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.86.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.86.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE23202E609D0028C7F7 /* Piano.mf.105.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.105.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.105.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE24202E609D0028C7F7 /* Piano.mf.98.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.98.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.98.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE25202E609D0028C7F7 /* Piano.mf.23.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.23.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.23.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE26202E609E0028C7F7 /* Piano.mf.75.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.75.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.75.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE27202E609E0028C7F7 /* Piano.mf.37.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.37.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.37.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE28202E609E0028C7F7 /* Piano.mf.55.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.55.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.55.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE29202E609E0028C7F7 /* Piano.mf.58.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.58.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.58.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE2A202E609E0028C7F7 /* Piano.mf.29.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.29.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.29.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE2B202E609E0028C7F7 /* Piano.mf.101.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.101.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.101.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE2C202E609E0028C7F7 /* Piano.mf.41.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.41.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.41.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE2D202E609E0028C7F7 /* Piano.mf.71.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.71.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.71.m4a"; sourceTree = SOURCE_ROOT; };
+		1626AE2E202E609E0028C7F7 /* Piano.mf.43.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = Piano.mf.43.m4a; path = "SingWell/Resources/synth-samples/piano-samples/Piano.mf.43.m4a"; sourceTree = SOURCE_ROOT; };
 		162D98041FA65CD3006068BC /* SingWell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SingWell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		162D98071FA65CD3006068BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		162D980E1FA65CD3006068BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -104,13 +308,37 @@
 		1652FDB01FB502D200D921EB /* HostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
 		1652FDB21FB5039400D921EB /* NavigationMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationMenuViewController.swift; sourceTree = "<group>"; };
 		1652FDB41FB5041600D921EB /* SideMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
+		166228EA2033A46A008219B3 /* PracticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PracticeViewController.swift; path = SingWell/ViewControllers/PracticeViewController/PracticeViewController.swift; sourceTree = SOURCE_ROOT; };
+		166B5511202E569400316957 /* SingWell-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SingWell-Bridging-Header.h"; sourceTree = "<group>"; };
+		166DF110202E5CEB00C71B00 /* SSSystemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSSystemView.m; path = SingWell/ViewControllers/PracticeViewController/SeeScoreFiles/SSSystemView.m; sourceTree = SOURCE_ROOT; };
+		166DF111202E5CEC00C71B00 /* SSSystemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSSystemView.h; path = SingWell/ViewControllers/PracticeViewController/SeeScoreFiles/SSSystemView.h; sourceTree = SOURCE_ROOT; };
+		166DF113202E5D0B00C71B00 /* SSPlayLoopGraphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSPlayLoopGraphics.h; path = SingWell/ViewControllers/PracticeViewController/SeeScoreFiles/SSPlayLoopGraphics.h; sourceTree = SOURCE_ROOT; };
+		166DF114202E5D0B00C71B00 /* SSPlayLoopGraphics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSPlayLoopGraphics.m; path = SingWell/ViewControllers/PracticeViewController/SeeScoreFiles/SSPlayLoopGraphics.m; sourceTree = SOURCE_ROOT; };
+		166DF116202E5D2100C71B00 /* evaluation_key.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = evaluation_key.c; path = SingWell/ViewControllers/PracticeViewController/SeeScoreFiles/evaluation_key.c; sourceTree = SOURCE_ROOT; };
+		166DF118202E5DF300C71B00 /* Bach Crucifixus_soprano.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "Bach Crucifixus_soprano.mid"; sourceTree = "<group>"; };
+		166DF119202E5DF300C71B00 /* Airfont_340.dls */ = {isa = PBXFileReference; lastKnownFileType = file; path = Airfont_340.dls; sourceTree = "<group>"; };
+		166DF11E202E5F4C00C71B00 /* TestMXL.mxl */ = {isa = PBXFileReference; lastKnownFileType = file; path = TestMXL.mxl; sourceTree = "<group>"; };
 		16A7A3211FCE0C8B00B32491 /* MusicLibraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicLibraryTableViewController.swift; sourceTree = "<group>"; };
 		16A7A3231FCE0C9600B32491 /* MusicLibrary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MusicLibrary.storyboard; sourceTree = "<group>"; };
 		16A7A3251FCE0CB800B32491 /* MusicLibraryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicLibraryTableViewCell.swift; sourceTree = "<group>"; };
 		16A7A3281FCE13E000B32491 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		16A7A32A1FCE13E900B32491 /* Event.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
+		16B6DCDF202E58390043300D /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Platform.swift; path = SingWell/ViewControllers/PracticeViewController/SeeScoreFiles/Platform.swift; sourceTree = SOURCE_ROOT; };
+		16B6DCE0202E58390043300D /* SSBarControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSBarControl.m; path = SingWell/ViewControllers/PracticeViewController/SeeScoreFiles/SSBarControl.m; sourceTree = SOURCE_ROOT; };
+		16B6DCE1202E58390043300D /* SingWell-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SingWell-Bridging-Header.h"; path = "SingWell/ViewControllers/PracticeViewController/SeeScoreFiles/SingWell-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		16B6DCE2202E58390043300D /* Platform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Platform.m; path = SingWell/ViewControllers/PracticeViewController/SeeScoreFiles/Platform.m; sourceTree = SOURCE_ROOT; };
+		16B6DCE3202E58390043300D /* SSBarControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSBarControl.h; path = SingWell/ViewControllers/PracticeViewController/SeeScoreFiles/SSBarControl.h; sourceTree = SOURCE_ROOT; };
+		16B6DCE4202E58390043300D /* SSScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSScrollView.m; path = SingWell/ViewControllers/PracticeViewController/SeeScoreFiles/SSScrollView.m; sourceTree = SOURCE_ROOT; };
+		16B6DCE5202E58390043300D /* SSScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSScrollView.h; path = SingWell/ViewControllers/PracticeViewController/SeeScoreFiles/SSScrollView.h; sourceTree = SOURCE_ROOT; };
+		16B6DCE6202E58390043300D /* sscore_key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sscore_key.h; path = SingWell/ViewControllers/PracticeViewController/SeeScoreFiles/sscore_key.h; sourceTree = SOURCE_ROOT; };
+		16B6DCE7202E58390043300D /* Intonation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Intonation.swift; path = SingWell/ViewControllers/PracticeViewController/SeeScoreFiles/Intonation.swift; sourceTree = SOURCE_ROOT; };
+		16B6DCE8202E58390043300D /* Platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Platform.h; path = SingWell/ViewControllers/PracticeViewController/SeeScoreFiles/Platform.h; sourceTree = SOURCE_ROOT; };
+		16B6DCE9202E58390043300D /* Practice.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Practice.storyboard; path = SingWell/ViewControllers/PracticeViewController/Practice.storyboard; sourceTree = SOURCE_ROOT; };
+		16B6DCED202E58390043300D /* SSBarControlProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSBarControlProtocol.h; path = SingWell/ViewControllers/PracticeViewController/SeeScoreFiles/SSBarControlProtocol.h; sourceTree = SOURCE_ROOT; };
+		16B6DCFF202E5A190043300D /* SeeScoreLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SeeScoreLib.framework; sourceTree = SOURCE_ROOT; };
 		16D2CF9F1FBE423500FDFF4D /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		16D2CFA11FBE424300FDFF4D /* ChoirNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoirNameTableViewCell.swift; sourceTree = "<group>"; };
+		16D9964D203B47BB007CCB18 /* AveVerumMozart.mxl */ = {isa = PBXFileReference; lastKnownFileType = file; path = AveVerumMozart.mxl; sourceTree = "<group>"; };
 		16E211911FC35122009969B1 /* ChoirInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoirInfoTableViewCell.swift; sourceTree = "<group>"; };
 		16E211941FC35C5F009969B1 /* NotificationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewController.swift; sourceTree = "<group>"; };
 		16E211961FC35C6B009969B1 /* Notifications.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notifications.storyboard; sourceTree = "<group>"; };
@@ -149,6 +377,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC314C3CF81F0D65E4D3B09F /* Pods_SingWell.framework in Frameworks */,
+				16B6DD00202E5A190043300D /* SeeScoreLib.framework in Frameworks */,
+				16B6DD01202E5A390043300D /* SeeScoreLib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +401,99 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1626ADD8202E60840028C7F7 /* piano_samples */ = {
+			isa = PBXGroup;
+			children = (
+				1626AE25202E609D0028C7F7 /* Piano.mf.23.m4a */,
+				1626ADF9202E609A0028C7F7 /* Piano.mf.24.m4a */,
+				1626ADF1202E60990028C7F7 /* Piano.mf.25.m4a */,
+				1626AE11202E609C0028C7F7 /* Piano.mf.26.m4a */,
+				1626AE0E202E609B0028C7F7 /* Piano.mf.27.m4a */,
+				1626ADFE202E609A0028C7F7 /* Piano.mf.28.m4a */,
+				1626AE2A202E609E0028C7F7 /* Piano.mf.29.m4a */,
+				1626ADED202E60980028C7F7 /* Piano.mf.30.m4a */,
+				1626AE0D202E609B0028C7F7 /* Piano.mf.31.m4a */,
+				1626AE0A202E609B0028C7F7 /* Piano.mf.32.m4a */,
+				1626ADE9202E60980028C7F7 /* Piano.mf.33.m4a */,
+				1626AE12202E609C0028C7F7 /* Piano.mf.34.m4a */,
+				1626ADFF202E609A0028C7F7 /* Piano.mf.35.m4a */,
+				1626ADF0202E60990028C7F7 /* Piano.mf.36.m4a */,
+				1626AE27202E609E0028C7F7 /* Piano.mf.37.m4a */,
+				1626AE1F202E609D0028C7F7 /* Piano.mf.38.m4a */,
+				1626ADE7202E60980028C7F7 /* Piano.mf.39.m4a */,
+				1626ADEE202E60990028C7F7 /* Piano.mf.40.m4a */,
+				1626AE2C202E609E0028C7F7 /* Piano.mf.41.m4a */,
+				1626ADF4202E60990028C7F7 /* Piano.mf.42.m4a */,
+				1626AE2E202E609E0028C7F7 /* Piano.mf.43.m4a */,
+				1626ADEC202E60980028C7F7 /* Piano.mf.44.m4a */,
+				1626ADE0202E60980028C7F7 /* Piano.mf.45.m4a */,
+				1626ADEF202E60990028C7F7 /* Piano.mf.46.m4a */,
+				1626ADF6202E60990028C7F7 /* Piano.mf.47.m4a */,
+				1626AE1E202E609D0028C7F7 /* Piano.mf.48.m4a */,
+				1626AE17202E609C0028C7F7 /* Piano.mf.49.m4a */,
+				1626AE04202E609B0028C7F7 /* Piano.mf.50.m4a */,
+				1626AE1A202E609C0028C7F7 /* Piano.mf.51.m4a */,
+				1626ADF3202E60990028C7F7 /* Piano.mf.52.m4a */,
+				1626AE00202E609A0028C7F7 /* Piano.mf.53.m4a */,
+				1626ADEB202E60980028C7F7 /* Piano.mf.54.m4a */,
+				1626AE28202E609E0028C7F7 /* Piano.mf.55.m4a */,
+				1626AE14202E609C0028C7F7 /* Piano.mf.56.m4a */,
+				1626AE06202E609B0028C7F7 /* Piano.mf.57.m4a */,
+				1626AE29202E609E0028C7F7 /* Piano.mf.58.m4a */,
+				1626ADE4202E60980028C7F7 /* Piano.mf.59.m4a */,
+				1626AE0F202E609C0028C7F7 /* Piano.mf.60.m4a */,
+				1626ADF2202E60990028C7F7 /* Piano.mf.61.m4a */,
+				1626ADFC202E609A0028C7F7 /* Piano.mf.62.m4a */,
+				1626AE20202E609D0028C7F7 /* Piano.mf.63.m4a */,
+				1626AE03202E609A0028C7F7 /* Piano.mf.64.m4a */,
+				1626AE1B202E609D0028C7F7 /* Piano.mf.65.m4a */,
+				1626AE1C202E609D0028C7F7 /* Piano.mf.66.m4a */,
+				1626AE08202E609B0028C7F7 /* Piano.mf.67.m4a */,
+				1626ADFD202E609A0028C7F7 /* Piano.mf.68.m4a */,
+				1626ADF7202E60990028C7F7 /* Piano.mf.69.m4a */,
+				1626AE10202E609C0028C7F7 /* Piano.mf.70.m4a */,
+				1626AE2D202E609E0028C7F7 /* Piano.mf.71.m4a */,
+				1626AE18202E609C0028C7F7 /* Piano.mf.72.m4a */,
+				1626AE13202E609C0028C7F7 /* Piano.mf.73.m4a */,
+				1626ADE8202E60980028C7F7 /* Piano.mf.74.m4a */,
+				1626AE26202E609E0028C7F7 /* Piano.mf.75.m4a */,
+				1626ADEA202E60980028C7F7 /* Piano.mf.76.m4a */,
+				1626AE01202E609A0028C7F7 /* Piano.mf.77.m4a */,
+				1626ADD9202E60970028C7F7 /* Piano.mf.78.m4a */,
+				1626ADE3202E60980028C7F7 /* Piano.mf.79.m4a */,
+				1626ADFB202E609A0028C7F7 /* Piano.mf.80.m4a */,
+				1626ADF8202E60990028C7F7 /* Piano.mf.81.m4a */,
+				1626AE0C202E609B0028C7F7 /* Piano.mf.82.m4a */,
+				1626ADDF202E60970028C7F7 /* Piano.mf.83.m4a */,
+				1626ADE6202E60980028C7F7 /* Piano.mf.84.m4a */,
+				1626ADE5202E60980028C7F7 /* Piano.mf.85.m4a */,
+				1626AE22202E609D0028C7F7 /* Piano.mf.86.m4a */,
+				1626AE15202E609C0028C7F7 /* Piano.mf.87.m4a */,
+				1626AE16202E609C0028C7F7 /* Piano.mf.88.m4a */,
+				1626AE19202E609C0028C7F7 /* Piano.mf.89.m4a */,
+				1626AE1D202E609D0028C7F7 /* Piano.mf.90.m4a */,
+				1626AE09202E609B0028C7F7 /* Piano.mf.91.m4a */,
+				1626AE0B202E609B0028C7F7 /* Piano.mf.92.m4a */,
+				1626AE02202E609A0028C7F7 /* Piano.mf.93.m4a */,
+				1626AE07202E609B0028C7F7 /* Piano.mf.94.m4a */,
+				1626ADE2202E60980028C7F7 /* Piano.mf.95.m4a */,
+				1626ADDA202E60970028C7F7 /* Piano.mf.96.m4a */,
+				1626ADDB202E60970028C7F7 /* Piano.mf.97.m4a */,
+				1626AE24202E609D0028C7F7 /* Piano.mf.98.m4a */,
+				1626AE05202E609B0028C7F7 /* Piano.mf.99.m4a */,
+				1626ADE1202E60980028C7F7 /* Piano.mf.100.m4a */,
+				1626AE2B202E609E0028C7F7 /* Piano.mf.101.m4a */,
+				1626ADF5202E60990028C7F7 /* Piano.mf.102.m4a */,
+				1626ADDC202E60970028C7F7 /* Piano.mf.103.m4a */,
+				1626AE21202E609D0028C7F7 /* Piano.mf.104.m4a */,
+				1626AE23202E609D0028C7F7 /* Piano.mf.105.m4a */,
+				1626ADFA202E609A0028C7F7 /* Piano.mf.106.m4a */,
+				1626ADDD202E60970028C7F7 /* Piano.mf.107.m4a */,
+				1626ADDE202E60970028C7F7 /* Piano.mf.108.m4a */,
+			);
+			path = piano_samples;
+			sourceTree = "<group>";
+		};
 		162D97FB1FA65CD3006068BC = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +519,7 @@
 		162D98061FA65CD3006068BC /* SingWell */ = {
 			isa = PBXGroup;
 			children = (
+				16B6DCFF202E5A190043300D /* SeeScoreLib.framework */,
 				162D98071FA65CD3006068BC /* AppDelegate.swift */,
 				1652FDAA1FB500FB00D921EB /* SideMenu */,
 				162D98351FA65CF6006068BC /* Resources */,
@@ -228,6 +552,11 @@
 		162D98351FA65CF6006068BC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				16D9964D203B47BB007CCB18 /* AveVerumMozart.mxl */,
+				1626ADD8202E60840028C7F7 /* piano_samples */,
+				166DF11E202E5F4C00C71B00 /* TestMXL.mxl */,
+				166DF119202E5DF300C71B00 /* Airfont_340.dls */,
+				166DF118202E5DF300C71B00 /* Bach Crucifixus_soprano.mid */,
 				52216586202A609E0024FAD4 /* Allegri Miserere Full.mid */,
 				1617DF931FB39EEB0094C474 /* ApiHelper.swift */,
 				162D98361FA65D09006068BC /* Extensions.swift */,
@@ -238,6 +567,7 @@
 		162D98381FA65D2E006068BC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				16B6DCDE202E58290043300D /* PracticeViewController */,
 				162E42FF20212BAC0036B897 /* RegisterViewController */,
 				162E42FE20212B9C0036B897 /* LoginViewController */,
 				52FD883E1FDDD01900958AAE /* NewEditProfileViewController */,
@@ -250,6 +580,7 @@
 				16E211931FC35C3B009969B1 /* NotificationsViewController */,
 				521BCF2B1FB3A44A000662F7 /* ProfileViewController */,
 				16E211981FC35DC5009969B1 /* RosterViewController */,
+				166B5511202E569400316957 /* SingWell-Bridging-Header.h */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -308,6 +639,30 @@
 			path = ChoirViewController;
 			sourceTree = "<group>";
 		};
+		165923DF2033A14B00026387 /* SeeScoreFiles */ = {
+			isa = PBXGroup;
+			children = (
+				16B6DCE1202E58390043300D /* SingWell-Bridging-Header.h */,
+				166DF113202E5D0B00C71B00 /* SSPlayLoopGraphics.h */,
+				166DF114202E5D0B00C71B00 /* SSPlayLoopGraphics.m */,
+				166DF111202E5CEC00C71B00 /* SSSystemView.h */,
+				166DF110202E5CEB00C71B00 /* SSSystemView.m */,
+				16B6DCE7202E58390043300D /* Intonation.swift */,
+				16B6DCE8202E58390043300D /* Platform.h */,
+				16B6DCE2202E58390043300D /* Platform.m */,
+				16B6DCDF202E58390043300D /* Platform.swift */,
+				16B6DCE3202E58390043300D /* SSBarControl.h */,
+				16B6DCE0202E58390043300D /* SSBarControl.m */,
+				16B6DCED202E58390043300D /* SSBarControlProtocol.h */,
+				16B6DCE6202E58390043300D /* sscore_key.h */,
+				16B6DCE5202E58390043300D /* SSScrollView.h */,
+				16B6DCE4202E58390043300D /* SSScrollView.m */,
+				166DF116202E5D2100C71B00 /* evaluation_key.c */,
+			);
+			name = SeeScoreFiles;
+			path = ../PracticeViewController/SeeScoreFiles;
+			sourceTree = "<group>";
+		};
 		16A7A3201FCE0C4F00B32491 /* MusicLibraryViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,6 +680,16 @@
 				16A7A32A1FCE13E900B32491 /* Event.storyboard */,
 			);
 			path = EventViewController;
+			sourceTree = "<group>";
+		};
+		16B6DCDE202E58290043300D /* PracticeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				166228EA2033A46A008219B3 /* PracticeViewController.swift */,
+				16B6DCE9202E58390043300D /* Practice.storyboard */,
+				165923DF2033A14B00026387 /* SeeScoreFiles */,
+			);
+			path = PracticeViewController;
 			sourceTree = "<group>";
 		};
 		16E211931FC35C3B009969B1 /* NotificationsViewController */ = {
@@ -421,6 +786,7 @@
 				162D98021FA65CD3006068BC /* Resources */,
 				1505FF534950B65B3BA82B4A /* [CP] Embed Pods Frameworks */,
 				C09506E06B8649978445079F /* [CP] Copy Pods Resources */,
+				16B6DD03202E5A390043300D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -485,6 +851,7 @@
 				TargetAttributes = {
 					162D98031FA65CD3006068BC = {
 						CreatedOnToolsVersion = 9.0.1;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -529,23 +896,114 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1626AE4D202E609E0028C7F7 /* Piano.mf.69.m4a in Resources */,
+				1626AE4C202E609E0028C7F7 /* Piano.mf.47.m4a in Resources */,
 				16A7A3241FCE0C9600B32491 /* MusicLibrary.storyboard in Resources */,
+				1626AE52202E609E0028C7F7 /* Piano.mf.62.m4a in Resources */,
+				1626AE4B202E609E0028C7F7 /* Piano.mf.102.m4a in Resources */,
+				1626AE77202E609E0028C7F7 /* Piano.mf.104.m4a in Resources */,
+				1626AE54202E609E0028C7F7 /* Piano.mf.28.m4a in Resources */,
+				1626AE7E202E609E0028C7F7 /* Piano.mf.55.m4a in Resources */,
+				1626AE76202E609E0028C7F7 /* Piano.mf.63.m4a in Resources */,
+				1626AE6B202E609E0028C7F7 /* Piano.mf.87.m4a in Resources */,
+				1626AE6E202E609E0028C7F7 /* Piano.mf.72.m4a in Resources */,
+				1626AE75202E609E0028C7F7 /* Piano.mf.38.m4a in Resources */,
+				1626AE37202E609E0028C7F7 /* Piano.mf.100.m4a in Resources */,
+				166DF11B202E5DF300C71B00 /* Airfont_340.dls in Resources */,
+				1626AE33202E609E0028C7F7 /* Piano.mf.107.m4a in Resources */,
+				1626AE67202E609E0028C7F7 /* Piano.mf.26.m4a in Resources */,
+				1626AE81202E609E0028C7F7 /* Piano.mf.101.m4a in Resources */,
+				1626AE7C202E609E0028C7F7 /* Piano.mf.75.m4a in Resources */,
+				1626AE5F202E609E0028C7F7 /* Piano.mf.91.m4a in Resources */,
 				16E211A11FC35E06009969B1 /* Calendar.storyboard in Resources */,
+				1626AE35202E609E0028C7F7 /* Piano.mf.83.m4a in Resources */,
+				1626AE64202E609E0028C7F7 /* Piano.mf.27.m4a in Resources */,
+				1626AE46202E609E0028C7F7 /* Piano.mf.36.m4a in Resources */,
+				1626AE6A202E609E0028C7F7 /* Piano.mf.56.m4a in Resources */,
+				1626AE30202E609E0028C7F7 /* Piano.mf.96.m4a in Resources */,
+				1626AE6D202E609E0028C7F7 /* Piano.mf.49.m4a in Resources */,
+				166DF11A202E5DF300C71B00 /* Bach Crucifixus_soprano.mid in Resources */,
+				1626AE68202E609E0028C7F7 /* Piano.mf.34.m4a in Resources */,
+				1626AE3C202E609E0028C7F7 /* Piano.mf.84.m4a in Resources */,
+				1626AE5B202E609E0028C7F7 /* Piano.mf.99.m4a in Resources */,
+				1626AE59202E609E0028C7F7 /* Piano.mf.64.m4a in Resources */,
+				1626AE84202E609E0028C7F7 /* Piano.mf.43.m4a in Resources */,
+				1626AE79202E609E0028C7F7 /* Piano.mf.105.m4a in Resources */,
+				1626AE51202E609E0028C7F7 /* Piano.mf.80.m4a in Resources */,
+				1626AE3B202E609E0028C7F7 /* Piano.mf.85.m4a in Resources */,
+				1626AE2F202E609E0028C7F7 /* Piano.mf.78.m4a in Resources */,
+				1626AE53202E609E0028C7F7 /* Piano.mf.68.m4a in Resources */,
+				1626AE49202E609E0028C7F7 /* Piano.mf.52.m4a in Resources */,
 				1652FDB51FB5041600D921EB /* SideMenu.storyboard in Resources */,
+				1626AE6C202E609E0028C7F7 /* Piano.mf.88.m4a in Resources */,
+				1626AE61202E609E0028C7F7 /* Piano.mf.92.m4a in Resources */,
+				1626AE42202E609E0028C7F7 /* Piano.mf.44.m4a in Resources */,
+				1626AE72202E609E0028C7F7 /* Piano.mf.66.m4a in Resources */,
+				1626AE62202E609E0028C7F7 /* Piano.mf.82.m4a in Resources */,
 				16A7A32B1FCE13E900B32491 /* Event.storyboard in Resources */,
+				1626AE69202E609E0028C7F7 /* Piano.mf.73.m4a in Resources */,
+				166DF11F202E5F4C00C71B00 /* TestMXL.mxl in Resources */,
+				1626AE58202E609E0028C7F7 /* Piano.mf.93.m4a in Resources */,
+				1626AE45202E609E0028C7F7 /* Piano.mf.46.m4a in Resources */,
+				1626AE41202E609E0028C7F7 /* Piano.mf.54.m4a in Resources */,
 				1652FDAF1FB5018000D921EB /* Choir.storyboard in Resources */,
 				162D98121FA65CD3006068BC /* LaunchScreen.storyboard in Resources */,
+				1626AE43202E609E0028C7F7 /* Piano.mf.30.m4a in Resources */,
+				1626AE48202E609E0028C7F7 /* Piano.mf.61.m4a in Resources */,
+				1626AE36202E609E0028C7F7 /* Piano.mf.45.m4a in Resources */,
+				16D9964E203B47BB007CCB18 /* AveVerumMozart.mxl in Resources */,
+				1626AE5A202E609E0028C7F7 /* Piano.mf.50.m4a in Resources */,
+				1626AE78202E609E0028C7F7 /* Piano.mf.86.m4a in Resources */,
+				1626AE3A202E609E0028C7F7 /* Piano.mf.59.m4a in Resources */,
+				1626AE71202E609E0028C7F7 /* Piano.mf.65.m4a in Resources */,
+				1626AE32202E609E0028C7F7 /* Piano.mf.103.m4a in Resources */,
+				1626AE34202E609E0028C7F7 /* Piano.mf.108.m4a in Resources */,
+				1626AE4E202E609E0028C7F7 /* Piano.mf.81.m4a in Resources */,
+				1626AE3E202E609E0028C7F7 /* Piano.mf.74.m4a in Resources */,
+				1626AE3F202E609E0028C7F7 /* Piano.mf.33.m4a in Resources */,
+				1626AE4F202E609E0028C7F7 /* Piano.mf.24.m4a in Resources */,
+				1626AE6F202E609E0028C7F7 /* Piano.mf.89.m4a in Resources */,
 				16E211971FC35C6B009969B1 /* Notifications.storyboard in Resources */,
 				521BCF2F1FB3A48A000662F7 /* Profile.storyboard in Resources */,
+				1626AE38202E609E0028C7F7 /* Piano.mf.95.m4a in Resources */,
+				1626AE73202E609E0028C7F7 /* Piano.mf.90.m4a in Resources */,
+				1626AE7B202E609E0028C7F7 /* Piano.mf.23.m4a in Resources */,
+				1626AE4A202E609E0028C7F7 /* Piano.mf.42.m4a in Resources */,
 				162E430520212BE50036B897 /* Login.storyboard in Resources */,
+				1626AE70202E609E0028C7F7 /* Piano.mf.51.m4a in Resources */,
+				1626AE7F202E609E0028C7F7 /* Piano.mf.58.m4a in Resources */,
+				1626AE39202E609E0028C7F7 /* Piano.mf.79.m4a in Resources */,
+				16B6DCF4202E58390043300D /* Practice.storyboard in Resources */,
 				525EF4B91FC3A4C600C8E822 /* EditProfile.storyboard in Resources */,
+				1626AE63202E609E0028C7F7 /* Piano.mf.31.m4a in Resources */,
+				1626AE80202E609E0028C7F7 /* Piano.mf.29.m4a in Resources */,
 				164A51461FCFA9A50026D7DE /* Song.storyboard in Resources */,
+				1626AE83202E609E0028C7F7 /* Piano.mf.71.m4a in Resources */,
+				1626AE74202E609E0028C7F7 /* Piano.mf.48.m4a in Resources */,
 				162D980F1FA65CD3006068BC /* Assets.xcassets in Resources */,
 				16E2119C1FC35DDF009969B1 /* Roster.storyboard in Resources */,
+				1626AE82202E609E0028C7F7 /* Piano.mf.41.m4a in Resources */,
+				1626AE56202E609E0028C7F7 /* Piano.mf.53.m4a in Resources */,
+				1626AE40202E609E0028C7F7 /* Piano.mf.76.m4a in Resources */,
+				1626AE7A202E609E0028C7F7 /* Piano.mf.98.m4a in Resources */,
 				526F5D5C1FCE13F9002F7D27 /* SettingsModal.storyboard in Resources */,
+				1626AE31202E609E0028C7F7 /* Piano.mf.97.m4a in Resources */,
+				1626AE44202E609E0028C7F7 /* Piano.mf.40.m4a in Resources */,
+				1626AE47202E609E0028C7F7 /* Piano.mf.25.m4a in Resources */,
+				1626AE5C202E609E0028C7F7 /* Piano.mf.57.m4a in Resources */,
+				1626AE50202E609E0028C7F7 /* Piano.mf.106.m4a in Resources */,
+				1626AE3D202E609E0028C7F7 /* Piano.mf.39.m4a in Resources */,
+				1626AE5E202E609E0028C7F7 /* Piano.mf.67.m4a in Resources */,
+				1626AE55202E609E0028C7F7 /* Piano.mf.35.m4a in Resources */,
+				1626AE66202E609E0028C7F7 /* Piano.mf.70.m4a in Resources */,
 				52216587202A609E0024FAD4 /* Allegri Miserere Full.mid in Resources */,
 				52FD88421FDDD06600958AAE /* NewEditProfile.storyboard in Resources */,
 				162E430720212BEF0036B897 /* Register.storyboard in Resources */,
+				1626AE7D202E609E0028C7F7 /* Piano.mf.37.m4a in Resources */,
+				1626AE60202E609E0028C7F7 /* Piano.mf.32.m4a in Resources */,
+				1626AE5D202E609E0028C7F7 /* Piano.mf.94.m4a in Resources */,
+				1626AE57202E609E0028C7F7 /* Piano.mf.77.m4a in Resources */,
+				1626AE65202E609E0028C7F7 /* Piano.mf.60.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -741,27 +1199,37 @@
 				525EF4B71FC3A4BB00C8E822 /* EditProfileViewController.swift in Sources */,
 				16E2119F1FC35DFB009969B1 /* CalendarViewController.swift in Sources */,
 				16D2CFA21FBE424300FDFF4D /* ChoirNameTableViewCell.swift in Sources */,
+				166228EB2033A46A008219B3 /* PracticeViewController.swift in Sources */,
+				16B6DCF2202E58390043300D /* SSScrollView.m in Sources */,
 				521BCF2D1FB3A472000662F7 /* ProfileViewController.swift in Sources */,
 				523E97EC203514780034C6C2 /* SongTableViewController.swift in Sources */,
 				162D98371FA65D09006068BC /* Extensions.swift in Sources */,
 				16A7A3291FCE13E000B32491 /* EventViewController.swift in Sources */,
 				52218E171FB50C0400EC4DDA /* UIImageExtension.swift in Sources */,
+				166DF115202E5D0B00C71B00 /* SSPlayLoopGraphics.m in Sources */,
 				5209FE2E1FD092CE00DB9CE8 /* SettingsModelViewController.swift in Sources */,
 				52AF5C7E203F715A009B12FB /* SongPDFTableViewCell.swift in Sources */,
 				16D2CFA01FBE423500FDFF4D /* ProfileTableViewCell.swift in Sources */,
 				1652FDB11FB502D200D921EB /* HostViewController.swift in Sources */,
 				52DA23DE1FD0B7B8004CD9E0 /* RosterTableViewCell.swift in Sources */,
+				166DF117202E5D2100C71B00 /* evaluation_key.c in Sources */,
 				16E211951FC35C5F009969B1 /* NotificationsTableViewController.swift in Sources */,
 				162E430120212BCA0036B897 /* LoginViewController.swift in Sources */,
+				16B6DCEF202E58390043300D /* SSBarControl.m in Sources */,
+				166DF112202E5CEC00C71B00 /* SSSystemView.m in Sources */,
 				16A7A3261FCE0CB800B32491 /* MusicLibraryTableViewCell.swift in Sources */,
 				523E97EE203519BA0034C6C2 /* SongInfoTableViewCell.swift in Sources */,
 				16E211921FC35122009969B1 /* ChoirInfoTableViewCell.swift in Sources */,
 				162D98081FA65CD3006068BC /* AppDelegate.swift in Sources */,
+				16B6DCF0202E58390043300D /* SingWell-Bridging-Header.h in Sources */,
+				16B6DCEE202E58390043300D /* Platform.swift in Sources */,
 				162E430320212BD70036B897 /* RegisterViewController.swift in Sources */,
 				1652FDB31FB5039400D921EB /* NavigationMenuViewController.swift in Sources */,
 				52EEFDCF203B3B9300E71045 /* SongYouTubeTableViewCell.swift in Sources */,
 				16256EE51FBB827A00992B02 /* ChoirResourceInfoTableViewCell.swift in Sources */,
 				16A7A3221FCE0C8B00B32491 /* MusicLibraryTableViewController.swift in Sources */,
+				16B6DCF3202E58390043300D /* Intonation.swift in Sources */,
+				16B6DCF1202E58390043300D /* Platform.m in Sources */,
 				16E2119A1FC35DD7009969B1 /* RosterTableViewController.swift in Sources */,
 				164A51441FCFA99A0026D7DE /* SongViewController.swift in Sources */,
 				1617DF941FB39EEB0094C474 /* ApiHelper.swift in Sources */,
@@ -924,13 +1392,27 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7A89585724F70104CBA47295 /* Pods-SingWell.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 59272Q867S;
+				DEVELOPMENT_TEAM = 788J8M5NBX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(SRCROOT)/**",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AudioKit\"",
+					"$(SRCROOT)/**",
+				);
 				INFOPLIST_FILE = SingWell/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.appcoda.tsiems.SingWell;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SingWell/ViewControllers/PracticeViewController/SeeScoreFiles/SingWell-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -940,13 +1422,26 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E2A8DF318F1B2398F5F35CF7 /* Pods-SingWell.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 59272Q867S;
+				DEVELOPMENT_TEAM = 788J8M5NBX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(SRCROOT)/**",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AudioKit\"",
+					"$(SRCROOT)/**",
+				);
 				INFOPLIST_FILE = SingWell/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.appcoda.tsiems.SingWell;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SingWell/ViewControllers/PracticeViewController/SeeScoreFiles/SingWell-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
