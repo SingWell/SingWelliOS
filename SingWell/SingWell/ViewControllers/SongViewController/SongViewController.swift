@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import SwiftyJSON
 import IBAnimatable
+import SwiftyJSON
 
 class SongViewController: UIViewController {
     
@@ -26,12 +26,17 @@ class SongViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = songInfo["name"].stringValue
+        self.title = songInfo["title"].stringValue
+        print(songInfo["title"].stringValue)
         
-        nameLabel.text = songInfo["name"].stringValue
+        nameLabel.text = songInfo["title"].stringValue
         composerLabel.text = songInfo["composer"].stringValue
         instrumentationLabel.text = songInfo["instrumentation"].stringValue
     }
+    
+    // Add a practice button
+    
+    // Table view with different kinds of cells
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

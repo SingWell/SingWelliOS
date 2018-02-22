@@ -13,7 +13,7 @@ import IoniconsKit
 import SwiftyJSON
 import MessageUI
 
-class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, MFMessageComposeViewControllerDelegate {
+class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate{
     
     
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
@@ -25,22 +25,12 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     var userId = ""
     
-//    @IBAction func phoneNumberTap(_ sender: Any) {
-//        print("handleTap")
-//        if (MFMessageComposeViewController.canSendText()) {
-//            let controller = MFMessageComposeViewController()
-//            controller.body = "Message Body"
-//            controller.recipients = [phoneNumberButton.]
-//            controller.messageComposeDelegate = self
-//            self.present(controller, animated: true, completion: nil)
-//        }
-//    }
     @IBOutlet weak var contactView: AnimatableView!
     @IBOutlet weak var biographyView: AnimatableView!
     @IBOutlet weak var addressView: AnimatableView!
     
     @IBOutlet weak var phoneNumberButton: AnimatableButton!
-    @IBOutlet weak var emailLabel: AnimatableLabel!
+    @IBOutlet weak var emailButton: AnimatableButton!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var biographyTextView: AnimatableTextView!
@@ -52,14 +42,43 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     @IBAction func phoneNumberTap(_ sender: Any) {
         print("tapped Number")
         
-        if (MFMessageComposeViewController.canSendText()) {
-                        let controller = MFMessageComposeViewController()
-                        controller.body = "Message Body"
-            controller.recipients = [phoneNumberButton.title(for: .normal)!]
-                        controller.messageComposeDelegate = self
-                        self.present(controller, animated: true, completion: nil)
-                    }
+        if (MFMessageComposeViewController.canSendText() == true) {
+//                        let controller = MFMessageComposeViewController()
+//                        controller.body = "Message Body"
+//            controller.recipients = [phoneNumberButton.title(for: .normal)!]
+//                        controller.messageComposeDelegate = self
+//                        self.present(controller, animated: true, completion: nil)
+//                    }
+            let recipients:[String] = [phoneNumberButton.title(for: .normal)!]
+            let messageController = MFMessageComposeViewController()
+            messageController.messageComposeDelegate  = self
+            messageController.recipients = recipients
+            messageController.body = ""
+            self.present(messageController, animated: true, completion: nil)
+        } else {
+            //handle text messaging not available
+        }
     }
+    
+    // Mail only works if the native Mail apple app is installed and set up with acount
+    @IBAction func launchEmail(sender: AnyObject) {
+        print("Tapped Email")
+        
+        if MFMailComposeViewController.canSendMail()
+        {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients([emailButton.title(for: .normal)!])
+            mail.setSubject("")
+            mail.setMessageBody("", isHTML: false)
+            self.present(mail, animated: true, completion: nil)
+        }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion:nil)
+    }
+    
     //    @IBOutlet weak var cellImageView: UIImageView!
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -162,6 +181,17 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         editButton.setImage( editImage, for: UIControlState.normal)
     }
     
+    func setEmailButton() {
+        let size = CGSize(width:55, height: 55)
+        var backImage: UIImage = UIImage(named: "editButtonBackground")!
+        backImage = backImage.resizeImageWith(newSize: size)
+        backImage = backImage.circleMasked!
+        editImageView.image = backImage
+        
+        let editImage = UIImage.ionicon(with: .iosEmail, textColor: UIColor.white, size: CGSize(width: 25, height: 25))
+        editButton.setImage( editImage, for: UIControlState.normal)
+    }
+    
     func setNotificationButton() {
         let size = CGSize(width:55, height: 55)
         var backImage: UIImage = UIImage(named: "editButtonBackground2")!
@@ -170,6 +200,17 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         notificationImageView.image = backImage
         
         let notificationImage = UIImage.ionicon(with: .gearA, textColor: UIColor.white, size: CGSize(width: 25, height: 25))
+        notificationButton.setImage( notificationImage, for: UIControlState.normal)
+    }
+    
+    func setTextButton() {
+        let size = CGSize(width:55, height: 55)
+        var backImage: UIImage = UIImage(named: "editButtonBackground2")!
+        backImage = backImage.resizeImageWith(newSize: size)
+        backImage = backImage.circleMasked!
+        notificationImageView.image = backImage
+        
+        let notificationImage = UIImage.ionicon(with: .iosTelephone, textColor: UIColor.white, size: CGSize(width: 25, height: 25))
         notificationButton.setImage( notificationImage, for: UIControlState.normal)
     }
     
@@ -184,11 +225,11 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
         
         if(user["email"].exists()){
-            emailLabel.text = user["email"].stringValue
-            emailLabel.isHidden = false
+            emailButton.setTitle(user["email"].stringValue, for: .normal)
+            emailButton.isHidden = false
         }
         else {
-            emailLabel.isHidden = true
+            emailButton.isHidden = true
         }
         if(user["phone_number"].exists()){
             phoneNumberButton.setTitle(user["phone_number"].stringValue, for: .normal)
@@ -293,17 +334,6 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         instrumentationButton.image = UIImage.ionicon(with: .headphone, textColor: UIColor.gray, size: CGSize(width: 35, height: 35))
     }
     
-//    func handleTap(gestureRecognizer: UIGestureRecognizer) {
-//        print("handleTap")
-//        if (MFMessageComposeViewController.canSendText()) {
-//            let controller = MFMessageComposeViewController()
-//            controller.body = "Message Body"
-//            controller.recipients = [phoneNumberButton.titleLabel!]
-//            controller.messageComposeDelegate = self
-//            self.present(controller, animated: true, completion: nil)
-//        }
-//    }
-    
     override func viewWillAppear(_ animated: Bool) {
         if userId != "" {
 //            Hide Navigation items
@@ -312,10 +342,12 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             getUser()
             
 //            Hide Edit and Notification Buttons
-            notificationImageView.isHidden = true
-            notificationButton.isHidden = true
-            editButton.isHidden = true
-            editImageView.isHidden = true
+//            notificationImageView.isHidden = true
+//            notificationButton.isHidden = true
+//            editButton.isHidden = true
+//            editImageView.isHidden = true
+            setEmailButton()
+            setTextButton()
         }
         else {
 //            View Navigation items
@@ -335,10 +367,13 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             self.navigationItem.leftBarButtonItem = menuItem
             
 //            View Edit and Notification Buttons
-            notificationImageView.isHidden = false
-            notificationButton.isHidden = false
-            editButton.isHidden = false
-            editImageView.isHidden = false
+//            notificationImageView.isHidden = false
+//            notificationButton.isHidden = false
+//            editButton.isHidden = false
+//            editImageView.isHidden = false
+            
+            setEditButton()
+            setNotificationButton()
             
         }
         userId = ""
@@ -361,7 +396,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         nextVc.zipPassed = self.user["zip_code"].stringValue
         
         nextVc.streetPassed = addressLabel.text!
-        nextVc.emailPassed = emailLabel.text!
+        nextVc.emailPassed = emailButton.title(for: .normal)!
         nextVc.phoneNumberPassed = phoneNumberButton.title(for: .normal)!
 //            (phoneNumberButton.titleLabel?.text!)!
         
