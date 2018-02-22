@@ -9,6 +9,7 @@
 import UIKit
 //import SeeScoreLib
 import AVFoundation
+import IoniconsKit
 
 
 //let sscore_libkey: sscore_libkeytype = sscore_libkeytype.init(identity: <#T##UnsafePointer<Int8>!#>, capabilities: <#T##(UInt32, UInt32)#>, key: <#T##(UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32)#>)
@@ -161,6 +162,8 @@ class NoteHandler : NSObject, SSNoteHandler {
 class PracticeViewController: UIViewController {
     
     var filename = "TestMXL.mxl"
+    var metronomeOn = true
+    var tempo = 80
     
     private var kSampledInstrumentsInfo : [SSSampledInstrumentInfo] {
         get {
@@ -206,15 +209,15 @@ class PracticeViewController: UIViewController {
     
     @IBOutlet var barControl: SSBarControl!
     @IBOutlet var titleLabel : UILabel?
-    @IBOutlet var playButton : UIBarButtonItem?
+    @IBOutlet var playButton : UIButton?
     @IBOutlet var countInLabel : UILabel?
     @IBOutlet var warningLabel : UILabel?
-    @IBOutlet var tempoSlider : UISlider?
-    @IBOutlet var tempoLabel : UILabel?
+//    @IBOutlet var tempoSlider : UISlider?
+//    @IBOutlet var tempoLabel : UILabel?
     @IBOutlet var metronomeSwitch : UISwitch?
-    @IBOutlet var nextFileButton : UIBarButtonItem?
-    @IBOutlet var versionLabel : UILabel?
-    @IBOutlet var layoutControl :UISegmentedControl?
+//    @IBOutlet var nextFileButton : UIBarButtonItem?
+//    @IBOutlet var versionLabel : UILabel?
+//    @IBOutlet var layoutControl :UISegmentedControl?
     @IBOutlet var sysScrollView : SSScrollView?
     
     public var cursorBarIndex : Int
@@ -293,12 +296,15 @@ class PracticeViewController: UIViewController {
         sysScrollView?.addGestureRecognizer(pressRecognizer!)
         cursorBarIndex = 0
         loadFile(filename: self.filename)
-        versionLabel?.text = SSScore.versionString()
+//        versionLabel?.text = SSScore.versionString()
         // test setting of background colour programmatically
         sysScrollView?.backgroundColor = UIColor(red:1.0, green:1.0, blue:0.95, alpha:1.0)
         loopStartBarIndex = -1
         loopEndBarIndex = -1
-        tempoSlider?.isEnabled = false
+        
+        
+        setPlayButton(ionicon: .play, size: 50)
+//        tempoSlider?.isEnabled = false
         
 //        leftLoopButton?.isEnabled = false;
 //        rightLoopButton?.isEnabled = false;
@@ -425,59 +431,60 @@ class PracticeViewController: UIViewController {
         }
     }
     
-    func displayTempoSliderValue()
-    {
-        // show the required tempo slider - absolute (bpm) or relative (scaling)
-        if let score = score
-        {
-            if let sliderValue = tempoSlider?.value
-            {
-                if score.scoreHasDefinedTempo
-                {
-                    assert(sliderValue >= Float(PracticeViewController.kMinTempoScaling) && sliderValue <= Float(PracticeViewController.kMaxTempoScaling))
-                    let tempo = score.tempoAtStart()
-                    if tempo.bpm > 0
-                    {
-                        tempoLabel?.text = String(format:"%1.0f", sliderValue * Float(tempo.bpm))
-                    }
-                    else
-                    {
-                        tempoLabel?.text = String(format:"%1.1f", sliderValue)
-                    }
-                }
-                else
-                {
-                    assert(sliderValue >= Float(PracticeViewController.kMinTempo) && sliderValue <= Float(PracticeViewController.kMaxTempo))
-                    tempoLabel?.text = String(format:"%d", Int(sliderValue))
-                }
-            }
-        }
-    }
+//    func displayTempoSliderValue()
+//    {
+//        // show the required tempo slider - absolute (bpm) or relative (scaling)
+//        if let score = score
+//        {
+//            if let sliderValue = tempoSlider?.value
+//            {
+//                if score.scoreHasDefinedTempo
+//                {
+//                    assert(sliderValue >= Float(PracticeViewController.kMinTempoScaling) && sliderValue <= Float(PracticeViewController.kMaxTempoScaling))
+//                    let tempo = score.tempoAtStart()
+//                    if tempo.bpm > 0
+//                    {
+//                        tempoLabel?.text = String(format:"%1.0f", sliderValue * Float(tempo.bpm))
+//                    }
+//                    else
+//                    {
+//                        tempoLabel?.text = String(format:"%1.1f", sliderValue)
+//                    }
+//                }
+//                else
+//                {
+//                    assert(sliderValue >= Float(PracticeViewController.kMinTempo) && sliderValue <= Float(PracticeViewController.kMaxTempo))
+//                    tempoLabel?.text = String(format:"%d", Int(sliderValue))
+//                }
+//            }
+//        }
+//    }
     
-    func setupTempoUI()
-    {
-        if let score = score
-        {
-            if score.scoreHasDefinedTempo
-            {
-                tempoSlider?.minimumValue = Float(PracticeViewController.kMinTempoScaling)
-                tempoSlider?.maximumValue = Float(PracticeViewController.kMaxTempoScaling)
-                tempoSlider?.value = 1.0
-            }
-            else
-            {
-                tempoSlider?.minimumValue = Float(PracticeViewController.kMinTempo)
-                tempoSlider?.maximumValue = Float(PracticeViewController.kMaxTempo)
-                tempoSlider?.value = Float(PracticeViewController.kDefaultTempo)
-            }
-            self.tempoSlider?.isEnabled = true;
-            displayTempoSliderValue()
-        }
-        else
-        {
-            self.tempoSlider?.isEnabled = false;
-        }
-    }
+    // MARK: TEMPO!!
+//    func setupTempoUI()
+//    {
+//        if let score = score
+//        {
+//            if score.scoreHasDefinedTempo
+//            {
+//                tempoSlider?.minimumValue = Float(PracticeViewController.kMinTempoScaling)
+//                tempoSlider?.maximumValue = Float(PracticeViewController.kMaxTempoScaling)
+//                tempoSlider?.value = 1.0
+//            }
+//            else
+//            {
+//                tempoSlider?.minimumValue = Float(PracticeViewController.kMinTempo)
+//                tempoSlider?.maximumValue = Float(PracticeViewController.kMaxTempo)
+//                tempoSlider?.value = Float(PracticeViewController.kDefaultTempo)
+//            }
+//            self.tempoSlider?.isEnabled = true;
+//            displayTempoSliderValue()
+//        }
+//        else
+//        {
+//            self.tempoSlider?.isEnabled = false;
+//        }
+//    }
     
     static func titleFromHeader(header: SSHeader, maxlen: Int) -> String
     {
@@ -556,7 +563,7 @@ class PracticeViewController: UIViewController {
         stopPlaying()
         var localFileUrl : URL? = PracticeViewController.urlForFileInDocuments(filename: filename)
         print(filename)
-        print(localFileUrl)
+//        print(localFileUrl)
         if let url = localFileUrl // if the same name exists in Documents use that, else restore from Bundle
         {
             if (!FileManager.default.fileExists(atPath: url.path))
@@ -592,7 +599,7 @@ class PracticeViewController: UIViewController {
             sysScrollView?.abortBackgroundProcessing({ // empty dispatch queues
                 self.sysScrollView?.clearAll()
                 self.score = nil
-                self.layoutControl?.selectedSegmentIndex = PracticeViewController.kXMLLayoutSegment_normal
+//                self.layoutControl?.selectedSegmentIndex = PracticeViewController.kXMLLayoutSegment_normal
                 self.showingSinglePart = false
                 self.showingSinglePartIndex = 0
                 self.showingParts = [NSNumber]()
@@ -609,7 +616,7 @@ class PracticeViewController: UIViewController {
                     self.layOptions = SSLayoutOptions() // set default layout
                     self.sysScrollView?.setupScore(self.score, openParts:self.showingParts, mag:Float(PracticeViewController.kDefaultMagnification), opt:self.layOptions)
                     self.barControl?.delegate = self.sysScrollView
-                    self.setupTempoUI()
+//                    self.setupTempoUI()
                 }
                 if let err = err
                 {
@@ -755,7 +762,7 @@ class PracticeViewController: UIViewController {
                     }
                     else // flip to showing a single part
                     {
-                        layoutControl?.selectedSegmentIndex = PracticeViewController.kXMLLayoutSegment_normal
+//                        layoutControl?.selectedSegmentIndex = PracticeViewController.kXMLLayoutSegment_normal
                         if let p = pressRecognizer?.location(in: sysScrollView)
                         {
                             if let partIndex = sysScrollView?.partIndex(forPos: p)
@@ -887,6 +894,11 @@ class PracticeViewController: UIViewController {
         self.warningLabel?.isHidden = message.isEmpty
     }
     
+    func setPlayButton(ionicon:Ionicons=Ionicons.play, size:CGFloat) {
+        self.playButton?.titleLabel?.font = UIFont.ionicon(of: size)
+        self.playButton?.setTitle(String.ionicon(with: ionicon), for: .normal)
+    }
+    
     @IBAction func play(_ sender: Any) {
         error(message: "") // clear any error message
         countInLabel?.isHidden = true
@@ -900,6 +912,8 @@ class PracticeViewController: UIViewController {
             {
                 if synth.isPlaying
                 {
+                    print("PAUSE")
+                    setPlayButton(ionicon: .play, size: 50)
                     synth.reset() // stop playing if playing
                     return
                 }
@@ -933,6 +947,8 @@ class PracticeViewController: UIViewController {
             }
             if let synth = synth // start playing if not playing
             {
+                print("PLAY")
+                setPlayButton(ionicon: .pause, size: 50)
                 if setupAudioSession()
                 {
                     playData = SSPData.createPlay(from: score, tempo:self)
@@ -999,13 +1015,13 @@ class PracticeViewController: UIViewController {
     }
     
     
-    @IBAction func tempoChanged(_ sender: Any) {
-        displayTempoSliderValue()
-        if let playdata = playData
-        {
-            playdata.updateTempo()
-        }
-    }
+//    @IBAction func tempoChanged(_ sender: Any) {
+//        displayTempoSliderValue()
+//        if let playdata = playData
+//        {
+//            playdata.updateTempo()
+//        }
+//    }
     
     @IBAction func metronomeSwitched(_ sender: Any) {
         if let synth = synth
@@ -1184,26 +1200,28 @@ extension PracticeViewController: SSSyControls, SSUTempo, ScoreChangeHandler,  S
     
     func bpm() -> Int32
     {
-        if let slider = tempoSlider
-        {
-            return Int32(limit(val: slider.value, min: Float(PracticeViewController.kMinTempo), max: Float(PracticeViewController.kMaxTempo)))
-        }
-        else
-        {
-            return 0
-        }
+//        if let slider = tempoSlider
+//        {
+//            return Int32(limit(val: slider.value, min: Float(PracticeViewController.kMinTempo), max: Float(PracticeViewController.kMaxTempo)))
+//        }
+//        else
+//        {
+//            return 0
+//        }
+        return Int32(tempo)
     }
     
     func tempoScaling() -> Float
     {
-        if let slider = tempoSlider
-        {
-            return limit(val: slider.value, min: Float(PracticeViewController.kMinTempoScaling), max: Float(PracticeViewController.kMaxTempoScaling))
-        }
-        else
-        {
-            return 0
-        }
+//        if let slider = tempoSlider
+//        {
+//            return limit(val: slider.value, min: Float(PracticeViewController.kMinTempoScaling), max: Float(PracticeViewController.kMaxTempoScaling))
+//        }
+//        else
+//        {
+//            return 0
+//        }
+        return 1.0
     }
     
     
@@ -1311,6 +1329,6 @@ extension PracticeViewController: SSSyControls, SSUTempo, ScoreChangeHandler,  S
     
     func metronomeVolume() -> Float
     {
-        return (metronomeSwitch?.isOn)! ? 1.0 : 0.0 // switch off metronome by setting volume = 0 (if we use enabled we cannot switch it on while playing)
+        return metronomeOn ? 1.0 : 0.0 // switch off metronome by setting volume = 0 (if we use enabled we cannot switch it on while playing)
     }
 }
