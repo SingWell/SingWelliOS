@@ -147,11 +147,15 @@
 		5209FE2E1FD092CE00DB9CE8 /* SettingsModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209FE2D1FD092CE00DB9CE8 /* SettingsModelViewController.swift */; };
 		521BCF2D1FB3A472000662F7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521BCF2C1FB3A472000662F7 /* ProfileViewController.swift */; };
 		521BCF2F1FB3A48A000662F7 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521BCF2E1FB3A48A000662F7 /* Profile.storyboard */; };
+		52216587202A609E0024FAD4 /* Allegri Miserere Full.mid in Resources */ = {isa = PBXBuildFile; fileRef = 52216586202A609E0024FAD4 /* Allegri Miserere Full.mid */; };
 		52218E171FB50C0400EC4DDA /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52218E161FB50C0400EC4DDA /* UIImageExtension.swift */; };
+		523E97EC203514780034C6C2 /* SongTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E97EB203514780034C6C2 /* SongTableViewController.swift */; };
+		523E97EE203519BA0034C6C2 /* SongInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E97ED203519BA0034C6C2 /* SongInfoTableViewCell.swift */; };
 		525EF4B71FC3A4BB00C8E822 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525EF4B61FC3A4BB00C8E822 /* EditProfileViewController.swift */; };
 		525EF4B91FC3A4C600C8E822 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 525EF4B81FC3A4C600C8E822 /* EditProfile.storyboard */; };
 		526F5D5C1FCE13F9002F7D27 /* SettingsModal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 526F5D5B1FCE13F9002F7D27 /* SettingsModal.storyboard */; };
 		52DA23DE1FD0B7B8004CD9E0 /* RosterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA23DD1FD0B7B8004CD9E0 /* RosterTableViewCell.swift */; };
+		52EEFDCF203B3B9300E71045 /* SongResourceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EEFDCE203B3B9300E71045 /* SongResourceTableViewCell.swift */; };
 		52FD88401FDDD05700958AAE /* NewEditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD883F1FDDD05700958AAE /* NewEditProfileViewController.swift */; };
 		52FD88421FDDD06600958AAE /* NewEditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52FD88411FDDD06600958AAE /* NewEditProfile.storyboard */; };
 		86F76E547079493C7DAADA22 /* Pods_SingWellTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5B7BEEE8800BC4F7098CCD /* Pods_SingWellTests.framework */; };
@@ -345,11 +349,15 @@
 		5209FE2D1FD092CE00DB9CE8 /* SettingsModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModelViewController.swift; sourceTree = "<group>"; };
 		521BCF2C1FB3A472000662F7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		521BCF2E1FB3A48A000662F7 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		52216586202A609E0024FAD4 /* Allegri Miserere Full.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "Allegri Miserere Full.mid"; sourceTree = "<group>"; };
 		52218E161FB50C0400EC4DDA /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		523E97EB203514780034C6C2 /* SongTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewController.swift; sourceTree = "<group>"; };
+		523E97ED203519BA0034C6C2 /* SongInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongInfoTableViewCell.swift; sourceTree = "<group>"; };
 		525EF4B61FC3A4BB00C8E822 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		525EF4B81FC3A4C600C8E822 /* EditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
 		526F5D5B1FCE13F9002F7D27 /* SettingsModal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsModal.storyboard; sourceTree = "<group>"; };
 		52DA23DD1FD0B7B8004CD9E0 /* RosterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RosterTableViewCell.swift; sourceTree = "<group>"; };
+		52EEFDCE203B3B9300E71045 /* SongResourceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongResourceTableViewCell.swift; sourceTree = "<group>"; };
 		52FD883F1FDDD05700958AAE /* NewEditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEditProfileViewController.swift; sourceTree = "<group>"; };
 		52FD88411FDDD06600958AAE /* NewEditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewEditProfile.storyboard; sourceTree = "<group>"; };
 		56D8462546CB3640CFED1D64 /* Pods_SingWellUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SingWellUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -597,6 +605,9 @@
 			children = (
 				164A51431FCFA99A0026D7DE /* SongViewController.swift */,
 				164A51451FCFA9A50026D7DE /* Song.storyboard */,
+				523E97EB203514780034C6C2 /* SongTableViewController.swift */,
+				523E97ED203519BA0034C6C2 /* SongInfoTableViewCell.swift */,
+				52EEFDCE203B3B9300E71045 /* SongResourceTableViewCell.swift */,
 			);
 			path = SongViewController;
 			sourceTree = "<group>";
@@ -838,6 +849,11 @@
 						CreatedOnToolsVersion = 9.0.1;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					162D98171FA65CD3006068BC = {
 						CreatedOnToolsVersion = 9.0.1;
@@ -1011,6 +1027,8 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SingWell/Pods-SingWell-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${PODS_ROOT}/AudioKit/iOS/AudioKit.framework",
+				"${PODS_ROOT}/AudioKit/iOS/AudioKitUI.framework",
 				"${BUILT_PRODUCTS_DIR}/DTTextField/DTTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/IBAnimatable/IBAnimatable.framework",
 				"${BUILT_PRODUCTS_DIR}/InteractiveSideMenu/InteractiveSideMenu.framework",
@@ -1022,6 +1040,8 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AudioKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AudioKitUI.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DTTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IBAnimatable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InteractiveSideMenu.framework",
@@ -1177,6 +1197,7 @@
 				166228EB2033A46A008219B3 /* PracticeViewController.swift in Sources */,
 				16B6DCF2202E58390043300D /* SSScrollView.m in Sources */,
 				521BCF2D1FB3A472000662F7 /* ProfileViewController.swift in Sources */,
+				523E97EC203514780034C6C2 /* SongTableViewController.swift in Sources */,
 				162D98371FA65D09006068BC /* Extensions.swift in Sources */,
 				16A7A3291FCE13E000B32491 /* EventViewController.swift in Sources */,
 				52218E171FB50C0400EC4DDA /* UIImageExtension.swift in Sources */,
@@ -1191,12 +1212,14 @@
 				16B6DCEF202E58390043300D /* SSBarControl.m in Sources */,
 				166DF112202E5CEC00C71B00 /* SSSystemView.m in Sources */,
 				16A7A3261FCE0CB800B32491 /* MusicLibraryTableViewCell.swift in Sources */,
+				523E97EE203519BA0034C6C2 /* SongInfoTableViewCell.swift in Sources */,
 				16E211921FC35122009969B1 /* ChoirInfoTableViewCell.swift in Sources */,
 				162D98081FA65CD3006068BC /* AppDelegate.swift in Sources */,
 				16B6DCF0202E58390043300D /* SingWell-Bridging-Header.h in Sources */,
 				16B6DCEE202E58390043300D /* Platform.swift in Sources */,
 				162E430320212BD70036B897 /* RegisterViewController.swift in Sources */,
 				1652FDB31FB5039400D921EB /* NavigationMenuViewController.swift in Sources */,
+				52EEFDCF203B3B9300E71045 /* SongResourceTableViewCell.swift in Sources */,
 				16256EE51FBB827A00992B02 /* ChoirResourceInfoTableViewCell.swift in Sources */,
 				16A7A3221FCE0C8B00B32491 /* MusicLibraryTableViewController.swift in Sources */,
 				16B6DCF3202E58390043300D /* Intonation.swift in Sources */,
