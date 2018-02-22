@@ -555,6 +555,7 @@
 				166DF11E202E5F4C00C71B00 /* TestMXL.mxl */,
 				166DF119202E5DF300C71B00 /* Airfont_340.dls */,
 				166DF118202E5DF300C71B00 /* Bach Crucifixus_soprano.mid */,
+				52216586202A609E0024FAD4 /* Allegri Miserere Full.mid */,
 				1617DF931FB39EEB0094C474 /* ApiHelper.swift */,
 				162D98361FA65D09006068BC /* Extensions.swift */,
 			);
@@ -992,6 +993,7 @@
 				1626AE5E202E609E0028C7F7 /* Piano.mf.67.m4a in Resources */,
 				1626AE55202E609E0028C7F7 /* Piano.mf.35.m4a in Resources */,
 				1626AE66202E609E0028C7F7 /* Piano.mf.70.m4a in Resources */,
+				52216587202A609E0024FAD4 /* Allegri Miserere Full.mid in Resources */,
 				52FD88421FDDD06600958AAE /* NewEditProfile.storyboard in Resources */,
 				162E430720212BEF0036B897 /* Register.storyboard in Resources */,
 				1626AE7D202E609E0028C7F7 /* Piano.mf.37.m4a in Resources */,

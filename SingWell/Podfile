@@ -1,23 +1,23 @@
 
 target 'SingWell' do
-	pod 'SwiftyJSON'
-	pod 'Alamofire'
-	pod 'PDFReader'
-	pod 'IBAnimatable'
-	pod 'InteractiveSideMenu'
-	pod 'IoniconsKit'
-	pod 'JTAppleCalendar'
-	pod 'DTTextField'
-	pod 'AudioKit'
+    pod 'SwiftyJSON'
+    pod 'Alamofire'
+    pod 'PDFReader'
+    pod 'IBAnimatable'
+    pod 'InteractiveSideMenu'
+    pod 'IoniconsKit'
+    pod 'JTAppleCalendar'
+    pod 'DTTextField'
+    pod 'AudioKit', '~> 4.0'
 
-	use_frameworks!
+    use_frameworks!
 
 
-	target 'SingWellTests' do
+    target 'SingWellTests' do
       inherit! :search_paths
-  	end
+      end
 
-	target 'SingWellUITests' do
+    target 'SingWellUITests' do
       inherit! :search_paths
     end
 end
