@@ -136,7 +136,6 @@
 		16B6DD02202E5A390043300D /* SeeScoreLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 16B6DCFF202E5A190043300D /* SeeScoreLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		16D2CFA01FBE423500FDFF4D /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2CF9F1FBE423500FDFF4D /* ProfileTableViewCell.swift */; };
 		16D2CFA21FBE424300FDFF4D /* ChoirNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D2CFA11FBE424300FDFF4D /* ChoirNameTableViewCell.swift */; };
-		16D9964E203B47BB007CCB18 /* AveVerumMozart.mxl in Resources */ = {isa = PBXBuildFile; fileRef = 16D9964D203B47BB007CCB18 /* AveVerumMozart.mxl */; };
 		16E211921FC35122009969B1 /* ChoirInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E211911FC35122009969B1 /* ChoirInfoTableViewCell.swift */; };
 		16E211951FC35C5F009969B1 /* NotificationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E211941FC35C5F009969B1 /* NotificationsTableViewController.swift */; };
 		16E211971FC35C6B009969B1 /* Notifications.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16E211961FC35C6B009969B1 /* Notifications.storyboard */; };
@@ -338,7 +337,6 @@
 		16B6DCFF202E5A190043300D /* SeeScoreLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SeeScoreLib.framework; sourceTree = SOURCE_ROOT; };
 		16D2CF9F1FBE423500FDFF4D /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		16D2CFA11FBE424300FDFF4D /* ChoirNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoirNameTableViewCell.swift; sourceTree = "<group>"; };
-		16D9964D203B47BB007CCB18 /* AveVerumMozart.mxl */ = {isa = PBXFileReference; lastKnownFileType = file; path = AveVerumMozart.mxl; sourceTree = "<group>"; };
 		16E211911FC35122009969B1 /* ChoirInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoirInfoTableViewCell.swift; sourceTree = "<group>"; };
 		16E211941FC35C5F009969B1 /* NotificationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewController.swift; sourceTree = "<group>"; };
 		16E211961FC35C6B009969B1 /* Notifications.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notifications.storyboard; sourceTree = "<group>"; };
@@ -491,7 +489,8 @@
 				1626ADDD202E60970028C7F7 /* Piano.mf.107.m4a */,
 				1626ADDE202E60970028C7F7 /* Piano.mf.108.m4a */,
 			);
-			path = piano_samples;
+			name = piano_samples;
+			path = "synth-samples/piano-samples";
 			sourceTree = "<group>";
 		};
 		162D97FB1FA65CD3006068BC = {
@@ -552,7 +551,6 @@
 		162D98351FA65CF6006068BC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				16D9964D203B47BB007CCB18 /* AveVerumMozart.mxl */,
 				1626ADD8202E60840028C7F7 /* piano_samples */,
 				166DF11E202E5F4C00C71B00 /* TestMXL.mxl */,
 				166DF119202E5DF300C71B00 /* Airfont_340.dls */,
@@ -659,8 +657,7 @@
 				16B6DCE4202E58390043300D /* SSScrollView.m */,
 				166DF116202E5D2100C71B00 /* evaluation_key.c */,
 			);
-			name = SeeScoreFiles;
-			path = ../PracticeViewController/SeeScoreFiles;
+			path = SeeScoreFiles;
 			sourceTree = "<group>";
 		};
 		16A7A3201FCE0C4F00B32491 /* MusicLibraryViewController */ = {
@@ -951,7 +948,6 @@
 				1626AE43202E609E0028C7F7 /* Piano.mf.30.m4a in Resources */,
 				1626AE48202E609E0028C7F7 /* Piano.mf.61.m4a in Resources */,
 				1626AE36202E609E0028C7F7 /* Piano.mf.45.m4a in Resources */,
-				16D9964E203B47BB007CCB18 /* AveVerumMozart.mxl in Resources */,
 				1626AE5A202E609E0028C7F7 /* Piano.mf.50.m4a in Resources */,
 				1626AE78202E609E0028C7F7 /* Piano.mf.86.m4a in Resources */,
 				1626AE3A202E609E0028C7F7 /* Piano.mf.59.m4a in Resources */,

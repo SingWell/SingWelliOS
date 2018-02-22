@@ -64,7 +64,7 @@ class SongTableViewController: UITableViewController {
         case kSongYouTubeLink:
             return 1
         case kSongPDFResource:
-            return 1
+            return 0
         default:
             return 0
         }
