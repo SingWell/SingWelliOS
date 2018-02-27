@@ -66,13 +66,14 @@ class BarChangeHandler : NSObject, SSEventHandler
         
         if UseNoteCursor
         {
-            svc.sysScrollView?.setCursorAtBar(index, type:cursor_line, scroll:scroll_bar)
+//            print("PRACTICE - NOTE CURSOR")
+//            svc.sysScrollView?.setCursorAtBar(index, type:cursor_line, scroll:scroll_bar)
         }
         else
         {
-            svc.sysScrollView?.setCursorAtBar(index,
-                                              type:(countIn) ? cursor_line : cursor_rect,
-                                              scroll:scroll_bar)
+//            svc.sysScrollView?.setCursorAtBar(index,
+//                                              type:(countIn) ? cursor_line : cursor_rect,
+//                                              scroll:scroll_bar)
         }
         
         svc.cursorBarIndex = Int(index)
@@ -161,7 +162,8 @@ class NoteHandler : NSObject, SSNoteHandler {
 
 class PracticeViewController: UIViewController {
     
-    var filename = "TestMXL.mxl"
+//    var filename = "TestMXL.mxl"
+    var filename = "AveVerumMozart.mxl"
     var metronomeOn = true
     var tempo = 80
     
@@ -210,6 +212,7 @@ class PracticeViewController: UIViewController {
     @IBOutlet var barControl: SSBarControl!
     @IBOutlet var titleLabel : UILabel?
     @IBOutlet var playButton : UIButton?
+    var playButtonSize:CGFloat = 50
     @IBOutlet var countInLabel : UILabel?
     @IBOutlet var warningLabel : UILabel?
 //    @IBOutlet var tempoSlider : UISlider?
@@ -282,6 +285,8 @@ class PracticeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Practice"
 
         editMode = false
         rEnabled = true
@@ -303,7 +308,10 @@ class PracticeViewController: UIViewController {
         loopEndBarIndex = -1
         
         
-        setPlayButton(ionicon: .play, size: 50)
+        setPlayButton(ionicon: .play, size: playButtonSize)
+        
+        
+        
 //        tempoSlider?.isEnabled = false
         
 //        leftLoopButton?.isEnabled = false;
@@ -314,13 +322,27 @@ class PracticeViewController: UIViewController {
     
     override func viewWillDisappear(_ animated : Bool)
     {
+        print("PRACTICE - Aborting background processing:")
         sysScrollView?.abortBackgroundProcessing({
+            print("PRACTICE - Aborted")
             self.lastMagnification = self.sysScrollView?.magnification
         })
+        clearAudioSession()
+        score = nil
+        if let synth = synth
+        {
+            if synth.isPlaying
+            {
+                print("PRACTICE - PAUSE")
+                setPlayButton(ionicon: .play, size: playButtonSize)
+                synth.reset() // stop playing if playing
+            }
+        }
     }
     
     deinit
     {
+        print("PRACTICE - DEINITING:")
         if editMode && (score != nil)
         {
             score?.removeChangeHandler(changeHandlerId!)
@@ -461,8 +483,19 @@ class PracticeViewController: UIViewController {
 //    }
     
     // MARK: TEMPO!!
-//    func setupTempoUI()
-//    {
+    func setupTempoUI()
+    {
+        if let score = score
+        {
+            if score.scoreHasDefinedTempo
+            {
+                tempo = Int(score.tempoAtStart().bpm)
+                print("Setting tempo to: ", tempo)
+            } else {
+                tempo = Int(PracticeViewController.kDefaultTempo)
+                print("Setting tempo to default: ", tempo)
+            }
+        }
 //        if let score = score
 //        {
 //            if score.scoreHasDefinedTempo
@@ -484,7 +517,7 @@ class PracticeViewController: UIViewController {
 //        {
 //            self.tempoSlider?.isEnabled = false;
 //        }
-//    }
+    }
     
     static func titleFromHeader(header: SSHeader, maxlen: Int) -> String
     {
@@ -616,7 +649,8 @@ class PracticeViewController: UIViewController {
                     self.layOptions = SSLayoutOptions() // set default layout
                     self.sysScrollView?.setupScore(self.score, openParts:self.showingParts, mag:Float(PracticeViewController.kDefaultMagnification), opt:self.layOptions)
                     self.barControl?.delegate = self.sysScrollView
-//                    self.setupTempoUI()
+                    self.setupTempoUI()
+                    
                 }
                 if let err = err
                 {
@@ -666,7 +700,7 @@ class PracticeViewController: UIViewController {
                     {
                         print("tap: partindex:" + String(sysPt.partIndex) + " barindex:" +  String(sysPt.barIndex))
                         cursorBarIndex = Int(sysPt.barIndex);
-                        sysScrollView.setCursorAtBar(sysPt.barIndex, type:cursor_rect, scroll:scroll_bar)
+                        sysScrollView.setCursorAtBar(sysPt.barIndex, type:cursor_rect, scroll:scroll_bar, shouldDisplayRect: true)
                         
                         if PrintXMLForTappedBar
                         {
@@ -913,7 +947,7 @@ class PracticeViewController: UIViewController {
                 if synth.isPlaying
                 {
                     print("PAUSE")
-                    setPlayButton(ionicon: .play, size: 50)
+                    setPlayButton(ionicon: .play, size: playButtonSize)
                     synth.reset() // stop playing if playing
                     return
                 }
@@ -948,7 +982,7 @@ class PracticeViewController: UIViewController {
             if let synth = synth // start playing if not playing
             {
                 print("PLAY")
-                setPlayButton(ionicon: .pause, size: 50)
+                setPlayButton(ionicon: .pause, size: playButtonSize)
                 if setupAudioSession()
                 {
                     playData = SSPData.createPlay(from: score, tempo:self)
@@ -977,7 +1011,7 @@ class PracticeViewController: UIViewController {
                         displaynotes(pd: playData)
                         // setup bar change notification to move cursor
                         let cursorAnimationTime_ms = Int(CATransaction.animationDuration() * 1000.0)
-                        sysScrollView?.setCursorAtBar(Int32(self.cursorBarIndex), type:cursor_line, scroll:scroll_bar)
+                        sysScrollView?.setCursorAtBar(Int32(self.cursorBarIndex), type:cursor_line, scroll:scroll_bar, shouldDisplayRect: false)
                         if UseNoteCursor
                         {
                             synth.setNoteHandler(NoteHandler(vc: self), delay:-(Int32)(cursorAnimationTime_ms))
