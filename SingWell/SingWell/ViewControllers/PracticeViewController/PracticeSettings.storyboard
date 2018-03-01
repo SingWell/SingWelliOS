@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WQJ-XH-vw8">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Practice Settings View Controller-->
+        <scene sceneID="hOv-MR-cAX">
+            <objects>
+                <viewController id="WQJ-XH-vw8" customClass="PracticeSettingsViewController" customModule="SingWell" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Uer-Hy-5u8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Practice Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCR-Fn-qD4">
+                                <rect key="frame" x="100" y="20" width="175.5" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TuH-oQ-Wn6">
+                                <rect key="frame" x="0.0" y="57" width="375" height="597"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TempoSettingCell" rowHeight="73" id="19D-a0-UBQ" customClass="TempoSettingCell" customModule="SingWell" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="73"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="19D-a0-UBQ" id="faC-eB-xM4">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="72.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="7t0-r7-AOR">
+                                                    <rect key="frame" x="119" y="21" width="243" height="31"/>
+                                                </slider>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tempo: 80" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GlR-uj-ftq">
+                                                    <rect key="frame" x="15" y="26" width="82" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GlR-uj-ftq" firstAttribute="centerY" secondItem="faC-eB-xM4" secondAttribute="centerY" id="FMa-Ql-Dv7"/>
+                                                <constraint firstItem="GlR-uj-ftq" firstAttribute="leading" secondItem="faC-eB-xM4" secondAttribute="leading" constant="15" id="hs2-8g-dZF"/>
+                                                <constraint firstAttribute="trailing" secondItem="7t0-r7-AOR" secondAttribute="trailing" constant="15" id="tvA-mL-yUQ"/>
+                                                <constraint firstItem="7t0-r7-AOR" firstAttribute="centerY" secondItem="GlR-uj-ftq" secondAttribute="centerY" id="uZ9-DV-1CT"/>
+                                                <constraint firstItem="7t0-r7-AOR" firstAttribute="leading" secondItem="faC-eB-xM4" secondAttribute="leading" constant="121" id="zmE-OD-YB9"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="tempoLabel" destination="GlR-uj-ftq" id="APY-4R-Myy"/>
+                                            <outlet property="tempoSlider" destination="7t0-r7-AOR" id="FAn-JA-mSz"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MetronomeSettingCell" rowHeight="90" id="Tcx-mJ-dT4" customClass="MetronomeSettingCell" customModule="SingWell" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="101" width="375" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tcx-mJ-dT4" id="qGz-G2-o66">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Metronome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jrr-i1-WTa">
+                                                    <rect key="frame" x="15" y="34" width="88" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AAy-Ok-HXe">
+                                                    <rect key="frame" x="311" y="29" width="51" height="31"/>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="AAy-Ok-HXe" firstAttribute="centerY" secondItem="Jrr-i1-WTa" secondAttribute="centerY" id="2yg-q1-t7P"/>
+                                                <constraint firstItem="Jrr-i1-WTa" firstAttribute="centerY" secondItem="qGz-G2-o66" secondAttribute="centerY" id="Mrl-q7-XXf"/>
+                                                <constraint firstAttribute="trailing" secondItem="AAy-Ok-HXe" secondAttribute="trailing" constant="15" id="V2J-GG-G4W"/>
+                                                <constraint firstItem="Jrr-i1-WTa" firstAttribute="leading" secondItem="qGz-G2-o66" secondAttribute="leading" constant="15" id="rCa-1D-ez8"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="metronomeSwitch" destination="AAy-Ok-HXe" id="y41-NN-Loe"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tCR-Fn-qD4" firstAttribute="centerX" secondItem="J37-1D-dSI" secondAttribute="centerX" id="MjD-NI-xKb"/>
+                            <constraint firstItem="tCR-Fn-qD4" firstAttribute="top" secondItem="J37-1D-dSI" secondAttribute="top" id="MjK-8D-VpS"/>
+                            <constraint firstItem="TuH-oQ-Wn6" firstAttribute="leading" secondItem="J37-1D-dSI" secondAttribute="leading" id="gZZ-lK-mwE"/>
+                            <constraint firstItem="TuH-oQ-Wn6" firstAttribute="top" secondItem="tCR-Fn-qD4" secondAttribute="bottom" constant="8" id="ix2-ai-kOq"/>
+                            <constraint firstItem="J37-1D-dSI" firstAttribute="trailing" secondItem="TuH-oQ-Wn6" secondAttribute="trailing" id="rAL-Xz-Cx0"/>
+                            <constraint firstItem="J37-1D-dSI" firstAttribute="bottom" secondItem="TuH-oQ-Wn6" secondAttribute="bottom" constant="13" id="rsf-cu-CqI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="J37-1D-dSI"/>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="_modalWidth" value="ThreeQuarters"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="_modalHeight" value="ThreeQuarters"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="tableView" destination="TuH-oQ-Wn6" id="r6L-bA-azB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kEq-1e-flT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="149.59999999999999" y="-139.880059970015"/>
+        </scene>
+    </scenes>
+</document>

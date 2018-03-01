@@ -10,10 +10,8 @@ import UIKit
 //import SeeScoreLib
 import AVFoundation
 import IoniconsKit
+import IBAnimatable
 
-
-//let sscore_libkey: sscore_libkeytype = sscore_libkeytype.init(identity: <#T##UnsafePointer<Int8>!#>, capabilities: <#T##(UInt32, UInt32)#>, key: <#T##(UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32, UInt32)#>)
-//let sscore_libkey = sscore_libkeytype {"evaluation", {0X83494,0X0}, {0X3d037225,0X2d3afa6e,0X7436f439,0X7b0f62f4,0X2f29c04a,0Xf9629574,0X5e0f5276,0X3feef138,0X835ee3c5,0X601eb452,0X7fd0a4ca,0X67f93f9c,0X5af30b54,0Xa6ce672,0Xcdd7ca0e}};
 
 let UseNoteCursor = true // define this to make the cursor move to each note as it plays, else it moves to the current bar
 let PrintPlayData  = false // define this to print play data in the console when play is pressed
@@ -22,145 +20,8 @@ let ColourTappedItem = true // define this to colour any item tapped in the scor
 let PrintXMLForTappedBar = false // define this to print the XML for the bar in the console (contents licence needed)
 let CreateMidiFile = false
 
-enum SSSynthVoice {
-    case Sampled
-    case Tick
-    case Sine
-    case Square
-    case Triangle
-}
 
-enum SSTemperament {
-    case Equal
-    case JustC
-}
-
-/********** Event Handlers ***********/
-
-class BarChangeHandler : NSObject, SSEventHandler
-{
-    let svc : PracticeViewController
-    var lastIndex : Int32
-    
-    init(vc : PracticeViewController)
-    {
-        svc = vc
-        lastIndex = -1
-        super.init()
-    }
-    
-    public func event(_ index: Int32, countIn: Bool, at:dispatch_time_t)
-    {
-        if ColourPlayedNotes
-        {
-            if let score = svc.score
-            {
-                let startRepeat = index < lastIndex
-                if (startRepeat)
-                {
-                    var br = sscore_barrange(startbarindex: index, numbars: score.numBars - index)
-                    svc.sysScrollView?.clearColouring(forBarRange: &br)
-                }
-            }
-        }
-        
-        if UseNoteCursor
-        {
-//            print("PRACTICE - NOTE CURSOR")
-//            svc.sysScrollView?.setCursorAtBar(index, type:cursor_line, scroll:scroll_bar)
-        }
-        else
-        {
-//            svc.sysScrollView?.setCursorAtBar(index,
-//                                              type:(countIn) ? cursor_line : cursor_rect,
-//                                              scroll:scroll_bar)
-        }
-        
-        svc.cursorBarIndex = Int(index)
-        lastIndex = index
-    }
-}
-
-class BeatHandler : NSObject, SSEventHandler {
-    
-    let svc : PracticeViewController
-    
-    init(vc : PracticeViewController)
-    {
-        svc = vc
-        super.init()
-    }
-    
-    func event(_ index : Int32,  countIn : Bool, at:dispatch_time_t)
-    {
-        svc.countInLabel?.isHidden = !countIn
-        if countIn
-        {
-            svc.countInLabel?.text = String.init(format: "%d", index + 1) // show count-in
-        }
-    }
-}
-
-class EndHandler : NSObject, SSEventHandler {
-    
-    let svc : PracticeViewController
-    
-    init(vc : PracticeViewController)
-    {
-        svc = vc
-        super.init()
-    }
-    
-    func event(_ index : Int32,  countIn : Bool, at:dispatch_time_t)
-    {
-        svc.sysScrollView?.hideCursor()
-        svc.countInLabel?.isHidden = true
-        svc.cursorBarIndex = 0
-        svc.stopPlaying()
-        if ColourPlayedNotes
-        {
-            svc.sysScrollView?.clearAllColouring()
-        }
-    }
-}
-
-class NoteHandler : NSObject, SSNoteHandler {
-    
-    let svc : PracticeViewController
-    
-    init(vc : PracticeViewController)
-    {
-        svc = vc
-        super.init()
-    }
-    
-    public func start(_ pnotes: [SSPDPartNote]!, at:dispatch_time_t)
-    {
-        assert(pnotes.count > 0)
-        svc.moveNoteCursor(notes: pnotes)
-        if ColourPlayedNotes
-        {
-            // convert array of SSPDPartNote to array of SSPDNote
-            var notes = [SSPDNote]()
-            for n in pnotes
-            {
-                notes.append(n.note)
-            }
-            svc.colourPDNotes(notes: notes)
-        }
-    }
-    
-    public func end(_ note: SSPDPartNote!, at:dispatch_time_t)
-    {
-        if ColourPlayedNotes
-        {
-            svc.changeColouredPDNote(note: note.note)
-        }
-    }
-}
-
-
-class PracticeViewController: UIViewController {
+class PracticeViewController: UIViewController, PracticeSettingsDelegate {
     
 //    var filename = "TestMXL.mxl"
     var filename = "AveVerumMozart.mxl"
@@ -190,10 +51,10 @@ class PracticeViewController: UIViewController {
     
     private static let kDefaultMagnification = 1.0
     
-    private static  let kMinTempoScaling = 0.5
-    private static  let kMaxTempoScaling = 2.0
-    private static  let kMinTempo = 40
-    private static  let kMaxTempo = 120
+//    private static  let kMinTempoScaling = 0.5
+//    private static  let kMaxTempoScaling = 2.0
+//    private static  let kMinTempo = 40
+//    private static  let kMaxTempo = 120
     private static  let kDefaultTempo = 80
     private static  let kStartPlayDelay = 1.0//s
     private static    let kStartDelay = 2.0//s
@@ -215,12 +76,7 @@ class PracticeViewController: UIViewController {
     var playButtonSize:CGFloat = 50
     @IBOutlet var countInLabel : UILabel?
     @IBOutlet var warningLabel : UILabel?
-//    @IBOutlet var tempoSlider : UISlider?
-//    @IBOutlet var tempoLabel : UILabel?
     @IBOutlet var metronomeSwitch : UISwitch?
-//    @IBOutlet var nextFileButton : UIBarButtonItem?
-//    @IBOutlet var versionLabel : UILabel?
-//    @IBOutlet var layoutControl :UISegmentedControl?
     @IBOutlet var sysScrollView : SSScrollView?
     
     public var cursorBarIndex : Int
@@ -301,12 +157,10 @@ class PracticeViewController: UIViewController {
         sysScrollView?.addGestureRecognizer(pressRecognizer!)
         cursorBarIndex = 0
         loadFile(filename: self.filename)
-//        versionLabel?.text = SSScore.versionString()
         // test setting of background colour programmatically
         sysScrollView?.backgroundColor = UIColor(red:1.0, green:1.0, blue:0.95, alpha:1.0)
         loopStartBarIndex = -1
         loopEndBarIndex = -1
-        
         
         setPlayButton(ionicon: .play, size: playButtonSize)
         
@@ -319,6 +173,43 @@ class PracticeViewController: UIViewController {
 //        editButton?.isEnabled = true;
         // enable restore button if file in documents is different from file in bundle
     }
+    
+    func updateSettings(_ tempo: Float?, _ metronomeOn: Bool?) {
+        self.tempo = Int(tempo!)
+        self.metronomeOn = metronomeOn!
+//        print("SETTINGS - TEST \(tempo), \(metronomeOn)")
+        
+    }
+    
+    
+    @IBAction func showSettingsModal(_ sender: Any?) {
+        let presentingVC = AppStoryboard.PracticeSettings.initialViewController()
+        if let presentedViewController = presentingVC as? PracticeSettingsViewController {
+            //            setupModal(for: presentedViewController)
+            presentedViewController.metronomeOn = self.metronomeOn
+            presentedViewController.tempo = Float(self.tempo)
+            presentedViewController.delegate = self
+            present(presentedViewController, animated: true, completion: nil)
+        }
+    }
+    
+    func setupBarItem() {
+        let menuBtn = AnimatableButton(type: .custom)
+        menuBtn.setTitle("", for: .normal)
+        menuBtn.tintColor = .black
+        menuBtn.setImage(UIImage.ionicon(with: .iosGear, textColor: UIColor.black, size: CGSize(width: 35, height: 35)), for: .normal)
+        menuBtn.addTarget(self, action: #selector(PracticeViewController.showSettingsModal(_:)), for: .touchUpInside)
+        
+        let menuItem = AnimatableBarButtonItem(customView: menuBtn)
+        
+        self.navigationItem.rightBarButtonItem = menuItem
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupBarItem()
+    }
+
     
     override func viewWillDisappear(_ animated : Bool)
     {
@@ -1366,3 +1257,148 @@ extension PracticeViewController: SSSyControls, SSUTempo, ScoreChangeHandler,  S
         return metronomeOn ? 1.0 : 0.0 // switch off metronome by setting volume = 0 (if we use enabled we cannot switch it on while playing)
     }
 }
+
+
+
+
+
+
+
+enum SSSynthVoice {
+    case Sampled
+    case Tick
+    case Sine
+    case Square
+    case Triangle
+}
+
+enum SSTemperament {
+    case Equal
+    case JustC
+}
+
+/********** Event Handlers ***********/
+
+class BarChangeHandler : NSObject, SSEventHandler
+{
+    let svc : PracticeViewController
+    var lastIndex : Int32
+    
+    init(vc : PracticeViewController)
+    {
+        svc = vc
+        lastIndex = -1
+        super.init()
+    }
+    
+    public func event(_ index: Int32, countIn: Bool, at:dispatch_time_t)
+    {
+        if ColourPlayedNotes
+        {
+            if let score = svc.score
+            {
+                let startRepeat = index < lastIndex
+                if (startRepeat)
+                {
+                    var br = sscore_barrange(startbarindex: index, numbars: score.numBars - index)
+                    svc.sysScrollView?.clearColouring(forBarRange: &br)
+                }
+            }
+        }
+        
+        if UseNoteCursor
+        {
+            //            print("PRACTICE - NOTE CURSOR")
+            //            svc.sysScrollView?.setCursorAtBar(index, type:cursor_line, scroll:scroll_bar)
+        }
+        else
+        {
+            //            svc.sysScrollView?.setCursorAtBar(index,
+            //                                              type:(countIn) ? cursor_line : cursor_rect,
+            //                                              scroll:scroll_bar)
+        }
+        
+        svc.cursorBarIndex = Int(index)
+        lastIndex = index
+    }
+}
+
+class BeatHandler : NSObject, SSEventHandler {
+    
+    let svc : PracticeViewController
+    
+    init(vc : PracticeViewController)
+    {
+        svc = vc
+        super.init()
+    }
+    
+    func event(_ index : Int32,  countIn : Bool, at:dispatch_time_t)
+    {
+        svc.countInLabel?.isHidden = !countIn
+        if countIn
+        {
+            svc.countInLabel?.text = String.init(format: "%d", index + 1) // show count-in
+        }
+    }
+}
+
+class EndHandler : NSObject, SSEventHandler {
+    
+    let svc : PracticeViewController
+    
+    init(vc : PracticeViewController)
+    {
+        svc = vc
+        super.init()
+    }
+    
+    func event(_ index : Int32,  countIn : Bool, at:dispatch_time_t)
+    {
+        svc.sysScrollView?.hideCursor()
+        svc.countInLabel?.isHidden = true
+        svc.cursorBarIndex = 0
+        svc.stopPlaying()
+        if ColourPlayedNotes
+        {
+            svc.sysScrollView?.clearAllColouring()
+        }
+    }
+}
+
+class NoteHandler : NSObject, SSNoteHandler {
+    
+    let svc : PracticeViewController
+    
+    init(vc : PracticeViewController)
+    {
+        svc = vc
+        super.init()
+    }
+    
+    public func start(_ pnotes: [SSPDPartNote]!, at:dispatch_time_t)
+    {
+        assert(pnotes.count > 0)
+        svc.moveNoteCursor(notes: pnotes)
+        if ColourPlayedNotes
+        {
+            // convert array of SSPDPartNote to array of SSPDNote
+            var notes = [SSPDNote]()
+            for n in pnotes
+            {
+                notes.append(n.note)
+            }
+            svc.colourPDNotes(notes: notes)
+        }
+    }
+    
+    public func end(_ note: SSPDPartNote!, at:dispatch_time_t)
+    {
+        if ColourPlayedNotes
+        {
+            svc.changeColouredPDNote(note: note.note)
+        }
+    }
+}
+
+

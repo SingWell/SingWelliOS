@@ -118,6 +118,8 @@
 		166DF117202E5D2100C71B00 /* evaluation_key.c in Sources */ = {isa = PBXBuildFile; fileRef = 166DF116202E5D2100C71B00 /* evaluation_key.c */; };
 		166DF11B202E5DF300C71B00 /* Airfont_340.dls in Resources */ = {isa = PBXBuildFile; fileRef = 166DF119202E5DF300C71B00 /* Airfont_340.dls */; };
 		166DF11F202E5F4C00C71B00 /* TestMXL.mxl in Resources */ = {isa = PBXBuildFile; fileRef = 166DF11E202E5F4C00C71B00 /* TestMXL.mxl */; };
+		16816C902046122E005CDDDB /* PracticeSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16816C8F2046122E005CDDDB /* PracticeSettingsViewController.swift */; };
+		16816C922046123C005CDDDB /* PracticeSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16816C912046123C005CDDDB /* PracticeSettings.storyboard */; };
 		16A7A3221FCE0C8B00B32491 /* MusicLibraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A3211FCE0C8B00B32491 /* MusicLibraryTableViewController.swift */; };
 		16A7A3241FCE0C9600B32491 /* MusicLibrary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16A7A3231FCE0C9600B32491 /* MusicLibrary.storyboard */; };
 		16A7A3261FCE0CB800B32491 /* MusicLibraryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A3251FCE0CB800B32491 /* MusicLibraryTableViewCell.swift */; };
@@ -317,6 +319,8 @@
 		166DF116202E5D2100C71B00 /* evaluation_key.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = evaluation_key.c; path = SingWell/ViewControllers/PracticeViewController/SeeScoreFiles/evaluation_key.c; sourceTree = SOURCE_ROOT; };
 		166DF119202E5DF300C71B00 /* Airfont_340.dls */ = {isa = PBXFileReference; lastKnownFileType = file; path = Airfont_340.dls; sourceTree = "<group>"; };
 		166DF11E202E5F4C00C71B00 /* TestMXL.mxl */ = {isa = PBXFileReference; lastKnownFileType = file; path = TestMXL.mxl; sourceTree = "<group>"; };
+		16816C8F2046122E005CDDDB /* PracticeSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeSettingsViewController.swift; sourceTree = "<group>"; };
+		16816C912046123C005CDDDB /* PracticeSettings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PracticeSettings.storyboard; sourceTree = "<group>"; };
 		16A7A3211FCE0C8B00B32491 /* MusicLibraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicLibraryTableViewController.swift; sourceTree = "<group>"; };
 		16A7A3231FCE0C9600B32491 /* MusicLibrary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MusicLibrary.storyboard; sourceTree = "<group>"; };
 		16A7A3251FCE0CB800B32491 /* MusicLibraryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicLibraryTableViewCell.swift; sourceTree = "<group>"; };
@@ -687,6 +691,8 @@
 			children = (
 				166228EA2033A46A008219B3 /* PracticeViewController.swift */,
 				16B6DCE9202E58390043300D /* Practice.storyboard */,
+				16816C8F2046122E005CDDDB /* PracticeSettingsViewController.swift */,
+				16816C912046123C005CDDDB /* PracticeSettings.storyboard */,
 				165923DF2033A14B00026387 /* SeeScoreFiles */,
 			);
 			path = PracticeViewController;
@@ -929,6 +935,7 @@
 				1626AE5B202E609E0028C7F7 /* Piano.mf.99.m4a in Resources */,
 				1626AE59202E609E0028C7F7 /* Piano.mf.64.m4a in Resources */,
 				1626AE84202E609E0028C7F7 /* Piano.mf.43.m4a in Resources */,
+				16816C922046123C005CDDDB /* PracticeSettings.storyboard in Resources */,
 				1626AE79202E609E0028C7F7 /* Piano.mf.105.m4a in Resources */,
 				1626AE51202E609E0028C7F7 /* Piano.mf.80.m4a in Resources */,
 				1626AE3B202E609E0028C7F7 /* Piano.mf.85.m4a in Resources */,
@@ -1222,6 +1229,7 @@
 				16E211921FC35122009969B1 /* ChoirInfoTableViewCell.swift in Sources */,
 				162D98081FA65CD3006068BC /* AppDelegate.swift in Sources */,
 				16B6DCF0202E58390043300D /* SingWell-Bridging-Header.h in Sources */,
+				16816C902046122E005CDDDB /* PracticeSettingsViewController.swift in Sources */,
 				16B6DCEE202E58390043300D /* Platform.swift in Sources */,
 				162E430320212BD70036B897 /* RegisterViewController.swift in Sources */,
 				1652FDB31FB5039400D921EB /* NavigationMenuViewController.swift in Sources */,
