@@ -15,7 +15,7 @@ import MessageUI
 
 class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    var userId = ""
+    var userId = "4"
     
     @IBOutlet weak var contactView: AnimatableView!
     @IBOutlet weak var biographyView: AnimatableView!
@@ -247,9 +247,9 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             addressView.isHidden = false
         }
         
-        var profileImage: UIImage = UIImage(named: "profileImage")!
-        profileImage = profileImage.circleMasked!
-        profileImageView.image = profileImage
+//        var profileImage: UIImage = UIImage(named: "profileImage")!
+//        profileImage = profileImage.circleMasked!
+//        profileImageView.image = profileImage
         
         let profileBackgroundImage: UIImage = UIImage(named: "profileBackground")!
         profileBackgroundImageView.image = profileBackgroundImage
@@ -339,6 +339,18 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     func getProfile() {
         var curUser = userId
+        
+        
+        ApiHelper.getProfilePic(path: "profilePictures", user_id: curUser) { data, error in
+            if error == nil {
+                let convertedData = Data(base64Encoded: data!)
+                var decodedimage:UIImage = UIImage(data: convertedData!)!
+                decodedimage = decodedimage.circleMasked!
+                self.profileImageView.image = decodedimage
+            } else {
+                print("Error getting profilePic: ",error as Any)
+            }
+        }
         
         ApiHelper.getProfile(userId: curUser) { response, error in
             if error == nil {

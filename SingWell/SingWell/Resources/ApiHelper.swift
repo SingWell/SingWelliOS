@@ -141,6 +141,16 @@ class ApiHelper {
         }
     }
     
+    static func getProfilePic(_ section: String, environment:String=PRODUCTION_ENV, completionHandler: @escaping (String?, Error?) -> ()) {
+        //        let destination = DownloadRequest.suggestedDownloadDestination(for: .documentDirectory)
+        
+        Alamofire.request(environment+"\(section)", encoding: JSONEncoding.default).responseString { response in
+            //            print(response)
+            completionHandler(response.value, response.error)
+            
+        }
+    }
+    
     static func makeDeleteCall(_ section: String, environment:String=PRODUCTION_ENV, completionHandler: @escaping (JSON?, Error?) -> ()) {
         
         print("\(section)")
@@ -157,10 +167,53 @@ class ApiHelper {
                 }
         }
     }
-
+    
+    static func uploadImage(image: UIImage, fileName:String, completionHandler: @escaping (String?, Error?) -> ()){
+        //        let imageData = UIImagePNGRepresentation(image)!
+        let imageData = UIImageJPEGRepresentation(image, 1.0)
+        
+        let parameters = [
+            "user_id": userId
+        ]
+        
+        Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = 10
+        let url = "http://ec2-34-215-244-252.us-west-2.compute.amazonaws.com/profilePictures/"
+        
+        Alamofire.upload(
+        
+            multipartFormData: { (multipartFormData) in
+                
+                multipartFormData.append(imageData! as Data, withName: fileName, fileName: "profilePic.jpg", mimeType: "image/jpg")
+                
+                for (key, value) in parameters {
+                    multipartFormData.append("\(value)".data(using: String.Encoding.utf8)!, withName: key as String)
+                }
+        },
+            to: url,
+            encodingCompletion: { encodingResult in
+                switch encodingResult {
+                case .success(let upload, _, _):
+                    upload.responseString { response in
+                        debugPrint(response)
+                        completionHandler(response.data?.base64EncodedString(),nil)
+                    }
+                    
+                    
+                    
+                case .failure(let encodingError):
+                    print(encodingError)
+                }
+        }
+        )
+        //   var section = "users/\(userId)/classes/\(courseId)/\(material)/\(materialId)/files/"
+    }
     
     static func downloadPDF(path:String, resourceID:String, recordID:String, completionHandler: @escaping (String?, Error?) -> ()) {
         makeFileCall("resource/?resource_id=\(resourceID)&record_id=\(recordID)", completionHandler: completionHandler)
+    }
+    
+    static func getProfilePic(path:String, user_id:String, completionHandler: @escaping (String?, Error?) -> ()) {
+        getProfilePic("profilePictures/?user_id=4", completionHandler: completionHandler)
     }
     
     //this will get user for a specific id

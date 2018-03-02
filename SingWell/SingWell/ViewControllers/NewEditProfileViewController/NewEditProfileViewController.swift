@@ -332,6 +332,16 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
             }
         }
         
+        ApiHelper.uploadImage(image: profileImageView.image!, fileName: "profilePic") { response, error in
+            if error == nil {
+                print("No error")
+            } else {
+                print(error!)
+            }
+        }
+        
+        
+        
         // do unwindToSaveProfileSegue
         self.performSegue(withIdentifier: "unwindToSaveProfileSegue", sender: self)
     }
