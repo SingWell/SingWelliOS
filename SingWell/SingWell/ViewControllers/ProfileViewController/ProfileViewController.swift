@@ -13,15 +13,7 @@ import IoniconsKit
 import SwiftyJSON
 import MessageUI
 
-class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, MFMessageComposeViewControllerDelegate, MFMailComposeViewControllerDelegate{
-    
-    
-    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
-        //... handle sms screen actions
-        self.dismiss(animated: true, completion: nil)
-
-    }
-    
+class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     var userId = ""
     
@@ -37,47 +29,6 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     var instruments = ["trumpet", "drum", "piano", "guitar"]
     var user:JSON = []
-    var rosterUser:JSON = []
-    
-    @IBAction func phoneNumberTap(_ sender: Any) {
-        print("tapped Number")
-        
-        if (MFMessageComposeViewController.canSendText() == true) {
-//                        let controller = MFMessageComposeViewController()
-//                        controller.body = "Message Body"
-//            controller.recipients = [phoneNumberButton.title(for: .normal)!]
-//                        controller.messageComposeDelegate = self
-//                        self.present(controller, animated: true, completion: nil)
-//                    }
-            let recipients:[String] = [phoneNumberButton.title(for: .normal)!]
-            let messageController = MFMessageComposeViewController()
-            messageController.messageComposeDelegate  = self
-            messageController.recipients = recipients
-            messageController.body = ""
-            self.present(messageController, animated: true, completion: nil)
-        } else {
-            //handle text messaging not available
-        }
-    }
-    
-    // Mail only works if the native Mail apple app is installed and set up with acount
-    @IBAction func launchEmail(sender: AnyObject) {
-        print("Tapped Email")
-        
-        if MFMailComposeViewController.canSendMail()
-        {
-            let mail = MFMailComposeViewController()
-            mail.mailComposeDelegate = self
-            mail.setToRecipients([emailButton.title(for: .normal)!])
-            mail.setSubject("")
-            mail.setMessageBody("", isHTML: false)
-            self.present(mail, animated: true, completion: nil)
-        }
-    }
-    
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        controller.dismiss(animated: true, completion:nil)
-    }
     
     //    @IBOutlet weak var cellImageView: UIImageView!
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -158,10 +109,21 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         // Refresh data
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        getProfile()
+    }
+    
     func setNavigationItems() {
-        menuItem.title = ""
-        menuItem.tintColor = .black
-        menuItem.image = UIImage.ionicon(with: .navicon, textColor: UIColor.black, size: CGSize(width: 35, height: 35))
+        // Add Menu button on navigation bar programmatically
+        var menuBtn = AnimatableButton(type: .custom)
+        menuBtn.setTitle("", for: .normal)
+        menuBtn.tintColor = .black
+        menuBtn.setImage(UIImage.ionicon(with: .navicon, textColor: UIColor.black, size: CGSize(width: 35, height: 35)), for: .normal)
+        menuBtn.addTarget(self, action: #selector(ProfileViewController.openMenu(_:)), for: .touchUpInside)
+        
+        let menuItem = AnimatableBarButtonItem(customView: menuBtn)
+        
+        self.navigationItem.leftBarButtonItem = menuItem
     }
     
     func setInstrumentItems() {
@@ -215,7 +177,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func setProfile(user:JSON) {
-        
+        print("Setting profile")
         if(user["bio"].exists()){
             biographyView.isHidden = false
             biographyTextView.text = user["bio"].stringValue
@@ -234,12 +196,12 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         if(user["phone_number"].exists()){
             phoneNumberButton.setTitle(user["phone_number"].stringValue, for: .normal)
 //                = user["phone_number"].stringValue
-//            phoneNumberLabel.isHidden = false
+            phoneNumberButton.isHidden = false
         }
         else {
-            phoneNumberButton.setTitle("9999999999", for: .normal)
+//            phoneNumberButton.setTitle("9999999999", for: .normal)
 //            phoneNumberButton.titleLabel?.text = "9999999999"
-//            phoneNumberLabel.isHidden = true
+            phoneNumberButton.isHidden = true
         }
         
         if(!user["email"].exists() && !user["phone_number"].exists()){
@@ -294,10 +256,10 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         var profileName = ""
         if(user != []){
-            profileName = user["username"].stringValue
+            profileName = user["first_name"].stringValue + " " + user["last_name"].stringValue
         }
         if(profileName == ""){
-            profileName = "Kenton Kravig"
+            profileName = "No Name"
         }
         
         profileNameLabel.text = profileName
@@ -316,7 +278,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         instrumentCollectionView.dataSource = (self as UICollectionViewDataSource)
         
         self.title = "Profile"
-//        setNavigationItems()
+        setNavigationItems()
         setEditButton()
         setNotificationButton()
         
@@ -332,51 +294,6 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         addressIcon.image = UIImage.ionicon(with: .location, textColor: UIColor.gray, size: CGSize(width: 35, height: 35))
         
         instrumentationButton.image = UIImage.ionicon(with: .headphone, textColor: UIColor.gray, size: CGSize(width: 35, height: 35))
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        if userId != "" {
-//            Hide Navigation items
-            
-            //get user information
-            getUser()
-            
-//            Hide Edit and Notification Buttons
-//            notificationImageView.isHidden = true
-//            notificationButton.isHidden = true
-//            editButton.isHidden = true
-//            editImageView.isHidden = true
-            setEmailButton()
-            setTextButton()
-        }
-        else {
-//            View Navigation items
-            
-            //get user information
-            getProfile()
-            
-            // Add Menu button on navigation bar programmatically
-            var menuBtn = AnimatableButton(type: .custom)
-            menuBtn.setTitle("", for: .normal)
-            menuBtn.tintColor = .black
-            menuBtn.setImage(UIImage.ionicon(with: .navicon, textColor: UIColor.black, size: CGSize(width: 35, height: 35)), for: .normal)
-            menuBtn.addTarget(self, action: #selector(ProfileViewController.openMenu(_:)), for: .touchUpInside)
-            
-            let menuItem = AnimatableBarButtonItem(customView: menuBtn)
-            
-            self.navigationItem.leftBarButtonItem = menuItem
-            
-//            View Edit and Notification Buttons
-//            notificationImageView.isHidden = false
-//            notificationButton.isHidden = false
-//            editButton.isHidden = false
-//            editImageView.isHidden = false
-            
-            setEditButton()
-            setNotificationButton()
-            
-        }
-        userId = ""
     }
     
     override func didReceiveMemoryWarning() {
@@ -421,39 +338,14 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func getProfile() {
-        var curUser = ""
-        if userId == "" {
-            curUser = "4"
-        }
-        else{
-            curUser = userId
-        }
+        var curUser = userId
+        
         ApiHelper.getProfile(userId: curUser) { response, error in
             if error == nil {
                 self.user = response!
                 print(self.user)
                 
                 self.setProfile(user:self.user)
-            } else {
-                print(error!)
-            }
-        }
-    }
-    
-    func getUser() {
-        var curUser = ""
-        if userId == "" {
-            curUser = "4"
-        }
-        else{
-            curUser = userId
-        }
-        ApiHelper.getUser(userId: curUser) { response, error in
-            if error == nil {
-                self.rosterUser = response!
-                print(self.rosterUser)
-                
-                self.setProfile(user: self.rosterUser)
             } else {
                 print(error!)
             }

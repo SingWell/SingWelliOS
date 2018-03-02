@@ -332,74 +332,11 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
             }
         }
         
-        ApiHelper.getProfile() { response, error in
-            if error == nil {
-                print(response)
-                print("No error")
-            } else {
-                print(error!)
-            }
-        }
-        
-//        let navCon = AppStoryboard.Profile.initialViewController() as! SideItemNavigationViewController
-//        let nextVc = navCon.topViewController as! ProfileViewController
-//
-//        self.navigationController?.pushViewController(nextVc, animated: true)
-        
         // do unwindToSaveProfileSegue
         self.performSegue(withIdentifier: "unwindToSaveProfileSegue", sender: self)
     }
-    
-//    func editUser() {
-//        let delimiter = " "
-//        let fullName = nameTextField.text
-//        var name = fullName?.components(separatedBy: delimiter)
-//        let firstName = name![0]
-//        var lastName = ""
-//        if(name?.count == 2){
-//            lastName = name![1]
-//        }
-//
-//        let phoneDelimiter = CharacterSet.init(charactersIn: "()-")
-//        let tmpNumber = phoneNumberTextField.text
-//        let phone = tmpNumber?.components(separatedBy: phoneDelimiter)
-//        var phoneNumber = ""
-//        for number in phone!{
-//            phoneNumber += number
-//        }
-//
-//        let email = emailTextField.text
-//        var biography = ""
-//        if(biographyTextView.text != "Add a short biography here"){
-//            biography = biographyTextView.text
-//        }
-//        let city = cityTextField.text
-//        let address = streetTextField.text
-//        let state = stateTextField.text
-//        let zipCode = zipCodeTextField.text
-//
-//        let parameters: [String: AnyObject] = [ "email": email! as AnyObject, "phone_number": phoneNumber as AnyObject, "address": address! as AnyObject, "bio": biography as AnyObject, "city": city! as AnyObject,"zip_code": zipCode! as AnyObject, "state": state! as AnyObject, "date_of_birth": "" as AnyObject]
-//
-//        ApiHelper.editUser(parameters: parameters) { response, error in
-//            if error == nil {
-//                print("Successful post")
-//            } else {
-//                print(error!)
-//            }
-//        }
-//
-//        let navCon = AppStoryboard.Profile.initialViewController() as! SideItemNavigationViewController
-//        let nextVc = navCon.topViewController as! ProfileViewController
-//
-//        self.navigationController?.pushViewController(nextVc, animated: true)
-//
-//    }
-    
+
     @IBAction func cancelUpdate(_ sender: Any) {
-//        let navCon = AppStoryboard.Profile.initialViewController() as! SideItemNavigationViewController
-//        let nextVc = navCon.topViewController as! ProfileViewController
-//
-//        self.navigationController?.pushViewController(nextVc, animated: true)
         
         self.performSegue(withIdentifier: "unwindToSaveProfileSegue", sender: self)
     }

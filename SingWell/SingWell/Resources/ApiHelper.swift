@@ -73,7 +73,7 @@ class ApiHelper {
             .responseJSON { response in
                 switch response.result {
                 case .success(let value):
-                    print("VALUE FOR \(section)",value)
+//                    print("VALUE FOR \(section)",value)
                     completionHandler(JSON(value), nil)
                 case .failure(let error):
                     print("ERROR FOR \(section)",error)
@@ -83,13 +83,11 @@ class ApiHelper {
     }
     
     static func makePostCall(_ section: String, environment:String=PRODUCTION_ENV, _ parameters: Parameters, completionHandler: @escaping (JSON?, Error?) -> ()) {
-        //let params = ["consumer_key":"key", "consumer_secret":"secret"]
-        //TODO: NEED PARAMS AS FUNCTION PARAMETER
-        let headers = ["Authorization": "Basic \(AUTH_TOKEN)"]
+        let headers = ["Content-Type": "application/json", "Authorization" : "Token \(AUTH_TOKEN)"]
         Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = 10
         print("\(parameters)")
         
-        Alamofire.request(environment+"\(section)", method: .post, parameters: parameters, encoding: JSONEncoding.default)
+        Alamofire.request(environment+"\(section)", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
             .responseJSON { response in
                 switch response.result {
                 case .success(let value):
@@ -101,43 +99,7 @@ class ApiHelper {
         }
     }
     
-//    static func makePutCall(_ section: String, environment:String=PRODUCTION_ENV, _ parameters: Parameters, completionHandler: @escaping (JSON?, Error?) -> ()) {
-//        //let params = ["consumer_key":"key", "consumer_secret":"secret"]
-//        //TODO: NEED PARAMS AS FUNCTION PARAMETER
-//        let headers = ["Authorization": "Basic \(AUTH_TOKEN)"]
-//        Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = 10
-//        print("\(parameters)")
-//
-//        Alamofire.request(environment+"\(section)", method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
-//            .responseString { response in
-//                switch response.result {
-//                case .success(let value):
-//                    print("VALUE FOR \(section)",value)
-//                    completionHandler(JSON(value), nil)
-//                case .failure(let error):
-//                    print("ERROR FOR \(section)",error)
-//                    completionHandler(nil, error)
-//                }
-//        }
-////            .responseString { response in
-////                guard response.result.error == nil else {
-////                    // got an error in getting the data, need to handle it
-////                    print("error calling PUT on /profile")
-////                    print(response.result.error!)
-////                    return
-////                }
-////                // make sure we got some JSON since that's what we expect
-////                guard (response.result.value as? [String: Any]) != nil else {
-////                    print("didn't get todo object as JSON from API")
-////                    print("Error: \(String(describing: response.result.error))")
-////                    return
-////                }
-////        }
-//    }
-    
     static func makePutCall(_ section: String, environment:String=PRODUCTION_ENV, _ parameters: Parameters, completionHandler: @escaping (JSON?, Error?) -> ()) {
-        //let params = ["consumer_key":"key", "consumer_secret":"secret"]
-        //TODO: NEED PARAMS AS FUNCTION PARAMETER
         let headers = ["Content-Type": "application/json", "Authorization" : "Token \(AUTH_TOKEN)"]
         Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = 10
         print("\(parameters)")
@@ -152,6 +114,30 @@ class ApiHelper {
                     print("ERROR FOR \(section)",error)
                     completionHandler(nil, error)
                 }
+        }
+    }
+    
+    
+//    static func makeFileCall(_ section: String, environment:String=PRODUCTION_ENV, completionHandler: @escaping (Data?, Error?) -> ()) {
+//
+//        print("\(section)")
+//        let headers = ["Authorization": "Token \(AUTH_TOKEN)"]
+//        Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = 10
+//
+//        Alamofire.request(environment+"\(section)", headers:headers)
+//            .response { response in
+//                print(response)
+//                completionHandler(response.data, response.error)
+//        }
+//    }
+    
+    static func makeFileCall(_ section: String, environment:String=PRODUCTION_ENV, completionHandler: @escaping (String?, Error?) -> ()) {
+        //        let destination = DownloadRequest.suggestedDownloadDestination(for: .documentDirectory)
+        
+        Alamofire.request(environment+"\(section)", encoding: JSONEncoding.default).responseString { response in
+            //            print(response)
+            completionHandler(response.value, response.error)
+            
         }
     }
     
@@ -171,7 +157,11 @@ class ApiHelper {
                 }
         }
     }
+
     
+    static func downloadPDF(path:String, resourceID:String, recordID:String, completionHandler: @escaping (String?, Error?) -> ()) {
+        makeFileCall("resource/?resource_id=\(resourceID)&record_id=\(recordID)", completionHandler: completionHandler)
+    }
     
     //this will get user for a specific id
     static func getUser(userId:String=userId, completionHandler: @escaping (JSON?, Error?) -> ()) {
