@@ -109,7 +109,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         // Refresh data
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         getProfile()
     }
     
