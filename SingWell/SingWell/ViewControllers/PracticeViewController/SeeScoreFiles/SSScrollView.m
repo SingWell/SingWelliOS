@@ -1150,9 +1150,11 @@ static float min(float a, float b)
 			SSSystemView *sysView = (SSSystemView*)v;
 			if (sysView.systemIndex == sysIndex)
 			{
-                if (cursor_xpos == 0 && shouldShowRect)
+                if (cursor_xpos == 0)
                 {
-                    [sysView showCursorAtBar:cursorBarIndex pre:cursorType==cursor_line];
+                    if(shouldShowRect) {
+                        [sysView showCursorAtBar:cursorBarIndex pre:cursorType==cursor_line];
+                    }
                 }
                 else
                 {

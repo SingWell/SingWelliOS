@@ -177,12 +177,20 @@ class PracticeViewController: UIViewController, PracticeSettingsDelegate {
     func updateSettings(_ tempo: Float?, _ metronomeOn: Bool?) {
         self.tempo = Int(tempo!)
         self.metronomeOn = metronomeOn!
-//        print("SETTINGS - TEST \(tempo), \(metronomeOn)")
-        
     }
     
     
     @IBAction func showSettingsModal(_ sender: Any?) {
+        if let synth = synth
+        {
+            if synth.isPlaying
+            {
+                print("PRACTICE - PAUSE")
+                setPlayButton(ionicon: .play, size: playButtonSize)
+                synth.reset() // stop playing if playing
+            }
+        }
+        
         let presentingVC = AppStoryboard.PracticeSettings.initialViewController()
         if let presentedViewController = presentingVC as? PracticeSettingsViewController {
             //            setupModal(for: presentedViewController)
