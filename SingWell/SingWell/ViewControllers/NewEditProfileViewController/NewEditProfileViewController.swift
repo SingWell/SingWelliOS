@@ -51,6 +51,7 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
     var statePassed = ""
     var zipPassed = ""
     var profileImagePassed = UIImage()
+    var birthdayPassed = ""
     
     //Format Phone Number
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
@@ -131,15 +132,34 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
         present(picker, animated: true)
     }
     
-//    @IBAction func birthdayEdit(_ sender: AnimatableTextField) {
-//        let datePickerView:UIDatePicker = UIDatePicker()
-//        
-//        datePickerView.datePickerMode = UIDatePickerMode.date
-//        
-//        sender.inputView = datePickerView
-//        
-//        datePickerView.addTarget(self, action: #selector(NewEditProfileViewController.datePickerValueChanged), for: UIControlEvents.ValueChanged)
-//    }
+    @IBAction func birthdayEdit(_ sender: AnimatableTextField) {
+        let datePickerView:UIDatePicker = UIDatePicker()
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM-dd"
+        let someDateTime = formatter.date(from: birthdayPassed)
+        
+        datePickerView.date = someDateTime!
+
+        datePickerView.datePickerMode = UIDatePickerMode.date
+
+        sender.inputView = datePickerView
+
+        datePickerView.addTarget(self, action: #selector(NewEditProfileViewController.datePickerValueChanged), for: UIControlEvents.valueChanged)
+    }
+    
+    @objc func datePickerValueChanged(sender:UIDatePicker) {
+        
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateStyle = DateFormatter.Style.medium
+        dateFormatter.timeStyle = DateFormatter.Style.none
+        
+        dateFormatter.dateFormat = "MM-dd"
+        
+        birthdayTextField.text = dateFormatter.string(from: sender.date)
+        
+    }
     
     func setConfirmButton() {
         let size = CGSize(width:55, height: 55)
@@ -198,6 +218,8 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
         
         phoneNumberTextField.text = phoneNumberPassed
         
+        birthdayTextField.text = birthdayPassed
+        
         
     }
     
@@ -247,23 +269,9 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
         birthdayTextField.leftImageLeftPadding = 10
     }
     
-//    @IBAction func dateField(sender: UITextField) {
-//        
-//        var datePickerView  : UIDatePicker = UIDatePicker()
-//        datePickerView.datePickerMode = UIDatePickerMode.time
-//        sender.inputView = datePickerView
-//        datePickerView.addTarget(self, action: Selector("handleDatePicker:"), for: UIControlEvents.valueChanged)
-//        
-//    }
-//    
-//    func handleDatePicker(sender: UIDatePicker) {
-//        var timeFormatter = DateFormatter()
-//        birthdayTextField.text = timeFormatter.string(from: sender.date)
-//    }
-//    
-//    @IBAction func DoneButton(sender: UIButton) {
-//        birthdayTextField.resignFirstResponder()
-//    }
+    @IBAction func DoneButton(sender: UIButton) {
+        birthdayTextField.resignFirstResponder()
+    }
     
 
     override func viewDidLoad() {
@@ -310,6 +318,7 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
         for number in phone!{
             phoneNumber += number
         }
+        let birthday = birthdayTextField.text
         
 //        let email = emailTextField.text
         var biography = ""
@@ -323,7 +332,7 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
         
 //        let parameters: [String: AnyObject] = [ "phone_number": phoneNumber as AnyObject, "address": address! as AnyObject, "bio": biography as AnyObject, "city": city! as AnyObject,"zip_code": zipCode! as AnyObject, "state": state! as AnyObject, "date_of_birth": "" as AnyObject]
         
-        let parameters: [String: String] = [ "phone_number": phoneNumber, "address": address!, "bio": biography, "city": city!,"zip_code": zipCode!, "state": state!, "date_of_birth": "01-30"]
+        let parameters: [String: String] = [ "phone_number": phoneNumber, "address": address!, "bio": biography, "city": city!,"zip_code": zipCode!, "state": state!, "date_of_birth": birthday!]
         
         ApiHelper.editUser(parameters: parameters) { response, error in
             if error == nil {

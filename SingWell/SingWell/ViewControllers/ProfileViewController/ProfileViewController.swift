@@ -307,7 +307,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         nextVc.emailPassed = emailButton.title(for: .normal)!
         nextVc.profileImagePassed = profileImageView.image!
         nextVc.phoneNumberPassed = phoneNumberButton.title(for: .normal)!
-//            (phoneNumberButton.titleLabel?.text!)!
+        nextVc.birthdayPassed = birthdayLabel.text!
         
         self.navigationController?.pushViewController(nextVc, animated: true)
     

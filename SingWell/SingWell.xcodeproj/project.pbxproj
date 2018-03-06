@@ -570,6 +570,7 @@
 		162D98381FA65D2E006068BC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				52180BE9204F27BC005426B4 /* ProgramViewController */,
 				52D5ABA12048AEE80019C5B4 /* UserViewController */,
 				16B6DCDE202E58290043300D /* PracticeViewController */,
 				162E42FF20212BAC0036B897 /* RegisterViewController */,
@@ -743,6 +744,13 @@
 				091858B7E57F4BDBB305B7A9 /* Pods-SingWellUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		52180BE9204F27BC005426B4 /* ProgramViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProgramViewController;
 			sourceTree = "<group>";
 		};
 		521BCF2B1FB3A44A000662F7 /* ProfileViewController */ = {

@@ -114,7 +114,7 @@ class NavigationMenuViewController: MenuViewController {
         ApiHelper.getUser() {
             response, error in
             if error == nil {
-                self.username = response!["username"].stringValue
+                self.username = response!["first_name"].stringValue + " " + response!["last_name"].stringValue
                 self.setOrgsForUser(orgIds: response!["owned_organizations"])
                 
             } else {

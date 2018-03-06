@@ -149,26 +149,28 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PDF Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SD9-gY-K7q" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                            <rect key="frame" x="20" y="11" width="375" height="21"/>
+                                            <rect key="frame" x="20" y="11" width="300" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhs-Or-ny6" userLabel="OpenButton" customClass="AnimatableButton" customModule="IBAnimatable">
-                                            <rect key="frame" x="317" y="7" width="38" height="30"/>
-                                            <state key="normal" title="Open"/>
-                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1P-X8-hr2" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                            <rect key="frame" x="355.5" y="11" width="4.5" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="mhs-Or-ny6" secondAttribute="trailing" constant="20" id="CLt-Sf-U2z"/>
+                                        <constraint firstItem="W1P-X8-hr2" firstAttribute="centerY" secondItem="SD9-gY-K7q" secondAttribute="centerY" id="3dN-me-tJ7"/>
+                                        <constraint firstAttribute="trailing" secondItem="W1P-X8-hr2" secondAttribute="trailing" constant="15" id="GuJ-Km-WWu"/>
                                         <constraint firstItem="SD9-gY-K7q" firstAttribute="centerY" secondItem="gJy-iT-zIY" secondAttribute="centerY" id="Nbc-w5-kMz"/>
                                         <constraint firstItem="SD9-gY-K7q" firstAttribute="leading" secondItem="gJy-iT-zIY" secondAttribute="leading" constant="20" id="hXQ-Gk-IEi"/>
-                                        <constraint firstItem="mhs-Or-ny6" firstAttribute="centerY" secondItem="SD9-gY-K7q" secondAttribute="centerY" id="kZi-oj-Vy9"/>
-                                        <constraint firstItem="SD9-gY-K7q" firstAttribute="width" secondItem="gJy-iT-zIY" secondAttribute="width" id="wRK-0e-Yqi"/>
+                                        <constraint firstItem="SD9-gY-K7q" firstAttribute="width" secondItem="gJy-iT-zIY" secondAttribute="width" multiplier="4/5" id="x0T-q9-9xr"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="openPDFButton" destination="mhs-Or-ny6" id="Qi9-zr-6d6"/>
+                                    <outlet property="openPDFLabel" destination="W1P-X8-hr2" id="U9k-Ip-D0a"/>
                                     <outlet property="pdfNameLabel" destination="SD9-gY-K7q" id="28F-zR-Utv"/>
                                 </connections>
                             </tableViewCell>

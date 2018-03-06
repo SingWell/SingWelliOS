@@ -54,7 +54,6 @@ class SongTableViewController: UITableViewController {
     func getMusicRecord() {
         ApiHelper.getMusicRecord(musicId: songInfo["id"].stringValue) { response, error in
             if error == nil {
-                print(response)
                 self.song = response!
                 self.songResources = self.song["music_resources"].arrayValue
                 self.tableView.reloadData()
@@ -101,6 +100,9 @@ class SongTableViewController: UITableViewController {
                 if resource["extension"].stringValue == "pdf" {
                     pdfNum.append(count)
                     numPDF += 1
+                }
+                if resource["extension"].stringValue == "mxl" {
+                    saveMXLFile(resourceID: resource["resource_id"].stringValue, recordID: songInfo["id"].stringValue, fileName: resource["title"].stringValue)
                 }
                 count += 1
             }
@@ -181,10 +183,9 @@ class SongTableViewController: UITableViewController {
             
             cell.pdfNameLabel.text = songResources[resourceNum]["title"].stringValue
             
-            let openImage = UIImage.ionicon(with: .chevronRight, textColor: UIColor.white, size: CGSize(width: 25, height: 25))
-            cell.openPDFButton.setImage( openImage, for: UIControlState.normal)
-            cell.openPDFButton.semanticContentAttribute = .forceRightToLeft
-            cell.openPDFButton.addTarget(self, action: #selector(openPDF(_:)), for: .touchUpInside)
+            let openImage = UIImage.ionicon(with: .chevronRight, textColor: UIColor.init(hexString: "007aff"), size: CGSize(width: 25, height: 25))
+            cell.openPDFLabel.addImage(image: openImage, afterLabel: true)
+//            cell.openPDFLabel.semanticContentAttribute = .forceRightToLeft
             
             
             return cell
@@ -221,59 +222,61 @@ class SongTableViewController: UITableViewController {
         }
     }
     
-    func getPDFResources(resourceID: String, recordID: String, fileName: String) {
-
-        
-
+    func saveMXLFile (resourceID: String, recordID: String, fileName: String){
         ApiHelper.downloadPDF(path: "resource", resourceID: resourceID, recordID: recordID) { data, error in
             if error == nil {
-////                self.saveBase64StringToPDF(data)
-//                print("data", data)
-                let convertedData = Data(base64Encoded: data!)
-//                print("converted data", convertedData)
-                self.showPDF(fileData: convertedData!, fileName: fileName)
+                let fileManager = FileManager.default
+                do {
+                    let documentDirectory = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor:nil, create:false)
+                    let fileURL = documentDirectory.appendingPathComponent(fileName)
+                    try data!.write(to: fileURL, atomically: true, encoding: String.Encoding.utf8)
                 
-//                self.showPDF(fileData: data!, fileName: "Mozart Ave Verum.pdf")
-//                let fileManager = FileManager.default
-//                do {
-//                    let documentDirectory = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor:nil, create:false)
-//                    let fileURL = documentDirectory.appendingPathComponent("AveVerumMozart.xml")
-//                    try data!.write(to: fileURL)
-//
-//                    let directoryContents = try FileManager.default.contentsOfDirectory(at: documentDirectory, includingPropertiesForKeys: nil, options: [])
-//                    print(directoryContents)
-//
-//                    let xmlFiles = directoryContents.filter{ $0.pathExtension == "xml" }
-//                    print("xml urls:",xmlFiles)
-//                } catch {
-//                    print(error)
-//                }
+                    let directoryContents = try FileManager.default.contentsOfDirectory(at: documentDirectory, includingPropertiesForKeys: nil, options: [])
+                                    print(directoryContents)
+                
+                    let mxlFiles = directoryContents.filter{ $0.pathExtension == "mxl" }
+                        print("mxl urls:",mxlFiles)
+                    } catch {
+                        print(error)
+                    }
             } else {
                 print("Error getting musicRecords: ",error as Any)
             }
         }
     }
     
-    func saveBase64StringToPDF(_ base64String: String) {
-        
-        guard
-            var documentsURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).last,
-            let convertedData = Data(base64Encoded: base64String)
-            else {
-                //handle error when getting documents URL
-                return
-        }
-        
-        //name your file however you prefer
-        documentsURL.appendPathComponent("yourFileName.pdf")
-        
-        do {
-            try convertedData.write(to: documentsURL)
-            self.showPDF(fileData: convertedData, fileName: "Mozart Ave Verum.pdf")
-        } catch {
-            //handle write error here
+    func getPDFResources(resourceID: String, recordID: String, fileName: String) {
+
+        ApiHelper.downloadPDF(path: "resource", resourceID: resourceID, recordID: recordID) { data, error in
+            if error == nil {
+                let convertedData = Data(base64Encoded: data!)
+                self.showPDF(fileData: convertedData!, fileName: fileName)
+            } else {
+                print("Error getting musicRecords: ",error as Any)
+            }
         }
     }
+    
+//    func saveBase64StringToPDF(_ base64String: String) {
+//
+//        guard
+//            var documentsURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).last,
+//            let convertedData = Data(base64Encoded: base64String)
+//            else {
+//                //handle error when getting documents URL
+//                return
+//        }
+//
+//        //name your file however you prefer
+//        documentsURL.appendPathComponent("yourFileName.pdf")
+//
+//        do {
+//            try convertedData.write(to: documentsURL)
+//            self.showPDF(fileData: convertedData, fileName: "Mozart Ave Verum.pdf")
+//        } catch {
+//            //handle write error here
+//        }
+//    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -330,4 +333,37 @@ class SongTableViewController: UITableViewController {
     }
     */
 
+}
+
+extension UILabel
+{
+    func addImage(image: UIImage, afterLabel bolAfterLabel: Bool = false)
+    {
+        let attachment: NSTextAttachment = NSTextAttachment()
+        attachment.image = image
+        let attachmentString: NSAttributedString = NSAttributedString(attachment: attachment)
+        
+        if (bolAfterLabel)
+        {
+            let strLabelText: NSMutableAttributedString = NSMutableAttributedString(string: self.text!)
+            strLabelText.append(attachmentString)
+            
+            self.attributedText = strLabelText
+        }
+        else
+        {
+            let strLabelText: NSAttributedString = NSAttributedString(string: self.text!)
+            let mutableAttachmentString: NSMutableAttributedString = NSMutableAttributedString(attributedString: attachmentString)
+            mutableAttachmentString.append(strLabelText)
+            
+            self.attributedText = mutableAttachmentString
+        }
+    }
+    
+    func removeImage()
+    {
+        let text = self.text
+        self.attributedText = nil
+        self.text = text
+    }
 }
