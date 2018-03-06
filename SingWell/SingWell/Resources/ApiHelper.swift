@@ -271,5 +271,10 @@ class ApiHelper {
         makeGetCall("/musicRecords", completionHandler: completionHandler)
     }
     
+    //this will get a specific musicRecord
+    static func getMusicRecord(musicId:String, completionHandler: @escaping (JSON?, Error?) -> ()) {
+        makeGetCall("/musicRecords/\(musicId)", completionHandler: completionHandler)
+    }
+    
     
 }

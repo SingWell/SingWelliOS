@@ -50,6 +50,7 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
     var cityPassed = ""
     var statePassed = ""
     var zipPassed = ""
+    var profileImagePassed = UIImage()
     
     //Format Phone Number
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
@@ -164,7 +165,7 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
     
     func setProfile() {
         
-        var profileImage: UIImage = UIImage(named: "profileImage")!
+        var profileImage: UIImage = profileImagePassed
         profileImage = profileImage.circleMasked!
         profileImageView.image = profileImage
         

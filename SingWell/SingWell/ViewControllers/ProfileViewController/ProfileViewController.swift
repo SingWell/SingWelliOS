@@ -21,12 +21,15 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     @IBOutlet weak var biographyView: AnimatableView!
     @IBOutlet weak var addressView: AnimatableView!
     
+    @IBOutlet weak var birthdayView: AnimatableView!
     @IBOutlet weak var phoneNumberButton: AnimatableButton!
     @IBOutlet weak var emailButton: AnimatableButton!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var biographyTextView: AnimatableTextView!
     
+    @IBOutlet weak var birthdayLabel: UILabel!
+    @IBOutlet weak var birthdayIcon: AnimatableImageView!
     var instruments = ["trumpet", "drum", "piano", "guitar"]
     var user:JSON = []
     
@@ -143,17 +146,6 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         editButton.setImage( editImage, for: UIControlState.normal)
     }
     
-    func setEmailButton() {
-        let size = CGSize(width:55, height: 55)
-        var backImage: UIImage = UIImage(named: "editButtonBackground")!
-        backImage = backImage.resizeImageWith(newSize: size)
-        backImage = backImage.circleMasked!
-        editImageView.image = backImage
-        
-        let editImage = UIImage.ionicon(with: .iosEmail, textColor: UIColor.white, size: CGSize(width: 25, height: 25))
-        editButton.setImage( editImage, for: UIControlState.normal)
-    }
-    
     func setNotificationButton() {
         let size = CGSize(width:55, height: 55)
         var backImage: UIImage = UIImage(named: "editButtonBackground2")!
@@ -165,17 +157,6 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         notificationButton.setImage( notificationImage, for: UIControlState.normal)
     }
     
-    func setTextButton() {
-        let size = CGSize(width:55, height: 55)
-        var backImage: UIImage = UIImage(named: "editButtonBackground2")!
-        backImage = backImage.resizeImageWith(newSize: size)
-        backImage = backImage.circleMasked!
-        notificationImageView.image = backImage
-        
-        let notificationImage = UIImage.ionicon(with: .iosTelephone, textColor: UIColor.white, size: CGSize(width: 25, height: 25))
-        notificationButton.setImage( notificationImage, for: UIControlState.normal)
-    }
-    
     func setProfile(user:JSON) {
         print("Setting profile")
         if(user["bio"].exists()){
@@ -184,6 +165,14 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
         else{
             biographyView.isHidden = true
+        }
+        
+        if(user["date_of_birth"].exists()){
+            birthdayView.isHidden = false
+            birthdayLabel.text = user["date_of_birth"].stringValue
+        }
+        else{
+            birthdayView.isHidden = true
         }
         
         if(user["email"].exists()){
@@ -293,6 +282,8 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         addressIcon.image = UIImage.ionicon(with: .location, textColor: UIColor.gray, size: CGSize(width: 35, height: 35))
         
+        birthdayIcon.image = UIImage.ionicon(with: .iosCalendar, textColor: UIColor.gray, size: CGSize(width: 35, height: 35))
+        
         instrumentationButton.image = UIImage.ionicon(with: .headphone, textColor: UIColor.gray, size: CGSize(width: 35, height: 35))
     }
     
@@ -314,6 +305,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         nextVc.streetPassed = addressLabel.text!
         nextVc.emailPassed = emailButton.title(for: .normal)!
+        nextVc.profileImagePassed = profileImageView.image!
         nextVc.phoneNumberPassed = phoneNumberButton.title(for: .normal)!
 //            (phoneNumberButton.titleLabel?.text!)!
         

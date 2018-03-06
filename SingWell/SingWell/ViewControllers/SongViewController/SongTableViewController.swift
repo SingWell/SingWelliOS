@@ -36,11 +36,32 @@ class SongTableViewController: UITableViewController {
         "pdfName" : "Allegri Miserere Score.pdf"
     ]
     
+    var songResources:[JSON] = []
+    var pdfNum : [Int] = []
+    
+    var numYTLinks = 0
+    var numPDF = 0
+    
     let BACKGROUND_COLOR = UIColor.init(hexString: "eeeeee")
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.getMusicRecord()
+        
+    }
+    
+    func getMusicRecord() {
+        ApiHelper.getMusicRecord(musicId: songInfo["id"].stringValue) { response, error in
+            if error == nil {
+                print(response)
+                self.song = response!
+                self.songResources = self.song["music_resources"].arrayValue
+                self.tableView.reloadData()
+            } else {
+                print("Error getting musicRecord: ",error as Any)
+            }
+        }
     }
     
     @IBAction func goToPracticePage(_ sender: Any) {
@@ -51,9 +72,9 @@ class SongTableViewController: UITableViewController {
     }
     
     @IBAction func openPDF(_ sender: Any) {
-        
-        getPDFResources()
-        
+
+//        getPDFResources()
+
     }
 
     // MARK: - Table view data source
@@ -68,9 +89,22 @@ class SongTableViewController: UITableViewController {
         case kSongInfo: // choir info cell
             return 1
         case kSongYouTubeLink:
-            return 1
+//            for resource in songResources {
+//                if resource["extension"].stringValue == "pdf" {
+//
+//                }
+//            }
+            return numYTLinks
         case kSongPDFResource:
-            return 1
+            var count = 0
+            for resource in songResources {
+                if resource["extension"].stringValue == "pdf" {
+                    pdfNum.append(count)
+                    numPDF += 1
+                }
+                count += 1
+            }
+            return numPDF
         default:
             return 0
         }
@@ -102,24 +136,24 @@ class SongTableViewController: UITableViewController {
             cell.composerNameLabel.text = "Composed By: " + songInfo["composer"].stringValue
             
             // Check if arranger data is available and diplay if it is
-            if(song["arranger"].stringValue != ""){
-                cell.arrangerNameLabel.text = "Arranged By: " + song["arranger"].stringValue
+            if(songInfo["arranger"].stringValue != ""){
+                cell.arrangerNameLabel.text = "Arranged By: " + songInfo["arranger"].stringValue
             }
             else {
                 cell.arrangerNameLabel.isHidden = true
             }
             
             // Check if publisher data is available and diplay if it is
-            if(song["publisher"].stringValue != ""){
+            if(songInfo["publisher"].stringValue != ""){
                 if(cell.arrangerNameLabel.isHidden == true) {
                     
                     // If no arranger, use that label instead
                     cell.publisherNameLabel.isHidden = true
                     cell.arrangerNameLabel.isHidden = false
-                    cell.arrangerNameLabel.text = "Published By: " + song["publisher"].stringValue
+                    cell.arrangerNameLabel.text = "Published By: " + songInfo["publisher"].stringValue
                 }
                 else {
-                    cell.publisherNameLabel.text = "Published By: " + song["publisher"].stringValue
+                    cell.publisherNameLabel.text = "Published By: " + songInfo["publisher"].stringValue
                 }
             }
             else {
@@ -136,22 +170,22 @@ class SongTableViewController: UITableViewController {
         case kSongYouTubeLink: // song resource cell - youtube link
             let cell = tableView.dequeueReusableCell(withIdentifier: "SongYouTubeCell", for: indexPath) as! SongYouTubeTableViewCell
             
-            let youtubeURL = NSURL(string: song["youtubeLink"].stringValue)
+//            let youtubeURL = NSURL(string: song["youtubeLink"].stringValue)
 //            cell.wv.loadRequest(URLRequest(url: youtubeURL! as URL))
             
             return cell
             
         case kSongPDFResource: // song resource cell - pdf resource
+            let resourceNum = pdfNum[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: "SongPDFCell", for: indexPath) as! SongPDFTableViewCell
             
-            cell.pdfNameLabel.text = "PDF Name"
-            
-            print(songInfo)
+            cell.pdfNameLabel.text = songResources[resourceNum]["title"].stringValue
             
             let openImage = UIImage.ionicon(with: .chevronRight, textColor: UIColor.white, size: CGSize(width: 25, height: 25))
             cell.openPDFButton.setImage( openImage, for: UIControlState.normal)
             cell.openPDFButton.semanticContentAttribute = .forceRightToLeft
             cell.openPDFButton.addTarget(self, action: #selector(openPDF(_:)), for: .touchUpInside)
+            
             
             return cell
             
@@ -160,6 +194,14 @@ class SongTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ResourceCell", for: indexPath) as! EventCell
             
             return cell
+        }
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 2 {
+            let resourceNum = pdfNum[indexPath.row]
+            getPDFResources(resourceID: songResources[resourceNum]["resource_id"].stringValue, recordID:songInfo["id"].stringValue, fileName: songResources[resourceNum]["title"].stringValue)
         }
         
     }
@@ -179,11 +221,7 @@ class SongTableViewController: UITableViewController {
         }
     }
     
-    func getPDFResources() {
-        
-        
-        var recordID = "5"
-        var resourceID = "2"
+    func getPDFResources(resourceID: String, recordID: String, fileName: String) {
 
         
 
@@ -193,7 +231,7 @@ class SongTableViewController: UITableViewController {
 //                print("data", data)
                 let convertedData = Data(base64Encoded: data!)
 //                print("converted data", convertedData)
-                self.showPDF(fileData: convertedData!, fileName: "Mozart Ave Verum.pdf")
+                self.showPDF(fileData: convertedData!, fileName: fileName)
                 
 //                self.showPDF(fileData: data!, fileName: "Mozart Ave Verum.pdf")
 //                let fileManager = FileManager.default

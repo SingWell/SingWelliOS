@@ -6,7 +6,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -68,20 +67,20 @@
                                 <rect key="frame" x="0.0" y="273" width="375" height="394"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="EkE-z5-W7j" customClass="AnimatableStackView" customModule="IBAnimatable">
-                                        <rect key="frame" x="15" y="15" width="345" height="394"/>
+                                        <rect key="frame" x="15" y="15" width="345" height="440.5"/>
                                         <subviews>
                                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="x4b-bo-B84" userLabel="Bio Info View" customClass="AnimatableView" customModule="IBAnimatable">
-                                                <rect key="frame" x="0.0" y="0.0" width="345" height="121"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="345" height="77.5"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gRo-MP-Esd" userLabel="Biography Icon" customClass="AnimatableImageView" customModule="IBAnimatable">
-                                                        <rect key="frame" x="20" y="43" width="35" height="35"/>
+                                                        <rect key="frame" x="20" y="22" width="35" height="35"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="35" id="3A9-5r-6rg"/>
                                                             <constraint firstAttribute="width" constant="35" id="lPD-BJ-PGr"/>
                                                         </constraints>
                                                     </imageView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PMf-wc-vR6" userLabel="Separator " customClass="AnimatableView" customModule="IBAnimatable">
-                                                        <rect key="frame" x="70" y="2" width="2" height="117"/>
+                                                        <rect key="frame" x="70" y="2" width="2" height="73.5"/>
                                                         <color key="backgroundColor" red="0.93086308179124033" green="0.93086308179124033" blue="0.93086308179124033" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <accessibility key="accessibilityConfiguration">
                                                             <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -102,7 +101,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Xm-0M-aWP" userLabel="Bio Text View" customClass="AnimatableTextView" customModule="IBAnimatable">
-                                                        <rect key="frame" x="87" y="29.5" width="253" height="86.5"/>
+                                                        <rect key="frame" x="87" y="29.5" width="253" height="43"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <accessibility key="accessibilityConfiguration">
                                                             <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
@@ -118,16 +117,15 @@
                                                 </accessibility>
                                                 <constraints>
                                                     <constraint firstItem="gRo-MP-Esd" firstAttribute="leading" secondItem="x4b-bo-B84" secondAttribute="leading" constant="20" id="05l-d6-dEt"/>
+                                                    <constraint firstItem="4Xm-0M-aWP" firstAttribute="leading" secondItem="EJQ-sk-xwd" secondAttribute="leading" id="5KI-Kz-01e"/>
                                                     <constraint firstAttribute="trailing" secondItem="4Xm-0M-aWP" secondAttribute="trailing" constant="5" id="9EN-sr-CWI"/>
                                                     <constraint firstItem="PMf-wc-vR6" firstAttribute="top" secondItem="x4b-bo-B84" secondAttribute="top" constant="2" id="A1F-Gx-GoV"/>
                                                     <constraint firstItem="4Xm-0M-aWP" firstAttribute="top" secondItem="EJQ-sk-xwd" secondAttribute="bottom" constant="1" id="BfE-oK-w4t"/>
-                                                    <constraint firstItem="4Xm-0M-aWP" firstAttribute="leading" secondItem="PMf-wc-vR6" secondAttribute="trailing" constant="15" id="MXY-3Z-lxb"/>
                                                     <constraint firstAttribute="bottom" secondItem="4Xm-0M-aWP" secondAttribute="bottom" constant="5" id="baN-qN-jJ6"/>
                                                     <constraint firstAttribute="bottom" secondItem="PMf-wc-vR6" secondAttribute="bottom" constant="2" id="g8e-Bt-N6Q"/>
                                                     <constraint firstItem="PMf-wc-vR6" firstAttribute="leading" secondItem="gRo-MP-Esd" secondAttribute="trailing" constant="15" id="grE-0W-lk2"/>
                                                     <constraint firstItem="gRo-MP-Esd" firstAttribute="centerY" secondItem="x4b-bo-B84" secondAttribute="centerY" id="iVW-b0-gVA"/>
                                                     <constraint firstItem="EJQ-sk-xwd" firstAttribute="top" secondItem="x4b-bo-B84" secondAttribute="top" constant="8" id="o8X-7V-5q6"/>
-                                                    <constraint firstAttribute="width" secondItem="x4b-bo-B84" secondAttribute="height" multiplier="345:121" id="v5V-2Z-JvO"/>
                                                     <constraint firstItem="EJQ-sk-xwd" firstAttribute="leading" secondItem="PMf-wc-vR6" secondAttribute="trailing" constant="15" id="vgX-we-kKo"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
@@ -149,11 +147,82 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bA-Gp-D86" userLabel="Birthday Info View" customClass="AnimatableView" customModule="IBAnimatable">
+                                                <rect key="frame" x="0.0" y="88.5" width="345" height="79"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XOt-dl-9vb" userLabel="Birthday Icon" customClass="AnimatableImageView" customModule="IBAnimatable">
+                                                        <rect key="frame" x="20" y="22" width="35" height="35"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="35" id="72B-hy-KwI"/>
+                                                            <constraint firstAttribute="width" constant="35" id="FdM-oO-TFH"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eqT-5D-H4a" userLabel="Separator " customClass="AnimatableView" customModule="IBAnimatable">
+                                                        <rect key="frame" x="70" y="2" width="2" height="75"/>
+                                                        <color key="backgroundColor" red="0.93086308179999999" green="0.93086308179999999" blue="0.93086308179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <accessibility key="accessibilityConfiguration">
+                                                            <accessibilityTraits key="traits" notEnabled="YES"/>
+                                                        </accessibility>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="2" id="hQK-3C-8go"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="13"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Cy-XS-x1x">
+                                                        <rect key="frame" x="86" y="8" width="64.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGY-Er-M0D" userLabel="Birthday Label">
+                                                        <rect key="frame" x="86" y="30" width="59" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="highlightedColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="rGY-Er-M0D" firstAttribute="top" secondItem="8bA-Gp-D86" secondAttribute="top" constant="30" id="4ao-cV-bsa"/>
+                                                    <constraint firstItem="2Cy-XS-x1x" firstAttribute="top" secondItem="8bA-Gp-D86" secondAttribute="topMargin" id="BMh-FN-exd"/>
+                                                    <constraint firstItem="eqT-5D-H4a" firstAttribute="top" secondItem="8bA-Gp-D86" secondAttribute="top" constant="2" id="CA4-09-ZRw"/>
+                                                    <constraint firstItem="rGY-Er-M0D" firstAttribute="leading" secondItem="2Cy-XS-x1x" secondAttribute="leading" id="PnR-QV-4oZ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="2Cy-XS-x1x" secondAttribute="trailing" constant="194.5" id="TR1-KF-NrT"/>
+                                                    <constraint firstItem="XOt-dl-9vb" firstAttribute="leading" secondItem="8bA-Gp-D86" secondAttribute="leading" constant="20" id="TT0-kn-y2S"/>
+                                                    <constraint firstAttribute="bottom" secondItem="eqT-5D-H4a" secondAttribute="bottom" constant="2" id="kMF-9b-roO"/>
+                                                    <constraint firstAttribute="height" constant="60" id="rwa-1q-qjw"/>
+                                                    <constraint firstItem="XOt-dl-9vb" firstAttribute="centerY" secondItem="8bA-Gp-D86" secondAttribute="centerY" id="uAq-d1-cAy"/>
+                                                    <constraint firstItem="eqT-5D-H4a" firstAttribute="leading" secondItem="XOt-dl-9vb" secondAttribute="trailing" constant="15" id="wge-La-POT"/>
+                                                    <constraint firstAttribute="trailing" secondItem="rGY-Er-M0D" secondAttribute="trailing" constant="200" id="zuU-wJ-Lyn"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                        <real key="value" value="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
+                                                        <point key="value" x="3" y="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="slide(in, left)"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                                        <real key="value" value="0.34999999999999998"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DO8-eJ-mVh" userLabel="Contact Info View" customClass="AnimatableView" customModule="IBAnimatable">
-                                                <rect key="frame" x="0.0" y="132" width="345" height="80"/>
+                                                <rect key="frame" x="0.0" y="178.5" width="345" height="80"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uVy-uC-3bm" userLabel="Contact Icon" customClass="AnimatableImageView" customModule="IBAnimatable">
-                                                        <rect key="frame" x="20" y="23" width="35" height="35"/>
+                                                        <rect key="frame" x="20" y="22.5" width="35" height="35"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="35" id="Elc-qm-Qb0"/>
                                                             <constraint firstAttribute="height" constant="35" id="gOa-3C-uOb"/>
@@ -236,7 +305,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pdH-lj-vTj" userLabel="Address View" customClass="AnimatableView" customModule="IBAnimatable">
-                                                <rect key="frame" x="0.0" y="223" width="345" height="80"/>
+                                                <rect key="frame" x="0.0" y="269.5" width="345" height="80"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OAK-a9-Sl3" userLabel="Address Icon" customClass="AnimatableImageView" customModule="IBAnimatable">
                                                         <rect key="frame" x="20" y="23" width="35" height="35"/>
@@ -315,7 +384,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Auj-OD-ANc" userLabel="Instrumentation View" customClass="AnimatableView" customModule="IBAnimatable">
-                                                <rect key="frame" x="0.0" y="314" width="345" height="80"/>
+                                                <rect key="frame" x="0.0" y="360.5" width="345" height="80"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l1L-PJ-5oV" userLabel="Instrumentation Icon" customClass="AnimatableImageView" customModule="IBAnimatable">
                                                         <rect key="frame" x="20" y="23" width="35" height="35"/>
@@ -504,6 +573,9 @@
                         <outlet property="bioIcon" destination="gRo-MP-Esd" id="4s3-rB-prW"/>
                         <outlet property="biographyTextView" destination="4Xm-0M-aWP" id="TwW-u8-abC"/>
                         <outlet property="biographyView" destination="x4b-bo-B84" id="Dol-Ok-SbT"/>
+                        <outlet property="birthdayIcon" destination="XOt-dl-9vb" id="cRn-Su-8fx"/>
+                        <outlet property="birthdayLabel" destination="rGY-Er-M0D" id="BDd-nZ-eCd"/>
+                        <outlet property="birthdayView" destination="8bA-Gp-D86" id="lbG-bc-BD1"/>
                         <outlet property="cityLabel" destination="J67-ei-xK7" id="j5o-6x-ESR"/>
                         <outlet property="contactIcon" destination="uVy-uC-3bm" id="Gpp-Fk-Vf0"/>
                         <outlet property="contactView" destination="DO8-eJ-mVh" id="hUC-8b-m4s"/>
