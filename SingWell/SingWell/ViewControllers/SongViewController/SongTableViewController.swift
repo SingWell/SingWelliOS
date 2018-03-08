@@ -13,15 +13,12 @@ import IoniconsKit
 import PDFReader
 
 let kSongInfo = "Song Info"
-//let kSongResources = "Song Resources"
 let kSongYouTubeLink = "Song YouTube Link"
 let kSongPDFResource = "Song PDF Resource"
 
 class SongTableViewController: UITableViewController {
     
     let SECTIONS:[String] = [kSongInfo, kSongYouTubeLink, kSongPDFResource]
-    
-//    @IBOutlet weak var wv: UIWebView!
     
     var songInfo:JSON = [
         "name":"My Favorite Things",
@@ -68,7 +65,7 @@ class SongTableViewController: UITableViewController {
     @IBAction func goToPracticePage(_ sender: Any) {
         let nextVc = AppStoryboard.Practice.initialViewController() as! PracticeViewController
         print("LOADING: ",mxlFilename)
-        nextVc.filename = mxlFilename // TODO: Download file!!
+        nextVc.filename = mxlFilename
         
         self.navigationController?.pushViewController(nextVc, animated: true)
     }
@@ -191,8 +188,6 @@ class SongTableViewController: UITableViewController {
             
             let openImage = UIImage.ionicon(with: .chevronRight, textColor: UIColor.init(hexString: "007aff"), size: CGSize(width: 25, height: 25))
             cell.openPDFLabel.addImage(image: openImage, afterLabel: true)
-//            cell.openPDFLabel.semanticContentAttribute = .forceRightToLeft
-            
             
             return cell
             
@@ -237,13 +232,6 @@ class SongTableViewController: UITableViewController {
                     let fileURL = documentDirectory.appendingPathComponent(fileName)
                     let convertedData = Data(base64Encoded: data!)
                     try convertedData!.write(to: fileURL, options: .atomic)
-//                    print(data?.data(using: String.Encoding.utf8, allowLossyConversion: true))
-                
-                    let directoryContents = try FileManager.default.contentsOfDirectory(at: documentDirectory, includingPropertiesForKeys: nil, options: [])
-//                                    print(directoryContents)
-                
-//                    let mxlFiles = directoryContents.filter{ $0.pathExtension == "xml" }
-//                        print("mxl urls:",mxlFiles)
                     } catch {
                         print(error)
                     }
