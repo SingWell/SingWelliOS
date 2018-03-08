@@ -36,11 +36,13 @@ class SongTableViewController: UITableViewController {
         "pdfName" : "Allegri Miserere Score.pdf"
     ]
     
+    var youtubeLink = "https://www.youtube.com/embed/DsUWFVKJwBM"
     var songResources:[JSON] = []
     var pdfNum : [Int] = []
     
-    var numYTLinks = 0
+    var numYTLinks = 1
     var numPDF = 0
+    var mxlFilename = "TestMXL.mxl"
     
     let BACKGROUND_COLOR = UIColor.init(hexString: "eeeeee")
 
@@ -65,7 +67,8 @@ class SongTableViewController: UITableViewController {
     
     @IBAction func goToPracticePage(_ sender: Any) {
         let nextVc = AppStoryboard.Practice.initialViewController() as! PracticeViewController
-        nextVc.filename = "TestMXL.mxl" // TODO: Download file!!
+        print("LOADING: ",mxlFilename)
+        nextVc.filename = mxlFilename // TODO: Download file!!
         
         self.navigationController?.pushViewController(nextVc, animated: true)
     }
@@ -100,6 +103,9 @@ class SongTableViewController: UITableViewController {
                 if resource["extension"].stringValue == "pdf" {
                     pdfNum.append(count)
                     numPDF += 1
+                }
+                if resource["extension"].stringValue == "xml" {
+                    saveMXLFile(resourceID: resource["resource_id"].stringValue, recordID: songInfo["id"].stringValue, fileName: resource["title"].stringValue)
                 }
                 if resource["extension"].stringValue == "mxl" {
                     saveMXLFile(resourceID: resource["resource_id"].stringValue, recordID: songInfo["id"].stringValue, fileName: resource["title"].stringValue)
@@ -172,8 +178,8 @@ class SongTableViewController: UITableViewController {
         case kSongYouTubeLink: // song resource cell - youtube link
             let cell = tableView.dequeueReusableCell(withIdentifier: "SongYouTubeCell", for: indexPath) as! SongYouTubeTableViewCell
             
-//            let youtubeURL = NSURL(string: song["youtubeLink"].stringValue)
-//            cell.wv.loadRequest(URLRequest(url: youtubeURL! as URL))
+            let youtubeURL = NSURL(string: youtubeLink)
+            cell.wv.loadRequest(URLRequest(url: youtubeURL! as URL))
             
             return cell
             
@@ -229,13 +235,15 @@ class SongTableViewController: UITableViewController {
                 do {
                     let documentDirectory = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor:nil, create:false)
                     let fileURL = documentDirectory.appendingPathComponent(fileName)
-                    try data!.write(to: fileURL, atomically: true, encoding: String.Encoding.utf8)
+                    let convertedData = Data(base64Encoded: data!)
+                    try convertedData!.write(to: fileURL, options: .atomic)
+//                    print(data?.data(using: String.Encoding.utf8, allowLossyConversion: true))
                 
                     let directoryContents = try FileManager.default.contentsOfDirectory(at: documentDirectory, includingPropertiesForKeys: nil, options: [])
-                                    print(directoryContents)
+//                                    print(directoryContents)
                 
-                    let mxlFiles = directoryContents.filter{ $0.pathExtension == "mxl" }
-                        print("mxl urls:",mxlFiles)
+//                    let mxlFiles = directoryContents.filter{ $0.pathExtension == "xml" }
+//                        print("mxl urls:",mxlFiles)
                     } catch {
                         print(error)
                     }
@@ -243,6 +251,7 @@ class SongTableViewController: UITableViewController {
                 print("Error getting musicRecords: ",error as Any)
             }
         }
+        mxlFilename = fileName
     }
     
     func getPDFResources(resourceID: String, recordID: String, fileName: String) {
@@ -256,27 +265,6 @@ class SongTableViewController: UITableViewController {
             }
         }
     }
-    
-//    func saveBase64StringToPDF(_ base64String: String) {
-//
-//        guard
-//            var documentsURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).last,
-//            let convertedData = Data(base64Encoded: base64String)
-//            else {
-//                //handle error when getting documents URL
-//                return
-//        }
-//
-//        //name your file however you prefer
-//        documentsURL.appendPathComponent("yourFileName.pdf")
-//
-//        do {
-//            try convertedData.write(to: documentsURL)
-//            self.showPDF(fileData: convertedData, fileName: "Mozart Ave Verum.pdf")
-//        } catch {
-//            //handle write error here
-//        }
-//    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
