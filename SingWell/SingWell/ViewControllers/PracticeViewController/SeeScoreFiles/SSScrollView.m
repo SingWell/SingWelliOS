@@ -49,6 +49,7 @@ static const int kMaxLedgers = 6; // determines max acceptable distance from sta
 	
 	int cursorBarIndex;
 	BOOL showingCursor;
+    BOOL shouldShowRect;
 	enum CursorType_e cursorType;
 	float cursor_xpos;
 	
@@ -222,6 +223,11 @@ static const int kMaxLedgers = 6; // determines max acceptable distance from sta
 -(bool)displayingCursor
 {
 	return showingCursor;
+}
+
+-(bool)shouldShowRect
+{
+    return shouldShowRect;
 }
 
 -(int)cursorBarIndex
@@ -1144,14 +1150,16 @@ static float min(float a, float b)
 			SSSystemView *sysView = (SSSystemView*)v;
 			if (sysView.systemIndex == sysIndex)
 			{
-				if (cursor_xpos == 0)
-				{
-					[sysView showCursorAtBar:cursorBarIndex pre:cursorType==cursor_line];
-				}
-				else
-				{
+                if (cursor_xpos == 0)
+                {
+                    if(shouldShowRect) {
+                        [sysView showCursorAtBar:cursorBarIndex pre:cursorType==cursor_line];
+                    }
+                }
+                else
+                {
 					[sysView showCursorAtXpos:cursor_xpos barIndex:cursorBarIndex];
-				}
+                }
 			}
 			else
 			{
@@ -1165,6 +1173,7 @@ static float min(float a, float b)
 			xpos:(float)xpos
 			type:(enum CursorType_e)type
 		  scroll:(enum ScrollType_e)scroll
+shouldDisplayRect:(BOOL)shouldDisplayRect
 {
 	assert(barIndex >= 0 && barIndex < score.numBars);
 	if (score && systemlist.count > 0)
@@ -1173,6 +1182,8 @@ static float min(float a, float b)
 		showingCursor = true;
 		cursorType = type;
 		cursor_xpos = xpos;
+        shouldShowRect = shouldDisplayRect;
+        
 		// scroll to system first so that the system is displayed and we can show the cursor
 		if (scroll != scroll_off
 			&& self.contentSize.height > self.frame.size.height) // don't scroll if content height is less than screen height
@@ -1186,18 +1197,20 @@ static float min(float a, float b)
 				[self scrollToBarContinuous:barIndex];
 			}
 		}
-		[self displayCursor];
+        [self displayCursor];
 	}
 }
 
 -(void)setCursorAtBar:(int)barIndex
 				 type:(enum CursorType_e)type
 			   scroll:(enum ScrollType_e)scroll
+    shouldDisplayRect:(BOOL)shouldDisplayRect
 {
 	[self setCursor:barIndex
 			   xpos:0
 			   type:type
-			 scroll:scroll];
+			 scroll:scroll
+     shouldDisplayRect:shouldDisplayRect];
 }
 
 -(void)setCursorAtXpos:(float)xpos
@@ -1207,7 +1220,8 @@ static float min(float a, float b)
 	[self setCursor:barIndex
 			   xpos:xpos
 			   type:cursor_line
-			 scroll:scroll];
+			 scroll:scroll
+  shouldDisplayRect:false];
 }
 
 -(void)hideCursor

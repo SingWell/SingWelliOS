@@ -115,14 +115,18 @@
 		166DF112202E5CEC00C71B00 /* SSSystemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 166DF110202E5CEB00C71B00 /* SSSystemView.m */; };
 		166DF115202E5D0B00C71B00 /* SSPlayLoopGraphics.m in Sources */ = {isa = PBXBuildFile; fileRef = 166DF114202E5D0B00C71B00 /* SSPlayLoopGraphics.m */; };
 		166DF117202E5D2100C71B00 /* evaluation_key.c in Sources */ = {isa = PBXBuildFile; fileRef = 166DF116202E5D2100C71B00 /* evaluation_key.c */; };
-		166DF11A202E5DF300C71B00 /* Bach Crucifixus_soprano.mid in Resources */ = {isa = PBXBuildFile; fileRef = 166DF118202E5DF300C71B00 /* Bach Crucifixus_soprano.mid */; };
 		166DF11B202E5DF300C71B00 /* Airfont_340.dls in Resources */ = {isa = PBXBuildFile; fileRef = 166DF119202E5DF300C71B00 /* Airfont_340.dls */; };
 		166DF11F202E5F4C00C71B00 /* TestMXL.mxl in Resources */ = {isa = PBXBuildFile; fileRef = 166DF11E202E5F4C00C71B00 /* TestMXL.mxl */; };
+		16816C902046122E005CDDDB /* PracticeSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16816C8F2046122E005CDDDB /* PracticeSettingsViewController.swift */; };
+		16816C922046123C005CDDDB /* PracticeSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16816C912046123C005CDDDB /* PracticeSettings.storyboard */; };
 		16A7A3221FCE0C8B00B32491 /* MusicLibraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A3211FCE0C8B00B32491 /* MusicLibraryTableViewController.swift */; };
 		16A7A3241FCE0C9600B32491 /* MusicLibrary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16A7A3231FCE0C9600B32491 /* MusicLibrary.storyboard */; };
 		16A7A3261FCE0CB800B32491 /* MusicLibraryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A3251FCE0CB800B32491 /* MusicLibraryTableViewCell.swift */; };
 		16A7A3291FCE13E000B32491 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A3281FCE13E000B32491 /* EventViewController.swift */; };
 		16A7A32B1FCE13E900B32491 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16A7A32A1FCE13E900B32491 /* Event.storyboard */; };
+		16B15229203F7B6B0038E399 /* Tallis If ye love me_Full.xml in Resources */ = {isa = PBXBuildFile; fileRef = 16B15228203F7B6B0038E399 /* Tallis If ye love me_Full.xml */; };
+		16B1522B203F7C270038E399 /* Allegri Miserere Full.xml in Resources */ = {isa = PBXBuildFile; fileRef = 16B1522A203F7C270038E399 /* Allegri Miserere Full.xml */; };
+		16B1522D203F7C900038E399 /* AveVerumMozart.mxl in Resources */ = {isa = PBXBuildFile; fileRef = 16B1522C203F7C900038E399 /* AveVerumMozart.mxl */; };
 		16B6DCEE202E58390043300D /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B6DCDF202E58390043300D /* Platform.swift */; };
 		16B6DCEF202E58390043300D /* SSBarControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 16B6DCE0202E58390043300D /* SSBarControl.m */; };
 		16B6DCF0202E58390043300D /* SingWell-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 16B6DCE1202E58390043300D /* SingWell-Bridging-Header.h */; };
@@ -146,7 +150,6 @@
 		5219880E20460C8A00770011 /* Allegri Miserere Score.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5219880D20460C8A00770011 /* Allegri Miserere Score.pdf */; };
 		521BCF2D1FB3A472000662F7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521BCF2C1FB3A472000662F7 /* ProfileViewController.swift */; };
 		521BCF2F1FB3A48A000662F7 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521BCF2E1FB3A48A000662F7 /* Profile.storyboard */; };
-		52216587202A609E0024FAD4 /* Allegri Miserere Full.mid in Resources */ = {isa = PBXBuildFile; fileRef = 52216586202A609E0024FAD4 /* Allegri Miserere Full.mid */; };
 		52218E171FB50C0400EC4DDA /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52218E161FB50C0400EC4DDA /* UIImageExtension.swift */; };
 		523E97EC203514780034C6C2 /* SongTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E97EB203514780034C6C2 /* SongTableViewController.swift */; };
 		523E97EE203519BA0034C6C2 /* SongInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E97ED203519BA0034C6C2 /* SongInfoTableViewCell.swift */; };
@@ -315,14 +318,18 @@
 		166DF113202E5D0B00C71B00 /* SSPlayLoopGraphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSPlayLoopGraphics.h; path = SingWell/ViewControllers/PracticeViewController/SeeScoreFiles/SSPlayLoopGraphics.h; sourceTree = SOURCE_ROOT; };
 		166DF114202E5D0B00C71B00 /* SSPlayLoopGraphics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSPlayLoopGraphics.m; path = SingWell/ViewControllers/PracticeViewController/SeeScoreFiles/SSPlayLoopGraphics.m; sourceTree = SOURCE_ROOT; };
 		166DF116202E5D2100C71B00 /* evaluation_key.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = evaluation_key.c; path = SingWell/ViewControllers/PracticeViewController/SeeScoreFiles/evaluation_key.c; sourceTree = SOURCE_ROOT; };
-		166DF118202E5DF300C71B00 /* Bach Crucifixus_soprano.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "Bach Crucifixus_soprano.mid"; sourceTree = "<group>"; };
 		166DF119202E5DF300C71B00 /* Airfont_340.dls */ = {isa = PBXFileReference; lastKnownFileType = file; path = Airfont_340.dls; sourceTree = "<group>"; };
 		166DF11E202E5F4C00C71B00 /* TestMXL.mxl */ = {isa = PBXFileReference; lastKnownFileType = file; path = TestMXL.mxl; sourceTree = "<group>"; };
+		16816C8F2046122E005CDDDB /* PracticeSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeSettingsViewController.swift; sourceTree = "<group>"; };
+		16816C912046123C005CDDDB /* PracticeSettings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PracticeSettings.storyboard; sourceTree = "<group>"; };
 		16A7A3211FCE0C8B00B32491 /* MusicLibraryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicLibraryTableViewController.swift; sourceTree = "<group>"; };
 		16A7A3231FCE0C9600B32491 /* MusicLibrary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MusicLibrary.storyboard; sourceTree = "<group>"; };
 		16A7A3251FCE0CB800B32491 /* MusicLibraryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicLibraryTableViewCell.swift; sourceTree = "<group>"; };
 		16A7A3281FCE13E000B32491 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		16A7A32A1FCE13E900B32491 /* Event.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
+		16B15228203F7B6B0038E399 /* Tallis If ye love me_Full.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Tallis If ye love me_Full.xml"; sourceTree = "<group>"; };
+		16B1522A203F7C270038E399 /* Allegri Miserere Full.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Allegri Miserere Full.xml"; sourceTree = "<group>"; };
+		16B1522C203F7C900038E399 /* AveVerumMozart.mxl */ = {isa = PBXFileReference; lastKnownFileType = file; path = AveVerumMozart.mxl; sourceTree = "<group>"; };
 		16B6DCDF202E58390043300D /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Platform.swift; path = SingWell/ViewControllers/PracticeViewController/SeeScoreFiles/Platform.swift; sourceTree = SOURCE_ROOT; };
 		16B6DCE0202E58390043300D /* SSBarControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSBarControl.m; path = SingWell/ViewControllers/PracticeViewController/SeeScoreFiles/SSBarControl.m; sourceTree = SOURCE_ROOT; };
 		16B6DCE1202E58390043300D /* SingWell-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SingWell-Bridging-Header.h"; path = "SingWell/ViewControllers/PracticeViewController/SeeScoreFiles/SingWell-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
@@ -350,7 +357,6 @@
 		5219880D20460C8A00770011 /* Allegri Miserere Score.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Allegri Miserere Score.pdf"; sourceTree = "<group>"; };
 		521BCF2C1FB3A472000662F7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		521BCF2E1FB3A48A000662F7 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
-		52216586202A609E0024FAD4 /* Allegri Miserere Full.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "Allegri Miserere Full.mid"; sourceTree = "<group>"; };
 		52218E161FB50C0400EC4DDA /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		523E97EB203514780034C6C2 /* SongTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewController.swift; sourceTree = "<group>"; };
 		523E97ED203519BA0034C6C2 /* SongInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongInfoTableViewCell.swift; sourceTree = "<group>"; };
@@ -555,12 +561,13 @@
 		162D98351FA65CF6006068BC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				16B1522C203F7C900038E399 /* AveVerumMozart.mxl */,
+				16B1522A203F7C270038E399 /* Allegri Miserere Full.xml */,
 				5219880D20460C8A00770011 /* Allegri Miserere Score.pdf */,
 				1626ADD8202E60840028C7F7 /* piano_samples */,
 				166DF11E202E5F4C00C71B00 /* TestMXL.mxl */,
+				16B15228203F7B6B0038E399 /* Tallis If ye love me_Full.xml */,
 				166DF119202E5DF300C71B00 /* Airfont_340.dls */,
-				166DF118202E5DF300C71B00 /* Bach Crucifixus_soprano.mid */,
-				52216586202A609E0024FAD4 /* Allegri Miserere Full.mid */,
 				1617DF931FB39EEB0094C474 /* ApiHelper.swift */,
 				162D98361FA65D09006068BC /* Extensions.swift */,
 			);
@@ -570,7 +577,6 @@
 		162D98381FA65D2E006068BC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				52180BE9204F27BC005426B4 /* ProgramViewController */,
 				52D5ABA12048AEE80019C5B4 /* UserViewController */,
 				16B6DCDE202E58290043300D /* PracticeViewController */,
 				162E42FF20212BAC0036B897 /* RegisterViewController */,
@@ -690,6 +696,8 @@
 			children = (
 				166228EA2033A46A008219B3 /* PracticeViewController.swift */,
 				16B6DCE9202E58390043300D /* Practice.storyboard */,
+				16816C8F2046122E005CDDDB /* PracticeSettingsViewController.swift */,
+				16816C912046123C005CDDDB /* PracticeSettings.storyboard */,
 				165923DF2033A14B00026387 /* SeeScoreFiles */,
 			);
 			path = PracticeViewController;
@@ -744,13 +752,6 @@
 				091858B7E57F4BDBB305B7A9 /* Pods-SingWellUITests.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		52180BE9204F27BC005426B4 /* ProgramViewController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ProgramViewController;
 			sourceTree = "<group>";
 		};
 		521BCF2B1FB3A44A000662F7 /* ProfileViewController */ = {
@@ -921,6 +922,7 @@
 				1626AE52202E609E0028C7F7 /* Piano.mf.62.m4a in Resources */,
 				52D5ABA52048AF3D0019C5B4 /* User.storyboard in Resources */,
 				1626AE4B202E609E0028C7F7 /* Piano.mf.102.m4a in Resources */,
+				16B1522D203F7C900038E399 /* AveVerumMozart.mxl in Resources */,
 				1626AE77202E609E0028C7F7 /* Piano.mf.104.m4a in Resources */,
 				1626AE54202E609E0028C7F7 /* Piano.mf.28.m4a in Resources */,
 				1626AE7E202E609E0028C7F7 /* Piano.mf.55.m4a in Resources */,
@@ -935,6 +937,7 @@
 				1626AE81202E609E0028C7F7 /* Piano.mf.101.m4a in Resources */,
 				1626AE7C202E609E0028C7F7 /* Piano.mf.75.m4a in Resources */,
 				1626AE5F202E609E0028C7F7 /* Piano.mf.91.m4a in Resources */,
+				16B1522B203F7C270038E399 /* Allegri Miserere Full.xml in Resources */,
 				16E211A11FC35E06009969B1 /* Calendar.storyboard in Resources */,
 				1626AE35202E609E0028C7F7 /* Piano.mf.83.m4a in Resources */,
 				1626AE64202E609E0028C7F7 /* Piano.mf.27.m4a in Resources */,
@@ -942,12 +945,12 @@
 				1626AE6A202E609E0028C7F7 /* Piano.mf.56.m4a in Resources */,
 				1626AE30202E609E0028C7F7 /* Piano.mf.96.m4a in Resources */,
 				1626AE6D202E609E0028C7F7 /* Piano.mf.49.m4a in Resources */,
-				166DF11A202E5DF300C71B00 /* Bach Crucifixus_soprano.mid in Resources */,
 				1626AE68202E609E0028C7F7 /* Piano.mf.34.m4a in Resources */,
 				1626AE3C202E609E0028C7F7 /* Piano.mf.84.m4a in Resources */,
 				1626AE5B202E609E0028C7F7 /* Piano.mf.99.m4a in Resources */,
 				1626AE59202E609E0028C7F7 /* Piano.mf.64.m4a in Resources */,
 				1626AE84202E609E0028C7F7 /* Piano.mf.43.m4a in Resources */,
+				16816C922046123C005CDDDB /* PracticeSettings.storyboard in Resources */,
 				1626AE79202E609E0028C7F7 /* Piano.mf.105.m4a in Resources */,
 				1626AE51202E609E0028C7F7 /* Piano.mf.80.m4a in Resources */,
 				1626AE3B202E609E0028C7F7 /* Piano.mf.85.m4a in Resources */,
@@ -965,6 +968,7 @@
 				166DF11F202E5F4C00C71B00 /* TestMXL.mxl in Resources */,
 				1626AE58202E609E0028C7F7 /* Piano.mf.93.m4a in Resources */,
 				1626AE45202E609E0028C7F7 /* Piano.mf.46.m4a in Resources */,
+				16B15229203F7B6B0038E399 /* Tallis If ye love me_Full.xml in Resources */,
 				1626AE41202E609E0028C7F7 /* Piano.mf.54.m4a in Resources */,
 				5219880E20460C8A00770011 /* Allegri Miserere Score.pdf in Resources */,
 				1652FDAF1FB5018000D921EB /* Choir.storyboard in Resources */,
@@ -1016,7 +1020,6 @@
 				1626AE5E202E609E0028C7F7 /* Piano.mf.67.m4a in Resources */,
 				1626AE55202E609E0028C7F7 /* Piano.mf.35.m4a in Resources */,
 				1626AE66202E609E0028C7F7 /* Piano.mf.70.m4a in Resources */,
-				52216587202A609E0024FAD4 /* Allegri Miserere Full.mid in Resources */,
 				52FD88421FDDD06600958AAE /* NewEditProfile.storyboard in Resources */,
 				162E430720212BEF0036B897 /* Register.storyboard in Resources */,
 				1626AE7D202E609E0028C7F7 /* Piano.mf.37.m4a in Resources */,
@@ -1242,6 +1245,7 @@
 				16E211921FC35122009969B1 /* ChoirInfoTableViewCell.swift in Sources */,
 				162D98081FA65CD3006068BC /* AppDelegate.swift in Sources */,
 				16B6DCF0202E58390043300D /* SingWell-Bridging-Header.h in Sources */,
+				16816C902046122E005CDDDB /* PracticeSettingsViewController.swift in Sources */,
 				16B6DCEE202E58390043300D /* Platform.swift in Sources */,
 				162E430320212BD70036B897 /* RegisterViewController.swift in Sources */,
 				52D5ABA62048AF3D0019C5B4 /* UserViewController.swift in Sources */,
