@@ -67,7 +67,8 @@ class SongTableViewController: UITableViewController {
     
     @IBAction func goToPracticePage(_ sender: Any) {
         let nextVc = AppStoryboard.Practice.initialViewController() as! PracticeViewController
-        nextVc.filename = "AveVerumMozart.mxl" // TODO: Download file!!
+        print("LOADING: ",mxlFilename)
+        nextVc.filename = mxlFilename // TODO: Download file!!
         
         self.navigationController?.pushViewController(nextVc, animated: true)
     }
