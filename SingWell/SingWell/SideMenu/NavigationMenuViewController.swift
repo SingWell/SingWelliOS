@@ -57,7 +57,7 @@ class NavigationMenuViewController: MenuViewController {
                                 contentViews[1].append("Choir")
                             }
                             (self.menuContainerViewController as! HostViewController).setControllerIdentifiers(identifiers: contentViews)
-                            print(self.choirs)
+//                            print(self.choirs)
                             
                             if numberOfChoirRequests == 0 && self.tableView != nil {
                                 self.tableView.reloadData()
@@ -202,7 +202,6 @@ extension NavigationMenuViewController: UITableViewDelegate, UITableViewDataSour
         default:
             return 80.0
         }
-        
     }
     
     
@@ -224,13 +223,7 @@ extension NavigationMenuViewController: UITableViewDelegate, UITableViewDataSour
             cell.nameLabel?.text = choir["name"].stringValue
 
             // get the organization that this choir is in
-            let orgs = organizations.filter({$0["id"] == choir["organization"]})
-            if orgs.count > 0 {
-                let org = orgs[0]
-                cell.orgNameLabel?.text = org["name"].stringValue
-            } else {
-                cell.orgNameLabel?.text = ""
-            }
+            cell.orgNameLabel.text = choir["organization_name"].stringValue
             
             let profileImage: UIImage = UIImage(named: "musicNotes")!
             cell.pictureView.image = profileImage

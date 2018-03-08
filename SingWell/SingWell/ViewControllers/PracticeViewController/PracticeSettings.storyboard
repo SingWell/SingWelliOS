@@ -85,6 +85,35 @@
                                             <outlet property="metronomeSwitch" destination="AAy-Ok-HXe" id="y41-NN-Loe"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DisplayPartSettingCell" rowHeight="90" id="rFr-Lb-Osg" customClass="DisplayPartSettingCell" customModule="SingWell" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="191" width="375" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rFr-Lb-Osg" id="3I5-sS-4Fq">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tenor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9V-TF-dC0" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                                    <rect key="frame" x="15" y="34" width="44" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1I8-jU-3nG">
+                                                    <rect key="frame" x="311" y="29" width="51" height="31"/>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="1I8-jU-3nG" secondAttribute="trailing" constant="15" id="17p-Cz-VXp"/>
+                                                <constraint firstItem="1I8-jU-3nG" firstAttribute="centerY" secondItem="h9V-TF-dC0" secondAttribute="centerY" id="QVr-iW-RAN"/>
+                                                <constraint firstItem="h9V-TF-dC0" firstAttribute="leading" secondItem="3I5-sS-4Fq" secondAttribute="leading" constant="15" id="Tjy-Lo-rkZ"/>
+                                                <constraint firstItem="h9V-TF-dC0" firstAttribute="centerY" secondItem="3I5-sS-4Fq" secondAttribute="centerY" id="Uj0-2j-1wx"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="displaySwitch" destination="1I8-jU-3nG" id="xqZ-2K-dg3"/>
+                                            <outlet property="partNameLabel" destination="h9V-TF-dC0" id="4jI-oU-a5G"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>

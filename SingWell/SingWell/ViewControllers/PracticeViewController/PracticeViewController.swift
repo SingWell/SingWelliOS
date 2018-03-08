@@ -28,6 +28,8 @@ class PracticeViewController: UIViewController, PracticeSettingsDelegate {
     var metronomeOn = true
     var tempo = 80
     
+    var partsToDisplay:[Int:[String:Any]] = [:]
+    
     private var kSampledInstrumentsInfo : [SSSampledInstrumentInfo] {
         get {
             var rval = [SSSampledInstrumentInfo]()
@@ -166,6 +168,9 @@ class PracticeViewController: UIViewController, PracticeSettingsDelegate {
         
         
         
+        
+        
+        
 //        tempoSlider?.isEnabled = false
         
 //        leftLoopButton?.isEnabled = false;
@@ -174,9 +179,25 @@ class PracticeViewController: UIViewController, PracticeSettingsDelegate {
         // enable restore button if file in documents is different from file in bundle
     }
     
-    func updateSettings(_ tempo: Float?, _ metronomeOn: Bool?) {
+    func initializeParts(score : SSScore) {
+        let numParts = Int(score.numParts)
+        for num in 0 ... numParts - 1
+        {
+            partsToDisplay[num] = [
+                "name":score.partName(forPart: Int32(num)).full_name,
+                "display":true
+            ]
+        }
+    }
+    
+    func updateSettings(_ tempo: Float?, _ metronomeOn: Bool?, _ partsToDisplay:[Int:[String:Any]]) {
         self.tempo = Int(tempo!)
         self.metronomeOn = metronomeOn!
+        self.partsToDisplay = partsToDisplay
+        if let score = self.score {
+            showingParts = displaySelectedParts(score: score)
+            sysScrollView?.displayParts(showingParts)
+        }
     }
     
     
@@ -196,6 +217,7 @@ class PracticeViewController: UIViewController, PracticeSettingsDelegate {
             //            setupModal(for: presentedViewController)
             presentedViewController.metronomeOn = self.metronomeOn
             presentedViewController.tempo = Float(self.tempo)
+            presentedViewController.partsToDisplay = self.partsToDisplay
             presentedViewController.delegate = self
             present(presentedViewController, animated: true, completion: nil)
         }
@@ -480,6 +502,24 @@ class PracticeViewController: UIViewController, PracticeSettingsDelegate {
         self.titleLabel?.text = title
     }
     
+    func displaySelectedParts(score: SSScore) -> [NSNumber]
+    {
+        print("PRACTICE - all parts: ",partsToDisplay)
+        var rval = [NSNumber]()
+        let numParts = score.numParts
+        for num in 0 ... numParts - 1
+        {
+            print("PRACTICE - num: ",num,score.partName(forPart: num).full_name)
+            if let shouldDisplay = partsToDisplay[Int(num)]!["display"] as? Bool {
+                rval.append(NSNumber(booleanLiteral: shouldDisplay )) // true for selected parts
+            } else {
+                
+                rval.append(NSNumber(booleanLiteral: true )) // true for all parts
+            }
+        }
+        return rval
+    }
+    
     func displayAllParts(score : SSScore) -> [NSNumber]
     {
         var rval = [NSNumber]()
@@ -555,6 +595,7 @@ class PracticeViewController: UIViewController, PracticeSettingsDelegate {
                 {
                     let filename = URL(fileURLWithPath: filePath).lastPathComponent
                     self.setTitle(filename: filename, score: sc)
+                    self.initializeParts(score: sc)
                     self.showingParts = self.displayAllParts(score: sc)
                     self.layOptions = SSLayoutOptions() // set default layout
                     self.sysScrollView?.setupScore(self.score, openParts:self.showingParts, mag:Float(PracticeViewController.kDefaultMagnification), opt:self.layOptions)
@@ -701,7 +742,8 @@ class PracticeViewController: UIViewController, PracticeSettingsDelegate {
                     if (showingSinglePart) // flip to showing all parts
                     {
                         showingSinglePart = false;
-                        showingParts = [NSNumber](repeating:NSNumber(booleanLiteral: true), count:Int(score.numParts))
+                        showingParts = displaySelectedParts(score: score)
+//                        showingParts = [NSNumber](repeating:NSNumber(booleanLiteral: true), count:Int(score.numParts))
                         sysScrollView?.displayParts(showingParts)
                     }
                     else // flip to showing a single part
