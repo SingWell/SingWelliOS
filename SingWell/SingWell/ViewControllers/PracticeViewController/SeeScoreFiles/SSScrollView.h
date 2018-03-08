@@ -108,6 +108,12 @@ typedef void (^handler_t)(void);
 @property (readonly) bool displayingCursor;
 
 /*!
+ * @property shouldShowRect
+ * @abstract true if should show rect cursor
+ */
+@property (readwrite) bool shouldShowRect;
+
+/*!
  * @property cursorBarIndex
  * @abstract the index of the bar where the cursor is currently if it is displayed
  */
@@ -288,7 +294,8 @@ enum ScrollType_e {scroll_off, scroll_system, scroll_bar};
  */
 -(void)setCursorAtBar:(int)barIndex
 				 type:(enum CursorType_e)type
-			   scroll:(enum ScrollType_e)scroll;
+			   scroll:(enum ScrollType_e)scroll
+    shouldDisplayRect:(BOOL)shouldDisplayRect;
 
 /*!
  * @method setCursorAtXpos
