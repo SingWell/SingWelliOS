@@ -15,9 +15,6 @@ class SongYouTubeTableViewCell: AnimatableTableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-//        let youtubeURL = URL(string: "https://www.youtube.com/embed/MLS6qZt9WLQ")
-//        wv.loadRequest(URLRequest(url: youtubeURL!))
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
