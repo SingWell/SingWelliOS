@@ -12,7 +12,7 @@ import SwiftyJSON
 
 enum AppStoryboard : String {
     
-    case Profile, EditProfile, Choir, SideMenu, Notifications, Calendar, Roster, MusicLibrary, Event, Song, SettingsModal, NewEditProfile, Login, Register, Practice
+    case Profile, EditProfile, Choir, SideMenu, Notifications, Calendar, Roster, MusicLibrary, Event, Song, SettingsModal, NewEditProfile, Login, Register, Practice, User
     
     var instance : UIStoryboard {
         return UIStoryboard(name: self.rawValue, bundle: Bundle.main)

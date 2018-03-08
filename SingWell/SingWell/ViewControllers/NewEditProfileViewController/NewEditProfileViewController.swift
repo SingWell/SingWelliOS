@@ -50,6 +50,8 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
     var cityPassed = ""
     var statePassed = ""
     var zipPassed = ""
+    var profileImagePassed = UIImage()
+    var birthdayPassed = ""
     
     //Format Phone Number
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
@@ -130,15 +132,34 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
         present(picker, animated: true)
     }
     
-//    @IBAction func birthdayEdit(_ sender: AnimatableTextField) {
-//        let datePickerView:UIDatePicker = UIDatePicker()
-//        
-//        datePickerView.datePickerMode = UIDatePickerMode.date
-//        
-//        sender.inputView = datePickerView
-//        
-//        datePickerView.addTarget(self, action: #selector(NewEditProfileViewController.datePickerValueChanged), for: UIControlEvents.ValueChanged)
-//    }
+    @IBAction func birthdayEdit(_ sender: AnimatableTextField) {
+        let datePickerView:UIDatePicker = UIDatePicker()
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM-dd"
+        let someDateTime = formatter.date(from: birthdayPassed)
+        
+        datePickerView.date = someDateTime!
+
+        datePickerView.datePickerMode = UIDatePickerMode.date
+
+        sender.inputView = datePickerView
+
+        datePickerView.addTarget(self, action: #selector(NewEditProfileViewController.datePickerValueChanged), for: UIControlEvents.valueChanged)
+    }
+    
+    @objc func datePickerValueChanged(sender:UIDatePicker) {
+        
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateStyle = DateFormatter.Style.medium
+        dateFormatter.timeStyle = DateFormatter.Style.none
+        
+        dateFormatter.dateFormat = "MM-dd"
+        
+        birthdayTextField.text = dateFormatter.string(from: sender.date)
+        
+    }
     
     func setConfirmButton() {
         let size = CGSize(width:55, height: 55)
@@ -164,7 +185,7 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
     
     func setProfile() {
         
-        var profileImage: UIImage = UIImage(named: "profileImage")!
+        var profileImage: UIImage = profileImagePassed
         profileImage = profileImage.circleMasked!
         profileImageView.image = profileImage
         
@@ -196,6 +217,8 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
         emailTextField.text = emailPassed
         
         phoneNumberTextField.text = phoneNumberPassed
+        
+        birthdayTextField.text = birthdayPassed
         
         
     }
@@ -246,23 +269,9 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
         birthdayTextField.leftImageLeftPadding = 10
     }
     
-//    @IBAction func dateField(sender: UITextField) {
-//        
-//        var datePickerView  : UIDatePicker = UIDatePicker()
-//        datePickerView.datePickerMode = UIDatePickerMode.time
-//        sender.inputView = datePickerView
-//        datePickerView.addTarget(self, action: Selector("handleDatePicker:"), for: UIControlEvents.valueChanged)
-//        
-//    }
-//    
-//    func handleDatePicker(sender: UIDatePicker) {
-//        var timeFormatter = DateFormatter()
-//        birthdayTextField.text = timeFormatter.string(from: sender.date)
-//    }
-//    
-//    @IBAction func DoneButton(sender: UIButton) {
-//        birthdayTextField.resignFirstResponder()
-//    }
+    @IBAction func DoneButton(sender: UIButton) {
+        birthdayTextField.resignFirstResponder()
+    }
     
 
     override func viewDidLoad() {
@@ -309,6 +318,7 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
         for number in phone!{
             phoneNumber += number
         }
+        let birthday = birthdayTextField.text
         
 //        let email = emailTextField.text
         var biography = ""
@@ -322,7 +332,7 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
         
 //        let parameters: [String: AnyObject] = [ "phone_number": phoneNumber as AnyObject, "address": address! as AnyObject, "bio": biography as AnyObject, "city": city! as AnyObject,"zip_code": zipCode! as AnyObject, "state": state! as AnyObject, "date_of_birth": "" as AnyObject]
         
-        let parameters: [String: String] = [ "phone_number": phoneNumber, "address": address!, "bio": biography, "city": city!,"zip_code": zipCode!, "state": state!, "date_of_birth": "01-30"]
+        let parameters: [String: String] = [ "phone_number": phoneNumber, "address": address!, "bio": biography, "city": city!,"zip_code": zipCode!, "state": state!, "date_of_birth": birthday!]
         
         ApiHelper.editUser(parameters: parameters) { response, error in
             if error == nil {
@@ -332,74 +342,21 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
             }
         }
         
-        ApiHelper.getProfile() { response, error in
+        ApiHelper.uploadImage(image: profileImageView.image!, fileName: "profilePic") { response, error in
             if error == nil {
-                print(response)
                 print("No error")
             } else {
                 print(error!)
             }
         }
         
-//        let navCon = AppStoryboard.Profile.initialViewController() as! SideItemNavigationViewController
-//        let nextVc = navCon.topViewController as! ProfileViewController
-//
-//        self.navigationController?.pushViewController(nextVc, animated: true)
+        
         
         // do unwindToSaveProfileSegue
         self.performSegue(withIdentifier: "unwindToSaveProfileSegue", sender: self)
     }
-    
-//    func editUser() {
-//        let delimiter = " "
-//        let fullName = nameTextField.text
-//        var name = fullName?.components(separatedBy: delimiter)
-//        let firstName = name![0]
-//        var lastName = ""
-//        if(name?.count == 2){
-//            lastName = name![1]
-//        }
-//
-//        let phoneDelimiter = CharacterSet.init(charactersIn: "()-")
-//        let tmpNumber = phoneNumberTextField.text
-//        let phone = tmpNumber?.components(separatedBy: phoneDelimiter)
-//        var phoneNumber = ""
-//        for number in phone!{
-//            phoneNumber += number
-//        }
-//
-//        let email = emailTextField.text
-//        var biography = ""
-//        if(biographyTextView.text != "Add a short biography here"){
-//            biography = biographyTextView.text
-//        }
-//        let city = cityTextField.text
-//        let address = streetTextField.text
-//        let state = stateTextField.text
-//        let zipCode = zipCodeTextField.text
-//
-//        let parameters: [String: AnyObject] = [ "email": email! as AnyObject, "phone_number": phoneNumber as AnyObject, "address": address! as AnyObject, "bio": biography as AnyObject, "city": city! as AnyObject,"zip_code": zipCode! as AnyObject, "state": state! as AnyObject, "date_of_birth": "" as AnyObject]
-//
-//        ApiHelper.editUser(parameters: parameters) { response, error in
-//            if error == nil {
-//                print("Successful post")
-//            } else {
-//                print(error!)
-//            }
-//        }
-//
-//        let navCon = AppStoryboard.Profile.initialViewController() as! SideItemNavigationViewController
-//        let nextVc = navCon.topViewController as! ProfileViewController
-//
-//        self.navigationController?.pushViewController(nextVc, animated: true)
-//
-//    }
-    
+
     @IBAction func cancelUpdate(_ sender: Any) {
-//        let navCon = AppStoryboard.Profile.initialViewController() as! SideItemNavigationViewController
-//        let nextVc = navCon.topViewController as! ProfileViewController
-//
-//        self.navigationController?.pushViewController(nextVc, animated: true)
         
         self.performSegue(withIdentifier: "unwindToSaveProfileSegue", sender: self)
     }

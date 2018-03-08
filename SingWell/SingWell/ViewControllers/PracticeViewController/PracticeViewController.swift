@@ -563,7 +563,18 @@ class PracticeViewController: UIViewController {
         stopPlaying()
         var localFileUrl : URL? = PracticeViewController.urlForFileInDocuments(filename: filename)
         print(filename)
-//        print(localFileUrl)
+        
+        print("Printing Directory")
+        
+        let fileManager = FileManager.default
+        do {
+            let documentDirectory = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor:nil, create:false)
+            localFileUrl = documentDirectory.appendingPathComponent(filename)
+        } catch {
+            print(error)
+        }
+        
+        
         if let url = localFileUrl // if the same name exists in Documents use that, else restore from Bundle
         {
             if (!FileManager.default.fileExists(atPath: url.path))

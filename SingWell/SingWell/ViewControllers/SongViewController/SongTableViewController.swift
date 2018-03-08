@@ -10,6 +10,7 @@ import UIKit
 import IBAnimatable
 import SwiftyJSON
 import IoniconsKit
+import PDFReader
 
 let kSongInfo = "Song Info"
 //let kSongResources = "Song Resources"
@@ -28,26 +29,54 @@ class SongTableViewController: UITableViewController {
         "instrumentation":"SATB"
     ]
     
+    var song:JSON = [
+        "arranger": "Test",
+        "publisher" : "Back",
+        "youtubeLink":"https://www.youtube.com/embed/DsUWFVKJwBM",
+        "pdfName" : "Allegri Miserere Score.pdf"
+    ]
+    
+    var youtubeLink = "https://www.youtube.com/embed/DsUWFVKJwBM"
+    var songResources:[JSON] = []
+    var pdfNum : [Int] = []
+    
+    var numYTLinks = 1
+    var numPDF = 0
+    var mxlFilename = "TestMXL.mxl"
+    
     let BACKGROUND_COLOR = UIColor.init(hexString: "eeeeee")
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let youtubeURL = URL(string: "https://www.youtube.com/embed/MLS6qZt9WLQ")
-//        wv.loadRequest(URLRequest(url: youtubeURL!))
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.getMusicRecord()
+        
+    }
+    
+    func getMusicRecord() {
+        ApiHelper.getMusicRecord(musicId: songInfo["id"].stringValue) { response, error in
+            if error == nil {
+                self.song = response!
+                self.songResources = self.song["music_resources"].arrayValue
+                self.tableView.reloadData()
+            } else {
+                print("Error getting musicRecord: ",error as Any)
+            }
+        }
     }
     
     @IBAction func goToPracticePage(_ sender: Any) {
         let nextVc = AppStoryboard.Practice.initialViewController() as! PracticeViewController
-        nextVc.filename = "TestMXL.mxl" // TODO: Download file!!
+        print("LOADING: ",mxlFilename)
+        nextVc.filename = mxlFilename // TODO: Download file!!
         
         self.navigationController?.pushViewController(nextVc, animated: true)
+    }
+    
+    @IBAction func openPDF(_ sender: Any) {
+
+//        getPDFResources()
+
     }
 
     // MARK: - Table view data source
@@ -62,9 +91,28 @@ class SongTableViewController: UITableViewController {
         case kSongInfo: // choir info cell
             return 1
         case kSongYouTubeLink:
-            return 1
+//            for resource in songResources {
+//                if resource["extension"].stringValue == "pdf" {
+//
+//                }
+//            }
+            return numYTLinks
         case kSongPDFResource:
-            return 0
+            var count = 0
+            for resource in songResources {
+                if resource["extension"].stringValue == "pdf" {
+                    pdfNum.append(count)
+                    numPDF += 1
+                }
+                if resource["extension"].stringValue == "xml" {
+                    saveMXLFile(resourceID: resource["resource_id"].stringValue, recordID: songInfo["id"].stringValue, fileName: resource["title"].stringValue)
+                }
+                if resource["extension"].stringValue == "mxl" {
+                    saveMXLFile(resourceID: resource["resource_id"].stringValue, recordID: songInfo["id"].stringValue, fileName: resource["title"].stringValue)
+                }
+                count += 1
+            }
+            return numPDF
         default:
             return 0
         }
@@ -73,11 +121,11 @@ class SongTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch SECTIONS[indexPath.section] {
         case kSongInfo:
-            return 147.0
-        case kSongYouTubeLink:
-            return 175.0
-        case kSongPDFResource:
             return 200.0
+        case kSongYouTubeLink:
+            return 225.0
+        case kSongPDFResource:
+            return 75.0
         default:
             return 175.0
         }
@@ -91,30 +139,60 @@ class SongTableViewController: UITableViewController {
             cell.contentView.backgroundColor = BACKGROUND_COLOR
             
             cell.songNameLabel.text = songInfo["title"].stringValue
-            cell.songNameLabel.font = cell.songNameLabel.font.withSize(20)
-            cell.composerNameLabel.text = songInfo["composer"].stringValue
+            cell.songNameLabel.font = cell.songNameLabel.font.withSize(25)
+            
+            cell.composerNameLabel.text = "Composed By: " + songInfo["composer"].stringValue
+            
+            // Check if arranger data is available and diplay if it is
+            if(songInfo["arranger"].stringValue != ""){
+                cell.arrangerNameLabel.text = "Arranged By: " + songInfo["arranger"].stringValue
+            }
+            else {
+                cell.arrangerNameLabel.isHidden = true
+            }
+            
+            // Check if publisher data is available and diplay if it is
+            if(songInfo["publisher"].stringValue != ""){
+                if(cell.arrangerNameLabel.isHidden == true) {
+                    
+                    // If no arranger, use that label instead
+                    cell.publisherNameLabel.isHidden = true
+                    cell.arrangerNameLabel.isHidden = false
+                    cell.arrangerNameLabel.text = "Published By: " + songInfo["publisher"].stringValue
+                }
+                else {
+                    cell.publisherNameLabel.text = "Published By: " + songInfo["publisher"].stringValue
+                }
+            }
+            else {
+                cell.publisherNameLabel.isHidden = true
+            }
             
             
             let practiceImage = UIImage.ionicon(with: .androidMicrophone, textColor: UIColor.white, size: CGSize(width: 25, height: 25))
             cell.practiceButton.setImage( practiceImage, for: UIControlState.normal)
             cell.practiceButton.semanticContentAttribute = .forceRightToLeft
             cell.practiceButton.addTarget(self, action: #selector(goToPracticePage(_:)), for: .touchUpInside)
-//            cell.practiceButton. = UIImage.ionicon(with: .androidMicrophone, textColor: UIColor.black, size: CGSize(width: 35, height: 35))
             
             return cell
         case kSongYouTubeLink: // song resource cell - youtube link
             let cell = tableView.dequeueReusableCell(withIdentifier: "SongYouTubeCell", for: indexPath) as! SongYouTubeTableViewCell
             
-            let youtubeURL = NSURL(string: "https://www.youtube.com/embed/MLS6qZt9WLQ")
-            
-            let requestObject = URLRequest(url: youtubeURL! as URL)
-            
+            let youtubeURL = NSURL(string: youtubeLink)
             cell.wv.loadRequest(URLRequest(url: youtubeURL! as URL))
             
             return cell
             
         case kSongPDFResource: // song resource cell - pdf resource
+            let resourceNum = pdfNum[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: "SongPDFCell", for: indexPath) as! SongPDFTableViewCell
+            
+            cell.pdfNameLabel.text = songResources[resourceNum]["title"].stringValue
+            
+            let openImage = UIImage.ionicon(with: .chevronRight, textColor: UIColor.init(hexString: "007aff"), size: CGSize(width: 25, height: 25))
+            cell.openPDFLabel.addImage(image: openImage, afterLabel: true)
+//            cell.openPDFLabel.semanticContentAttribute = .forceRightToLeft
+            
             
             return cell
             
@@ -127,12 +205,66 @@ class SongTableViewController: UITableViewController {
         
     }
     
-//    func loadYoutube(videoID:String) {
-//        guard
-//            let youtubeURL = URL(string: "https://www.youtube.com/embed/\(videoID)")
-//            else { return }
-//        wv.loadRequest( URLRequest(url: youtubeURL) )
-//    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 2 {
+            let resourceNum = pdfNum[indexPath.row]
+            getPDFResources(resourceID: songResources[resourceNum]["resource_id"].stringValue, recordID:songInfo["id"].stringValue, fileName: songResources[resourceNum]["title"].stringValue)
+        }
+        
+    }
+    
+    func showPDF(fileData:Data, fileName:String) {
+        if let document = PDFDocument(fileData: fileData, fileName: fileName) {
+
+            let readerController = PDFViewController.createNew(with: document,actionStyle:.activitySheet)
+
+            navigationController?.pushViewController(readerController, animated: true)
+        } else {
+            let alert = UIAlertController(title: "File Corrupted", message: "The file could not be displayed.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func saveMXLFile (resourceID: String, recordID: String, fileName: String){
+        ApiHelper.downloadPDF(path: "resource", resourceID: resourceID, recordID: recordID) { data, error in
+            if error == nil {
+                let fileManager = FileManager.default
+                do {
+                    let documentDirectory = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor:nil, create:false)
+                    let fileURL = documentDirectory.appendingPathComponent(fileName)
+                    let convertedData = Data(base64Encoded: data!)
+                    try convertedData!.write(to: fileURL, options: .atomic)
+//                    print(data?.data(using: String.Encoding.utf8, allowLossyConversion: true))
+                
+                    let directoryContents = try FileManager.default.contentsOfDirectory(at: documentDirectory, includingPropertiesForKeys: nil, options: [])
+//                                    print(directoryContents)
+                
+//                    let mxlFiles = directoryContents.filter{ $0.pathExtension == "xml" }
+//                        print("mxl urls:",mxlFiles)
+                    } catch {
+                        print(error)
+                    }
+            } else {
+                print("Error getting musicRecords: ",error as Any)
+            }
+        }
+        mxlFilename = fileName
+    }
+    
+    func getPDFResources(resourceID: String, recordID: String, fileName: String) {
+
+        ApiHelper.downloadPDF(path: "resource", resourceID: resourceID, recordID: recordID) { data, error in
+            if error == nil {
+                let convertedData = Data(base64Encoded: data!)
+                self.showPDF(fileData: convertedData!, fileName: fileName)
+            } else {
+                print("Error getting musicRecords: ",error as Any)
+            }
+        }
+    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -189,4 +321,37 @@ class SongTableViewController: UITableViewController {
     }
     */
 
+}
+
+extension UILabel
+{
+    func addImage(image: UIImage, afterLabel bolAfterLabel: Bool = false)
+    {
+        let attachment: NSTextAttachment = NSTextAttachment()
+        attachment.image = image
+        let attachmentString: NSAttributedString = NSAttributedString(attachment: attachment)
+        
+        if (bolAfterLabel)
+        {
+            let strLabelText: NSMutableAttributedString = NSMutableAttributedString(string: self.text!)
+            strLabelText.append(attachmentString)
+            
+            self.attributedText = strLabelText
+        }
+        else
+        {
+            let strLabelText: NSAttributedString = NSAttributedString(string: self.text!)
+            let mutableAttachmentString: NSMutableAttributedString = NSMutableAttributedString(attributedString: attachmentString)
+            mutableAttachmentString.append(strLabelText)
+            
+            self.attributedText = mutableAttachmentString
+        }
+    }
+    
+    func removeImage()
+    {
+        let text = self.text
+        self.attributedText = nil
+        self.text = text
+    }
 }
