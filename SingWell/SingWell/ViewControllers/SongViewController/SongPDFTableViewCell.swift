@@ -11,6 +11,9 @@ import IBAnimatable
 
 class SongPDFTableViewCell: AnimatableTableViewCell {
 
+    @IBOutlet weak var pdfNameLabel: AnimatableLabel!
+    @IBOutlet weak var openPDFLabel: AnimatableLabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -105,7 +105,6 @@
 		162E430320212BD70036B897 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162E430220212BD70036B897 /* RegisterViewController.swift */; };
 		162E430520212BE50036B897 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 162E430420212BE50036B897 /* Login.storyboard */; };
 		162E430720212BEF0036B897 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 162E430620212BEF0036B897 /* Register.storyboard */; };
-		164A51441FCFA99A0026D7DE /* SongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164A51431FCFA99A0026D7DE /* SongViewController.swift */; };
 		164A51461FCFA9A50026D7DE /* Song.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 164A51451FCFA9A50026D7DE /* Song.storyboard */; };
 		1652FDAD1FB5016F00D921EB /* ChoirTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1652FDAC1FB5016F00D921EB /* ChoirTableViewController.swift */; };
 		1652FDAF1FB5018000D921EB /* Choir.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1652FDAE1FB5018000D921EB /* Choir.storyboard */; };
@@ -148,6 +147,7 @@
 		16E2119F1FC35DFB009969B1 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E2119E1FC35DFB009969B1 /* CalendarViewController.swift */; };
 		16E211A11FC35E06009969B1 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16E211A01FC35E06009969B1 /* Calendar.storyboard */; };
 		5209FE2E1FD092CE00DB9CE8 /* SettingsModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5209FE2D1FD092CE00DB9CE8 /* SettingsModelViewController.swift */; };
+		5219880E20460C8A00770011 /* Allegri Miserere Score.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5219880D20460C8A00770011 /* Allegri Miserere Score.pdf */; };
 		521BCF2D1FB3A472000662F7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521BCF2C1FB3A472000662F7 /* ProfileViewController.swift */; };
 		521BCF2F1FB3A48A000662F7 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521BCF2E1FB3A48A000662F7 /* Profile.storyboard */; };
 		52218E171FB50C0400EC4DDA /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52218E161FB50C0400EC4DDA /* UIImageExtension.swift */; };
@@ -157,6 +157,8 @@
 		525EF4B91FC3A4C600C8E822 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 525EF4B81FC3A4C600C8E822 /* EditProfile.storyboard */; };
 		526F5D5C1FCE13F9002F7D27 /* SettingsModal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 526F5D5B1FCE13F9002F7D27 /* SettingsModal.storyboard */; };
 		52AF5C7E203F715A009B12FB /* SongPDFTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AF5C7D203F715A009B12FB /* SongPDFTableViewCell.swift */; };
+		52D5ABA52048AF3D0019C5B4 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D5ABA22048AF3D0019C5B4 /* User.storyboard */; };
+		52D5ABA62048AF3D0019C5B4 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D5ABA32048AF3D0019C5B4 /* UserViewController.swift */; };
 		52DA23DE1FD0B7B8004CD9E0 /* RosterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA23DD1FD0B7B8004CD9E0 /* RosterTableViewCell.swift */; };
 		52EEFDCF203B3B9300E71045 /* SongYouTubeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EEFDCE203B3B9300E71045 /* SongYouTubeTableViewCell.swift */; };
 		52FD88401FDDD05700958AAE /* NewEditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD883F1FDDD05700958AAE /* NewEditProfileViewController.swift */; };
@@ -303,7 +305,6 @@
 		162E430220212BD70036B897 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		162E430420212BE50036B897 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		162E430620212BEF0036B897 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
-		164A51431FCFA99A0026D7DE /* SongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongViewController.swift; sourceTree = "<group>"; };
 		164A51451FCFA9A50026D7DE /* Song.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Song.storyboard; sourceTree = "<group>"; };
 		1652FDAC1FB5016F00D921EB /* ChoirTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoirTableViewController.swift; sourceTree = "<group>"; };
 		1652FDAE1FB5018000D921EB /* Choir.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Choir.storyboard; sourceTree = "<group>"; };
@@ -353,6 +354,7 @@
 		16E211A01FC35E06009969B1 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 		2CF3257DBA9274E82C0A0B81 /* Pods-SingWellTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SingWellTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SingWellTests/Pods-SingWellTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5209FE2D1FD092CE00DB9CE8 /* SettingsModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModelViewController.swift; sourceTree = "<group>"; };
+		5219880D20460C8A00770011 /* Allegri Miserere Score.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Allegri Miserere Score.pdf"; sourceTree = "<group>"; };
 		521BCF2C1FB3A472000662F7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		521BCF2E1FB3A48A000662F7 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		52218E161FB50C0400EC4DDA /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
@@ -362,6 +364,8 @@
 		525EF4B81FC3A4C600C8E822 /* EditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
 		526F5D5B1FCE13F9002F7D27 /* SettingsModal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsModal.storyboard; sourceTree = "<group>"; };
 		52AF5C7D203F715A009B12FB /* SongPDFTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongPDFTableViewCell.swift; sourceTree = "<group>"; };
+		52D5ABA22048AF3D0019C5B4 /* User.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
+		52D5ABA32048AF3D0019C5B4 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		52DA23DD1FD0B7B8004CD9E0 /* RosterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RosterTableViewCell.swift; sourceTree = "<group>"; };
 		52EEFDCE203B3B9300E71045 /* SongYouTubeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongYouTubeTableViewCell.swift; sourceTree = "<group>"; };
 		52FD883F1FDDD05700958AAE /* NewEditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEditProfileViewController.swift; sourceTree = "<group>"; };
@@ -572,6 +576,8 @@
 		162D98381FA65D2E006068BC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				52180BE9204F27BC005426B4 /* ProgramViewController */,
+				52D5ABA12048AEE80019C5B4 /* UserViewController */,
 				16B6DCDE202E58290043300D /* PracticeViewController */,
 				162E42FF20212BAC0036B897 /* RegisterViewController */,
 				162E42FE20212B9C0036B897 /* LoginViewController */,
@@ -611,7 +617,6 @@
 		164A51421FCFA9830026D7DE /* SongViewController */ = {
 			isa = PBXGroup;
 			children = (
-				164A51431FCFA99A0026D7DE /* SongViewController.swift */,
 				164A51451FCFA9A50026D7DE /* Song.storyboard */,
 				523E97EB203514780034C6C2 /* SongTableViewController.swift */,
 				523E97ED203519BA0034C6C2 /* SongInfoTableViewCell.swift */,
@@ -749,6 +754,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		52180BE9204F27BC005426B4 /* ProgramViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProgramViewController;
+			sourceTree = "<group>";
+		};
 		521BCF2B1FB3A44A000662F7 /* ProfileViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -768,6 +780,15 @@
 				525EF4B81FC3A4C600C8E822 /* EditProfile.storyboard */,
 			);
 			path = EditProfileViewController;
+			sourceTree = "<group>";
+		};
+		52D5ABA12048AEE80019C5B4 /* UserViewController */ = {
+			isa = PBXGroup;
+			children = (
+				52D5ABA22048AF3D0019C5B4 /* User.storyboard */,
+				52D5ABA32048AF3D0019C5B4 /* UserViewController.swift */,
+			);
+			path = UserViewController;
 			sourceTree = "<group>";
 		};
 		52FD883E1FDDD01900958AAE /* NewEditProfileViewController */ = {
@@ -906,6 +927,7 @@
 				1626AE4C202E609E0028C7F7 /* Piano.mf.47.m4a in Resources */,
 				16A7A3241FCE0C9600B32491 /* MusicLibrary.storyboard in Resources */,
 				1626AE52202E609E0028C7F7 /* Piano.mf.62.m4a in Resources */,
+				52D5ABA52048AF3D0019C5B4 /* User.storyboard in Resources */,
 				1626AE4B202E609E0028C7F7 /* Piano.mf.102.m4a in Resources */,
 				16B1522D203F7C900038E399 /* AveVerumMozart.mxl in Resources */,
 				1626AE77202E609E0028C7F7 /* Piano.mf.104.m4a in Resources */,
@@ -955,6 +977,7 @@
 				1626AE45202E609E0028C7F7 /* Piano.mf.46.m4a in Resources */,
 				16B15229203F7B6B0038E399 /* Tallis If ye love me_Full.xml in Resources */,
 				1626AE41202E609E0028C7F7 /* Piano.mf.54.m4a in Resources */,
+				5219880E20460C8A00770011 /* Allegri Miserere Score.pdf in Resources */,
 				1652FDAF1FB5018000D921EB /* Choir.storyboard in Resources */,
 				162D98121FA65CD3006068BC /* LaunchScreen.storyboard in Resources */,
 				1626AE43202E609E0028C7F7 /* Piano.mf.30.m4a in Resources */,
@@ -1232,6 +1255,7 @@
 				16816C902046122E005CDDDB /* PracticeSettingsViewController.swift in Sources */,
 				16B6DCEE202E58390043300D /* Platform.swift in Sources */,
 				162E430320212BD70036B897 /* RegisterViewController.swift in Sources */,
+				52D5ABA62048AF3D0019C5B4 /* UserViewController.swift in Sources */,
 				1652FDB31FB5039400D921EB /* NavigationMenuViewController.swift in Sources */,
 				52EEFDCF203B3B9300E71045 /* SongYouTubeTableViewCell.swift in Sources */,
 				16256EE51FBB827A00992B02 /* ChoirResourceInfoTableViewCell.swift in Sources */,
@@ -1239,7 +1263,6 @@
 				16B6DCF3202E58390043300D /* Intonation.swift in Sources */,
 				16B6DCF1202E58390043300D /* Platform.m in Sources */,
 				16E2119A1FC35DD7009969B1 /* RosterTableViewController.swift in Sources */,
-				164A51441FCFA99A0026D7DE /* SongViewController.swift in Sources */,
 				1617DF941FB39EEB0094C474 /* ApiHelper.swift in Sources */,
 				1652FDAD1FB5016F00D921EB /* ChoirTableViewController.swift in Sources */,
 				52FD88401FDDD05700958AAE /* NewEditProfileViewController.swift in Sources */,
@@ -1403,7 +1426,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 788J8M5NBX;
+				DEVELOPMENT_TEAM = 59272Q867S;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1433,7 +1456,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 788J8M5NBX;
+				DEVELOPMENT_TEAM = 59272Q867S;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

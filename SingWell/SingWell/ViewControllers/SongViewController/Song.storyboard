@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -31,16 +32,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kwy-15-Ldk" customClass="AnimatableView" customModule="IBAnimatable">
-                                            <rect key="frame" x="0.0" y="11" width="375" height="128.5"/>
+                                            <rect key="frame" x="0.0" y="11" width="375" height="250"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Directed by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lzk-oB-aRv" userLabel="SongNameLabel" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                                    <rect key="frame" x="10" y="12" width="375" height="30"/>
-                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="25"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lzk-oB-aRv" userLabel="SongNameLabel" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                                    <rect key="frame" x="10" y="12" width="375" height="32.5"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="27"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Composer Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqc-5a-J30" userLabel="ComposerNameLabel" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                                    <rect key="frame" x="10" y="50" width="132.5" height="23"/>
+                                                    <rect key="frame" x="10" y="50.5" width="132.5" height="23"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -49,17 +50,39 @@
                                                     <rect key="frame" x="304" y="88.5" width="61" height="30"/>
                                                     <state key="normal" title="Practice "/>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arranger Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUe-Zv-8o3" userLabel="ArrangerNameLabel" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                                    <rect key="frame" x="10" y="79.5" width="121" height="23"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="19"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publisher Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMc-4z-3pr" userLabel="PublisherNameLabel" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                                    <rect key="frame" x="10" y="108.5" width="126" height="23"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="19"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SATB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecr-gP-pE3" userLabel="InstrumentationLabel" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                                    <rect key="frame" x="329" y="18.5" width="36" height="19.5"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="QUi-Zs-kPx" secondAttribute="bottom" constant="10" id="9nl-X1-25R"/>
+                                                <constraint firstAttribute="bottom" secondItem="QUi-Zs-kPx" secondAttribute="bottom" constant="131.5" id="9nl-X1-25R"/>
+                                                <constraint firstAttribute="trailing" secondItem="ecr-gP-pE3" secondAttribute="trailing" constant="10" id="BmF-zY-Ifd"/>
                                                 <constraint firstItem="Lzk-oB-aRv" firstAttribute="leading" secondItem="Kwy-15-Ldk" secondAttribute="leading" constant="10" id="Ej6-Hr-F5n"/>
                                                 <constraint firstItem="Lzk-oB-aRv" firstAttribute="top" secondItem="Kwy-15-Ldk" secondAttribute="topMargin" constant="4" id="JYN-aC-SNb"/>
-                                                <constraint firstItem="rqc-5a-J30" firstAttribute="top" secondItem="Lzk-oB-aRv" secondAttribute="bottom" constant="8" id="Rgr-Pf-p8S"/>
+                                                <constraint firstItem="wUe-Zv-8o3" firstAttribute="leading" secondItem="rqc-5a-J30" secondAttribute="leading" id="Nlc-UQ-YkY"/>
+                                                <constraint firstItem="rqc-5a-J30" firstAttribute="top" secondItem="Lzk-oB-aRv" secondAttribute="bottom" constant="6" id="Rgr-Pf-p8S"/>
                                                 <constraint firstAttribute="trailing" secondItem="QUi-Zs-kPx" secondAttribute="trailing" constant="10" id="TnJ-vh-Jw6"/>
-                                                <constraint firstItem="rqc-5a-J30" firstAttribute="top" secondItem="Lzk-oB-aRv" secondAttribute="bottom" constant="8" symbolic="YES" id="XTZ-Dr-lIJ"/>
+                                                <constraint firstItem="ecr-gP-pE3" firstAttribute="centerY" secondItem="Lzk-oB-aRv" secondAttribute="centerY" id="fnb-rA-JFJ"/>
+                                                <constraint firstItem="wUe-Zv-8o3" firstAttribute="top" secondItem="rqc-5a-J30" secondAttribute="bottom" constant="6" id="mZM-cI-bin"/>
+                                                <constraint firstItem="LMc-4z-3pr" firstAttribute="top" secondItem="wUe-Zv-8o3" secondAttribute="bottom" constant="6" id="nQM-Gw-srA"/>
+                                                <constraint firstItem="LMc-4z-3pr" firstAttribute="leading" secondItem="wUe-Zv-8o3" secondAttribute="leading" id="rGi-Df-Npe"/>
                                                 <constraint firstItem="rqc-5a-J30" firstAttribute="leading" secondItem="Lzk-oB-aRv" secondAttribute="leading" id="rha-d1-Gk7"/>
-                                                <constraint firstItem="rqc-5a-J30" firstAttribute="top" secondItem="Lzk-oB-aRv" secondAttribute="bottom" constant="8" symbolic="YES" id="txO-V0-rAM"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
@@ -82,13 +105,16 @@
                                         <constraint firstItem="Kwy-15-Ldk" firstAttribute="top" secondItem="ffG-Jy-P9B" secondAttribute="topMargin" id="UCE-sJ-tEn"/>
                                         <constraint firstItem="Kwy-15-Ldk" firstAttribute="leading" secondItem="ffG-Jy-P9B" secondAttribute="leading" id="WbO-GA-VCe"/>
                                         <constraint firstItem="Kwy-15-Ldk" firstAttribute="centerX" secondItem="ffG-Jy-P9B" secondAttribute="centerX" id="jLj-79-zH8"/>
-                                        <constraint firstItem="Kwy-15-Ldk" firstAttribute="centerY" secondItem="ffG-Jy-P9B" secondAttribute="centerY" id="snT-VP-kFR"/>
+                                        <constraint firstItem="Kwy-15-Ldk" firstAttribute="centerY" secondItem="ffG-Jy-P9B" secondAttribute="centerY" constant="60.75" id="snT-VP-kFR"/>
                                         <constraint firstAttribute="trailing" secondItem="Kwy-15-Ldk" secondAttribute="trailing" id="wha-Lf-IDr"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="arrangerNameLabel" destination="wUe-Zv-8o3" id="W9a-2W-HN9"/>
                                     <outlet property="composerNameLabel" destination="rqc-5a-J30" id="rL8-15-s6O"/>
+                                    <outlet property="instrumentationLabel" destination="ecr-gP-pE3" id="aUy-l5-o7r"/>
                                     <outlet property="practiceButton" destination="QUi-Zs-kPx" id="ghn-Yb-kaq"/>
+                                    <outlet property="publisherNameLabel" destination="LMc-4z-3pr" id="3Yv-Ml-Gdm"/>
                                     <outlet property="songNameLabel" destination="Lzk-oB-aRv" id="BrJ-A1-GS8"/>
                                 </connections>
                             </tableViewCell>
@@ -100,15 +126,15 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VsQ-mY-0xm">
-                                            <rect key="frame" x="0.0" y="-1" width="375" height="44"/>
+                                            <rect key="frame" x="37.5" y="5.5" width="300" height="32.5"/>
                                             <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </webView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="VsQ-mY-0xm" firstAttribute="height" secondItem="eEO-RL-BvA" secondAttribute="height" id="5lm-xm-4L2"/>
+                                        <constraint firstItem="VsQ-mY-0xm" firstAttribute="height" secondItem="eEO-RL-BvA" secondAttribute="height" multiplier="3/4" id="5lm-xm-4L2"/>
                                         <constraint firstItem="VsQ-mY-0xm" firstAttribute="centerX" secondItem="eEO-RL-BvA" secondAttribute="centerX" id="6Km-tc-xee"/>
                                         <constraint firstItem="VsQ-mY-0xm" firstAttribute="centerY" secondItem="eEO-RL-BvA" secondAttribute="centerY" id="E0g-Ok-SMy"/>
-                                        <constraint firstItem="VsQ-mY-0xm" firstAttribute="width" secondItem="eEO-RL-BvA" secondAttribute="width" id="zj2-W6-kMB"/>
+                                        <constraint firstItem="VsQ-mY-0xm" firstAttribute="width" secondItem="eEO-RL-BvA" secondAttribute="width" multiplier="4/5" id="zj2-W6-kMB"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -122,20 +148,30 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qJO-L5-CZb">
-                                            <rect key="frame" x="0.0" y="-1" width="375" height="44"/>
-                                            <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </webView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PDF Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SD9-gY-K7q" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                            <rect key="frame" x="20" y="11" width="300" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1P-X8-hr2" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                            <rect key="frame" x="355.5" y="11" width="4.5" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="qJO-L5-CZb" firstAttribute="height" secondItem="gJy-iT-zIY" secondAttribute="height" id="KQf-QV-OOy"/>
-                                        <constraint firstItem="qJO-L5-CZb" firstAttribute="centerX" secondItem="gJy-iT-zIY" secondAttribute="centerX" id="bN2-5l-u0s"/>
-                                        <constraint firstItem="qJO-L5-CZb" firstAttribute="centerY" secondItem="gJy-iT-zIY" secondAttribute="centerY" id="dYw-wN-uEB"/>
-                                        <constraint firstItem="qJO-L5-CZb" firstAttribute="width" secondItem="gJy-iT-zIY" secondAttribute="width" id="gga-vL-TWL"/>
+                                        <constraint firstItem="W1P-X8-hr2" firstAttribute="centerY" secondItem="SD9-gY-K7q" secondAttribute="centerY" id="3dN-me-tJ7"/>
+                                        <constraint firstAttribute="trailing" secondItem="W1P-X8-hr2" secondAttribute="trailing" constant="15" id="GuJ-Km-WWu"/>
+                                        <constraint firstItem="SD9-gY-K7q" firstAttribute="centerY" secondItem="gJy-iT-zIY" secondAttribute="centerY" id="Nbc-w5-kMz"/>
+                                        <constraint firstItem="SD9-gY-K7q" firstAttribute="leading" secondItem="gJy-iT-zIY" secondAttribute="leading" constant="20" id="hXQ-Gk-IEi"/>
+                                        <constraint firstItem="SD9-gY-K7q" firstAttribute="width" secondItem="gJy-iT-zIY" secondAttribute="width" multiplier="4/5" id="x0T-q9-9xr"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="wv" destination="qJO-L5-CZb" id="Dqb-uq-T2I"/>
+                                    <outlet property="openPDFLabel" destination="W1P-X8-hr2" id="U9k-Ip-D0a"/>
+                                    <outlet property="pdfNameLabel" destination="SD9-gY-K7q" id="28F-zR-Utv"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

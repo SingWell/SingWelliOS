@@ -104,8 +104,8 @@ class RosterTableViewController: UITableViewController {
             user = roster[indexPath.row]
         }
         
-        let navCon = AppStoryboard.Profile.initialViewController() as! SideItemNavigationViewController
-        let nextVc = navCon.topViewController as! ProfileViewController
+        let navCon = AppStoryboard.User.initialViewController() as! SideItemNavigationViewController
+        let nextVc = navCon.topViewController as! UserViewController
         
         nextVc.userId = user["id"].stringValue
         
