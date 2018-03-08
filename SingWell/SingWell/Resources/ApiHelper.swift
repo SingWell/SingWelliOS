@@ -20,15 +20,16 @@ class ApiHelper {
     //Had to create new post method in order to save userID value
     static func login(_ user: String, _ password: String, environment:String=PRODUCTION_ENV, completionHandler: @escaping (JSON?, Error?) -> ()){
         let parameters = [
-            "username": user,
+            "email": user,
             "password": password
         ]
         
         Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = 10
-        Alamofire.request(environment + "login", method: .post, parameters: parameters, encoding: JSONEncoding.default)
+        Alamofire.request(environment + "login/", method: .post, parameters: parameters, encoding: JSONEncoding.default)
             .responseJSON { response in
                 switch response.result {
                 case .success(let value):
+                    print("LOGIN - ",JSON(value))
                     completionHandler(JSON(value), nil)
                     AUTH_TOKEN = JSON(value)["token"].stringValue
                 case .failure(let error):
@@ -41,7 +42,6 @@ class ApiHelper {
     //Had to create new post method in order to save userID value
     static func register(email: String, firstname: String, lastname: String, password: String, environment:String=PRODUCTION_ENV, completionHandler: @escaping (JSON?, Error?) -> ()){
         let parameters = [
-            "username": "",
             "email": email,
             "first_name":firstname,
             "last_name":lastname,
