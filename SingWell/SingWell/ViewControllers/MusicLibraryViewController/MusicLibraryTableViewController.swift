@@ -142,7 +142,7 @@ extension MusicLibraryTableViewController: UISearchResultsUpdating {
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
         filteredMusicLibrary = musicLibrary.filter({( song : JSON) -> Bool in
-            return song["name"].stringValue.lowercased().contains(searchText.lowercased()) ||
+            return song["title"].stringValue.lowercased().contains(searchText.lowercased()) ||
                 song["composer"].stringValue.lowercased().contains(searchText.lowercased()) ||
                 song["instrumentation"].stringValue.lowercased().contains(searchText.lowercased())
         })
