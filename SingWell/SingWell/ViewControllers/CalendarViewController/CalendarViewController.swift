@@ -83,6 +83,7 @@ class CalendarViewController: UIViewController {
         ApiHelper.getEvents(orgId:self.orgId) { response, error in
             if error == nil {
                 self.events = response!.arrayValue
+                self.events = self.events.filter( JSON.currentChoirId )
                 self.eventDict = self.parseEvents(events: self.events)
                 self.calendarView.reloadData()
             } else {

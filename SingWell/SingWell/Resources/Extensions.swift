@@ -68,6 +68,8 @@ extension UIColor {
     }
 }
 
+var CURRENT_CHOIR_ID = 0
+
 extension JSON {
     static let formatter = DateFormatter()
     static let kDate = "date"
@@ -99,6 +101,10 @@ extension JSON {
         formatter.timeZone = .current
         formatter.locale = .current
         return $0[kDate].stringValue <= formatter.string(from: Date())
+    }
+    
+    static let currentChoirId: (JSON) -> Bool = {
+        return $0["choirs"].arrayValue.map{ $0.intValue }.contains(CURRENT_CHOIR_ID)
     }
 }
 

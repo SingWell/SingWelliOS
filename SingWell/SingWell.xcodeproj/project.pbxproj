@@ -124,9 +124,6 @@
 		16A7A3261FCE0CB800B32491 /* MusicLibraryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A3251FCE0CB800B32491 /* MusicLibraryTableViewCell.swift */; };
 		16A7A3291FCE13E000B32491 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A7A3281FCE13E000B32491 /* EventViewController.swift */; };
 		16A7A32B1FCE13E900B32491 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16A7A32A1FCE13E900B32491 /* Event.storyboard */; };
-		16B15229203F7B6B0038E399 /* Tallis If ye love me_Full.xml in Resources */ = {isa = PBXBuildFile; fileRef = 16B15228203F7B6B0038E399 /* Tallis If ye love me_Full.xml */; };
-		16B1522B203F7C270038E399 /* Allegri Miserere Full.xml in Resources */ = {isa = PBXBuildFile; fileRef = 16B1522A203F7C270038E399 /* Allegri Miserere Full.xml */; };
-		16B1522D203F7C900038E399 /* AveVerumMozart.mxl in Resources */ = {isa = PBXBuildFile; fileRef = 16B1522C203F7C900038E399 /* AveVerumMozart.mxl */; };
 		16B6DCEE202E58390043300D /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B6DCDF202E58390043300D /* Platform.swift */; };
 		16B6DCEF202E58390043300D /* SSBarControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 16B6DCE0202E58390043300D /* SSBarControl.m */; };
 		16B6DCF0202E58390043300D /* SingWell-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 16B6DCE1202E58390043300D /* SingWell-Bridging-Header.h */; };
@@ -156,6 +153,9 @@
 		525EF4B71FC3A4BB00C8E822 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525EF4B61FC3A4BB00C8E822 /* EditProfileViewController.swift */; };
 		525EF4B91FC3A4C600C8E822 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 525EF4B81FC3A4C600C8E822 /* EditProfile.storyboard */; };
 		526F5D5C1FCE13F9002F7D27 /* SettingsModal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 526F5D5B1FCE13F9002F7D27 /* SettingsModal.storyboard */; };
+		527089D02051EB3E00E7C1D0 /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527089CF2051EB3E00E7C1D0 /* EventTableViewController.swift */; };
+		527089D22051ECFC00E7C1D0 /* EventInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527089D12051ECFC00E7C1D0 /* EventInfoTableViewCell.swift */; };
+		527089D42051F10800E7C1D0 /* ProgramTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527089D32051F10800E7C1D0 /* ProgramTableViewCell.swift */; };
 		52AF5C7E203F715A009B12FB /* SongPDFTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AF5C7D203F715A009B12FB /* SongPDFTableViewCell.swift */; };
 		52D5ABA52048AF3D0019C5B4 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D5ABA22048AF3D0019C5B4 /* User.storyboard */; };
 		52D5ABA62048AF3D0019C5B4 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D5ABA32048AF3D0019C5B4 /* UserViewController.swift */; };
@@ -327,9 +327,6 @@
 		16A7A3251FCE0CB800B32491 /* MusicLibraryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicLibraryTableViewCell.swift; sourceTree = "<group>"; };
 		16A7A3281FCE13E000B32491 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		16A7A32A1FCE13E900B32491 /* Event.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
-		16B15228203F7B6B0038E399 /* Tallis If ye love me_Full.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Tallis If ye love me_Full.xml"; sourceTree = "<group>"; };
-		16B1522A203F7C270038E399 /* Allegri Miserere Full.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Allegri Miserere Full.xml"; sourceTree = "<group>"; };
-		16B1522C203F7C900038E399 /* AveVerumMozart.mxl */ = {isa = PBXFileReference; lastKnownFileType = file; path = AveVerumMozart.mxl; sourceTree = "<group>"; };
 		16B6DCDF202E58390043300D /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Platform.swift; path = SingWell/ViewControllers/PracticeViewController/SeeScoreFiles/Platform.swift; sourceTree = SOURCE_ROOT; };
 		16B6DCE0202E58390043300D /* SSBarControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSBarControl.m; path = SingWell/ViewControllers/PracticeViewController/SeeScoreFiles/SSBarControl.m; sourceTree = SOURCE_ROOT; };
 		16B6DCE1202E58390043300D /* SingWell-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SingWell-Bridging-Header.h"; path = "SingWell/ViewControllers/PracticeViewController/SeeScoreFiles/SingWell-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
@@ -363,6 +360,9 @@
 		525EF4B61FC3A4BB00C8E822 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		525EF4B81FC3A4C600C8E822 /* EditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
 		526F5D5B1FCE13F9002F7D27 /* SettingsModal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsModal.storyboard; sourceTree = "<group>"; };
+		527089CF2051EB3E00E7C1D0 /* EventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
+		527089D12051ECFC00E7C1D0 /* EventInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoTableViewCell.swift; sourceTree = "<group>"; };
+		527089D32051F10800E7C1D0 /* ProgramTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramTableViewCell.swift; sourceTree = "<group>"; };
 		52AF5C7D203F715A009B12FB /* SongPDFTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongPDFTableViewCell.swift; sourceTree = "<group>"; };
 		52D5ABA22048AF3D0019C5B4 /* User.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		52D5ABA32048AF3D0019C5B4 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
@@ -561,12 +561,9 @@
 		162D98351FA65CF6006068BC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				16B1522C203F7C900038E399 /* AveVerumMozart.mxl */,
-				16B1522A203F7C270038E399 /* Allegri Miserere Full.xml */,
 				5219880D20460C8A00770011 /* Allegri Miserere Score.pdf */,
 				1626ADD8202E60840028C7F7 /* piano_samples */,
 				166DF11E202E5F4C00C71B00 /* TestMXL.mxl */,
-				16B15228203F7B6B0038E399 /* Tallis If ye love me_Full.xml */,
 				166DF119202E5DF300C71B00 /* Airfont_340.dls */,
 				1617DF931FB39EEB0094C474 /* ApiHelper.swift */,
 				162D98361FA65D09006068BC /* Extensions.swift */,
@@ -687,6 +684,9 @@
 			children = (
 				16A7A3281FCE13E000B32491 /* EventViewController.swift */,
 				16A7A32A1FCE13E900B32491 /* Event.storyboard */,
+				527089CF2051EB3E00E7C1D0 /* EventTableViewController.swift */,
+				527089D12051ECFC00E7C1D0 /* EventInfoTableViewCell.swift */,
+				527089D32051F10800E7C1D0 /* ProgramTableViewCell.swift */,
 			);
 			path = EventViewController;
 			sourceTree = "<group>";
@@ -922,7 +922,6 @@
 				1626AE52202E609E0028C7F7 /* Piano.mf.62.m4a in Resources */,
 				52D5ABA52048AF3D0019C5B4 /* User.storyboard in Resources */,
 				1626AE4B202E609E0028C7F7 /* Piano.mf.102.m4a in Resources */,
-				16B1522D203F7C900038E399 /* AveVerumMozart.mxl in Resources */,
 				1626AE77202E609E0028C7F7 /* Piano.mf.104.m4a in Resources */,
 				1626AE54202E609E0028C7F7 /* Piano.mf.28.m4a in Resources */,
 				1626AE7E202E609E0028C7F7 /* Piano.mf.55.m4a in Resources */,
@@ -937,7 +936,6 @@
 				1626AE81202E609E0028C7F7 /* Piano.mf.101.m4a in Resources */,
 				1626AE7C202E609E0028C7F7 /* Piano.mf.75.m4a in Resources */,
 				1626AE5F202E609E0028C7F7 /* Piano.mf.91.m4a in Resources */,
-				16B1522B203F7C270038E399 /* Allegri Miserere Full.xml in Resources */,
 				16E211A11FC35E06009969B1 /* Calendar.storyboard in Resources */,
 				1626AE35202E609E0028C7F7 /* Piano.mf.83.m4a in Resources */,
 				1626AE64202E609E0028C7F7 /* Piano.mf.27.m4a in Resources */,
@@ -968,7 +966,6 @@
 				166DF11F202E5F4C00C71B00 /* TestMXL.mxl in Resources */,
 				1626AE58202E609E0028C7F7 /* Piano.mf.93.m4a in Resources */,
 				1626AE45202E609E0028C7F7 /* Piano.mf.46.m4a in Resources */,
-				16B15229203F7B6B0038E399 /* Tallis If ye love me_Full.xml in Resources */,
 				1626AE41202E609E0028C7F7 /* Piano.mf.54.m4a in Resources */,
 				5219880E20460C8A00770011 /* Allegri Miserere Score.pdf in Resources */,
 				1652FDAF1FB5018000D921EB /* Choir.storyboard in Resources */,
@@ -1219,6 +1216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				527089D22051ECFC00E7C1D0 /* EventInfoTableViewCell.swift in Sources */,
 				525EF4B71FC3A4BB00C8E822 /* EditProfileViewController.swift in Sources */,
 				16E2119F1FC35DFB009969B1 /* CalendarViewController.swift in Sources */,
 				16D2CFA21FBE424300FDFF4D /* ChoirNameTableViewCell.swift in Sources */,
@@ -1227,6 +1225,7 @@
 				521BCF2D1FB3A472000662F7 /* ProfileViewController.swift in Sources */,
 				523E97EC203514780034C6C2 /* SongTableViewController.swift in Sources */,
 				162D98371FA65D09006068BC /* Extensions.swift in Sources */,
+				527089D02051EB3E00E7C1D0 /* EventTableViewController.swift in Sources */,
 				16A7A3291FCE13E000B32491 /* EventViewController.swift in Sources */,
 				52218E171FB50C0400EC4DDA /* UIImageExtension.swift in Sources */,
 				166DF115202E5D0B00C71B00 /* SSPlayLoopGraphics.m in Sources */,
@@ -1258,6 +1257,7 @@
 				16E2119A1FC35DD7009969B1 /* RosterTableViewController.swift in Sources */,
 				1617DF941FB39EEB0094C474 /* ApiHelper.swift in Sources */,
 				1652FDAD1FB5016F00D921EB /* ChoirTableViewController.swift in Sources */,
+				527089D42051F10800E7C1D0 /* ProgramTableViewCell.swift in Sources */,
 				52FD88401FDDD05700958AAE /* NewEditProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

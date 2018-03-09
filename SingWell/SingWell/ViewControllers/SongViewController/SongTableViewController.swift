@@ -141,24 +141,24 @@ class SongTableViewController: UITableViewController {
             cell.composerNameLabel.text = "Composed By: " + songInfo["composer"].stringValue
             
             // Check if arranger data is available and diplay if it is
-            if(songInfo["arranger"].stringValue != ""){
-                cell.arrangerNameLabel.text = "Arranged By: " + songInfo["arranger"].stringValue
+            if(song["arranger"].stringValue != ""){
+                cell.arrangerNameLabel.text = "Arranged By: " + song["arranger"].stringValue
             }
             else {
                 cell.arrangerNameLabel.isHidden = true
             }
             
             // Check if publisher data is available and diplay if it is
-            if(songInfo["publisher"].stringValue != ""){
+            if(song["publisher"].stringValue != ""){
                 if(cell.arrangerNameLabel.isHidden == true) {
                     
                     // If no arranger, use that label instead
                     cell.publisherNameLabel.isHidden = true
                     cell.arrangerNameLabel.isHidden = false
-                    cell.arrangerNameLabel.text = "Published By: " + songInfo["publisher"].stringValue
+                    cell.arrangerNameLabel.text = "Published By: " + song["publisher"].stringValue
                 }
                 else {
-                    cell.publisherNameLabel.text = "Published By: " + songInfo["publisher"].stringValue
+                    cell.publisherNameLabel.text = "Published By: " + song["publisher"].stringValue
                 }
             }
             else {
@@ -170,6 +170,13 @@ class SongTableViewController: UITableViewController {
             cell.practiceButton.setImage( practiceImage, for: UIControlState.normal)
             cell.practiceButton.semanticContentAttribute = .forceRightToLeft
             cell.practiceButton.addTarget(self, action: #selector(goToPracticePage(_:)), for: .touchUpInside)
+            
+            if mxlFilename == "TestMXL.mxl" {
+                cell.practiceButton.isHidden = true
+            }
+            else {
+                cell.practiceButton.isHidden = false
+            }
             
             return cell
         case kSongYouTubeLink: // song resource cell - youtube link
