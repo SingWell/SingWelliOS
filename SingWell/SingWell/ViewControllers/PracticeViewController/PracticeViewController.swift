@@ -1267,8 +1267,12 @@ extension PracticeViewController: SSSyControls, SSUTempo, ScoreChangeHandler,  S
      */
     func partEnabled(_ partIndex : Int32) -> Bool
     {
-        return partInstrument(partIndex) != 0 // ensure we have a non-zero instrument id
+        
+        let enabled = partInstrument(partIndex) != 0 // ensure we have a non-zero instrument id
             && (!showingSinglePart || partIndex==Int32(showingSinglePartIndex))
+            && (partsToDisplay[Int(partIndex)]!["display"] as! Bool)
+        print("PRACTICE - enabled??: \(partIndex)",enabled)
+        return enabled
     }
     
     func partInstrument(_ partIndex : Int32) -> UInt32
