@@ -54,7 +54,7 @@ class ApiHelper {
                 switch response.result {
                 case .success(let value):
                     completionHandler(JSON(value), nil)
-                    print("REGISTER VALUE:", value)
+                    print("REGISTER - ", value)
 //                    AUTH_TOKEN = JSON(value)["token"].stringValue
                 case .failure(let error):
                     print("ERROR REGISTERING!", error)
@@ -65,7 +65,7 @@ class ApiHelper {
     
     static func makeGetCall(_ section: String, environment:String=PRODUCTION_ENV, completionHandler: @escaping (JSON?, Error?) -> ()) {
         
-        print("\(section)")
+//        print("\(section)")
         let headers = ["Authorization": "Token \(AUTH_TOKEN)"]
         Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = 10
         
@@ -85,7 +85,7 @@ class ApiHelper {
     static func makePostCall(_ section: String, environment:String=PRODUCTION_ENV, _ parameters: Parameters, completionHandler: @escaping (JSON?, Error?) -> ()) {
         let headers = ["Content-Type": "application/json", "Authorization" : "Token \(AUTH_TOKEN)"]
         Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = 10
-        print("\(parameters)")
+//        print("\(parameters)")
         
         Alamofire.request(environment+"\(section)", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
             .responseJSON { response in
@@ -102,13 +102,13 @@ class ApiHelper {
     static func makePutCall(_ section: String, environment:String=PRODUCTION_ENV, _ parameters: Parameters, completionHandler: @escaping (JSON?, Error?) -> ()) {
         let headers = ["Content-Type": "application/json", "Authorization" : "Token \(AUTH_TOKEN)"]
         Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = 10
-        print("\(parameters)")
+//        print("\(parameters)")
         
         Alamofire.request(environment+"\(section)", method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
             .responseString { response in
                 switch response.result {
                 case .success(let value):
-                    print("VALUE FOR \(section)",value)
+//                    print("VALUE FOR \(section)",value)
                     completionHandler(JSON(value), nil)
                 case .failure(let error):
                     print("ERROR FOR \(section)",error)
@@ -194,7 +194,7 @@ class ApiHelper {
                 switch encodingResult {
                 case .success(let upload, _, _):
                     upload.responseString { response in
-                        debugPrint(response)
+//                        debugPrint(response)
                         completionHandler(response.data?.base64EncodedString(),nil)
                     }
                     
@@ -243,7 +243,7 @@ class ApiHelper {
     
     //this will get choirs for a specific organization
     static func getChoirs(orgId:String, completionHandler: @escaping (JSON?, Error?) -> ()) {
-        makeGetCall("choirs/", completionHandler: completionHandler)
+        makeGetCall("choirs/?organization=\(orgId)", completionHandler: completionHandler)
     }
     
     //this will get choirs for a user

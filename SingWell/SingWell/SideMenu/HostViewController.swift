@@ -66,7 +66,7 @@ class HostViewController: MenuContainerViewController {
         controllerIdentifiers = identifiers
         self.contentViewControllers = contentControllers()
         
-        print("IDENTIFIERS: ",controllerIdentifiers)
+//        print("IDENTIFIERS: ",controllerIdentifiers)
     }
     
     private func contentControllers() -> [UIViewController] {
