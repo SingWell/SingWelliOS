@@ -258,7 +258,7 @@ class ApiHelper {
     
     //this will get events for a organization
     static func getEvents(orgId:String, completionHandler: @escaping (JSON?, Error?) -> ()) {
-        makeGetCall("organizations/\(orgId)/events/", completionHandler: completionHandler)
+        makeGetCall("events/", completionHandler: completionHandler)
     }
     
     //this will get a roster for a specific choir

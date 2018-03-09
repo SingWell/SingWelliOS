@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RRv-DK-kuU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ul2-I6-n7t">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,6 +11,7 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="AppleSDGothicNeo.ttc">
+            <string>AppleSDGothicNeo-Bold</string>
             <string>AppleSDGothicNeo-Regular</string>
         </array>
     </customFonts>
@@ -84,6 +85,151 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d9m-9Z-CRC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="88.799999999999997" y="123.68815592203899"/>
+        </scene>
+        <!--Event Table View Controller-->
+        <scene sceneID="HUS-6h-Kit">
+            <objects>
+                <tableViewController id="ul2-I6-n7t" customClass="EventTableViewController" customModule="SingWell" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fDw-dS-Kma" customClass="AnimatableTableView" customModule="IBAnimatable">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventInfoCell" rowHeight="208" id="T55-OO-ceJ" customClass="EventInfoTableViewCell" customModule="SingWell" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="208"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="T55-OO-ceJ" id="wS4-NH-sZi">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="207.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="PqF-hk-ytg" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                            <rect key="frame" x="16" y="11" width="174.5" height="41"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="34"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PsU-vz-fl6" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                            <rect key="frame" x="16" y="56" width="94" height="26"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="26" id="eQ1-GE-amK"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="26"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZu-mm-QUO" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                            <rect key="frame" x="16" y="102" width="41.5" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="oQS-z8-jzg"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="21"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPH-g3-S0B" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                            <rect key="frame" x="16" y="128" width="44" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="hUa-Q2-axt"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="21"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="PqF-hk-ytg" firstAttribute="leading" secondItem="PsU-vz-fl6" secondAttribute="leading" id="3oo-O0-tkN"/>
+                                        <constraint firstItem="xPH-g3-S0B" firstAttribute="top" secondItem="CZu-mm-QUO" secondAttribute="bottom" constant="5" id="9Wz-LB-UDa"/>
+                                        <constraint firstItem="CZu-mm-QUO" firstAttribute="top" secondItem="PsU-vz-fl6" secondAttribute="bottom" constant="20" id="A6t-EZ-Z5B"/>
+                                        <constraint firstItem="xPH-g3-S0B" firstAttribute="leading" secondItem="CZu-mm-QUO" secondAttribute="leading" id="HcN-DS-WFj"/>
+                                        <constraint firstItem="PsU-vz-fl6" firstAttribute="leading" secondItem="wS4-NH-sZi" secondAttribute="leading" constant="16" id="ICT-dM-8Ya"/>
+                                        <constraint firstItem="PqF-hk-ytg" firstAttribute="top" secondItem="wS4-NH-sZi" secondAttribute="top" constant="11" id="iVZ-bD-hfa"/>
+                                        <constraint firstItem="CZu-mm-QUO" firstAttribute="leading" secondItem="PsU-vz-fl6" secondAttribute="leading" id="k9i-40-YsG"/>
+                                        <constraint firstItem="PsU-vz-fl6" firstAttribute="top" secondItem="PqF-hk-ytg" secondAttribute="bottom" constant="4" id="tfq-0o-sqV"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="eventDateLabel" destination="CZu-mm-QUO" id="OnG-15-OjE"/>
+                                    <outlet property="eventLocationLabel" destination="PsU-vz-fl6" id="4lB-vp-KfG"/>
+                                    <outlet property="eventNameLabel" destination="PqF-hk-ytg" id="0bm-8i-xOt"/>
+                                    <outlet property="eventTimeLabel" destination="xPH-g3-S0B" id="Zx2-LV-hvp"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProgramCell" rowHeight="106" id="ifB-tb-g2Q" userLabel="ProgramCell" customClass="ProgramTableViewCell" customModule="SingWell" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="236" width="375" height="106"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ifB-tb-g2Q" id="AfT-nv-xfv">
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="105.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Field Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nf-yM-uo0" userLabel="Field Titile Label" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                            <rect key="frame" x="13" y="11" width="322" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="Akg-KF-onE"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="21"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DD3-O2-rqE" userLabel="Song Title Label" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                            <rect key="frame" x="13" y="33" width="314" height="20"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Composer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVP-Rt-7Jh" userLabel="Composer Label" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                            <rect key="frame" x="13" y="51" width="311" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="oa0-Nd-ydA"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntU-Qg-y6t" userLabel="Notes Label" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                            <rect key="frame" x="13" y="75" width="311" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="g6W-L0-3lY"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="GVP-Rt-7Jh" secondAttribute="trailing" constant="17" id="4dd-vg-L4B"/>
+                                        <constraint firstItem="DD3-O2-rqE" firstAttribute="top" secondItem="3nf-yM-uo0" secondAttribute="bottom" constant="1" id="IZ2-ht-n7K"/>
+                                        <constraint firstItem="3nf-yM-uo0" firstAttribute="leading" secondItem="AfT-nv-xfv" secondAttribute="leading" constant="13" id="QLZ-jF-LW4"/>
+                                        <constraint firstItem="3nf-yM-uo0" firstAttribute="top" secondItem="AfT-nv-xfv" secondAttribute="top" constant="11" id="VQM-dO-SKE"/>
+                                        <constraint firstAttribute="trailing" secondItem="DD3-O2-rqE" secondAttribute="trailing" constant="14" id="dRr-ZA-gpA"/>
+                                        <constraint firstItem="ntU-Qg-y6t" firstAttribute="top" secondItem="GVP-Rt-7Jh" secondAttribute="bottom" constant="4" id="dx8-dS-nFh"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="3nf-yM-uo0" secondAttribute="trailing" constant="-2" id="jkX-82-hSJ"/>
+                                        <constraint firstItem="GVP-Rt-7Jh" firstAttribute="top" secondItem="DD3-O2-rqE" secondAttribute="bottom" constant="-2" id="mKJ-cj-YIx"/>
+                                        <constraint firstItem="DD3-O2-rqE" firstAttribute="leading" secondItem="AfT-nv-xfv" secondAttribute="leading" constant="13" id="pUy-Fo-BdW"/>
+                                        <constraint firstAttribute="trailing" secondItem="ntU-Qg-y6t" secondAttribute="trailing" constant="17" id="rJW-Fb-hQ9"/>
+                                        <constraint firstItem="ntU-Qg-y6t" firstAttribute="leading" secondItem="AfT-nv-xfv" secondAttribute="leading" constant="13" id="vJU-oW-zEP"/>
+                                        <constraint firstItem="GVP-Rt-7Jh" firstAttribute="leading" secondItem="AfT-nv-xfv" secondAttribute="leading" constant="13" id="vlK-90-hTI"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="slide(in, left)"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="NotesLabel" destination="ntU-Qg-y6t" id="7Oh-4i-rtP"/>
+                                    <outlet property="composerLabel" destination="GVP-Rt-7Jh" id="USW-28-qnL"/>
+                                    <outlet property="fieldTitleLabel" destination="3nf-yM-uo0" id="yb2-rH-qJB"/>
+                                    <outlet property="songTitleLabel" destination="DD3-O2-rqE" id="iKN-ce-kvT"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ul2-I6-n7t" id="wCD-yz-Tep"/>
+                            <outlet property="delegate" destination="ul2-I6-n7t" id="r3V-1t-zhE"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Aq-X6-ef8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1013.6" y="94.902548725637189"/>
         </scene>
     </scenes>
 </document>

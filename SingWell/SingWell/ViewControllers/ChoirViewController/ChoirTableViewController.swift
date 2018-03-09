@@ -114,8 +114,9 @@ class ChoirTableViewController: UITableViewController {
     func getChoirEvents() {
         ApiHelper.getEvents(orgId: choirInfo["organization"].stringValue) { response, error in
             if error == nil {
-                let events = response!.arrayValue
-                
+                var events = response!.arrayValue
+                CURRENT_CHOIR_ID = self.choirInfo["id"].intValue
+                events = events.filter( JSON.currentChoirId )
                 self.upcomingChoirEvents = events.filter( JSON.futureDateStrings )
                 self.pastChoirEvents = events.filter( JSON.pastDateStrings )
 
@@ -223,7 +224,7 @@ class ChoirTableViewController: UITableViewController {
     }
     
     func viewEvent(indexPath:IndexPath) {
-        let nextVc = AppStoryboard.Event.initialViewController() as! EventViewController
+        let nextVc = AppStoryboard.Event.initialViewController() as! EventTableViewController
         nextVc.eventInfo = indexPath.section == 1 ? upcomingChoirEvents[indexPath.row] : pastChoirEvents[indexPath.row]
         self.navigationController?.pushViewController(nextVc, animated: true)
     }
