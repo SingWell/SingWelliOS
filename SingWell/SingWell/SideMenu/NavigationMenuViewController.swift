@@ -156,14 +156,27 @@ class SideItemNavigationViewController: AnimatableNavigationController, SideMenu
             }
             break
         case 736.0: // iPhone 7/8 Plus
+            let profileClass = String(describing: Optional(SingWell.ProfileViewController.self))
+            let choirClass = String(describing: Optional(SingWell.ChoirTableViewController.self))
             let vcClass = String(describing: self.childViewControllers.first?.classForCoder)
             if FIRST_CONTROLLER == true || !CLASS_INSETS.contains(vcClass) {
                 
                 self.additionalSafeAreaInsets = UIEdgeInsetsMake(0,0,0,0)
+                print("NO SAFE AREA INSETS",vcClass)
                 CLASS_INSETS.append(vcClass)
                 FIRST_CONTROLLER = false
             } else {
-                self.additionalSafeAreaInsets = UIEdgeInsetsMake(20,0,0,0)
+                if vcClass == profileClass && !CLASS_INSETS.contains(choirClass) {
+                    print("FIXING SAFE AREA INSETS")
+                    CLASS_INSETS.append(choirClass)
+                    self.additionalSafeAreaInsets = UIEdgeInsetsMake(0,0,0,0)
+                }
+                else {
+                    self.additionalSafeAreaInsets = UIEdgeInsetsMake(20,0,0,0)
+                    print("SAFE AREA INSETS")
+                }
+                
+                
             }
             break
         default:

@@ -13,6 +13,7 @@
         <array key="AppleSDGothicNeo.ttc">
             <string>AppleSDGothicNeo-Bold</string>
             <string>AppleSDGothicNeo-Regular</string>
+            <string>AppleSDGothicNeo-Thin</string>
         </array>
     </customFonts>
     <scenes>
@@ -29,10 +30,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4g-Oy-BYP" customClass="SSScrollView">
-                                <rect key="frame" x="0.0" y="60" width="375" height="440"/>
+                                <rect key="frame" x="0.0" y="80" width="375" height="420"/>
                             </scrollView>
                             <label hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="the quick brown fox jumps over the lazy dog. the quick brown fox jumps over the lazy dog. " lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="705" translatesAutoresizingMaskIntoConstraints="NO" id="scI-iH-Hwe">
-                                <rect key="frame" x="5" y="90" width="365" height="100"/>
+                                <rect key="frame" x="5" y="110" width="365" height="100"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="DpU-dt-Z29"/>
@@ -48,7 +49,7 @@
                                 <rect key="frame" x="8" y="475.5" width="38" height="14.5"/>
                             </stackView>
                             <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrA-63-8aV">
-                                <rect key="frame" x="87.5" y="76" width="200" height="200"/>
+                                <rect key="frame" x="87.5" y="99.5" width="200" height="200"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="i5o-EB-wSF"/>
@@ -61,9 +62,9 @@
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qFw-r5-1H7">
                                 <rect key="frame" x="16" y="556.5" width="42" height="14.5"/>
                             </stackView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Filename" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="HxC-Ux-jnI">
-                                <rect key="frame" x="8" y="24" width="351" height="26.5"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="22"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Filename" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="HxC-Ux-jnI" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                <rect key="frame" x="8" y="52" width="351" height="22"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -75,10 +76,10 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QRF-dc-4iq">
-                                <rect key="frame" x="375" y="60" width="0.0" height="0.0"/>
+                                <rect key="frame" x="375" y="80" width="0.0" height="0.0"/>
                                 <subviews>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aER-CK-qOC">
-                                        <rect key="frame" x="-375" y="-60" width="0.0" height="27"/>
+                                        <rect key="frame" x="-375" y="-80" width="0.0" height="27"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                         <state key="normal" title="OMR Edit"/>
@@ -98,16 +99,23 @@
                                     <action selector="play:" destination="vyv-ZE-fvR" eventType="touchUpInside" id="xVH-wM-48T"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Song Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="o9T-t3-qEK" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                <rect key="frame" x="8" y="26" width="351" height="29"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="nrA-63-8aV" firstAttribute="centerX" secondItem="k58-rb-uqH" secondAttribute="centerX" id="2RL-Jx-gUy"/>
                             <constraint firstItem="a4g-Oy-BYP" firstAttribute="top" secondItem="QRF-dc-4iq" secondAttribute="bottom" id="BFP-dj-BHM"/>
                             <constraint firstAttribute="trailing" secondItem="sbV-1c-wfq" secondAttribute="trailing" constant="-20" id="HFH-uZ-rub"/>
-                            <constraint firstItem="HxC-Ux-jnI" firstAttribute="top" secondItem="sko-yd-SKb" secondAttribute="top" constant="4" id="JgA-0I-kFW"/>
-                            <constraint firstItem="scI-iH-Hwe" firstAttribute="top" secondItem="sko-yd-SKb" secondAttribute="top" constant="70" id="M1Z-Iv-IxN"/>
+                            <constraint firstItem="HxC-Ux-jnI" firstAttribute="top" secondItem="sko-yd-SKb" secondAttribute="top" constant="32" id="JgA-0I-kFW"/>
+                            <constraint firstItem="scI-iH-Hwe" firstAttribute="top" secondItem="sko-yd-SKb" secondAttribute="top" constant="90" id="M1Z-Iv-IxN"/>
                             <constraint firstItem="vFC-16-6S2" firstAttribute="top" secondItem="sbV-1c-wfq" secondAttribute="bottom" constant="105" id="Mbp-wE-Xmk"/>
                             <constraint firstAttribute="trailing" secondItem="QRF-dc-4iq" secondAttribute="trailing" id="Mzh-Vz-8f2"/>
+                            <constraint firstItem="sko-yd-SKb" firstAttribute="trailing" secondItem="o9T-t3-qEK" secondAttribute="trailing" constant="16" id="Nle-hQ-p8T"/>
                             <constraint firstItem="sbV-1c-wfq" firstAttribute="top" secondItem="FV6-Nv-dFD" secondAttribute="bottom" constant="7" id="Nvb-m3-tR8"/>
                             <constraint firstItem="FV6-Nv-dFD" firstAttribute="top" secondItem="qFw-r5-1H7" secondAttribute="bottom" constant="9" id="UQx-k9-33J"/>
                             <constraint firstItem="HxC-Ux-jnI" firstAttribute="leading" secondItem="k58-rb-uqH" secondAttribute="leading" constant="8" id="XGL-kd-FcZ"/>
@@ -119,10 +127,12 @@
                             <constraint firstItem="crV-Ix-UUD" firstAttribute="centerX" secondItem="sko-yd-SKb" secondAttribute="centerX" id="d8b-f8-WUQ"/>
                             <constraint firstItem="qFw-r5-1H7" firstAttribute="leading" secondItem="k58-rb-uqH" secondAttribute="leadingMargin" id="emY-CD-s1Z"/>
                             <constraint firstItem="scI-iH-Hwe" firstAttribute="centerX" secondItem="k58-rb-uqH" secondAttribute="centerX" id="fY4-Ur-eZU"/>
+                            <constraint firstItem="o9T-t3-qEK" firstAttribute="top" secondItem="sko-yd-SKb" secondAttribute="top" constant="6" id="lkI-RS-lze"/>
                             <constraint firstItem="sko-yd-SKb" firstAttribute="trailing" secondItem="HxC-Ux-jnI" secondAttribute="trailing" constant="16" id="myD-42-avv"/>
                             <constraint firstItem="sbV-1c-wfq" firstAttribute="leading" secondItem="k58-rb-uqH" secondAttribute="leading" id="n4A-Y1-kzM"/>
                             <constraint firstItem="sbV-1c-wfq" firstAttribute="top" secondItem="a4g-Oy-BYP" secondAttribute="bottom" constant="12" id="nhz-Oe-Qiq"/>
-                            <constraint firstItem="a4g-Oy-BYP" firstAttribute="top" secondItem="sko-yd-SKb" secondAttribute="top" constant="40" id="qqM-cF-Umn"/>
+                            <constraint firstItem="o9T-t3-qEK" firstAttribute="leading" secondItem="sko-yd-SKb" secondAttribute="leading" constant="8" id="per-ph-nte"/>
+                            <constraint firstItem="a4g-Oy-BYP" firstAttribute="top" secondItem="sko-yd-SKb" secondAttribute="top" constant="60" id="qqM-cF-Umn"/>
                             <constraint firstItem="nrA-63-8aV" firstAttribute="top" secondItem="HxC-Ux-jnI" secondAttribute="bottom" constant="25.5" id="tzs-fr-PGj"/>
                             <constraint firstAttribute="trailing" secondItem="scI-iH-Hwe" secondAttribute="trailing" constant="5" id="uUe-iG-OKW"/>
                         </constraints>
@@ -134,13 +144,14 @@
                     <connections>
                         <outlet property="barControl" destination="sbV-1c-wfq" id="hWr-8F-1qn"/>
                         <outlet property="countInLabel" destination="nrA-63-8aV" id="ApU-ge-Lld"/>
+                        <outlet property="filenameLabel" destination="HxC-Ux-jnI" id="G0k-LA-Knx"/>
                         <outlet property="layoutControl" destination="dFG-kH-0BE" id="s5I-S2-QpJ"/>
                         <outlet property="metronomeSwitch" destination="E6C-cq-c9J" id="bTh-oR-uhe"/>
                         <outlet property="playButton" destination="crV-Ix-UUD" id="7Wh-qG-xx3"/>
                         <outlet property="sysScrollView" destination="a4g-Oy-BYP" id="a6Q-gm-rEd"/>
                         <outlet property="tempoLabel" destination="loh-a0-rYR" id="XdY-Ug-a2Z"/>
                         <outlet property="tempoSlider" destination="VhM-iI-pVN" id="ZMz-0w-usZ"/>
-                        <outlet property="titleLabel" destination="HxC-Ux-jnI" id="LFC-Yu-C5O"/>
+                        <outlet property="titleLabel" destination="o9T-t3-qEK" id="JWg-NQ-Jzr"/>
                         <outlet property="warningLabel" destination="scI-iH-Hwe" id="jiJ-Rr-13Y"/>
                     </connections>
                 </viewController>
