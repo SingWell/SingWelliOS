@@ -38,7 +38,7 @@ class MusicLibraryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("SONG:",musicLibrary[0].stringValue)
+//        print("SONG:",musicLibrary[0].stringValue)
         
         self.getMusicLibrary()
         
