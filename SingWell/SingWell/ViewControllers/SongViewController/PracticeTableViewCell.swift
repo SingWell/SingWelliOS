@@ -1,17 +1,17 @@
 //
-//  SongPDFTableViewCell.swift
+//  PracticeTableViewCell.swift
 //  SingWell
 //
-//  Created by Elena Sharp on 2/22/18.
+//  Created by Elena Sharp on 3/22/18.
 //  Copyright © 2018 Travis Siems. All rights reserved.
 //
 
 import UIKit
 import IBAnimatable
 
-class SongPDFTableViewCell: AnimatableTableViewCell {
+class PracticeTableViewCell: AnimatableTableViewCell {
 
-    @IBOutlet weak var pdfNameLabel: AnimatableLabel!
+    @IBOutlet weak var mxlNameLabel: AnimatableLabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

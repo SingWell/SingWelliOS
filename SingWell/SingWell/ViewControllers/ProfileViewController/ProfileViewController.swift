@@ -110,11 +110,12 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     @IBAction func unwindToSaveProfile(_ sender: UIStoryboardSegue) {
         // Refresh data
+        setProfile()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        getProfile()
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        getProfile()
+//    }
     
     func setNavigationItems() {
         // Add Menu button on navigation bar programmatically
@@ -239,6 +240,103 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
 //        var profileImage: UIImage = UIImage(named: "profileImage")!
 //        profileImage = profileImage.circleMasked!
 //        profileImageView.image = profileImage
+        
+        let profileBackgroundImage: UIImage = UIImage(named: "profileBackground")!
+        profileBackgroundImageView.image = profileBackgroundImage
+        
+        var profileName = ""
+        if(user != []){
+            profileName = user["first_name"].stringValue + " " + user["last_name"].stringValue
+        }
+        if(profileName == ""){
+            profileName = "No Name"
+        }
+        
+        profileNameLabel.text = profileName
+    }
+    
+    func setProfile() {
+        print("Setting profile")
+        if(user["bio"].exists()){
+            biographyView.isHidden = false
+            biographyTextView.text = user["bio"].stringValue
+        }
+        else{
+            biographyView.isHidden = true
+        }
+        
+        if(user["date_of_birth"].exists()){
+            birthdayView.isHidden = false
+            birthdayLabel.text = user["date_of_birth"].stringValue
+        }
+        else{
+            birthdayView.isHidden = true
+        }
+        
+        if(user["email"].exists()){
+            emailButton.setTitle(user["email"].stringValue, for: .normal)
+            emailButton.isHidden = false
+        }
+        else {
+            emailButton.isHidden = true
+        }
+        if(user["phone_number"].exists()){
+            phoneNumberButton.setTitle(user["phone_number"].stringValue, for: .normal)
+            //                = user["phone_number"].stringValue
+            phoneNumberButton.isHidden = false
+        }
+        else {
+            //            phoneNumberButton.setTitle("9999999999", for: .normal)
+            //            phoneNumberButton.titleLabel?.text = "9999999999"
+            phoneNumberButton.isHidden = true
+        }
+        
+        if(!user["email"].exists() && !user["phone_number"].exists()){
+            contactView.isHidden = true
+        }
+        else {
+            contactView.isHidden = false
+        }
+        
+        if(self.user["address"].exists()){
+            addressView.isHidden = false
+            addressLabel.text = user["address"].stringValue
+            addressLabel.isHidden = false
+        }
+        else {
+            addressLabel.isHidden = true
+        }
+        
+        if(user["city"].exists()){
+            addressView.isHidden = false
+            var tempAddLabel = user["city"].stringValue
+            if(user["state"].exists()){
+                let tempState = user["state"].stringValue
+                tempAddLabel += ", "
+                tempAddLabel += tempState
+            }
+            if(user["zip_code"].exists()){
+                let tempZip = user["zip_code"].stringValue
+                tempAddLabel += " "
+                tempAddLabel += tempZip
+            }
+            cityLabel.text = tempAddLabel
+            cityLabel.isHidden = false
+        }
+        else {
+            cityLabel.isHidden = true
+        }
+        
+        if(!user["address"].exists() && !user["city"].exists()){
+            addressView.isHidden = true
+        }
+        else {
+            addressView.isHidden = false
+        }
+        
+        //        var profileImage: UIImage = UIImage(named: "profileImage")!
+        //        profileImage = profileImage.circleMasked!
+        //        profileImageView.image = profileImage
         
         let profileBackgroundImage: UIImage = UIImage(named: "profileBackground")!
         profileBackgroundImageView.image = profileBackgroundImage

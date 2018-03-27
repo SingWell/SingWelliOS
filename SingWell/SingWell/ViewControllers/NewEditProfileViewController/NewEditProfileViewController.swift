@@ -11,6 +11,10 @@ import IBAnimatable
 import IoniconsKit
 import ImageIO
 
+protocol NewEditProfileDelegate: class {
+    func sendInfo(_ bio: String?, _ phoneNumber: String?, _ city: String?, _ address: String?, _ zipCode: String?, _ state: String?, _ birthday: String?)
+}
+
 class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     let scrollView = UIScrollView()
     
@@ -350,7 +354,23 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
             }
         }
         
+//        let nextVc = AppStoryboard.Profile.viewController(viewControllerClass: ProfileViewController) as! ProfileViewController
         
+//        nextVc.biographyTextView.text = biography
+//        nextVc.addressLabel.text = address
+//        nextVc.birthdayLabel.text = birthday
+//        nextVc.cityLabel.text = city
+//        nextVc.phoneNumberButton.setTitle(phoneNumber, for: .normal)
+//        nextVc.user["state"].string = state
+//        nextVc.user["bio"].string = biography
+//        nextVc.user["address"].string = address
+//        nextVc.user["date_of_birth"].string = birthday
+//        nextVc.user["city"].string = city
+//        nextVc.user["phone_number"].string = phoneNumber
+//        nextVc.user["zip_code"].string = zipCode
+        
+        
+//        delegate.sendInfo()
         
         // do unwindToSaveProfileSegue
         self.performSegue(withIdentifier: "unwindToSaveProfileSegue", sender: self)
@@ -423,16 +443,6 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

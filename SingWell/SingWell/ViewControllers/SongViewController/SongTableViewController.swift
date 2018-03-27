@@ -15,10 +15,11 @@ import PDFReader
 let kSongInfo = "Song Info"
 let kSongYouTubeLink = "Song YouTube Link"
 let kSongPDFResource = "Song PDF Resource"
+let kPractice = "Song Practice"
 
 class SongTableViewController: UITableViewController {
     
-    let SECTIONS:[String] = [kSongInfo, kSongYouTubeLink, kSongPDFResource]
+    let SECTIONS:[String] = [kSongInfo, kPractice, kSongYouTubeLink, kSongPDFResource]
     
     var songInfo:JSON = [
         "name":"My Favorite Things",
@@ -36,15 +37,19 @@ class SongTableViewController: UITableViewController {
     var youtubeLink = "https://www.youtube.com/embed/DsUWFVKJwBM"
     var songResources:[JSON] = []
     var pdfNum : [Int] = []
+    var mxlNum : [Int] = []
     
     var numYTLinks = 1
     var numPDF = 0
+    var numML = 0
     var mxlFilename = "TestMXL.mxl"
     
     let BACKGROUND_COLOR = UIColor.init(hexString: "eeeeee")
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        self.clearAllFilesFromTempDirectory()
         
         self.getMusicRecord()
         
@@ -80,13 +85,29 @@ class SongTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 3
+        return 4
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch SECTIONS[section] {
         case kSongInfo: // choir info cell
             return 1
+        case kPractice:
+            var count = 0
+            for resource in songResources {
+                if resource["extension"].stringValue == "xml" {
+                    saveMXLFile(resourceID: resource["resource_id"].stringValue, recordID: songInfo["id"].stringValue, fileName: resource["title"].stringValue)
+                    mxlNum.append(count)
+                    numML += 1
+                }
+                if resource["extension"].stringValue == "mxl" {
+                    saveMXLFile(resourceID: resource["resource_id"].stringValue, recordID: songInfo["id"].stringValue, fileName: resource["title"].stringValue)
+                    mxlNum.append(count)
+                    numML += 1
+                }
+                count += 1
+            }
+            return numML
         case kSongYouTubeLink:
 //            for resource in songResources {
 //                if resource["extension"].stringValue == "pdf" {
@@ -101,12 +122,6 @@ class SongTableViewController: UITableViewController {
                     pdfNum.append(count)
                     numPDF += 1
                 }
-                if resource["extension"].stringValue == "xml" {
-                    saveMXLFile(resourceID: resource["resource_id"].stringValue, recordID: songInfo["id"].stringValue, fileName: resource["title"].stringValue)
-                }
-                if resource["extension"].stringValue == "mxl" {
-                    saveMXLFile(resourceID: resource["resource_id"].stringValue, recordID: songInfo["id"].stringValue, fileName: resource["title"].stringValue)
-                }
                 count += 1
             }
             return numPDF
@@ -118,10 +133,12 @@ class SongTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch SECTIONS[indexPath.section] {
         case kSongInfo:
-            return 200.0
+            return 150.0
         case kSongYouTubeLink:
             return 225.0
         case kSongPDFResource:
+            return 75.0
+        case kPractice:
             return 75.0
         default:
             return 175.0
@@ -165,19 +182,6 @@ class SongTableViewController: UITableViewController {
                 cell.publisherNameLabel.isHidden = true
             }
             
-            
-            let practiceImage = UIImage.ionicon(with: .androidMicrophone, textColor: UIColor.white, size: CGSize(width: 25, height: 25))
-            cell.practiceButton.setImage( practiceImage, for: UIControlState.normal)
-            cell.practiceButton.semanticContentAttribute = .forceRightToLeft
-            cell.practiceButton.addTarget(self, action: #selector(goToPracticePage(_:)), for: .touchUpInside)
-            
-            if mxlFilename == "TestMXL.mxl" {
-                cell.practiceButton.isHidden = true
-            }
-            else {
-                cell.practiceButton.isHidden = false
-            }
-            
             return cell
         case kSongYouTubeLink: // song resource cell - youtube link
             let cell = tableView.dequeueReusableCell(withIdentifier: "SongYouTubeCell", for: indexPath) as! SongYouTubeTableViewCell
@@ -193,8 +197,13 @@ class SongTableViewController: UITableViewController {
             
             cell.pdfNameLabel.text = songResources[resourceNum]["title"].stringValue
             
-            let openImage = UIImage.ionicon(with: .chevronRight, textColor: UIColor.init(hexString: "007aff"), size: CGSize(width: 25, height: 25))
-            cell.openPDFLabel.addImage(image: openImage, afterLabel: true)
+            return cell
+            
+        case kPractice: // song resource cell - pdf resource
+            let resourceNum = mxlNum[indexPath.row]
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PracticeCell", for: indexPath) as! PracticeTableViewCell
+            
+            cell.mxlNameLabel.text = songResources[resourceNum]["title"].stringValue
             
             return cell
             
@@ -208,7 +217,17 @@ class SongTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 2 {
+        if indexPath.section == 1 {
+            let resourceNum = mxlNum[indexPath.row]
+//            mxlFilename = songResources[resourceNum]["title"].stringValue
+//            goToPracticePage(_:)
+            let nextVc = AppStoryboard.Practice.initialViewController() as! PracticeViewController
+            print("LOADING: ",mxlFilename)
+            nextVc.filename = songResources[resourceNum]["title"].stringValue
+            
+            self.navigationController?.pushViewController(nextVc, animated: true)
+        }
+        if indexPath.section == 3 {
             let resourceNum = pdfNum[indexPath.row]
             getPDFResources(resourceID: songResources[resourceNum]["resource_id"].stringValue, recordID:songInfo["id"].stringValue, fileName: songResources[resourceNum]["title"].stringValue)
         }
@@ -249,6 +268,21 @@ class SongTableViewController: UITableViewController {
         mxlFilename = fileName
     }
     
+    func clearAllFilesFromTempDirectory(){
+        
+        let fileManager = FileManager.default
+        do {
+            let documentDirectory = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor:nil, create:false)
+            let docDirectory = documentDirectory.absoluteString
+            let filePaths = try fileManager.contentsOfDirectory(atPath: docDirectory)
+            for filePath in filePaths {
+                try fileManager.removeItem(atPath: docDirectory + filePath)
+            }
+        } catch {
+            print(error)
+        }
+    }
+    
     func getPDFResources(resourceID: String, recordID: String, fileName: String) {
 
         ApiHelper.downloadPDF(path: "resource", resourceID: resourceID, recordID: recordID) { data, error in
@@ -258,6 +292,15 @@ class SongTableViewController: UITableViewController {
             } else {
                 print("Error getting musicRecords: ",error as Any)
             }
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch SECTIONS[section] {
+        case kPractice:
+            return "Song Resources"
+        default:
+            return ""
         }
     }
 

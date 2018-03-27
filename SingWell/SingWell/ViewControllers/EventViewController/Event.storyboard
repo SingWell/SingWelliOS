@@ -11,8 +11,10 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="AppleSDGothicNeo.ttc">
-            <string>AppleSDGothicNeo-Bold</string>
+            <string>AppleSDGothicNeo-Light</string>
             <string>AppleSDGothicNeo-Regular</string>
+            <string>AppleSDGothicNeo-SemiBold</string>
+            <string>AppleSDGothicNeo-Thin</string>
         </array>
     </customFonts>
     <scenes>
@@ -161,49 +163,49 @@
                                     <rect key="frame" x="0.0" y="0.0" width="341" height="105.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Field Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nf-yM-uo0" userLabel="Field Titile Label" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Field Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nf-yM-uo0" userLabel="Field Titile Label" customClass="AnimatableLabel" customModule="IBAnimatable">
                                             <rect key="frame" x="13" y="11" width="322" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="Akg-KF-onE"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="21"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DD3-O2-rqE" userLabel="Song Title Label" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                            <rect key="frame" x="13" y="33" width="314" height="20"/>
-                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                            <rect key="frame" x="13" y="36" width="314" height="24"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Composer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVP-Rt-7Jh" userLabel="Composer Label" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                            <rect key="frame" x="13" y="51" width="311" height="20"/>
+                                            <rect key="frame" x="13" y="64" width="311" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="oa0-Nd-ydA"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntU-Qg-y6t" userLabel="Notes Label" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                            <rect key="frame" x="13" y="75" width="311" height="20"/>
+                                            <rect key="frame" x="13" y="88" width="311" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="g6W-L0-3lY"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="GVP-Rt-7Jh" secondAttribute="trailing" constant="17" id="4dd-vg-L4B"/>
-                                        <constraint firstItem="DD3-O2-rqE" firstAttribute="top" secondItem="3nf-yM-uo0" secondAttribute="bottom" constant="1" id="IZ2-ht-n7K"/>
+                                        <constraint firstItem="DD3-O2-rqE" firstAttribute="top" secondItem="3nf-yM-uo0" secondAttribute="bottom" constant="4" id="IZ2-ht-n7K"/>
                                         <constraint firstItem="3nf-yM-uo0" firstAttribute="leading" secondItem="AfT-nv-xfv" secondAttribute="leading" constant="13" id="QLZ-jF-LW4"/>
                                         <constraint firstItem="3nf-yM-uo0" firstAttribute="top" secondItem="AfT-nv-xfv" secondAttribute="top" constant="11" id="VQM-dO-SKE"/>
                                         <constraint firstAttribute="trailing" secondItem="DD3-O2-rqE" secondAttribute="trailing" constant="14" id="dRr-ZA-gpA"/>
                                         <constraint firstItem="ntU-Qg-y6t" firstAttribute="top" secondItem="GVP-Rt-7Jh" secondAttribute="bottom" constant="4" id="dx8-dS-nFh"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="3nf-yM-uo0" secondAttribute="trailing" constant="-2" id="jkX-82-hSJ"/>
-                                        <constraint firstItem="GVP-Rt-7Jh" firstAttribute="top" secondItem="DD3-O2-rqE" secondAttribute="bottom" constant="-2" id="mKJ-cj-YIx"/>
+                                        <constraint firstItem="GVP-Rt-7Jh" firstAttribute="top" secondItem="DD3-O2-rqE" secondAttribute="bottom" constant="4" id="mKJ-cj-YIx"/>
                                         <constraint firstItem="DD3-O2-rqE" firstAttribute="leading" secondItem="AfT-nv-xfv" secondAttribute="leading" constant="13" id="pUy-Fo-BdW"/>
                                         <constraint firstAttribute="trailing" secondItem="ntU-Qg-y6t" secondAttribute="trailing" constant="17" id="rJW-Fb-hQ9"/>
                                         <constraint firstItem="ntU-Qg-y6t" firstAttribute="leading" secondItem="AfT-nv-xfv" secondAttribute="leading" constant="13" id="vJU-oW-zEP"/>
