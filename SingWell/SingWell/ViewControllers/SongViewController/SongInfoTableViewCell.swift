@@ -13,8 +13,6 @@ class SongInfoTableViewCell: AnimatableTableViewCell {
 
     @IBOutlet weak var songNameLabel: AnimatableLabel!
     
-    @IBOutlet weak var practiceButton: AnimatableButton!
-    
     @IBOutlet weak var instrumentationLabel: AnimatableLabel!
     @IBOutlet weak var composerNameLabel: AnimatableLabel!
     @IBOutlet weak var arrangerNameLabel: AnimatableLabel!

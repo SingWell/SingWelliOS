@@ -124,6 +124,7 @@ class EventTableViewController: AnimatableTableViewController {
             
             cell.fieldTitleLabel.text = program[indexPath.row]["field_title"].stringValue
             cell.songTitleLabel.text = program[indexPath.row]["title"].stringValue
+            cell.songTitleLabel.font = UIFont.boldSystemFont(ofSize: 22.0)
             cell.composerLabel.text = program[indexPath.row]["composer"].stringValue
             cell.NotesLabel.text = program[indexPath.row]["notes"].stringValue
             

@@ -46,10 +46,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUi-Zs-kPx" userLabel="PracticeButton" customClass="AnimatableButton" customModule="IBAnimatable">
-                                                    <rect key="frame" x="304" y="88.5" width="61" height="30"/>
-                                                    <state key="normal" title="Practice "/>
-                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arranger Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUe-Zv-8o3" userLabel="ArrangerNameLabel" customClass="AnimatableLabel" customModule="IBAnimatable">
                                                     <rect key="frame" x="10" y="79.5" width="121" height="23"/>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="19"/>
@@ -71,13 +67,11 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="QUi-Zs-kPx" secondAttribute="bottom" constant="131.5" id="9nl-X1-25R"/>
                                                 <constraint firstAttribute="trailing" secondItem="ecr-gP-pE3" secondAttribute="trailing" constant="10" id="BmF-zY-Ifd"/>
                                                 <constraint firstItem="Lzk-oB-aRv" firstAttribute="leading" secondItem="Kwy-15-Ldk" secondAttribute="leading" constant="10" id="Ej6-Hr-F5n"/>
                                                 <constraint firstItem="Lzk-oB-aRv" firstAttribute="top" secondItem="Kwy-15-Ldk" secondAttribute="topMargin" constant="4" id="JYN-aC-SNb"/>
                                                 <constraint firstItem="wUe-Zv-8o3" firstAttribute="leading" secondItem="rqc-5a-J30" secondAttribute="leading" id="Nlc-UQ-YkY"/>
                                                 <constraint firstItem="rqc-5a-J30" firstAttribute="top" secondItem="Lzk-oB-aRv" secondAttribute="bottom" constant="6" id="Rgr-Pf-p8S"/>
-                                                <constraint firstAttribute="trailing" secondItem="QUi-Zs-kPx" secondAttribute="trailing" constant="10" id="TnJ-vh-Jw6"/>
                                                 <constraint firstItem="ecr-gP-pE3" firstAttribute="centerY" secondItem="Lzk-oB-aRv" secondAttribute="centerY" id="fnb-rA-JFJ"/>
                                                 <constraint firstItem="wUe-Zv-8o3" firstAttribute="top" secondItem="rqc-5a-J30" secondAttribute="bottom" constant="6" id="mZM-cI-bin"/>
                                                 <constraint firstItem="LMc-4z-3pr" firstAttribute="top" secondItem="wUe-Zv-8o3" secondAttribute="bottom" constant="6" id="nQM-Gw-srA"/>
@@ -113,7 +107,6 @@
                                     <outlet property="arrangerNameLabel" destination="wUe-Zv-8o3" id="W9a-2W-HN9"/>
                                     <outlet property="composerNameLabel" destination="rqc-5a-J30" id="rL8-15-s6O"/>
                                     <outlet property="instrumentationLabel" destination="ecr-gP-pE3" id="aUy-l5-o7r"/>
-                                    <outlet property="practiceButton" destination="QUi-Zs-kPx" id="ghn-Yb-kaq"/>
                                     <outlet property="publisherNameLabel" destination="LMc-4z-3pr" id="3Yv-Ml-Gdm"/>
                                     <outlet property="songNameLabel" destination="Lzk-oB-aRv" id="BrJ-A1-GS8"/>
                                 </connections>
@@ -137,40 +130,68 @@
                                         <constraint firstItem="VsQ-mY-0xm" firstAttribute="width" secondItem="eEO-RL-BvA" secondAttribute="width" multiplier="4/5" id="zj2-W6-kMB"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="slide(in, left)"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="wv" destination="VsQ-mY-0xm" id="hkD-Qd-l5d"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongPDFCell" id="HBe-cW-HkN" userLabel="SongPDFCell" customClass="SongPDFTableViewCell" customModule="SingWell" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PracticeCell" textLabel="gPe-h7-U4f" detailTextLabel="ItY-ee-M5o" style="IBUITableViewCellStyleValue1" id="VvB-Yb-unz" userLabel="PracticeSongCell" customClass="PracticeTableViewCell" customModule="SingWell" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="223" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HBe-cW-HkN" id="gJy-iT-zIY">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VvB-Yb-unz" id="jqq-Tk-xJg">
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PDF Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SD9-gY-K7q" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                            <rect key="frame" x="20" y="11" width="300" height="21"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gPe-h7-U4f" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                            <rect key="frame" x="16" y="12" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1P-X8-hr2" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                            <rect key="frame" x="355.5" y="11" width="4.5" height="21"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Practice" textAlignment="right" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" id="ItY-ee-M5o" userLabel="Practice" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                            <rect key="frame" x="277" y="12" width="63" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                </tableViewCellContentView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="slide(in, left)"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autoRun" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="mxlNameLabel" destination="gPe-h7-U4f" id="S1W-Ru-NTh"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SongPDFCell" id="HBe-cW-HkN" userLabel="SongPDFCell" customClass="SongPDFTableViewCell" customModule="SingWell" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="267" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HBe-cW-HkN" id="gJy-iT-zIY">
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PDF Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SD9-gY-K7q" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                            <rect key="frame" x="20" y="11" width="273" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <constraints>
-                                        <constraint firstItem="W1P-X8-hr2" firstAttribute="centerY" secondItem="SD9-gY-K7q" secondAttribute="centerY" id="3dN-me-tJ7"/>
-                                        <constraint firstAttribute="trailing" secondItem="W1P-X8-hr2" secondAttribute="trailing" constant="15" id="GuJ-Km-WWu"/>
                                         <constraint firstItem="SD9-gY-K7q" firstAttribute="centerY" secondItem="gJy-iT-zIY" secondAttribute="centerY" id="Nbc-w5-kMz"/>
                                         <constraint firstItem="SD9-gY-K7q" firstAttribute="leading" secondItem="gJy-iT-zIY" secondAttribute="leading" constant="20" id="hXQ-Gk-IEi"/>
                                         <constraint firstItem="SD9-gY-K7q" firstAttribute="width" secondItem="gJy-iT-zIY" secondAttribute="width" multiplier="4/5" id="x0T-q9-9xr"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="slide(in, left)"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <outlet property="openPDFLabel" destination="W1P-X8-hr2" id="U9k-Ip-D0a"/>
                                     <outlet property="pdfNameLabel" destination="SD9-gY-K7q" id="28F-zR-Utv"/>
                                 </connections>
                             </tableViewCell>

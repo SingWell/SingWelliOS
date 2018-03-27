@@ -161,6 +161,7 @@
 		52D5ABA62048AF3D0019C5B4 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D5ABA32048AF3D0019C5B4 /* UserViewController.swift */; };
 		52DA23DE1FD0B7B8004CD9E0 /* RosterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DA23DD1FD0B7B8004CD9E0 /* RosterTableViewCell.swift */; };
 		52EEFDCF203B3B9300E71045 /* SongYouTubeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EEFDCE203B3B9300E71045 /* SongYouTubeTableViewCell.swift */; };
+		52EF662620643E19000509D8 /* PracticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EF662520643E19000509D8 /* PracticeTableViewCell.swift */; };
 		52FD88401FDDD05700958AAE /* NewEditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FD883F1FDDD05700958AAE /* NewEditProfileViewController.swift */; };
 		52FD88421FDDD06600958AAE /* NewEditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52FD88411FDDD06600958AAE /* NewEditProfile.storyboard */; };
 		86F76E547079493C7DAADA22 /* Pods_SingWellTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5B7BEEE8800BC4F7098CCD /* Pods_SingWellTests.framework */; };
@@ -368,6 +369,7 @@
 		52D5ABA32048AF3D0019C5B4 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		52DA23DD1FD0B7B8004CD9E0 /* RosterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RosterTableViewCell.swift; sourceTree = "<group>"; };
 		52EEFDCE203B3B9300E71045 /* SongYouTubeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongYouTubeTableViewCell.swift; sourceTree = "<group>"; };
+		52EF662520643E19000509D8 /* PracticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeTableViewCell.swift; sourceTree = "<group>"; };
 		52FD883F1FDDD05700958AAE /* NewEditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEditProfileViewController.swift; sourceTree = "<group>"; };
 		52FD88411FDDD06600958AAE /* NewEditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewEditProfile.storyboard; sourceTree = "<group>"; };
 		56D8462546CB3640CFED1D64 /* Pods_SingWellUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SingWellUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -619,6 +621,7 @@
 				523E97ED203519BA0034C6C2 /* SongInfoTableViewCell.swift */,
 				52EEFDCE203B3B9300E71045 /* SongYouTubeTableViewCell.swift */,
 				52AF5C7D203F715A009B12FB /* SongPDFTableViewCell.swift */,
+				52EF662520643E19000509D8 /* PracticeTableViewCell.swift */,
 			);
 			path = SongViewController;
 			sourceTree = "<group>";
@@ -1220,6 +1223,7 @@
 				525EF4B71FC3A4BB00C8E822 /* EditProfileViewController.swift in Sources */,
 				16E2119F1FC35DFB009969B1 /* CalendarViewController.swift in Sources */,
 				16D2CFA21FBE424300FDFF4D /* ChoirNameTableViewCell.swift in Sources */,
+				52EF662620643E19000509D8 /* PracticeTableViewCell.swift in Sources */,
 				166228EB2033A46A008219B3 /* PracticeViewController.swift in Sources */,
 				16B6DCF2202E58390043300D /* SSScrollView.m in Sources */,
 				521BCF2D1FB3A472000662F7 /* ProfileViewController.swift in Sources */,
