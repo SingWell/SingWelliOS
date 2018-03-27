@@ -21,7 +21,7 @@ class SongTableViewController: UITableViewController {
     let SECTIONS:[String] = [kSongInfo, kSongYouTubeLink, kSongPDFResource]
     
     var songInfo:JSON = [
-        "name":"My Favorite Things",
+        "title":"My Favorite Things",
         "composer":"John Coltrane",
         "instrumentation":"SATB"
     ]
@@ -66,6 +66,7 @@ class SongTableViewController: UITableViewController {
         let nextVc = AppStoryboard.Practice.initialViewController() as! PracticeViewController
         print("LOADING: ",mxlFilename)
         nextVc.filename = mxlFilename
+        nextVc.songName = songInfo["title"].stringValue
         
         self.navigationController?.pushViewController(nextVc, animated: true)
     }

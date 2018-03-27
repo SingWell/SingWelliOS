@@ -13,18 +13,18 @@
         <scene sceneID="hOv-MR-cAX">
             <objects>
                 <viewController id="WQJ-XH-vw8" customClass="PracticeSettingsViewController" customModule="SingWell" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Uer-Hy-5u8">
+                    <view key="view" contentMode="scaleToFill" id="Uer-Hy-5u8" customClass="AnimatableView" customModule="IBAnimatable">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Practice Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCR-Fn-qD4">
-                                <rect key="frame" x="100" y="20" width="175.5" height="29"/>
+                                <rect key="frame" x="100" y="32" width="175.5" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TuH-oQ-Wn6">
-                                <rect key="frame" x="0.0" y="57" width="375" height="597"/>
+                                <rect key="frame" x="0.0" y="73" width="375" height="581"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TempoSettingCell" rowHeight="73" id="19D-a0-UBQ" customClass="TempoSettingCell" customModule="SingWell" customModuleProvider="target">
@@ -120,13 +120,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="tCR-Fn-qD4" firstAttribute="centerX" secondItem="J37-1D-dSI" secondAttribute="centerX" id="MjD-NI-xKb"/>
-                            <constraint firstItem="tCR-Fn-qD4" firstAttribute="top" secondItem="J37-1D-dSI" secondAttribute="top" id="MjK-8D-VpS"/>
+                            <constraint firstItem="tCR-Fn-qD4" firstAttribute="top" secondItem="J37-1D-dSI" secondAttribute="top" constant="12" id="MjK-8D-VpS"/>
                             <constraint firstItem="TuH-oQ-Wn6" firstAttribute="leading" secondItem="J37-1D-dSI" secondAttribute="leading" id="gZZ-lK-mwE"/>
-                            <constraint firstItem="TuH-oQ-Wn6" firstAttribute="top" secondItem="tCR-Fn-qD4" secondAttribute="bottom" constant="8" id="ix2-ai-kOq"/>
+                            <constraint firstItem="TuH-oQ-Wn6" firstAttribute="top" secondItem="tCR-Fn-qD4" secondAttribute="bottom" constant="12" id="ix2-ai-kOq"/>
                             <constraint firstItem="J37-1D-dSI" firstAttribute="trailing" secondItem="TuH-oQ-Wn6" secondAttribute="trailing" id="rAL-Xz-Cx0"/>
                             <constraint firstItem="J37-1D-dSI" firstAttribute="bottom" secondItem="TuH-oQ-Wn6" secondAttribute="bottom" constant="13" id="rsf-cu-CqI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="J37-1D-dSI"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="7"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="_modalWidth" value="ThreeQuarters"/>
