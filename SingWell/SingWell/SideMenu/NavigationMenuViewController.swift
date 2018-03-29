@@ -225,7 +225,7 @@ extension NavigationMenuViewController: UITableViewDelegate, UITableViewDataSour
             let cell = tableView.dequeueReusableCell(withIdentifier: kProfileCellReuseIdentifier, for: indexPath) as! ProfileTableViewCell
             cell.nameLabel?.text = username
             
-            let profileImage: UIImage = UIImage(named: "profileImage")!
+            let profileImage: UIImage = userProfilePicture
             cell.pictureView.image = profileImage
             
             return cell

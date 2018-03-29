@@ -117,19 +117,30 @@ class ApiHelper {
         }
     }
     
-    
-//    static func makeFileCall(_ section: String, environment:String=PRODUCTION_ENV, completionHandler: @escaping (Data?, Error?) -> ()) {
-//
-//        print("\(section)")
-//        let headers = ["Authorization": "Token \(AUTH_TOKEN)"]
-//        Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = 10
-//
-//        Alamofire.request(environment+"\(section)", headers:headers)
-//            .response { response in
-//                print(response)
-//                completionHandler(response.data, response.error)
-//        }
-//    }
+    static func makePatchCall(_ section: String, environment:String=PRODUCTION_ENV, _ parameters: Parameters, completionHandler: @escaping (JSON?, Error?) -> ()) {
+        let headers = ["Content-Type": "application/json", "Authorization" : "Token \(AUTH_TOKEN)"]
+        if let theJSONData = try? JSONSerialization.data(
+            withJSONObject: parameters,
+            options: [.prettyPrinted]) {
+            let theJSONText = String(data: theJSONData,
+                                     encoding: .ascii)
+            print("JSON string = \(theJSONText!)")
+        }
+        Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = 10
+        //        print("\(parameters)")
+        
+        Alamofire.request(environment+"\(section)", method: .patch, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+            .responseString { response in
+                switch response.result {
+                case .success(let value):
+                    //                    print("VALUE FOR \(section)",value)
+                    completionHandler(JSON(value), nil)
+                case .failure(let error):
+                    print("ERROR FOR \(section)",error)
+                    completionHandler(nil, error)
+                }
+        }
+    }
     
     static func makeFileCall(_ section: String, environment:String=PRODUCTION_ENV, completionHandler: @escaping (String?, Error?) -> ()) {
         //        let destination = DownloadRequest.suggestedDownloadDestination(for: .documentDirectory)
@@ -143,8 +154,9 @@ class ApiHelper {
     
     static func getProfilePic(_ section: String, environment:String=PRODUCTION_ENV, completionHandler: @escaping (String?, Error?) -> ()) {
         //        let destination = DownloadRequest.suggestedDownloadDestination(for: .documentDirectory)
+        let headers = ["Content-Type": "application/json", "Authorization" : "Token \(AUTH_TOKEN)"]
         
-        Alamofire.request(environment+"\(section)", encoding: JSONEncoding.default).responseString { response in
+        Alamofire.request(environment+"\(section)", encoding: JSONEncoding.default, headers: headers).responseString { response in
             //            print(response)
             completionHandler(response.value, response.error)
             
@@ -173,11 +185,12 @@ class ApiHelper {
         let imageData = UIImageJPEGRepresentation(image, 1.0)
         
         let parameters = [
-            "user_id": userId
+            "id": userId,
+            "picture_type" : "profile"
         ]
         
         Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = 10
-        let url = "http://ec2-34-215-244-252.us-west-2.compute.amazonaws.com/profilePictures/"
+        let url = "http://ec2-34-215-244-252.us-west-2.compute.amazonaws.com/pictures/"
         
         Alamofire.upload(
         
@@ -212,8 +225,8 @@ class ApiHelper {
         makeFileCall("resource/?resource_id=\(resourceID)&record_id=\(recordID)", completionHandler: completionHandler)
     }
     
-    static func getProfilePic(path:String, user_id:String, completionHandler: @escaping (String?, Error?) -> ()) {
-        getProfilePic("profilePictures/?user_id=4", completionHandler: completionHandler)
+    static func getPicture(path:String, id:String, type:String, completionHandler: @escaping (String?, Error?) -> ()) {
+        getProfilePic("pictures/?id=\(id)&picture_type=\(type)", completionHandler: completionHandler)
     }
     
     //this will get user for a specific id
@@ -223,7 +236,7 @@ class ApiHelper {
     
     //this will edit user for a specific id
     static func editUser(userId:String=userId, parameters: Parameters, completionHandler: @escaping (JSON?, Error?) -> ()) {
-        makePutCall("profile/", parameters, completionHandler: completionHandler)
+        makePatchCall("users/\(userId)/", parameters, completionHandler: completionHandler)
     }
     
     //this is for testing edit user TO BE DELETED later

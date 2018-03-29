@@ -56,6 +56,7 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
     var zipPassed = ""
     var profileImagePassed = UIImage()
     var birthdayPassed = ""
+    var newImage = UIImage()
     
     //Format Phone Number
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
@@ -189,7 +190,8 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
     
     func setProfile() {
         
-        var profileImage: UIImage = profileImagePassed
+        var profileImage: UIImage = userProfilePicture
+        newImage = profileImagePassed
         profileImage = profileImage.circleMasked!
         profileImageView.image = profileImage
         
@@ -336,7 +338,7 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
         
 //        let parameters: [String: AnyObject] = [ "phone_number": phoneNumber as AnyObject, "address": address! as AnyObject, "bio": biography as AnyObject, "city": city! as AnyObject,"zip_code": zipCode! as AnyObject, "state": state! as AnyObject, "date_of_birth": "" as AnyObject]
         
-        let parameters: [String: String] = [ "phone_number": phoneNumber, "address": address!, "bio": biography, "city": city!,"zip_code": zipCode!, "state": state!, "date_of_birth": birthday!]
+        let parameters: [String: Any] = [ "profile": ["phone_number": phoneNumber, "address": address!, "bio": biography, "city": city!,"zip_code": zipCode!, "state": state!, "date_of_birth": birthday!], "last_name": lastName, "first_name":firstName]
         
         ApiHelper.editUser(parameters: parameters) { response, error in
             if error == nil {
@@ -346,13 +348,14 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
             }
         }
         
-        ApiHelper.uploadImage(image: profileImageView.image!, fileName: "profilePic") { response, error in
+        ApiHelper.uploadImage(image: newImage, fileName: "profilePic") { response, error in
             if error == nil {
                 print("No error")
             } else {
                 print(error!)
             }
         }
+        userProfilePicture = newImage
         
 //        let nextVc = AppStoryboard.Profile.viewController(viewControllerClass: ProfileViewController) as! ProfileViewController
         
@@ -451,8 +454,39 @@ extension NewEditProfileViewController: UIImagePickerControllerDelegate, UINavig
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         picker.dismiss(animated: true)
         
+        let size = CGSize(width: 200, height:200)
+        
         // We always expect `imagePickerController(:didFinishPickingMediaWithInfo:)` to supply the original image.
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        var image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        image = self.resizeImage(image: image, targetSize: size)
+        newImage = image
         profileImageView.image = image
     }
+    
+    func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+        let size = image.size
+        
+        let widthRatio  = targetSize.width  / size.width
+        let heightRatio = targetSize.height / size.height
+        
+        // Figure out what our orientation is, and use that to form the rectangle
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+        } else {
+            newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+        }
+        
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        
+        // Actually do the resizing to the rect using the ImageContext stuff
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
+    }
 }
+
