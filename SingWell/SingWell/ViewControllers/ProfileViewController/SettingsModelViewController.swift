@@ -23,6 +23,21 @@ class SettingsModelViewController: AnimatableModalViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    @IBAction func logoutButtonPressed(sender: Any?) {
+        //logout:
+        let alertController = UIAlertController(title: "Logout", message:
+            "Are you sure?", preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "Yes, logout", style: UIAlertActionStyle.destructive) { action in
+            ApiHelper.logout()
+            self.performSegue(withIdentifier: "unwindToLoginSegue", sender: self)
+        })
+        alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel,handler: nil))
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    
 
     /*
     // MARK: - Navigation

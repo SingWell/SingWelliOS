@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vox-kd-i40">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,11 +16,11 @@
             <objects>
                 <viewController id="L3Z-2C-S4K" customClass="ProfileViewController" customModule="SingWell" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1bN-An-Zih">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="whE-ZY-vXf" userLabel="Background Image View" customClass="AnimatableImageView" customModule="IBAnimatable">
-                                <rect key="frame" x="0.0" y="64" width="375" height="209"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="209"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="209" id="eg4-fe-GVQ"/>
                                 </constraints>
@@ -43,7 +43,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tL9-BB-ita" customClass="AnimatableImageView" customModule="IBAnimatable">
-                                <rect key="frame" x="137.5" y="90" width="100" height="100"/>
+                                <rect key="frame" x="157" y="90" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="eT1-wY-OD7"/>
                                     <constraint firstAttribute="width" constant="100" id="uC0-Yu-tts"/>
@@ -58,29 +58,29 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3d-3e-42g" userLabel="Name Label" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                <rect key="frame" x="144.5" y="198" width="86" height="20.5"/>
+                                <rect key="frame" x="164.33333333333334" y="198" width="85.666666666666657" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" red="1" green="0.9895500495249947" blue="0.98637118383842937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJJ-hg-0AP">
-                                <rect key="frame" x="0.0" y="273" width="375" height="394"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mJJ-hg-0AP">
+                                <rect key="frame" x="0.0" y="273" width="414" height="463"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="EkE-z5-W7j" customClass="AnimatableStackView" customModule="IBAnimatable">
-                                        <rect key="frame" x="15" y="15" width="345" height="441"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillProportionally" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="EkE-z5-W7j" customClass="AnimatableStackView" customModule="IBAnimatable">
+                                        <rect key="frame" x="15" y="15" width="384" height="334.66666666666669"/>
                                         <subviews>
-                                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="x4b-bo-B84" userLabel="Bio Info View" customClass="AnimatableView" customModule="IBAnimatable">
-                                                <rect key="frame" x="0.0" y="0.0" width="345" height="78"/>
+                                            <view contentMode="scaleAspectFit" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x4b-bo-B84" userLabel="Bio Info View" customClass="AnimatableView" customModule="IBAnimatable">
+                                                <rect key="frame" x="0.0" y="0.0" width="384" height="59"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gRo-MP-Esd" userLabel="Biography Icon" customClass="AnimatableImageView" customModule="IBAnimatable">
-                                                        <rect key="frame" x="20" y="21.5" width="35" height="35"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gRo-MP-Esd" userLabel="Biography Icon" customClass="AnimatableImageView" customModule="IBAnimatable">
+                                                        <rect key="frame" x="20" y="12" width="35" height="35"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="35" id="3A9-5r-6rg"/>
                                                             <constraint firstAttribute="width" constant="35" id="lPD-BJ-PGr"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PMf-wc-vR6" userLabel="Separator " customClass="AnimatableView" customModule="IBAnimatable">
-                                                        <rect key="frame" x="70" y="2" width="2" height="74"/>
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PMf-wc-vR6" userLabel="Separator " customClass="AnimatableView" customModule="IBAnimatable">
+                                                        <rect key="frame" x="70" y="2" width="2" height="55"/>
                                                         <color key="backgroundColor" red="0.93086308179124033" green="0.93086308179124033" blue="0.93086308179124033" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <accessibility key="accessibilityConfiguration">
                                                             <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -95,13 +95,13 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Biography" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJQ-sk-xwd" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                                        <rect key="frame" x="87" y="8" width="77.5" height="20.5"/>
+                                                        <rect key="frame" x="87" y="7.9999999999999982" width="77.666666666666686" height="20.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Xm-0M-aWP" userLabel="Bio Text View" customClass="AnimatableTextView" customModule="IBAnimatable">
-                                                        <rect key="frame" x="87" y="29.5" width="253" height="43.5"/>
+                                                        <rect key="frame" x="87" y="29.333333333333314" width="292" height="24.666666666666671"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <accessibility key="accessibilityConfiguration">
                                                             <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
@@ -147,18 +147,18 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bA-Gp-D86" userLabel="Birthday Info View" customClass="AnimatableView" customModule="IBAnimatable">
-                                                <rect key="frame" x="0.0" y="89" width="345" height="79"/>
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8bA-Gp-D86" userLabel="Birthday Info View" customClass="AnimatableView" customModule="IBAnimatable">
+                                                <rect key="frame" x="0.0" y="70" width="384" height="60"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XOt-dl-9vb" userLabel="Birthday Icon" customClass="AnimatableImageView" customModule="IBAnimatable">
-                                                        <rect key="frame" x="20" y="21.5" width="35" height="35"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XOt-dl-9vb" userLabel="Birthday Icon" customClass="AnimatableImageView" customModule="IBAnimatable">
+                                                        <rect key="frame" x="20" y="12.333333333333314" width="35" height="35"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="35" id="72B-hy-KwI"/>
                                                             <constraint firstAttribute="width" constant="35" id="FdM-oO-TFH"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eqT-5D-H4a" userLabel="Separator " customClass="AnimatableView" customModule="IBAnimatable">
-                                                        <rect key="frame" x="70" y="2" width="2" height="75"/>
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eqT-5D-H4a" userLabel="Separator " customClass="AnimatableView" customModule="IBAnimatable">
+                                                        <rect key="frame" x="70" y="2" width="2" height="56"/>
                                                         <color key="backgroundColor" red="0.93086308179999999" green="0.93086308179999999" blue="0.93086308179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <accessibility key="accessibilityConfiguration">
                                                             <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -172,14 +172,14 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Cy-XS-x1x">
-                                                        <rect key="frame" x="87" y="8" width="64.5" height="20.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Birthday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Cy-XS-x1x">
+                                                        <rect key="frame" x="87" y="8" width="64.333333333333314" height="20.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGY-Er-M0D" userLabel="Birthday Label">
-                                                        <rect key="frame" x="87" y="30" width="58" height="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGY-Er-M0D" userLabel="Birthday Label">
+                                                        <rect key="frame" x="87" y="30" width="97" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="highlightedColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
@@ -218,18 +218,18 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DO8-eJ-mVh" userLabel="Contact Info View" customClass="AnimatableView" customModule="IBAnimatable">
-                                                <rect key="frame" x="0.0" y="179" width="345" height="80"/>
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DO8-eJ-mVh" userLabel="Contact Info View" customClass="AnimatableView" customModule="IBAnimatable">
+                                                <rect key="frame" x="0.0" y="141" width="384" height="60.666666666666657"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uVy-uC-3bm" userLabel="Contact Icon" customClass="AnimatableImageView" customModule="IBAnimatable">
-                                                        <rect key="frame" x="20" y="22" width="35" height="35"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uVy-uC-3bm" userLabel="Contact Icon" customClass="AnimatableImageView" customModule="IBAnimatable">
+                                                        <rect key="frame" x="20" y="13" width="35" height="35"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="35" id="Elc-qm-Qb0"/>
                                                             <constraint firstAttribute="height" constant="35" id="gOa-3C-uOb"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hHz-Mg-0fz" userLabel="Separator " customClass="AnimatableView" customModule="IBAnimatable">
-                                                        <rect key="frame" x="70" y="2" width="2" height="76"/>
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hHz-Mg-0fz" userLabel="Separator " customClass="AnimatableView" customModule="IBAnimatable">
+                                                        <rect key="frame" x="70" y="2" width="2" height="56.666666666666664"/>
                                                         <color key="backgroundColor" red="0.93086308179999999" green="0.93086308179999999" blue="0.93086308179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <accessibility key="accessibilityConfiguration">
                                                             <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -243,13 +243,13 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtp-Q1-7nL">
-                                                        <rect key="frame" x="85" y="8" width="152.5" height="20.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Contact Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtp-Q1-7nL">
+                                                        <rect key="frame" x="84.999999999999986" y="8" width="152.66666666666663" height="20.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4LU-VE-UgI" userLabel="Phone Number Button" customClass="AnimatableButton" customModule="IBAnimatable">
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4LU-VE-UgI" userLabel="Phone Number Button" customClass="AnimatableButton" customModule="IBAnimatable">
                                                         <rect key="frame" x="85" y="23" width="46" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <state key="normal">
@@ -259,8 +259,8 @@
                                                             <action selector="phoneNumberTap:" destination="L3Z-2C-S4K" eventType="touchUpInside" id="Ef7-ES-Q4B"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPM-8M-lBE" userLabel="Email Button" customClass="AnimatableButton" customModule="IBAnimatable">
-                                                        <rect key="frame" x="87" y="41" width="30" height="29"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPM-8M-lBE" userLabel="Email Button" customClass="AnimatableButton" customModule="IBAnimatable">
+                                                        <rect key="frame" x="87" y="21.666666666666686" width="30" height="29"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <state key="normal">
                                                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
@@ -304,18 +304,18 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pdH-lj-vTj" userLabel="Address View" customClass="AnimatableView" customModule="IBAnimatable">
-                                                <rect key="frame" x="0.0" y="270" width="345" height="80"/>
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pdH-lj-vTj" userLabel="Address View" customClass="AnimatableView" customModule="IBAnimatable">
+                                                <rect key="frame" x="0.0" y="212.66666666666669" width="384" height="61"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OAK-a9-Sl3" userLabel="Address Icon" customClass="AnimatableImageView" customModule="IBAnimatable">
-                                                        <rect key="frame" x="20" y="23" width="35" height="35"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OAK-a9-Sl3" userLabel="Address Icon" customClass="AnimatableImageView" customModule="IBAnimatable">
+                                                        <rect key="frame" x="20" y="12.999999999999943" width="35" height="35"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="35" id="EFZ-dk-j5e"/>
                                                             <constraint firstAttribute="height" constant="35" id="TDs-fY-zXC"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QH3-Jz-SIu" userLabel="Separator " customClass="AnimatableView" customModule="IBAnimatable">
-                                                        <rect key="frame" x="70" y="2" width="2" height="76"/>
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QH3-Jz-SIu" userLabel="Separator " customClass="AnimatableView" customModule="IBAnimatable">
+                                                        <rect key="frame" x="70" y="2" width="2" height="58"/>
                                                         <color key="backgroundColor" red="0.93086308179999999" green="0.93086308179999999" blue="0.93086308179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <accessibility key="accessibilityConfiguration">
                                                             <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -329,20 +329,20 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5il-BJ-tew" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                                        <rect key="frame" x="87" y="8" width="63" height="20.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5il-BJ-tew" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                                        <rect key="frame" x="87" y="8" width="63" height="20.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4n-Qv-iq0">
-                                                        <rect key="frame" x="87" y="32" width="0.0" height="18"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4n-Qv-iq0">
+                                                        <rect key="frame" x="87" y="31.999999999999943" width="0.0" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J67-ei-xK7">
-                                                        <rect key="frame" x="87" y="72" width="0.0" height="0.0"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J67-ei-xK7">
+                                                        <rect key="frame" x="87" y="52.999999999999943" width="0.0" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -383,18 +383,18 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Auj-OD-ANc" userLabel="Instrumentation View" customClass="AnimatableView" customModule="IBAnimatable">
-                                                <rect key="frame" x="0.0" y="361" width="345" height="80"/>
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Auj-OD-ANc" userLabel="Instrumentation View" customClass="AnimatableView" customModule="IBAnimatable">
+                                                <rect key="frame" x="0.0" y="284.66666666666663" width="384" height="50"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l1L-PJ-5oV" userLabel="Instrumentation Icon" customClass="AnimatableImageView" customModule="IBAnimatable">
-                                                        <rect key="frame" x="20" y="22.5" width="35" height="35"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l1L-PJ-5oV" userLabel="Instrumentation Icon" customClass="AnimatableImageView" customModule="IBAnimatable">
+                                                        <rect key="frame" x="20" y="7.3333333333333712" width="35" height="35"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="35" id="6LP-TP-ycP"/>
                                                             <constraint firstAttribute="height" constant="35" id="jQ2-LR-kbQ"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SLz-RX-cBc" userLabel="Separator " customClass="AnimatableView" customModule="IBAnimatable">
-                                                        <rect key="frame" x="70" y="2" width="2" height="76"/>
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SLz-RX-cBc" userLabel="Separator " customClass="AnimatableView" customModule="IBAnimatable">
+                                                        <rect key="frame" x="70" y="2" width="2" height="46"/>
                                                         <color key="backgroundColor" red="0.93086308179999999" green="0.93086308179999999" blue="0.93086308179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <accessibility key="accessibilityConfiguration">
                                                             <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -408,8 +408,8 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Oys-kw-yeh" userLabel="Instrument Collection View">
-                                                        <rect key="frame" x="77" y="20" width="263" height="40"/>
+                                                    <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Oys-kw-yeh" userLabel="Instrument Collection View">
+                                                        <rect key="frame" x="77" y="20" width="302" height="10"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZmV-X3-YR7">
                                                             <size key="itemSize" width="45" height="45"/>
@@ -480,7 +480,7 @@
                                 </constraints>
                             </scrollView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tjl-4U-GKY" userLabel="Edit Button Image View" customClass="AnimatableImageView" customModule="IBAnimatable">
-                                <rect key="frame" x="295" y="242" width="55" height="55"/>
+                                <rect key="frame" x="334" y="242" width="55" height="55"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                         <color key="value" red="0.93086308179999999" green="0.93086308179999999" blue="0.93086308179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -497,7 +497,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nnx-ix-0M9" userLabel="Edit Button" customClass="AnimatableButton" customModule="IBAnimatable">
-                                <rect key="frame" x="307" y="254" width="30" height="30"/>
+                                <rect key="frame" x="346" y="254" width="30" height="30"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -507,7 +507,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iPg-ZZ-uLi" userLabel="Notification Button Image View" customClass="AnimatableImageView" customModule="IBAnimatable">
-                                <rect key="frame" x="219" y="242" width="55" height="55"/>
+                                <rect key="frame" x="180" y="242" width="133" height="55"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                         <color key="value" red="0.93086308179999999" green="0.93086308179999999" blue="0.93086308179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -602,7 +602,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vox-kd-i40" customClass="SideItemNavigationViewController" customModule="SingWell" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Eq8-xe-x3D">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
