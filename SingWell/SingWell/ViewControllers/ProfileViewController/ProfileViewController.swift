@@ -365,6 +365,8 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             }
         }
     }
+    
+    
 
     /*
     // MARK: - Navigation

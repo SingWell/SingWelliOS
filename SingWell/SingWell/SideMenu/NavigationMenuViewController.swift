@@ -11,10 +11,16 @@ import InteractiveSideMenu
 import IBAnimatable
 import SwiftyJSON
 
+class LogoutTableViewCell: AnimatableTableViewCell {
+    @IBOutlet weak var logoutLabel: AnimatableLabel!
+    
+}
+
 class NavigationMenuViewController: MenuViewController {
 
     let kProfileCellReuseIdentifier = "ProfileCell"
     let kChoirNameCellReuseIdentifier = "ChoirNameCell"
+    let kLogoutCellReuseIdentifier = "LogoutCell"
     
     var username:String = "bob"
     var choirs:[JSON] = []
@@ -60,7 +66,9 @@ class NavigationMenuViewController: MenuViewController {
 //                            print(self.choirs)
                             
                             if numberOfChoirRequests == 0 && self.tableView != nil {
-                                self.tableView.reloadData()
+                                DispatchQueue.main.async {
+                                    self.tableView.reloadData()
+                                }
                             }
                         } else {
                             print(error!)
@@ -110,7 +118,7 @@ class NavigationMenuViewController: MenuViewController {
         guard self.menuContainerViewController != nil else {
             return
         }
-        
+        print("USER ID RN:",ApiHelper.userId)
         ApiHelper.getUser() {
             response, error in
             if error == nil {
@@ -118,7 +126,7 @@ class NavigationMenuViewController: MenuViewController {
                 self.setOrgsForUser(orgIds: response!["owned_organizations"])
                 
             } else {
-                print(error!)
+                print("ERROR GETTIN USER",error!)
             }
         }
     }
@@ -144,7 +152,7 @@ class SideItemNavigationViewController: AnimatableNavigationController, SideMenu
                 self.additionalSafeAreaInsets = UIEdgeInsetsMake(0,0,0,0)
                 FIRST_CONTROLLER = false
             } else {
-                self.additionalSafeAreaInsets = UIEdgeInsetsMake(44,0,0,0)
+//                self.additionalSafeAreaInsets = UIEdgeInsetsMake(44,0,0,0)
             }
             break
         case 667.0: // iPhone 7/8
@@ -152,7 +160,7 @@ class SideItemNavigationViewController: AnimatableNavigationController, SideMenu
                 self.additionalSafeAreaInsets = UIEdgeInsetsMake(0,0,0,0)
                 FIRST_CONTROLLER = false
             } else {
-                self.additionalSafeAreaInsets = UIEdgeInsetsMake(20,0,0,0)
+//                self.additionalSafeAreaInsets = UIEdgeInsetsMake(20,0,0,0)
             }
             break
         case 736.0: // iPhone 7/8 Plus
@@ -172,7 +180,7 @@ class SideItemNavigationViewController: AnimatableNavigationController, SideMenu
                     self.additionalSafeAreaInsets = UIEdgeInsetsMake(0,0,0,0)
                 }
                 else {
-                    self.additionalSafeAreaInsets = UIEdgeInsetsMake(20,0,0,0)
+//                    self.additionalSafeAreaInsets = UIEdgeInsetsMake(20,0,0,0)
                     print("SAFE AREA INSETS")
                 }
                 
@@ -203,8 +211,10 @@ extension NavigationMenuViewController: UITableViewDelegate, UITableViewDataSour
         switch section {
         case 0:
             return 1
-        default:
+        case 1:
             return choirs.count
+        default:
+            return 1
         }
     }
     
@@ -212,8 +222,10 @@ extension NavigationMenuViewController: UITableViewDelegate, UITableViewDataSour
         switch indexPath.section {
         case 0:
             return 80.0
-        default:
+        case 1:
             return 80.0
+        default:
+            return 50.0
         }
     }
     
@@ -229,7 +241,7 @@ extension NavigationMenuViewController: UITableViewDelegate, UITableViewDataSour
             cell.pictureView.image = profileImage
             
             return cell
-        default:
+        case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: kChoirNameCellReuseIdentifier, for: indexPath) as! ChoirNameTableViewCell
             
             let choir = self.choirs[indexPath.row]
@@ -244,6 +256,9 @@ extension NavigationMenuViewController: UITableViewDelegate, UITableViewDataSour
             
             cell.selectionStyle = .gray
             
+            return cell
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: kLogoutCellReuseIdentifier, for: indexPath) as! LogoutTableViewCell
             return cell
         }
         

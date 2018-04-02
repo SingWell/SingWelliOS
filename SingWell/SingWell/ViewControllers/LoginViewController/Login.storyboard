@@ -22,27 +22,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Zk-Q3-z64">
+                                <rect key="frame" x="84" y="601" width="206" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="kJB-aT-ZJT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="19"/>
+                                <state key="normal" title="New to SingWell? Sign Up">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="signUpButtonPressed:" destination="3rp-Bw-EZX" eventType="touchUpInside" id="aSJ-Ei-tQE"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HCl-0S-KB6" customClass="DTTextField" customModule="DTTextField">
-                                <rect key="frame" x="16" y="328.5" width="343" height="30"/>
+                                <rect key="frame" x="16" y="191.5" width="343" height="30"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jRf-RO-8Cf" customClass="DTTextField" customModule="DTTextField">
-                                <rect key="frame" x="16" y="401" width="343" height="30"/>
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jRf-RO-8Cf" customClass="DTTextField" customModule="DTTextField">
+                                <rect key="frame" x="16" y="263.5" width="343" height="30"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SingWell" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="SVE-P5-0Ey" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                <rect key="frame" x="16" y="189.5" width="343" height="67.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choir Connect" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="SVE-P5-0Ey" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                <rect key="frame" x="16" y="35" width="343" height="68"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="56"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eq6-Xf-fKp" customClass="AnimatableButton" customModule="IBAnimatable">
-                                <rect key="frame" x="16" y="498" width="343" height="35"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="19"/>
+                                <rect key="frame" x="16" y="360.5" width="343" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="5Xx-sd-Vvg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="26"/>
                                 <state key="normal" title="Log In">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -58,19 +74,6 @@
                                     <action selector="signInPressed:" destination="3rp-Bw-EZX" eventType="touchUpInside" id="I4h-5e-dj1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Zk-Q3-z64">
-                                <rect key="frame" x="84" y="601" width="206" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="kJB-aT-ZJT"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="19"/>
-                                <state key="normal" title="New to SingWell? Sign Up">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="signUpButtonPressed:" destination="3rp-Bw-EZX" eventType="touchUpInside" id="aSJ-Ei-tQE"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.62100949750000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -78,19 +81,22 @@
                             <constraint firstItem="65R-xh-en8" firstAttribute="trailing" secondItem="Eq6-Xf-fKp" secondAttribute="trailing" constant="16" id="58r-rM-apQ"/>
                             <constraint firstItem="Eq6-Xf-fKp" firstAttribute="top" secondItem="jRf-RO-8Cf" secondAttribute="bottom" constant="67" id="Dil-Ht-xdO"/>
                             <constraint firstItem="SVE-P5-0Ey" firstAttribute="leading" secondItem="65R-xh-en8" secondAttribute="leading" constant="16" id="FVd-Dv-cHp"/>
+                            <constraint firstItem="SVE-P5-0Ey" firstAttribute="top" secondItem="65R-xh-en8" secondAttribute="top" constant="15" id="QS6-x8-GRC"/>
                             <constraint firstItem="65R-xh-en8" firstAttribute="trailing" secondItem="SVE-P5-0Ey" secondAttribute="trailing" constant="16" id="SyU-qf-yf3"/>
                             <constraint firstItem="HCl-0S-KB6" firstAttribute="leading" secondItem="65R-xh-en8" secondAttribute="leading" constant="16" id="TE7-fg-o2m"/>
                             <constraint firstItem="Eq6-Xf-fKp" firstAttribute="leading" secondItem="65R-xh-en8" secondAttribute="leading" constant="16" id="Vtk-O1-UDT"/>
-                            <constraint firstItem="HCl-0S-KB6" firstAttribute="centerY" secondItem="65R-xh-en8" secondAttribute="centerY" id="hQ0-pQ-IGX"/>
                             <constraint firstItem="jRf-RO-8Cf" firstAttribute="top" secondItem="HCl-0S-KB6" secondAttribute="bottom" constant="42" id="rvf-M4-nF8"/>
                             <constraint firstItem="jRf-RO-8Cf" firstAttribute="leading" secondItem="65R-xh-en8" secondAttribute="leading" constant="16" id="s6j-dO-JPa"/>
                             <constraint firstItem="65R-xh-en8" firstAttribute="bottom" secondItem="2Zk-Q3-z64" secondAttribute="bottom" constant="36" id="s8T-x5-uqP"/>
                             <constraint firstItem="65R-xh-en8" firstAttribute="trailing" secondItem="jRf-RO-8Cf" secondAttribute="trailing" constant="16" id="srH-KC-AZW"/>
                             <constraint firstItem="2Zk-Q3-z64" firstAttribute="centerX" secondItem="65R-xh-en8" secondAttribute="centerX" id="v7N-dS-FZV"/>
-                            <constraint firstItem="HCl-0S-KB6" firstAttribute="top" secondItem="SVE-P5-0Ey" secondAttribute="bottom" constant="71.5" id="yfB-Du-9f3"/>
+                            <constraint firstItem="HCl-0S-KB6" firstAttribute="top" secondItem="SVE-P5-0Ey" secondAttribute="bottom" constant="88.5" id="yfB-Du-9f3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="65R-xh-en8"/>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="_transitionAnimationType" value="Fade(Forward)"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="emailField" destination="HCl-0S-KB6" id="0PC-p7-GVI"/>
                         <outlet property="passwordField" destination="jRf-RO-8Cf" id="3qE-dK-en8"/>
