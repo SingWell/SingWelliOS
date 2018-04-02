@@ -111,22 +111,38 @@
                                     <outlet property="songNameLabel" destination="Lzk-oB-aRv" id="BrJ-A1-GS8"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongYouTubeCell" id="HhZ-4s-43I" userLabel="SongYouTubeCell" customClass="SongYouTubeTableViewCell" customModule="SingWell" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="179" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongYouTubeCell" rowHeight="275" id="HhZ-4s-43I" userLabel="SongYouTubeCell" customClass="SongYouTubeTableViewCell" customModule="SingWell" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="179" width="375" height="275"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HhZ-4s-43I" id="eEO-RL-BvA">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="274.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VsQ-mY-0xm">
-                                            <rect key="frame" x="37.5" y="5.5" width="300" height="32.5"/>
+                                            <rect key="frame" x="37.5" y="34.5" width="300" height="205.5"/>
                                             <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </webView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAQ-2w-uII">
+                                            <rect key="frame" x="16" y="248" width="78" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SongTitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HIa-wN-eGf">
+                                            <rect key="frame" x="16" y="11" width="73" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="VsQ-mY-0xm" firstAttribute="height" secondItem="eEO-RL-BvA" secondAttribute="height" multiplier="3/4" id="5lm-xm-4L2"/>
                                         <constraint firstItem="VsQ-mY-0xm" firstAttribute="centerX" secondItem="eEO-RL-BvA" secondAttribute="centerX" id="6Km-tc-xee"/>
+                                        <constraint firstItem="nAQ-2w-uII" firstAttribute="leading" secondItem="eEO-RL-BvA" secondAttribute="leading" constant="16" id="7GO-o5-3Uy"/>
                                         <constraint firstItem="VsQ-mY-0xm" firstAttribute="centerY" secondItem="eEO-RL-BvA" secondAttribute="centerY" id="E0g-Ok-SMy"/>
+                                        <constraint firstItem="nAQ-2w-uII" firstAttribute="top" secondItem="VsQ-mY-0xm" secondAttribute="bottom" constant="8" id="gQE-Oc-hq1"/>
+                                        <constraint firstItem="HIa-wN-eGf" firstAttribute="top" secondItem="eEO-RL-BvA" secondAttribute="top" constant="11" id="tQv-7R-Cci"/>
+                                        <constraint firstItem="HIa-wN-eGf" firstAttribute="leading" secondItem="eEO-RL-BvA" secondAttribute="leading" constant="16" id="uwm-Az-Zc5"/>
                                         <constraint firstItem="VsQ-mY-0xm" firstAttribute="width" secondItem="eEO-RL-BvA" secondAttribute="width" multiplier="4/5" id="zj2-W6-kMB"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -134,11 +150,13 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="slide(in, left)"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <outlet property="descriptionLabel" destination="nAQ-2w-uII" id="UYk-7d-uSe"/>
+                                    <outlet property="songTitle" destination="HIa-wN-eGf" id="Sdr-QQ-ZJU"/>
                                     <outlet property="wv" destination="VsQ-mY-0xm" id="hkD-Qd-l5d"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PracticeCell" textLabel="gPe-h7-U4f" detailTextLabel="ItY-ee-M5o" style="IBUITableViewCellStyleValue1" id="VvB-Yb-unz" userLabel="PracticeSongCell" customClass="PracticeTableViewCell" customModule="SingWell" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="223" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="454" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VvB-Yb-unz" id="jqq-Tk-xJg">
                                     <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
@@ -169,7 +187,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SongPDFCell" id="HBe-cW-HkN" userLabel="SongPDFCell" customClass="SongPDFTableViewCell" customModule="SingWell" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="267" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="498" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HBe-cW-HkN" id="gJy-iT-zIY">
                                     <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>

@@ -12,7 +12,11 @@ import IBAnimatable
 class SongYouTubeTableViewCell: AnimatableTableViewCell {
     
     @IBOutlet weak var wv: UIWebView!
-
+    @IBOutlet weak var songTitle: UILabel!
+    
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
