@@ -13,6 +13,8 @@ import IoniconsKit
 import SwiftyJSON
 import MessageUI
 
+var userProfilePicture : UIImage = UIImage(named: "profileImage")!
+
 class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     var userId = "4"
@@ -110,12 +112,12 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     @IBAction func unwindToSaveProfile(_ sender: UIStoryboardSegue) {
         // Refresh data
-        setProfile()
+//        setProfile()
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        getProfile()
-//    }
+    override func viewDidAppear(_ animated: Bool) {
+        getProfile()
+    }
     
     func setNavigationItems() {
         // Add Menu button on navigation bar programmatically
@@ -159,18 +161,18 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func setProfile(user:JSON) {
-        print("Setting profile")
-        if(user["bio"].exists()){
+        
+        if(user["profile"]["bio"].exists()){
             biographyView.isHidden = false
-            biographyTextView.text = user["bio"].stringValue
+            biographyTextView.text = user["profile"]["bio"].stringValue
         }
         else{
             biographyView.isHidden = true
         }
         
-        if(user["date_of_birth"].exists()){
+        if(user["profile"]["date_of_birth"].exists()){
             birthdayView.isHidden = false
-            birthdayLabel.text = user["date_of_birth"].stringValue
+            birthdayLabel.text = user["profile"]["date_of_birth"].stringValue
         }
         else{
             birthdayView.isHidden = true
@@ -183,140 +185,42 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         else {
             emailButton.isHidden = true
         }
-        if(user["phone_number"].exists()){
-            phoneNumberButton.setTitle(user["phone_number"].stringValue, for: .normal)
-//                = user["phone_number"].stringValue
-            phoneNumberButton.isHidden = false
-        }
-        else {
-//            phoneNumberButton.setTitle("9999999999", for: .normal)
-//            phoneNumberButton.titleLabel?.text = "9999999999"
-            phoneNumberButton.isHidden = true
-        }
-        
-        if(!user["email"].exists() && !user["phone_number"].exists()){
-            contactView.isHidden = true
-        }
-        else {
-            contactView.isHidden = false
-        }
-        
-        if(self.user["address"].exists()){
-            addressView.isHidden = false
-            addressLabel.text = user["address"].stringValue
-            addressLabel.isHidden = false
-        }
-        else {
-            addressLabel.isHidden = true
-        }
-        
-        if(user["city"].exists()){
-            addressView.isHidden = false
-            var tempAddLabel = user["city"].stringValue
-            if(user["state"].exists()){
-                let tempState = user["state"].stringValue
-                tempAddLabel += ", "
-                tempAddLabel += tempState
-            }
-            if(user["zip_code"].exists()){
-                let tempZip = user["zip_code"].stringValue
-                tempAddLabel += " "
-                tempAddLabel += tempZip
-            }
-            cityLabel.text = tempAddLabel
-            cityLabel.isHidden = false
-        }
-        else {
-            cityLabel.isHidden = true
-        }
-        
-        if(!user["address"].exists() && !user["city"].exists()){
-            addressView.isHidden = true
-        }
-        else {
-            addressView.isHidden = false
-        }
-        
-//        var profileImage: UIImage = UIImage(named: "profileImage")!
-//        profileImage = profileImage.circleMasked!
-//        profileImageView.image = profileImage
-        
-        let profileBackgroundImage: UIImage = UIImage(named: "profileBackground")!
-        profileBackgroundImageView.image = profileBackgroundImage
-        
-        var profileName = ""
-        if(user != []){
-            profileName = user["first_name"].stringValue + " " + user["last_name"].stringValue
-        }
-        if(profileName == ""){
-            profileName = "No Name"
-        }
-        
-        profileNameLabel.text = profileName
-    }
-    
-    func setProfile() {
-        print("Setting profile")
-        if(user["bio"].exists()){
-            biographyView.isHidden = false
-            biographyTextView.text = user["bio"].stringValue
-        }
-        else{
-            biographyView.isHidden = true
-        }
-        
-        if(user["date_of_birth"].exists()){
-            birthdayView.isHidden = false
-            birthdayLabel.text = user["date_of_birth"].stringValue
-        }
-        else{
-            birthdayView.isHidden = true
-        }
-        
-        if(user["email"].exists()){
-            emailButton.setTitle(user["email"].stringValue, for: .normal)
-            emailButton.isHidden = false
-        }
-        else {
-            emailButton.isHidden = true
-        }
-        if(user["phone_number"].exists()){
-            phoneNumberButton.setTitle(user["phone_number"].stringValue, for: .normal)
-            //                = user["phone_number"].stringValue
+        if(user["profile"]["phone_number"].exists()){
+            phoneNumberButton.setTitle(user["profile"]["phone_number"].stringValue, for: .normal)
             phoneNumberButton.isHidden = false
         }
         else {
             //            phoneNumberButton.setTitle("9999999999", for: .normal)
-            //            phoneNumberButton.titleLabel?.text = "9999999999"
+            phoneNumberButton.titleLabel?.text = "9999999999"
             phoneNumberButton.isHidden = true
         }
         
-        if(!user["email"].exists() && !user["phone_number"].exists()){
+        if(!user["email"].exists() && !user["profile"]["phone_number"].exists()){
             contactView.isHidden = true
         }
         else {
             contactView.isHidden = false
         }
         
-        if(self.user["address"].exists()){
+        if(user["profile"]["address"].exists()){
             addressView.isHidden = false
-            addressLabel.text = user["address"].stringValue
+            addressLabel.text = user["profile"]["address"].stringValue
             addressLabel.isHidden = false
         }
         else {
             addressLabel.isHidden = true
         }
         
-        if(user["city"].exists()){
+        if(user["profile"]["city"].exists()){
             addressView.isHidden = false
-            var tempAddLabel = user["city"].stringValue
-            if(user["state"].exists()){
-                let tempState = user["state"].stringValue
+            var tempAddLabel = user["profile"]["city"].stringValue
+            if(user["profile"]["state"].exists()){
+                let tempState = user["profile"]["state"].stringValue
                 tempAddLabel += ", "
                 tempAddLabel += tempState
             }
-            if(user["zip_code"].exists()){
-                let tempZip = user["zip_code"].stringValue
+            if(user["profile"]["zip_code"].exists()){
+                let tempZip = user["profile"]["zip_code"].stringValue
                 tempAddLabel += " "
                 tempAddLabel += tempZip
             }
@@ -327,16 +231,12 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             cityLabel.isHidden = true
         }
         
-        if(!user["address"].exists() && !user["city"].exists()){
+        if(!user["profile"]["address"].exists() && !user["profile"]["city"].exists()){
             addressView.isHidden = true
         }
         else {
             addressView.isHidden = false
         }
-        
-        //        var profileImage: UIImage = UIImage(named: "profileImage")!
-        //        profileImage = profileImage.circleMasked!
-        //        profileImageView.image = profileImage
         
         let profileBackgroundImage: UIImage = UIImage(named: "profileBackground")!
         profileBackgroundImageView.image = profileBackgroundImage
@@ -350,6 +250,11 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         }
         
         profileNameLabel.text = profileName
+        
+        var tempImage = userProfilePicture
+        tempImage = tempImage.circleMasked!
+        profileImageView.image = tempImage
+        
     }
     
     @IBOutlet weak var profileImageView: AnimatableImageView!
@@ -397,9 +302,9 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         nextVc.profileNamePassed = profileNameLabel.text!
         nextVc.biographyPassed = biographyTextView.text!
-        nextVc.cityPassed = self.user["city"].stringValue
-        nextVc.statePassed = self.user["state"].stringValue
-        nextVc.zipPassed = self.user["zip_code"].stringValue
+        nextVc.cityPassed = self.user["profile"]["city"].stringValue
+        nextVc.statePassed = self.user["profile"]["state"].stringValue
+        nextVc.zipPassed = self.user["profile"]["zip_code"].stringValue
         
         nextVc.streetPassed = addressLabel.text!
         nextVc.emailPassed = emailButton.title(for: .normal)!
@@ -431,12 +336,17 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         var curUser = userId
         
         
-        print("GETTING USER: \(userId)")
-        ApiHelper.getProfilePic(path: "profilePictures", user_id: curUser) { data, error in
+        ApiHelper.getPicture(path: "pictures", id: curUser, type: "profile") { data, error in
             if error == nil {
+                var decodedimage:UIImage
                 let convertedData = Data(base64Encoded: data!)
-                
-                var decodedimage:UIImage = UIImage(named:"profileImage")!
+                if(convertedData != nil){
+                    decodedimage = UIImage(data: convertedData!)!
+                }
+                else {
+                     decodedimage = UIImage(named: "profileImage")!
+                }
+                userProfilePicture = decodedimage
                 decodedimage = decodedimage.circleMasked!
                 self.profileImageView.image = decodedimage
             } else {
@@ -444,7 +354,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             }
         }
         
-        ApiHelper.getProfile(userId: curUser) { response, error in
+        ApiHelper.getUser(userId: curUser) { response, error in
             if error == nil {
                 self.user = response!
                 print(self.user)

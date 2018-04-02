@@ -272,9 +272,9 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
             addressView.isHidden = false
         }
         
-        var profileImage: UIImage = UIImage(named: "profileImage")!
-        profileImage = profileImage.circleMasked!
-        profileImageView.image = profileImage
+//        var profileImage: UIImage = UIImage(named: "profileImage")!
+//        profileImage = profileImage.circleMasked!
+//        profileImageView.image = profileImage
         
         let profileBackgroundImage: UIImage = UIImage(named: "profileBackground")!
         profileBackgroundImageView.image = profileBackgroundImage
@@ -331,6 +331,24 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func getUser() {
         let curUser = userId
+        
+        ApiHelper.getPicture(path: "pictures", id: curUser, type: "profile") { data, error in
+            if error == nil {
+                print(curUser)
+                var decodedimage:UIImage
+                let convertedData = Data(base64Encoded: data!)
+                if(convertedData != nil){
+                    decodedimage = UIImage(data: convertedData!)!
+                }
+                else {
+                    decodedimage = UIImage(named: "profileImage")!
+                }
+                decodedimage = decodedimage.circleMasked!
+                self.profileImageView.image = decodedimage
+            } else {
+                print("Error getting profilePic: ",error as Any)
+            }
+        }
         
         ApiHelper.getUser(userId: curUser) { response, error in
             if error == nil {

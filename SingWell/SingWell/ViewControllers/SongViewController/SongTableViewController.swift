@@ -38,8 +38,9 @@ class SongTableViewController: UITableViewController {
     var songResources:[JSON] = []
     var pdfNum : [Int] = []
     var mxlNum : [Int] = []
+    var ytNum : [Int] = []
     
-    var numYTLinks = 1
+    var numYTLinks = 0
     var numPDF = 0
     var numML = 0
     var mxlFilename = "TestMXL.mxl"
@@ -110,11 +111,14 @@ class SongTableViewController: UITableViewController {
             }
             return numML
         case kSongYouTubeLink:
-//            for resource in songResources {
-//                if resource["extension"].stringValue == "pdf" {
-//
-//                }
-//            }
+            var count = 0
+            for resource in songResources {
+                if resource["type"].stringValue == "youtube_link" {
+                    numYTLinks += 1
+                    ytNum.append(count)
+                }
+                count += 1
+            }
             return numYTLinks
         case kSongPDFResource:
             var count = 0
@@ -136,7 +140,7 @@ class SongTableViewController: UITableViewController {
         case kSongInfo:
             return 150.0
         case kSongYouTubeLink:
-            return 225.0
+            return 285.0
         case kSongPDFResource:
             return 75.0
         case kPractice:
@@ -185,11 +189,18 @@ class SongTableViewController: UITableViewController {
             
             return cell
         case kSongYouTubeLink: // song resource cell - youtube link
+            let resourceNum = ytNum[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: "SongYouTubeCell", for: indexPath) as! SongYouTubeTableViewCell
             
-            let youtubeURL = NSURL(string: youtubeLink)
+            let youtubeURL = NSURL(string: songResources[resourceNum]["url"].stringValue)
             cell.wv.loadRequest(URLRequest(url: youtubeURL! as URL))
-            
+            cell.songTitle.text = "Title: " + songResources[resourceNum]["title"].stringValue
+            if(songResources[resourceNum]["description"].stringValue != ""){
+                cell.descriptionLabel.text = "Notes: " + songResources[resourceNum]["description"].stringValue
+            }
+            else {
+                cell.descriptionLabel.text = ""
+            }
             return cell
             
         case kSongPDFResource: // song resource cell - pdf resource
