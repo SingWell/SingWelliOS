@@ -152,7 +152,7 @@ class SideItemNavigationViewController: AnimatableNavigationController, SideMenu
                 self.additionalSafeAreaInsets = UIEdgeInsetsMake(0,0,0,0)
                 FIRST_CONTROLLER = false
             } else {
-                self.additionalSafeAreaInsets = UIEdgeInsetsMake(44,0,0,0)
+//                self.additionalSafeAreaInsets = UIEdgeInsetsMake(44,0,0,0)
             }
             break
         case 667.0: // iPhone 7/8
@@ -160,7 +160,7 @@ class SideItemNavigationViewController: AnimatableNavigationController, SideMenu
                 self.additionalSafeAreaInsets = UIEdgeInsetsMake(0,0,0,0)
                 FIRST_CONTROLLER = false
             } else {
-                self.additionalSafeAreaInsets = UIEdgeInsetsMake(20,0,0,0)
+//                self.additionalSafeAreaInsets = UIEdgeInsetsMake(20,0,0,0)
             }
             break
         case 736.0: // iPhone 7/8 Plus
@@ -180,7 +180,7 @@ class SideItemNavigationViewController: AnimatableNavigationController, SideMenu
                     self.additionalSafeAreaInsets = UIEdgeInsetsMake(0,0,0,0)
                 }
                 else {
-                    self.additionalSafeAreaInsets = UIEdgeInsetsMake(20,0,0,0)
+//                    self.additionalSafeAreaInsets = UIEdgeInsetsMake(20,0,0,0)
                     print("SAFE AREA INSETS")
                 }
                 
