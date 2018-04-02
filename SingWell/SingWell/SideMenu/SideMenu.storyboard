@@ -168,6 +168,34 @@
                                             <outlet property="pictureView" destination="k38-tl-wDf" id="lgF-IL-gkh"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LogoutCell" rowHeight="110" id="d9X-nA-N3j" customClass="LogoutTableViewCell" customModule="SingWell" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="248" width="375" height="110"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d9X-nA-N3j" id="rHL-L0-7Ek">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auz-kL-Ld3" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                                    <rect key="frame" x="15" y="39" width="345" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="32" id="yzU-SK-Rmf"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="26"/>
+                                                    <color key="textColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="auz-kL-Ld3" firstAttribute="centerY" secondItem="rHL-L0-7Ek" secondAttribute="centerY" id="VQi-IK-SjJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="auz-kL-Ld3" secondAttribute="trailing" constant="15" id="mY3-Ej-bPw"/>
+                                                <constraint firstItem="auz-kL-Ld3" firstAttribute="leading" secondItem="rHL-L0-7Ek" secondAttribute="leading" constant="15" id="uMy-Yt-yp6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.0" green="0.62100949750000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="logoutLabel" destination="auz-kL-Ld3" id="MKu-GR-3jE"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">

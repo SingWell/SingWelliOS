@@ -9,6 +9,7 @@
 import UIKit
 
 let kToken = "AUTH_TOKEN"
+let kUserId = "userId"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,18 +26,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             ApiHelper.AUTH_TOKEN = token
         } else {
             // Have to login
-            ApiHelper.login( "kenton", "password123") { response, error in
-                if error == nil {
-                    print("LOGGED IN")
-                    ApiHelper.AUTH_TOKEN = response!["token"].stringValue
-                    
-                    // save value in user defaults
-                    UserDefaults.standard.setValue(ApiHelper.AUTH_TOKEN, forKey: kToken)
-                    UserDefaults.standard.synchronize()
-                } else {
-                    print("ERROR Logging in:",error as Any)
-                }
-            }
+            print("ERROR: NOT LOGGED IN!!!")
+//            ApiHelper.login( "kenton", "password123") { response, error in
+//                if error == nil {
+//                    print("LOGGED IN")
+//                    ApiHelper.AUTH_TOKEN = response!["token"].stringValue
+//
+//                    // save value in user defaults
+//                    UserDefaults.standard.setValue(ApiHelper.AUTH_TOKEN, forKey: kToken)
+//                    UserDefaults.standard.synchronize()
+//                } else {
+//                    print("ERROR Logging in:",error as Any)
+//                }
+//            }
         }
         
         // Override point for customization after application launch.

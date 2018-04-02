@@ -14,7 +14,7 @@ let PRODUCTION_ENV = "http://ec2-34-215-244-252.us-west-2.compute.amazonaws.com/
 
 
 class ApiHelper {
-    static var userId = "4"
+    static var userId = "77"
     static var AUTH_TOKEN = ""
     
     //Had to create new post method in order to save userID value
@@ -30,13 +30,28 @@ class ApiHelper {
                 switch response.result {
                 case .success(let value):
                     print("LOGIN - ",JSON(value))
+                    
+                    if JSON(value)["token"] != JSON.null {
+                        print("setting AUTH_TOKEN and userId")
+                        AUTH_TOKEN = JSON(value)["token"].stringValue
+                        ApiHelper.userId = JSON(value)["user_id"].stringValue
+                        UserDefaults.standard.set(AUTH_TOKEN, forKey: kToken)
+                        UserDefaults.standard.set(ApiHelper.userId, forKey: kUserId)
+                        print("USER ID IS NOW: ", ApiHelper.userId)
+                    }
                     completionHandler(JSON(value), nil)
-                    AUTH_TOKEN = JSON(value)["token"].stringValue
                 case .failure(let error):
                     print("ERROR LOGGING IN!", error)
                     completionHandler(nil, error)
                 }
         }
+    }
+    
+    static func logout() {
+        AUTH_TOKEN = ""
+        ApiHelper.userId = ""
+        UserDefaults.standard.removeObject(forKey: kToken)
+        UserDefaults.standard.removeObject(forKey: kUserId)
     }
     
     //Had to create new post method in order to save userID value
@@ -218,6 +233,7 @@ class ApiHelper {
     
     //this will get user for a specific id
     static func getUser(userId:String=userId, completionHandler: @escaping (JSON?, Error?) -> ()) {
+        print("GETTING USER!!",userId)
         makeGetCall("users/\(userId)/", completionHandler: completionHandler)
     }
     

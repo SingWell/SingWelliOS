@@ -44,6 +44,7 @@ class HostViewController: MenuContainerViewController {
         
         // Select initial content controller. It's needed even if the first view controller should be selected.
         let firstVc = contentViewControllers.first!
+        (firstVc.childViewControllers.first as! ProfileViewController).userId = ApiHelper.userId
         self.selectContentViewController(firstVc)
     }
     

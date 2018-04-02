@@ -431,10 +431,12 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         var curUser = userId
         
         
+        print("GETTING USER: \(userId)")
         ApiHelper.getProfilePic(path: "profilePictures", user_id: curUser) { data, error in
             if error == nil {
                 let convertedData = Data(base64Encoded: data!)
-                var decodedimage:UIImage = UIImage(data: convertedData!)!
+                
+                var decodedimage:UIImage = UIImage(named:"profileImage")!
                 decodedimage = decodedimage.circleMasked!
                 self.profileImageView.image = decodedimage
             } else {
@@ -453,6 +455,8 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             }
         }
     }
+    
+    
 
     /*
     // MARK: - Navigation

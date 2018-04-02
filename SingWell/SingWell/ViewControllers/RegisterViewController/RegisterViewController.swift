@@ -10,6 +10,9 @@ import UIKit
 import IBAnimatable
 import DTTextField
 
+var REGISTER_EMAIL = ""
+var REGISTER_PASSWORD = ""
+
 class RegisterViewController: AnimatableViewController {
 
     @IBOutlet weak var firstNameField: DTTextField!
@@ -32,10 +35,14 @@ class RegisterViewController: AnimatableViewController {
             print("Error register: ", error)
             if error == nil {
                 // REGISTER SUCCESSFUL
-                let alert = UIAlertController(title: "Register Successful", message: response?.stringValue, preferredStyle: .alert)
-                alert.addAction( UIAlertAction(title: "OK", style: .cancel) )
+//                let alert = UIAlertController(title: "Register Successful", message: response?.stringValue, preferredStyle: .alert)
+//                alert.addAction( UIAlertAction(title: "OK", style: .cancel) )
+//
+//                self.present(alert, animated: true, completion: nil)
+                REGISTER_EMAIL = self.emailField.text!
+                REGISTER_PASSWORD = self.passwordField.text!
                 
-                self.present(alert, animated: true, completion: nil)
+                self.performSegue(withIdentifier: "loginFromRegisterSegue", sender: self)
             } else {
                 // REGISTER FAILED
                 let alert = UIAlertController(title: "Register Failed", message: "", preferredStyle: .alert)
