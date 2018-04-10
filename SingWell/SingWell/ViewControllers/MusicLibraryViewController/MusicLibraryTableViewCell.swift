@@ -9,7 +9,7 @@
 import UIKit
 import IBAnimatable
 
-class MusicLibraryTableViewCell: UITableViewCell {
+class MusicLibraryTableViewCell: AnimatableTableViewCell {
     @IBOutlet weak var songNameLabel: AnimatableLabel!
     
     @IBOutlet weak var composerNameLabel: AnimatableLabel!

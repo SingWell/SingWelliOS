@@ -291,7 +291,7 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
             profileName = user["first_name"].stringValue + " " + user["last_name"].stringValue
         }
         if(profileName == ""){
-            profileName = "No Name"
+            profileName = "..."
         }
         
         profileNameLabel.text = profileName
