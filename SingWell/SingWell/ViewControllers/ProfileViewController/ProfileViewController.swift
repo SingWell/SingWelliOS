@@ -17,7 +17,7 @@ var userProfilePicture : UIImage = UIImage(named: "profileImage")!
 
 class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    var userId = "4"
+    var userId = ""
     
     @IBOutlet weak var emailIcon: AnimatableImageView!
     @IBOutlet weak var contactView: AnimatableView!
@@ -339,10 +339,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func getProfile() {
-        var curUser = userId
-        
-        
-        ApiHelper.getPicture(path: "pictures", id: curUser, type: "profile") { data, error in
+        ApiHelper.getPicture(path: "pictures", id: ApiHelper.userId, type: "profile") { data, error in
             if error == nil {
                 var decodedimage:UIImage
                 let convertedData = Data(base64Encoded: data!)
@@ -360,7 +357,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             }
         }
         
-        ApiHelper.getUser(userId: curUser) { response, error in
+        ApiHelper.getUser(userId: ApiHelper.userId) { response, error in
             if error == nil {
                 self.user = response!
                 print(self.user)
