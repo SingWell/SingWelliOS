@@ -183,9 +183,9 @@ class ChoirTableViewController: UITableViewController {
         case kChoirInfo: // choir info cell
             return 1
         case kUpcomingEvents:
-            return min(upcomingChoirEvents.count, 4)
+            return min(upcomingChoirEvents.count, 3)
         case kPastEvents:
-            return min(pastChoirEvents.count, 4)
+            return min(pastChoirEvents.count, 3)
         default:
             return 0
         }

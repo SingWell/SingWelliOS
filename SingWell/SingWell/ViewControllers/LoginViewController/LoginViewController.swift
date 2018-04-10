@@ -34,8 +34,8 @@ class LoginViewController: AnimatableViewController {
         passwordField.font = UIFont(name: DEFAULT_FONT, size: 20)
         loginButton.titleLabel?.font = UIFont(name: DEFAULT_FONT, size: 26)
         
-        emailField.text = "kenton@gmail.com"
-        passwordField.text = "password123"
+        emailField.text = "jbritton@stmarks.org"
+        passwordField.text = "password"
     }
     
     @IBAction func signInPressed(_ sender: Any) {
