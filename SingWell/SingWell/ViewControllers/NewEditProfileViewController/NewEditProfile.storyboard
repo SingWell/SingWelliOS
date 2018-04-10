@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6RR-4o-91f">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6RR-4o-91f">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -78,7 +78,7 @@
                                 <rect key="frame" x="0.0" y="179" width="375" height="488"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pGL-24-tfj" customClass="AnimatableStackView" customModule="IBAnimatable">
-                                        <rect key="frame" x="10" y="10" width="355" height="460"/>
+                                        <rect key="frame" x="10" y="10" width="355" height="410"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gXo-uZ-nFO" userLabel="Name text field" customClass="AnimatableTextField" customModule="IBAnimatable">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
@@ -207,45 +207,8 @@
                                                     <action selector="birthdayEdit:" destination="6RR-4o-91f" eventType="editingDidBegin" id="Fo6-ql-Y3J"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IRt-bn-jhK" userLabel="Email text field" customClass="AnimatableTextField" customModule="IBAnimatable">
-                                                <rect key="frame" x="0.0" y="160" width="355" height="50"/>
-                                                <accessibility key="accessibilityConfiguration">
-                                                    <accessibilityTraits key="traits" notEnabled="YES"/>
-                                                </accessibility>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="Bz4-iu-Nr8"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                                        <color key="value" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="leftImageRightPadding">
-                                                        <real key="value" value="15"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" red="0.086750656369999998" green="0.08585051447" blue="0.11175550519999999" alpha="0.050000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="1"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="FadeInRight"/>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
-                                                        <real key="value" value="0.69999999999999996"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="slideFade(in,right)"/>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="_borderSides" value="bottom"/>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingLeft">
-                                                        <real key="value" value="50"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VRI-Yg-MaX" userLabel="Phone Number text field" customClass="AnimatableTextField" customModule="IBAnimatable">
-                                                <rect key="frame" x="0.0" y="210" width="355" height="50"/>
+                                                <rect key="frame" x="0.0" y="160" width="355" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="6Hz-rw-Can"/>
                                                 </constraints>
@@ -279,7 +242,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eZ5-bb-zJM" userLabel="Address text field" customClass="AnimatableTextField" customModule="IBAnimatable">
-                                                <rect key="frame" x="0.0" y="260" width="355" height="50"/>
+                                                <rect key="frame" x="0.0" y="210" width="355" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="oCt-z9-Zfs"/>
                                                 </constraints>
@@ -313,7 +276,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rfW-Xp-FJB" userLabel="City field" customClass="AnimatableTextField" customModule="IBAnimatable">
-                                                <rect key="frame" x="0.0" y="310" width="355" height="50"/>
+                                                <rect key="frame" x="0.0" y="260" width="355" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Rlt-xF-Hlk"/>
                                                 </constraints>
@@ -347,7 +310,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BFw-L0-8X5" userLabel="State text field" customClass="AnimatableTextField" customModule="IBAnimatable">
-                                                <rect key="frame" x="0.0" y="360" width="355" height="50"/>
+                                                <rect key="frame" x="0.0" y="310" width="355" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="T77-CJ-8tC"/>
                                                 </constraints>
@@ -381,7 +344,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Zip Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ek3-pi-efC" userLabel="Zip Code text field" customClass="AnimatableTextField" customModule="IBAnimatable">
-                                                <rect key="frame" x="0.0" y="410" width="355" height="50"/>
+                                                <rect key="frame" x="0.0" y="360" width="355" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="v2Q-G7-DZS"/>
                                                 </constraints>
@@ -528,7 +491,6 @@
                         <outlet property="cityTextField" destination="rfW-Xp-FJB" id="1rx-O7-ug2"/>
                         <outlet property="confirmButton" destination="oEz-Ku-jBW" id="47h-Y2-LzK"/>
                         <outlet property="confirmButtonImageView" destination="0N7-3J-W7t" id="ZxT-Dw-Pjk"/>
-                        <outlet property="emailTextField" destination="IRt-bn-jhK" id="YEn-q2-NFJ"/>
                         <outlet property="nameTextField" destination="gXo-uZ-nFO" id="QaC-gA-ILe"/>
                         <outlet property="phoneNumberTextField" destination="VRI-Yg-MaX" id="gel-PG-W7Y"/>
                         <outlet property="profileBackgroundImageView" destination="7ik-lD-yIz" id="TBe-Tn-DMH"/>

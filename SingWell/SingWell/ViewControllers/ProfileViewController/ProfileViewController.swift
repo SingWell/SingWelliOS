@@ -19,13 +19,15 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     var userId = "4"
     
+    @IBOutlet weak var emailIcon: AnimatableImageView!
     @IBOutlet weak var contactView: AnimatableView!
     @IBOutlet weak var biographyView: AnimatableView!
     @IBOutlet weak var addressView: AnimatableView!
     
+    @IBOutlet weak var emailView: AnimatableView!
     @IBOutlet weak var birthdayView: AnimatableView!
-    @IBOutlet weak var phoneNumberButton: AnimatableButton!
-    @IBOutlet weak var emailButton: AnimatableButton!
+    @IBOutlet weak var phoneNumberLabel: AnimatableLabel!
+    @IBOutlet weak var emailLabel: AnimatableLabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var biographyTextView: AnimatableTextView!
@@ -162,7 +164,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     func setProfile(user:JSON) {
         
-        if(user["profile"]["bio"].exists()){
+        if(user["profile"]["bio"].stringValue != ""){
             biographyView.isHidden = false
             biographyTextView.text = user["profile"]["bio"].stringValue
             biographyTextView.font = UIFont(name:DEFAULT_FONT, size:14)
@@ -171,7 +173,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             biographyView.isHidden = true
         }
         
-        if(user["profile"]["date_of_birth"].exists()){
+        if(user["profile"]["date_of_birth"].stringValue != ""){
             birthdayView.isHidden = false
             birthdayLabel.text = user["profile"]["date_of_birth"].stringValue
             birthdayLabel.font = UIFont(name:DEFAULT_FONT, size:14)
@@ -180,31 +182,31 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             birthdayView.isHidden = true
         }
         
-        if(user["email"].exists()){
-            emailButton.setTitle(user["email"].stringValue, for: .normal)
-            emailButton.isHidden = false
+        if(user["email"].stringValue != ""){
+            emailLabel.text = user["email"].stringValue
+            emailView.isHidden = false
         }
         else {
-            emailButton.isHidden = true
-        }
-        if(user["profile"]["phone_number"].exists()){
-            phoneNumberButton.setTitle(user["profile"]["phone_number"].stringValue, for: .normal)
-            phoneNumberButton.isHidden = false
-        }
-        else {
-            //            phoneNumberButton.setTitle("9999999999", for: .normal)
-            phoneNumberButton.titleLabel?.text = "9999999999"
-            phoneNumberButton.isHidden = true
+            emailView.isHidden = true
         }
         
-        if(!user["email"].exists() && !user["profile"]["phone_number"].exists()){
-            contactView.isHidden = true
-        }
-        else {
+        if(user["profile"]["phone_number"].stringValue != ""){
+            phoneNumberLabel.text = user["profile"]["phone_number"].stringValue
             contactView.isHidden = false
         }
+        else {
+            phoneNumberLabel.text = ""
+            contactView.isHidden = true
+        }
         
-        if(user["profile"]["address"].exists()){
+//        if(!(user["email"].stringValue != "") && !(user["profile"]["phone_number"].stringValue != "")){
+//            contactView.isHidden = true
+//        }
+//        else {
+//            contactView.isHidden = false
+//        }
+        
+        if(user["profile"]["address"].stringValue != ""){
             addressView.isHidden = false
             addressLabel.text = user["profile"]["address"].stringValue
             addressLabel.isHidden = false
@@ -213,7 +215,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             addressLabel.isHidden = true
         }
         
-        if(user["profile"]["city"].exists()){
+        if(user["profile"]["city"].stringValue != ""){
             addressView.isHidden = false
             var tempAddLabel = user["profile"]["city"].stringValue
             if(user["profile"]["state"].exists()){
@@ -221,7 +223,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
                 tempAddLabel += ", "
                 tempAddLabel += tempState
             }
-            if(user["profile"]["zip_code"].exists()){
+            if(user["profile"]["zip_code"].stringValue != ""){
                 let tempZip = user["profile"]["zip_code"].stringValue
                 tempAddLabel += " "
                 tempAddLabel += tempZip
@@ -233,7 +235,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             cityLabel.isHidden = true
         }
         
-        if(!user["profile"]["address"].exists() && !user["profile"]["city"].exists()){
+        if(!(user["profile"]["address"].stringValue != "") && !(user["profile"]["city"].stringValue != "")){
             addressView.isHidden = true
         }
         else {
@@ -281,7 +283,9 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
 
         // Do any additional setup after loading the view.
         
-        contactIcon.image = UIImage.ionicon(with: .chatbubble, textColor: UIColor.gray, size: CGSize(width: 35, height: 35))
+        contactIcon.image = UIImage.ionicon(with: .iosTelephone, textColor: UIColor.gray, size: CGSize(width: 35, height: 35))
+        
+        emailIcon.image = UIImage.ionicon(with: .email, textColor: UIColor.gray, size: CGSize(width: 35, height: 35))
         
         bioIcon.image = UIImage.ionicon(with: .iosPaperOutline, textColor: UIColor.gray, size: CGSize(width: 35, height: 35))
         
@@ -309,9 +313,9 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         nextVc.zipPassed = self.user["profile"]["zip_code"].stringValue
         
         nextVc.streetPassed = addressLabel.text!
-        nextVc.emailPassed = emailButton.title(for: .normal)!
+        nextVc.emailPassed = emailLabel.text!
         nextVc.profileImagePassed = profileImageView.image!
-        nextVc.phoneNumberPassed = phoneNumberButton.title(for: .normal)!
+        nextVc.phoneNumberPassed = phoneNumberLabel.text!
         nextVc.birthdayPassed = birthdayLabel.text!
         
         self.navigationController?.pushViewController(nextVc, animated: true)

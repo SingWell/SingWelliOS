@@ -25,9 +25,13 @@ class ChoirTableViewController: UITableViewController {
     
     let BACKGROUND_COLOR = UIColor.init(hexString: "eeeeee")
     
+    let INFO_COLOR = UIColor.init(hexString: "2fd0b0")
+    
     let formatter = DateFormatter()
     
     var choirInfo:JSON = ["name":"Choir A"]
+    
+    var rosterImages: [UIImage] = []
 
 //    var choirUpdatesList:JSON = [
 //        ["title":"Event Changed", "info":"The time for mass changed to 12:00pm-1:30pm.", "time":"1 hour ago"],
@@ -58,16 +62,19 @@ class ChoirTableViewController: UITableViewController {
         rightBarButtonItem.title = ""
         rightBarButtonItem.tintColor = .black
         rightBarButtonItem.image = UIImage.ionicon(with: .iosBell, textColor: UIColor.black, size: CGSize(width: 32, height: 32))
-
+        
+        // Hide for now
+        rightBarButtonItem.isEnabled = false
+        rightBarButtonItem.tintColor = UIColor.clear
         // TODO: show a number label with the number of unread notifications
     }
     
     @IBAction func viewDirectorProfile(_ sender: Any) {
-        let navCon = AppStoryboard.Profile.initialViewController() as! SideItemNavigationViewController
-        let nextVc = navCon.topViewController as! ProfileViewController
         
-        // TODO: make dynamic
-        nextVc.userId = "1"
+        let navCon = AppStoryboard.User.initialViewController() as! SideItemNavigationViewController
+        let nextVc = navCon.topViewController as! UserViewController
+        
+        nextVc.userId = choirInfo["director"].stringValue
         
         self.navigationController?.pushViewController(nextVc, animated: true)
     }
@@ -85,6 +92,9 @@ class ChoirTableViewController: UITableViewController {
     
     @IBAction func viewRoster(_ sender: Any) {
         let nextVc = AppStoryboard.Roster.initialViewController() as! RosterTableViewController
+        nextVc.choirId = choirInfo["id"].stringValue
+        nextVc.orgId = choirInfo["organization"].stringValue
+        nextVc.rosterImages = rosterImages
         self.navigationController?.pushViewController(nextVc, animated: true)
     }
     
@@ -94,19 +104,21 @@ class ChoirTableViewController: UITableViewController {
         self.navigationController?.pushViewController(nextVc, animated: true)
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         formatter.timeZone = .current
         formatter.locale = .current
         
-        self.title = choirInfo["name"].stringValue
+        self.title = "Choir"
         
         self.tableView.backgroundColor = BACKGROUND_COLOR
         
         setNavigationItems()
         setRightNavItem()
         getChoirEvents()
+//        getRosterImages()
         
         self.view.frame = self.view.bounds
     }
@@ -137,6 +149,28 @@ class ChoirTableViewController: UITableViewController {
         }
     }
     
+    func getRosterImages() {
+        for index in 0 ... (self.choirInfo["choristers"].count - 1) {
+            ApiHelper.getPicture(path: "pictures", id: self.choirInfo["choristers"][index].stringValue, type: "profile") { data, error in
+                if error == nil {
+                    var decodedimage:UIImage
+                    let convertedData = Data(base64Encoded: data!)
+                    if(convertedData != nil){
+                        decodedimage = UIImage(data: convertedData!)!
+                    }
+                    else {
+                        decodedimage = UIImage(named: "profileImage")!
+                    }
+                    decodedimage = decodedimage.circleMasked!
+                    var profileImage = decodedimage
+                    self.rosterImages.append(profileImage)
+                } else {
+                    print("Error getting profilePic: ",error as Any)
+                }
+            }
+        }
+    }
+    
 
     // MARK: - Table view data source
 
@@ -160,7 +194,7 @@ class ChoirTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch SECTIONS[indexPath.section] {
         case kChoirInfo:
-            return 147.0
+            return 167.0
         default:
             return super.tableView(tableView, heightForRowAt: indexPath)
         }
@@ -173,10 +207,13 @@ class ChoirTableViewController: UITableViewController {
             
             cell.contentView.backgroundColor = BACKGROUND_COLOR
             
+            // CHOIR NAME LABEL
+            cell.choirNameLabel.text = choirInfo["name"].stringValue
+            
             //DIRECTOR NAME BUTTON
             cell.directorNameButton.addTarget(self, action: #selector(ChoirTableViewController.viewDirectorProfile(_:)), for: UIControlEvents.touchUpInside)
-            // TODO: make dynamic
-            cell.directorNameButton.setTitle("Bob Johnson", for: .normal)
+            cell.directorNameButton.setTitle(choirInfo["director_name"].stringValue, for: .normal)
+            print(choirInfo)
 
             // CALENDAR BUTTON
             cell.calendarButton.addTarget(self, action: #selector(ChoirTableViewController.viewCalendar(_:)), for: UIControlEvents.touchUpInside)

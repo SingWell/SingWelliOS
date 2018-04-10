@@ -11,6 +11,9 @@ import IBAnimatable
 import IoniconsKit
 import ImageIO
 
+var fontName = "Apple SD Gothic Neo"
+var newProfileImage = false
+
 protocol NewEditProfileDelegate: class {
     func sendInfo(_ bio: String?, _ phoneNumber: String?, _ city: String?, _ address: String?, _ zipCode: String?, _ state: String?, _ birthday: String?)
 }
@@ -33,7 +36,7 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
     @IBOutlet weak var nameTextField: AnimatableTextField!
     @IBOutlet weak var biographyTextView: AnimatableTextView!
     @IBOutlet weak var phoneNumberTextField: AnimatableTextField!
-    @IBOutlet weak var emailTextField: AnimatableTextField!
+//    @IBOutlet weak var emailTextField: AnimatableTextField!
     @IBOutlet weak var cityTextField: AnimatableTextField!
     @IBOutlet weak var streetTextField: AnimatableTextField!
     @IBOutlet weak var stateTextField: AnimatableTextField!
@@ -191,7 +194,7 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
     func setProfile() {
         
         var profileImage: UIImage = userProfilePicture
-        newImage = profileImagePassed
+        newImage = userProfilePicture
         profileImage = profileImage.circleMasked!
         profileImageView.image = profileImage
         
@@ -206,25 +209,33 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
         let profileName = profileNamePassed
         
         nameTextField.text = profileName
+        nameTextField.font = UIFont(name: fontName, size: 15)
         biographyTextView.text = biographyPassed
         if(biographyTextView.text == ""){
             biographyTextView.textColor = UIColor.lightGray
             biographyTextView.text = "Add a short biography here"
         }
+        biographyTextView.font = UIFont(name: fontName, size: 15)
         
         cityTextField.text = cityPassed
+        cityTextField.font = UIFont(name: fontName, size: 15)
         
         streetTextField.text = streetPassed
+        streetTextField.font = UIFont(name: fontName, size: 15)
         
         stateTextField.text = statePassed
+        stateTextField.font = UIFont(name: fontName, size: 15)
         
         zipCodeTextField.text = zipPassed
+        zipCodeTextField.font = UIFont(name: fontName, size: 15)
         
-        emailTextField.text = emailPassed
+//        emailTextField.text = emailPassed
         
         phoneNumberTextField.text = phoneNumberPassed
+        phoneNumberTextField.font = UIFont(name: fontName, size: 15)
         
         birthdayTextField.text = birthdayPassed
+        birthdayTextField.font = UIFont(name: fontName, size: 15)
         
         
     }
@@ -242,8 +253,8 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
         
         let emailIcon = UIImage.ionicon(with: .email, textColor: UIColor.gray, size: CGSize(width: 25, height: 25))
         
-        emailTextField.leftImage = emailIcon
-        emailTextField.leftImageLeftPadding = 10
+//        emailTextField.leftImage = emailIcon
+//        emailTextField.leftImageLeftPadding = 10
         
         let phoneIcon = UIImage.ionicon(with: .iphone, textColor: UIColor.gray, size: CGSize(width: 25, height: 25))
         
@@ -286,7 +297,7 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
         //show date picker
 //        showDatePicker()
         
-        emailTextField.delegate = self
+//        emailTextField.delegate = self
         phoneNumberTextField.delegate = self
         streetTextField.delegate = self
         cityTextField.delegate = self
@@ -348,14 +359,16 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
             }
         }
         
-        ApiHelper.uploadImage(image: newImage, fileName: "profilePic") { response, error in
-            if error == nil {
-                print("No error")
-            } else {
-                print(error!)
+        if(newProfileImage){
+            ApiHelper.uploadImage(image: newImage, fileName: "profilePic") { response, error in
+                if error == nil {
+                    print("No error")
+                } else {
+                    print(error!)
+                }
             }
+            userProfilePicture = newImage
         }
-        userProfilePicture = newImage
         
 //        let nextVc = AppStoryboard.Profile.viewController(viewControllerClass: ProfileViewController) as! ProfileViewController
         
@@ -461,6 +474,7 @@ extension NewEditProfileViewController: UIImagePickerControllerDelegate, UINavig
         image = self.resizeImage(image: image, targetSize: size)
         newImage = image
         profileImageView.image = image
+        newProfileImage = true
     }
     
     func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {

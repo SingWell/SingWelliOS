@@ -196,47 +196,54 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func setProfile(user:JSON) {
         
-        if(user["profile"]["bio"].exists()){
+        if(user["profile"]["bio"].stringValue != ""){
             biographyView.isHidden = false
             biographyTextView.text = user["profile"]["bio"].stringValue
         }
         else{
             biographyView.isHidden = true
         }
+        biographyTextView.font = UIFont(name: fontName, size: 17)
         
-        if(user["profile"]["date_of_birth"].exists()){
+        if(user["profile"]["date_of_birth"].stringValue != ""){
             birthdayView.isHidden = false
             birthdayLabel.text = user["profile"]["date_of_birth"].stringValue
         }
         else{
             birthdayView.isHidden = true
         }
+        birthdayLabel.font = UIFont(name: fontName, size: 17)
         
-        if(user["email"].exists()){
+        if(user["email"].stringValue != ""){
             emailButton.setTitle(user["email"].stringValue, for: .normal)
-            emailButton.isHidden = false
+            emailView.isHidden = false
+            setEmailButton()
         }
         else {
-            emailButton.isHidden = true
+            emailView.isHidden = true
         }
-        if(user["profile"]["phone_number"].exists()){
+        
+        if(user["profile"]["phone_number"].stringValue != ""){
             phoneNumberButton.setTitle(user["profile"]["phone_number"].stringValue, for: .normal)
-            phoneNumberButton.isHidden = false
+//            phoneNumberButton.isHidden = false
+            contactView.isHidden = false
+            setTextButton()
         }
         else {
 //            phoneNumberButton.setTitle("9999999999", for: .normal)
-            phoneNumberButton.titleLabel?.text = "9999999999"
-            phoneNumberButton.isHidden = true
-        }
-        
-        if(!user["email"].exists() && !user["profile"]["phone_number"].exists()){
+//            phoneNumberButton.titleLabel?.text = "9999999999"
+//            phoneNumberButton.isHidden = true
             contactView.isHidden = true
         }
-        else {
-            contactView.isHidden = false
-        }
         
-        if(user["profile"]["address"].exists()){
+//        if(!(user["email"].stringValue != "") && !(user["profile"]["phone_number"].stringValue != "")){
+//            contactView.isHidden = true
+//        }
+//        else {
+//            contactView.isHidden = false
+//        }
+        
+        if(user["profile"]["address"].stringValue != ""){
             addressView.isHidden = false
             addressLabel.text = user["profile"]["address"].stringValue
             addressLabel.isHidden = false
@@ -245,7 +252,7 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
             addressLabel.isHidden = true
         }
         
-        if(user["profile"]["city"].exists()){
+        if(user["profile"]["city"].stringValue != ""){
             addressView.isHidden = false
             var tempAddLabel = user["profile"]["city"].stringValue
             if(user["profile"]["state"].exists()){
@@ -253,7 +260,7 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 tempAddLabel += ", "
                 tempAddLabel += tempState
             }
-            if(user["profile"]["zip_code"].exists()){
+            if(user["profile"]["zip_code"].stringValue != ""){
                 let tempZip = user["profile"]["zip_code"].stringValue
                 tempAddLabel += " "
                 tempAddLabel += tempZip
@@ -265,7 +272,7 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
             cityLabel.isHidden = true
         }
         
-        if(!user["profile"]["address"].exists() && !user["profile"]["city"].exists()){
+        if(!(user["profile"]["address"].stringValue != "") && !(user["profile"]["city"].stringValue != "")){
             addressView.isHidden = true
         }
         else {
@@ -303,8 +310,8 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
         instrumentCollectionView.dataSource = (self as UICollectionViewDataSource)
         
         self.title = "User Profile"
-        setEmailButton()
-        setTextButton()
+//        setEmailButton()
+//        setTextButton()
         
         setInstrumentItems()
         setProfile(user: self.user)

@@ -19,6 +19,8 @@ class EventTableViewController: AnimatableTableViewController {
     
     let BACKGROUND_COLOR = UIColor.init(hexString: "eeeeee")
     
+    let CONTENT_COLOR = UIColor.init(hexString: "ffffff")
+    
     var eventInfo:JSON = [
         "id": 1,
         "name": "Event Name",
@@ -40,9 +42,9 @@ class EventTableViewController: AnimatableTableViewController {
         
         self.title = eventInfo["name"].stringValue
         
-        print(eventInfo)
+//        print(eventInfo)
         
-       program = eventInfo["program_music"].arrayValue
+        program = eventInfo["program_music"].arrayValue
         
         self.tableView.backgroundColor = BACKGROUND_COLOR
         
@@ -94,7 +96,7 @@ class EventTableViewController: AnimatableTableViewController {
         case kEventInfo: // Event info cell
             let cell = tableView.dequeueReusableCell(withIdentifier: "EventInfoCell", for: indexPath) as! EventInfoTableViewCell
             
-            cell.contentView.backgroundColor = BACKGROUND_COLOR
+            cell.contentView.backgroundColor = CONTENT_COLOR
             
             cell.eventNameLabel.text = eventInfo["name"].stringValue
             cell.eventLocationLabel.text = eventInfo["location"].stringValue
@@ -118,8 +120,6 @@ class EventTableViewController: AnimatableTableViewController {
                 formatter.dateFormat = "h:mm a"
                 cell.eventTimeLabel.text = formatter.string(from: eventTime)
             }
-            
-            cell.contentView.backgroundColor = BACKGROUND_COLOR
             
             return cell
         default:
