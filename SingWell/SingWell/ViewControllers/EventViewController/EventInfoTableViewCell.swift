@@ -15,6 +15,8 @@ class EventInfoTableViewCell: AnimatableTableViewCell {
     @IBOutlet weak var eventDateLabel: AnimatableLabel!
     @IBOutlet weak var eventLocationLabel: AnimatableLabel!
     @IBOutlet weak var eventNameLabel: AnimatableLabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -11,6 +11,7 @@ import IBAnimatable
 
 class ChoirInfoTableViewCell: AnimatableTableViewCell {
 
+    @IBOutlet weak var choirNameLabel: AnimatableLabel!
     @IBOutlet weak var directedByLabel: AnimatableLabel!
     @IBOutlet weak var directorNameButton: AnimatableButton!
     @IBOutlet weak var descriptionLabel: AnimatableLabel!

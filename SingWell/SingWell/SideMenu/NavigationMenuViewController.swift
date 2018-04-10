@@ -123,7 +123,7 @@ class NavigationMenuViewController: MenuViewController {
             response, error in
             if error == nil {
                 self.username = response!["first_name"].stringValue + " " + response!["last_name"].stringValue
-                self.setOrgsForUser(orgIds: response!["owned_organizations"])
+                self.setOrgsForUser(orgIds: response!["organizations"])
                 
             } else {
                 print("ERROR GETTIN USER",error!)
