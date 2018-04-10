@@ -15,6 +15,10 @@ class RosterTableViewController: UITableViewController {
     let kRosterCellReuseIdentifier = "RosterCell"
     var roster = [JSON]()
     var filteredRoster = [JSON]()
+    var rosterImages: [UIImage] = []
+    
+    var choirId = ""
+    var orgId = ""
     
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -30,9 +34,30 @@ class RosterTableViewController: UITableViewController {
     }
     
     func getRoster() {
-        ApiHelper.getRoster(orgId: "16", choirId: "18") { response, error in
+        ApiHelper.getRoster(orgId: orgId, choirId: choirId) { response, error in
             if error == nil {
                 self.roster = response!.arrayValue
+                for index in 0 ... (self.roster.count - 1) {
+                    self.rosterImages.append(UIImage(named: "profileImage")!)
+                    ApiHelper.getPicture(path: "pictures", id: self.roster[index]["id"].stringValue, type: "profile") { data, error in
+                        if error == nil {
+                            var decodedimage:UIImage
+                            let convertedData = Data(base64Encoded: data!)
+                            if(convertedData != nil){
+                                decodedimage = UIImage(data: convertedData!)!
+                            }
+                            else {
+                                decodedimage = UIImage(named: "profileImage")!
+                            }
+                            decodedimage = decodedimage.circleMasked!
+                            var profileImage = decodedimage
+                            self.rosterImages[index] = profileImage
+                            self.tableView.reloadData()
+                        } else {
+                            print("Error getting profilePic: ",error as Any)
+                        }
+                    }
+                }
                 
                 self.tableView.reloadData()
             } else {
@@ -71,11 +96,15 @@ class RosterTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kRosterCellReuseIdentifier, for: indexPath) as! RosterTableViewCell
         let user:JSON
+        let userPicture: UIImage
         if isFiltering() {
             print("FILTERED SIZE:",filteredRoster.count)
             user = filteredRoster[indexPath.row]
+            userPicture = rosterImages[indexPath.row]
         } else {
+            print(roster[0])
             user = roster[indexPath.row]
+            userPicture = rosterImages[indexPath.row]
         }
         
         var fullName = ""
@@ -83,10 +112,33 @@ class RosterTableViewController: UITableViewController {
         fullName += " "
         fullName += user["last_name"].stringValue
         
-        cell.rosterCellName.text = fullName
-        cell.rosterCellEmail.text = user["email"].stringValue
+        print(user["id"].stringValue)
+        print(rosterImages.count)
         
-        var profileImage: UIImage = UIImage(named: "profileImage")!
+        cell.rosterCellName.text = fullName
+        cell.rosterCellName.font = UIFont(name: fontName, size: 17)
+        cell.rosterCellEmail.text = user["email"].stringValue
+        cell.rosterCellEmail.font = UIFont(name: fontName, size: 17)
+        
+        var profileImage: UIImage = userPicture
+//        ApiHelper.getPicture(path: "pictures", id: user["id"].stringValue, type: "profile") { data, error in
+//            if error == nil {
+//                var decodedimage:UIImage
+//                let convertedData = Data(base64Encoded: data!)
+//                if(convertedData != nil){
+//                    decodedimage = UIImage(data: convertedData!)!
+//                }
+//                else {
+//                    decodedimage = UIImage(named: "profileImage")!
+//                }
+//                decodedimage = decodedimage.circleMasked!
+//                var profileImage = decodedimage
+//                cell.rosterCellImageView.image = profileImage
+//            } else {
+//                print("Error getting profilePic: ",error as Any)
+//            }
+//        }
+        
         profileImage = profileImage.circleMasked!
         cell.rosterCellImageView.image = profileImage
         
