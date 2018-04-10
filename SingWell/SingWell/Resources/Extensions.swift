@@ -92,15 +92,17 @@ extension JSON {
     }
     
     static let pastDateStrings: (JSON) -> Bool = {
+        formatter.dateFormat = "yyyy-MM-dd"
         formatter.timeZone = .current
         formatter.locale = .current
-        return $0[kDate].stringValue > formatter.string(from: Date())
+        return $0[kDate].stringValue < formatter.string(from: Date())
     }
     
     static let futureDateStrings: (JSON) -> Bool = {
+        formatter.dateFormat = "yyyy-MM-dd"
         formatter.timeZone = .current
         formatter.locale = .current
-        return $0[kDate].stringValue <= formatter.string(from: Date())
+        return $0[kDate].stringValue >= formatter.string(from: Date())
     }
     
     static let currentChoirId: (JSON) -> Bool = {

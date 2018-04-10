@@ -165,6 +165,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         if(user["profile"]["bio"].exists()){
             biographyView.isHidden = false
             biographyTextView.text = user["profile"]["bio"].stringValue
+            biographyTextView.font = UIFont(name:DEFAULT_FONT, size:14)
         }
         else{
             biographyView.isHidden = true
@@ -173,6 +174,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         if(user["profile"]["date_of_birth"].exists()){
             birthdayView.isHidden = false
             birthdayLabel.text = user["profile"]["date_of_birth"].stringValue
+            birthdayLabel.font = UIFont(name:DEFAULT_FONT, size:14)
         }
         else{
             birthdayView.isHidden = true

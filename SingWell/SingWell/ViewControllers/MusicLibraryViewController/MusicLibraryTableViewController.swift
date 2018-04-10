@@ -38,6 +38,7 @@ class MusicLibraryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
 //        print("SONG:",musicLibrary[0].stringValue)
         
         self.getMusicLibrary()
@@ -93,8 +94,9 @@ class MusicLibraryTableViewController: UITableViewController {
         cell.songNameLabel.text = song["title"].stringValue
         cell.composerNameLabel.text = song["composer"].stringValue
         cell.instrumentationLabel.text = song["instrumentation"].stringValue
-        
-
+        cell.songNameLabel.font = UIFont(name: DEFAULT_FONT, size: 28)
+        cell.composerNameLabel.font = UIFont(name: DEFAULT_FONT, size: 17)
+        cell.instrumentationLabel.font = UIFont(name: DEFAULT_FONT, size: 17)
         return cell
     }
     

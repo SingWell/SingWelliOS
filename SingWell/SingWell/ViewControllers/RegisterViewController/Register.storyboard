@@ -101,6 +101,7 @@
                         <outlet property="emailField" destination="yal-B1-JTc" id="qCT-MB-yuk"/>
                         <outlet property="firstNameField" destination="K9E-ub-auJ" id="Hm7-7W-M9V"/>
                         <outlet property="lastNameField" destination="vl9-TA-ux5" id="xZg-5Y-KeR"/>
+                        <outlet property="loginButton" destination="T5e-ZE-dKy" id="5E0-a6-evy"/>
                         <outlet property="passwordField" destination="stg-Xp-WRG" id="p2J-RP-Hxy"/>
                         <segue destination="DYW-Tl-8h0" kind="unwind" identifier="loginFromRegisterSegue" unwindAction="loginFromRegister:" id="yQn-31-eA7"/>
                     </connections>

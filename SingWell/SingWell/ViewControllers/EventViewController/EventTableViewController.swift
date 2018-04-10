@@ -98,6 +98,10 @@ class EventTableViewController: AnimatableTableViewController {
             
             cell.eventNameLabel.text = eventInfo["name"].stringValue
             cell.eventLocationLabel.text = eventInfo["location"].stringValue
+            cell.eventNameLabel.font = UIFont(name: DEFAULT_FONT, size:34)
+            cell.eventLocationLabel.font = UIFont(name: DEFAULT_FONT, size:26)
+            cell.eventDateLabel.font = UIFont(name: DEFAULT_FONT, size:21)
+            cell.eventTimeLabel.font = UIFont(name: DEFAULT_FONT, size:21)
             
             let formatter = DateFormatter()
             formatter.timeZone = .current
@@ -124,9 +128,14 @@ class EventTableViewController: AnimatableTableViewController {
             
             cell.fieldTitleLabel.text = program[indexPath.row]["field_title"].stringValue
             cell.songTitleLabel.text = program[indexPath.row]["title"].stringValue
-            cell.songTitleLabel.font = UIFont.boldSystemFont(ofSize: 22.0)
+//            cell.songTitleLabel.font = UIFont.boldSystemFont(ofSize: 22.0)
             cell.composerLabel.text = program[indexPath.row]["composer"].stringValue
             cell.NotesLabel.text = program[indexPath.row]["notes"].stringValue
+            
+            cell.fieldTitleLabel.font = UIFont(name: DEFAULT_FONT_THIN, size:18)
+            cell.songTitleLabel.font = UIFont(name: DEFAULT_FONT_SEMIBOLD, size:20)
+            cell.composerLabel.font = UIFont(name: DEFAULT_FONT_SEMIBOLD, size:16)
+            cell.NotesLabel.font = UIFont(name: DEFAULT_FONT_LIGHT, size:16)
             
             return cell
         }
