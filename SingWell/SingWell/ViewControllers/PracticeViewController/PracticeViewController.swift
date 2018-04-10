@@ -70,6 +70,7 @@ class PracticeViewController: UIViewController, PracticeSettingsDelegate {
     @IBOutlet var titleLabel : AnimatableLabel?
     @IBOutlet weak var filenameLabel: AnimatableLabel!
     @IBOutlet var playButton : UIButton?
+    @IBOutlet weak var restartButton: UIButton!
     var playButtonSize:CGFloat = 50
     @IBOutlet var countInLabel : UILabel?
     @IBOutlet var warningLabel : UILabel?
@@ -162,6 +163,7 @@ class PracticeViewController: UIViewController, PracticeSettingsDelegate {
         loopEndBarIndex = -1
         
         setPlayButton(ionicon: .play, size: playButtonSize)
+        setRestartButton(ionicon: .iosSkipbackward, size: playButtonSize)
     }
     
     func initializeParts(score : SSScore) {
@@ -819,6 +821,28 @@ class PracticeViewController: UIViewController, PracticeSettingsDelegate {
     func setPlayButton(ionicon:Ionicons=Ionicons.play, size:CGFloat) {
         self.playButton?.titleLabel?.font = UIFont.ionicon(of: size)
         self.playButton?.setTitle(String.ionicon(with: ionicon), for: .normal)
+    }
+    
+    func setRestartButton(ionicon:Ionicons=Ionicons.play, size:CGFloat) {
+        self.restartButton?.titleLabel?.font = UIFont.ionicon(of: size)
+        self.restartButton?.setTitle(String.ionicon(with: ionicon), for: .normal)
+    }
+    
+    
+    @IBAction func restartPressed(_ sender: Any) {
+        print("RESTART:",loopStartBarIndex,loopEndBarIndex,cursorBarIndex)
+//        playData.setLoopStart(Int32(loopStartBarIndex), loopBackBar:Int32(loopEndBarIndex), numRepeats:10)
+        if let synth = synth
+        {
+            if synth.isPlaying
+            {
+                print("PAUSE")
+                setPlayButton(ionicon: .play, size: playButtonSize)
+                synth.reset() // stop playing if playing
+            }
+        }
+        self.cursorBarIndex = 0
+        sysScrollView?.setCursorAtBar(Int32(self.cursorBarIndex), type:cursor_rect, scroll:scroll_bar, shouldDisplayRect: true)
     }
     
     @IBAction func play(_ sender: Any) {

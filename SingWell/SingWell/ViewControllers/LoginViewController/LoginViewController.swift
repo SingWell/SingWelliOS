@@ -23,10 +23,19 @@ class LoginViewController: AnimatableViewController {
     @IBOutlet weak var emailField: DTTextField!
     @IBOutlet weak var passwordField: DTTextField!
     
+    @IBOutlet weak var loginButton: AnimatableButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.transitionAnimationType = .fade(direction: .cross)
         hideKeyboardWhenTappedAround()
+        
+        emailField.font = UIFont(name: DEFAULT_FONT, size: 20)
+        passwordField.font = UIFont(name: DEFAULT_FONT, size: 20)
+        loginButton.titleLabel?.font = UIFont(name: DEFAULT_FONT, size: 26)
+        
+        emailField.text = "kenton@gmail.com"
+        passwordField.text = "password123"
     }
     
     @IBAction func signInPressed(_ sender: Any) {

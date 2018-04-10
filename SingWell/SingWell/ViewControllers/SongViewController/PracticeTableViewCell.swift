@@ -13,6 +13,8 @@ class PracticeTableViewCell: AnimatableTableViewCell {
 
     @IBOutlet weak var mxlNameLabel: AnimatableLabel!
     
+    @IBOutlet weak var practiceLabel: AnimatableLabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

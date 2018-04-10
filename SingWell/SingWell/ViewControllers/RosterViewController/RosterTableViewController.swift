@@ -139,6 +139,10 @@ class RosterTableViewController: UITableViewController {
 //            }
 //        }
         
+        cell.rosterCellName.font = UIFont(name:DEFAULT_FONT, size:17)
+        cell.rosterCellEmail.font = UIFont(name:DEFAULT_FONT, size:17)
+        
+//        var profileImage: UIImage = UIImage(named: "profileImage")!
         profileImage = profileImage.circleMasked!
         cell.rosterCellImageView.image = profileImage
         

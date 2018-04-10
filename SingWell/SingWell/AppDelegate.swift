@@ -11,6 +11,13 @@ import UIKit
 let kToken = "AUTH_TOKEN"
 let kUserId = "userId"
 
+let BASE_FONT = "AppleSDGothicNeo"
+let DEFAULT_FONT = BASE_FONT+"-Regular"
+let DEFAULT_FONT_BOLD = BASE_FONT+"-Bold"
+let DEFAULT_FONT_SEMIBOLD = BASE_FONT+"-SemiBold"
+let DEFAULT_FONT_LIGHT = BASE_FONT+"-Light"
+let DEFAULT_FONT_THIN = BASE_FONT+"-Thin"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

@@ -123,10 +123,17 @@ class ChoirTableViewController: UITableViewController {
         self.view.frame = self.view.bounds
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        CURRENT_CHOIR_ID = self.choirInfo["id"].intValue
+    }
+    
     func getChoirEvents() {
         ApiHelper.getEvents(orgId: choirInfo["organization"].stringValue) { response, error in
+            
             if error == nil {
+                
                 var events = response!.arrayValue
+                print(events)
                 CURRENT_CHOIR_ID = self.choirInfo["id"].intValue
                 events = events.filter( JSON.currentChoirId )
                 self.upcomingChoirEvents = events.filter( JSON.futureDateStrings )
@@ -176,9 +183,9 @@ class ChoirTableViewController: UITableViewController {
         case kChoirInfo: // choir info cell
             return 1
         case kUpcomingEvents:
-            return upcomingChoirEvents.count
+            return min(upcomingChoirEvents.count, 4)
         case kPastEvents:
-            return pastChoirEvents.count
+            return min(pastChoirEvents.count, 4)
         default:
             return 0
         }
@@ -223,6 +230,11 @@ class ChoirTableViewController: UITableViewController {
             cell.musicLibraryButton.titleLabel?.font = UIFont.ionicon(of: 30)
             cell.musicLibraryButton.setTitle(String.ionicon(with:.musicNote), for: .normal)
             
+            cell.directedByLabel.font = UIFont(name:DEFAULT_FONT, size:19)
+            cell.descriptionLabel.font = UIFont(name:DEFAULT_FONT, size:19)
+            cell.directorNameButton.titleLabel?.font = UIFont(name:DEFAULT_FONT, size:19)
+            
+            
             return cell
         default:
             
@@ -231,6 +243,12 @@ class ChoirTableViewController: UITableViewController {
             
             cell.eventNameLabel.text = event["name"].stringValue
             cell.locationLabel.text = event["location"].stringValue
+            
+            cell.eventNameLabel.font = UIFont(name:DEFAULT_FONT_BOLD, size:21)
+            cell.locationLabel.font = UIFont(name:DEFAULT_FONT, size:16)
+            cell.dateLabel.font = UIFont(name:DEFAULT_FONT, size:29)
+            cell.timeLabel.font = UIFont(name:DEFAULT_FONT, size:16)
+            
             
             formatter.dateFormat = "yyyy-MM-dd"
             if let eventDate = formatter.date(from: event[JSON.kDate].stringValue) {

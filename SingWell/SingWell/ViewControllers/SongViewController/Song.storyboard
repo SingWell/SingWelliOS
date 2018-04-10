@@ -27,7 +27,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kwy-15-Ldk" customClass="AnimatableView" customModule="IBAnimatable">
-                                            <rect key="frame" x="0.0" y="11" width="375" height="250"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="272"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lzk-oB-aRv" userLabel="SongNameLabel" customClass="AnimatableLabel" customModule="IBAnimatable">
                                                     <rect key="frame" x="10" y="12" width="375" height="32.5"/>
@@ -90,8 +90,8 @@
                                         </view>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="Kwy-15-Ldk" firstAttribute="top" secondItem="ffG-Jy-P9B" secondAttribute="top" id="99d-rI-k3g"/>
                                         <constraint firstItem="Lzk-oB-aRv" firstAttribute="width" secondItem="ffG-Jy-P9B" secondAttribute="width" id="TK7-Oy-TAL"/>
-                                        <constraint firstItem="Kwy-15-Ldk" firstAttribute="top" secondItem="ffG-Jy-P9B" secondAttribute="topMargin" id="UCE-sJ-tEn"/>
                                         <constraint firstItem="Kwy-15-Ldk" firstAttribute="leading" secondItem="ffG-Jy-P9B" secondAttribute="leading" id="WbO-GA-VCe"/>
                                         <constraint firstItem="Kwy-15-Ldk" firstAttribute="centerX" secondItem="ffG-Jy-P9B" secondAttribute="centerX" id="jLj-79-zH8"/>
                                         <constraint firstItem="Kwy-15-Ldk" firstAttribute="centerY" secondItem="ffG-Jy-P9B" secondAttribute="centerY" constant="60.75" id="snT-VP-kFR"/>
@@ -179,6 +179,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="mxlNameLabel" destination="gPe-h7-U4f" id="S1W-Ru-NTh"/>
+                                    <outlet property="practiceLabel" destination="ItY-ee-M5o" id="o4R-dP-C2v"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SongPDFCell" id="HBe-cW-HkN" userLabel="SongPDFCell" customClass="SongPDFTableViewCell" customModule="SingWell" customModuleProvider="target">

@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vyv-ZE-fvR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vyv-ZE-fvR">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="AppleSDGothicNeo.ttc">
-            <string>AppleSDGothicNeo-Bold</string>
-            <string>AppleSDGothicNeo-Regular</string>
-            <string>AppleSDGothicNeo-Thin</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Practice View Controller-->
         <scene sceneID="SXh-a7-4WH">
@@ -105,11 +98,25 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dXa-tj-hKf">
+                                <rect key="frame" x="74" y="570" width="66" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="66" id="BpW-jU-ClD"/>
+                                    <constraint firstAttribute="height" constant="60" id="Uyb-SD-W2Z"/>
+                                </constraints>
+                                <state key="normal" title="RESTART">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="restartPressed:" destination="vyv-ZE-fvR" eventType="touchUpInside" id="Scd-C6-QCm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="nrA-63-8aV" firstAttribute="centerX" secondItem="k58-rb-uqH" secondAttribute="centerX" id="2RL-Jx-gUy"/>
                             <constraint firstItem="a4g-Oy-BYP" firstAttribute="top" secondItem="QRF-dc-4iq" secondAttribute="bottom" id="BFP-dj-BHM"/>
+                            <constraint firstItem="crV-Ix-UUD" firstAttribute="leading" secondItem="dXa-tj-hKf" secondAttribute="trailing" constant="14" id="F95-5y-UvE"/>
                             <constraint firstAttribute="trailing" secondItem="sbV-1c-wfq" secondAttribute="trailing" constant="-20" id="HFH-uZ-rub"/>
                             <constraint firstItem="HxC-Ux-jnI" firstAttribute="top" secondItem="sko-yd-SKb" secondAttribute="top" constant="32" id="JgA-0I-kFW"/>
                             <constraint firstItem="scI-iH-Hwe" firstAttribute="top" secondItem="sko-yd-SKb" secondAttribute="top" constant="90" id="M1Z-Iv-IxN"/>
@@ -117,6 +124,7 @@
                             <constraint firstAttribute="trailing" secondItem="QRF-dc-4iq" secondAttribute="trailing" id="Mzh-Vz-8f2"/>
                             <constraint firstItem="sko-yd-SKb" firstAttribute="trailing" secondItem="o9T-t3-qEK" secondAttribute="trailing" constant="16" id="Nle-hQ-p8T"/>
                             <constraint firstItem="sbV-1c-wfq" firstAttribute="top" secondItem="FV6-Nv-dFD" secondAttribute="bottom" constant="7" id="Nvb-m3-tR8"/>
+                            <constraint firstItem="dXa-tj-hKf" firstAttribute="bottom" secondItem="crV-Ix-UUD" secondAttribute="bottom" id="SZc-5y-UL2"/>
                             <constraint firstItem="FV6-Nv-dFD" firstAttribute="top" secondItem="qFw-r5-1H7" secondAttribute="bottom" constant="9" id="UQx-k9-33J"/>
                             <constraint firstItem="HxC-Ux-jnI" firstAttribute="leading" secondItem="k58-rb-uqH" secondAttribute="leading" constant="8" id="XGL-kd-FcZ"/>
                             <constraint firstItem="crV-Ix-UUD" firstAttribute="top" secondItem="sbV-1c-wfq" secondAttribute="bottom" constant="8" id="YIU-lb-bZf"/>
@@ -148,6 +156,7 @@
                         <outlet property="layoutControl" destination="dFG-kH-0BE" id="s5I-S2-QpJ"/>
                         <outlet property="metronomeSwitch" destination="E6C-cq-c9J" id="bTh-oR-uhe"/>
                         <outlet property="playButton" destination="crV-Ix-UUD" id="7Wh-qG-xx3"/>
+                        <outlet property="restartButton" destination="dXa-tj-hKf" id="hqu-Zv-bEs"/>
                         <outlet property="sysScrollView" destination="a4g-Oy-BYP" id="a6Q-gm-rEd"/>
                         <outlet property="tempoLabel" destination="loh-a0-rYR" id="XdY-Ug-a2Z"/>
                         <outlet property="tempoSlider" destination="VhM-iI-pVN" id="ZMz-0w-usZ"/>

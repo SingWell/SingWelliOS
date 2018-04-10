@@ -71,6 +71,7 @@ class CalendarViewController: UIViewController {
 
         self.title = "Calendar"
         
+        print("Loading events:",orgId)
         getEvents()
         
         setupCalendarView()
@@ -85,7 +86,11 @@ class CalendarViewController: UIViewController {
                 self.events = response!.arrayValue
                 self.events = self.events.filter( JSON.currentChoirId )
                 self.eventDict = self.parseEvents(events: self.events)
-                self.calendarView.reloadData()
+                print("EVENTS:",self.eventDict)
+                DispatchQueue.main.async {
+                    self.calendarView.reloadData()
+                }
+                
             } else {
                 print("Error getting events:",error as Any)
             }
@@ -273,7 +278,10 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.eventNameLabel.text = event["name"].stringValue
         cell.locationLabel.text = event["location"].stringValue
-        
+        cell.eventNameLabel.font = UIFont(name:DEFAULT_FONT_BOLD, size:21)
+        cell.locationLabel.font = UIFont(name:DEFAULT_FONT, size:16)
+        cell.dateLabel.font = UIFont(name:DEFAULT_FONT, size:16)
+        cell.timeLabel.font = UIFont(name:DEFAULT_FONT, size:16)
         formatter.dateFormat = "yyyy-MM-dd"
         if let eventDate = formatter.date(from: event["date"].stringValue) {
             formatter.dateFormat = "EEEE, MMM d, yyyy"
@@ -298,7 +306,7 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let nextVc = AppStoryboard.Event.initialViewController() as! EventViewController
+        let nextVc = AppStoryboard.Event.initialViewController() as! EventTableViewController
         nextVc.eventInfo = selectedEvents[indexPath.row]
         self.navigationController?.pushViewController(nextVc, animated: true)
     }

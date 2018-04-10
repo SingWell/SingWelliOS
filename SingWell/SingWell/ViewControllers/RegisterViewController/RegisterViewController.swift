@@ -20,9 +20,16 @@ class RegisterViewController: AnimatableViewController {
     @IBOutlet weak var emailField: DTTextField!
     @IBOutlet weak var passwordField: DTTextField!
     
+    @IBOutlet weak var loginButton: AnimatableButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
+        
+        firstNameField.font = UIFont(name: DEFAULT_FONT, size: 20)
+        lastNameField.font = UIFont(name: DEFAULT_FONT, size: 20)
+        emailField.font = UIFont(name: DEFAULT_FONT, size: 20)
+        passwordField.font = UIFont(name: DEFAULT_FONT, size: 20)
+        loginButton.titleLabel?.font = UIFont(name: DEFAULT_FONT, size: 26)
     }
 
     @IBAction func signUpPressed(_ sender: Any) {

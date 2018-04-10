@@ -68,15 +68,6 @@ class SongTableViewController: UITableViewController {
         }
     }
     
-    @IBAction func goToPracticePage(_ sender: Any) {
-        let nextVc = AppStoryboard.Practice.initialViewController() as! PracticeViewController
-        print("LOADING: ",mxlFilename)
-        nextVc.filename = mxlFilename
-        nextVc.songName = songInfo["title"].stringValue
-        
-        self.navigationController?.pushViewController(nextVc, animated: true)
-    }
-    
     @IBAction func openPDF(_ sender: Any) {
 
 //        getPDFResources()
@@ -158,7 +149,12 @@ class SongTableViewController: UITableViewController {
             cell.contentView.backgroundColor = BACKGROUND_COLOR
             
             cell.songNameLabel.text = songInfo["title"].stringValue
-            cell.songNameLabel.font = cell.songNameLabel.font.withSize(25)
+//            cell.songNameLabel.font = cell.songNameLabel.font.withSize(25)
+            
+            cell.songNameLabel.font = UIFont(name:DEFAULT_FONT, size:25)
+            cell.composerNameLabel.font = UIFont(name:DEFAULT_FONT, size:19)
+            cell.arrangerNameLabel.font = UIFont(name:DEFAULT_FONT, size:19)
+            cell.publisherNameLabel.font = UIFont(name:DEFAULT_FONT, size:19)
             
             cell.composerNameLabel.text = "Composed By: " + songInfo["composer"].stringValue
             
@@ -195,6 +191,10 @@ class SongTableViewController: UITableViewController {
             let youtubeURL = NSURL(string: songResources[resourceNum]["url"].stringValue)
             cell.wv.loadRequest(URLRequest(url: youtubeURL! as URL))
             cell.songTitle.text = "Title: " + songResources[resourceNum]["title"].stringValue
+            
+            cell.songTitle.font = UIFont(name:DEFAULT_FONT, size:17)
+            cell.descriptionLabel.font = UIFont(name:DEFAULT_FONT, size:16)
+            
             if(songResources[resourceNum]["description"].stringValue != ""){
                 cell.descriptionLabel.text = "Notes: " + songResources[resourceNum]["description"].stringValue
             }
@@ -209,6 +209,8 @@ class SongTableViewController: UITableViewController {
             
             cell.pdfNameLabel.text = songResources[resourceNum]["title"].stringValue
             
+            cell.pdfNameLabel.font = UIFont(name:DEFAULT_FONT, size:17)
+            
             return cell
             
         case kPractice: // song resource cell - pdf resource
@@ -216,6 +218,8 @@ class SongTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PracticeCell", for: indexPath) as! PracticeTableViewCell
             
             cell.mxlNameLabel.text = songResources[resourceNum]["title"].stringValue
+            cell.mxlNameLabel.font = UIFont(name:DEFAULT_FONT, size:17)
+            cell.practiceLabel.font = UIFont(name:DEFAULT_FONT, size:17)
             
             return cell
             
@@ -231,12 +235,10 @@ class SongTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 1 {
             let resourceNum = mxlNum[indexPath.row]
-//            mxlFilename = songResources[resourceNum]["title"].stringValue
-//            goToPracticePage(_:)
             let nextVc = AppStoryboard.Practice.initialViewController() as! PracticeViewController
             print("LOADING: ",mxlFilename)
             nextVc.filename = songResources[resourceNum]["title"].stringValue
-            
+            nextVc.songName = songInfo["title"].stringValue
             self.navigationController?.pushViewController(nextVc, animated: true)
         }
         if indexPath.section == 3 {
