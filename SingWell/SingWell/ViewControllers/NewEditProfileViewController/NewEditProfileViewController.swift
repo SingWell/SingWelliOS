@@ -176,7 +176,7 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
         backImage = backImage.circleMasked!
         confirmButtonImageView.image = backImage
         
-        let confirmImage = UIImage.ionicon(with: .checkmarkRound, textColor: UIColor.white, size: CGSize(width: 25, height: 25))
+        let confirmImage = UIImage.ionicon(with: .iosBox, textColor: UIColor.white, size: CGSize(width: 25, height: 25))
         confirmButton.setImage( confirmImage, for: UIControlState.normal)
     }
     
