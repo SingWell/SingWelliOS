@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uif-4I-O6B">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uif-4I-O6B">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="AppleSDGothicNeo.ttc">
-            <string>AppleSDGothicNeo-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Settings Model View Controller-->
         <scene sceneID="7xP-vX-IOV">
@@ -23,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="azM-aa-E3e" customClass="AnimatableButton" customModule="IBAnimatable">
-                                <rect key="frame" x="64" y="319" width="247" height="49"/>
+                                <rect key="frame" x="64" y="279" width="247" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="5oU-bf-Yxz"/>
                                 </constraints>
@@ -36,19 +31,43 @@
                                         <real key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                        <color key="value" red="0.0" green="0.62100949750000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="logoutButtonPressedWithSender:" destination="Uif-4I-O6B" eventType="touchUpInside" id="gJ2-Ca-6Hk"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5b-4g-wW0" customClass="AnimatableButton" customModule="IBAnimatable">
+                                <rect key="frame" x="64" y="345" width="247" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="jfn-df-xpP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="23"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.0" green="0.62100949750000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cancelButtonPressedWithSender:" destination="Uif-4I-O6B" eventType="touchUpInside" id="6Tz-7x-q7G"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="e5b-4g-wW0" firstAttribute="trailing" secondItem="azM-aa-E3e" secondAttribute="trailing" id="GQu-vd-Mwk"/>
                             <constraint firstItem="azM-aa-E3e" firstAttribute="leading" secondItem="SPe-VI-wrn" secondAttribute="leading" constant="64" id="K3l-Th-vhh"/>
+                            <constraint firstItem="e5b-4g-wW0" firstAttribute="leading" secondItem="azM-aa-E3e" secondAttribute="leading" id="QPT-JS-5wB"/>
+                            <constraint firstItem="e5b-4g-wW0" firstAttribute="top" secondItem="azM-aa-E3e" secondAttribute="bottom" constant="17" id="UNI-B9-4VB"/>
                             <constraint firstItem="azM-aa-E3e" firstAttribute="centerX" secondItem="SPe-VI-wrn" secondAttribute="centerX" id="jn7-ZA-XQQ"/>
-                            <constraint firstItem="azM-aa-E3e" firstAttribute="centerY" secondItem="SPe-VI-wrn" secondAttribute="centerY" id="wnv-NE-Oyg"/>
+                            <constraint firstItem="azM-aa-E3e" firstAttribute="centerY" secondItem="SPe-VI-wrn" secondAttribute="centerY" constant="-40" id="wnv-NE-Oyg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SPe-VI-wrn"/>
                     </view>

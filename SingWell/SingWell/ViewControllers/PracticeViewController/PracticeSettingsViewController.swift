@@ -8,6 +8,7 @@
 
 import UIKit
 import IBAnimatable
+import IoniconsKit
 
 protocol PracticeSettingsDelegate: class {
     func updateSettings(_ tempo: Float?, _ metronomeOn: Bool?, _ partsToDisplay:[Int:[String:Any]])
@@ -20,6 +21,7 @@ class PracticeSettingsViewController: AnimatableModalViewController {
     @IBOutlet weak var metronomeSwitch: UISwitch!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var doneBtn: AnimatableButton!
     weak var delegate: PracticeSettingsDelegate?
     
     var metronomeOn = true
@@ -34,6 +36,10 @@ class PracticeSettingsViewController: AnimatableModalViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.allowsSelection = false
+        
+        
+        self.doneBtn?.titleLabel?.font = UIFont.ionicon(of: 20)
+        self.doneBtn?.setTitle(String.ionicon(with: Ionicons.checkmarkRound ), for: .normal)
     }
     
     @objc func tempoSliderChanged(sender:UISlider) {
@@ -54,6 +60,9 @@ class PracticeSettingsViewController: AnimatableModalViewController {
         self.delegate?.updateSettings(tempo, metronomeOn, partsToDisplay)
     }
     
+    @IBAction func doneBtnPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
 
 }
