@@ -158,7 +158,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         backImage = backImage.circleMasked!
         notificationImageView.image = backImage
         
-        let notificationImage = UIImage.ionicon(with: .gearA, textColor: UIColor.white, size: CGSize(width: 25, height: 25))
+        let notificationImage = UIImage.ionicon(with: .logOut, textColor: UIColor.white, size: CGSize(width: 25, height: 25))
         notificationButton.setImage( notificationImage, for: UIControlState.normal)
     }
     

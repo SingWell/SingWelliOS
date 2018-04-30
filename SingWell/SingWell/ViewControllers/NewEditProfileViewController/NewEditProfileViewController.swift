@@ -176,7 +176,7 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
         backImage = backImage.circleMasked!
         confirmButtonImageView.image = backImage
         
-        let confirmImage = UIImage.ionicon(with: .checkmarkRound, textColor: UIColor.white, size: CGSize(width: 25, height: 25))
+        let confirmImage = UIImage.ionicon(with: .iosBox, textColor: UIColor.white, size: CGSize(width: 25, height: 25))
         confirmButton.setImage( confirmImage, for: UIControlState.normal)
     }
     
@@ -322,8 +322,9 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
         let delimiter = " "
         let fullName = nameTextField.text
         var name = fullName?.components(separatedBy: delimiter)
-        let firstName = name![0]
-        var lastName = ""
+        var firstName: String?
+        firstName = name![0]
+        var lastName: String?
         if(name?.count == 2){
             lastName = name![1]
         }
@@ -335,21 +336,66 @@ class NewEditProfileViewController: UIViewController, UITextFieldDelegate, UITex
         for number in phone!{
             phoneNumber += number
         }
-        let birthday = birthdayTextField.text
+        
+        var birthday = birthdayTextField.text
         
 //        let email = emailTextField.text
-        var biography = ""
+        var biography: String?
         if(biographyTextView.text != "Add a short biography here"){
             biography = biographyTextView.text
         }
-        let city = cityTextField.text
-        let address = streetTextField.text
-        let state = stateTextField.text
-        let zipCode = zipCodeTextField.text
+        var city = cityTextField.text
+        var address = streetTextField.text
+        var state = stateTextField.text
+        var zipCode = zipCodeTextField.text
         
 //        let parameters: [String: AnyObject] = [ "phone_number": phoneNumber as AnyObject, "address": address! as AnyObject, "bio": biography as AnyObject, "city": city! as AnyObject,"zip_code": zipCode! as AnyObject, "state": state! as AnyObject, "date_of_birth": "" as AnyObject]
         
-        let parameters: [String: Any] = [ "profile": ["phone_number": phoneNumber, "address": address!, "bio": biography, "city": city!,"zip_code": zipCode!, "state": state!, "date_of_birth": birthday!], "last_name": lastName, "first_name":firstName]
+//        let parameters: [String: Any] = [ "profile": ["phone_number": phoneNumber, "address": address!, "bio": biography, "city": city!,"zip_code": zipCode!, "state": state!, "date_of_birth": birthday!], "last_name": lastName, "first_name":firstName]
+        
+//        (state == "OFF") ? "securityOn" : "securityOff"
+        var phone_number: String?
+        if phoneNumber == "" {
+            phone_number = nil
+        }
+        else {
+            phone_number = phoneNumber
+        }
+        
+        if address == "" {
+            address = nil
+        }
+        
+        if biography == "" {
+            biography = nil
+        }
+        
+        if city == "" {
+            city = nil
+        }
+        
+        if zipCode == "" {
+            zipCode = nil
+        }
+        
+        if state == "" {
+            state = nil
+        }
+        
+        if birthday == "" {
+            birthday = nil
+        }
+        
+        if lastName == "" {
+            lastName = nil
+        }
+        
+        if firstName == "" {
+            firstName = nil
+        }
+        
+        
+        let parameters: [String: Any] = [ "profile": ["phone_number": phone_number as Any, "address": address as Any, "bio": biography as Any, "city": city as Any,"zip_code": zipCode as Any, "state": state as Any, "date_of_birth": birthday as Any], "last_name": lastName as Any, "first_name":firstName as Any]
         
         ApiHelper.editUser(parameters: parameters) { response, error in
             if error == nil {
