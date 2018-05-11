@@ -54,6 +54,8 @@ The NavigationMenuViewController determines the order of the cells in the side m
 
 This file uses the SeeScoreLib library to display and listen to MXL or XML files as sheet music. Most of the variables used throughout the file are instantiated at the top of the class. Take some time to go through this file if needed to figure out how it all works. The updateSettings delegate function updates certain variables after the practice settings are changed. (To implement the ability to have certain volume differences for specified parts, the class variable for the specified volumes would be set here and implemented when playing sound from the “synth”. Look at “partsToDisplay” to figure this out)
 
+![alt text](FileStructure.png "File location for SeeScoreLib executable")
+
 There are a bunch of delegate functions that are pretty much left as default for now because the sheet music worked. The license to use this library will need to be updated for a fully functional app.
 
 To make it work, you must put the SeeScoreLib executable file in the directory as shown in the image below.
