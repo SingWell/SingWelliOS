@@ -21,6 +21,70 @@ ApiHelper.functionCall(parameters) { response, error in
         }
 ```
 
+## IBAnimatable and Font
+
+We tried to make everything part of the “Animatable” classes so we have more control over display characteristics in the storyboards and animations. It is not necessary for everything, but it will help you out in general.
+
+We use a specified font that is set through code. The idea is to be able to programmatically change the font throughout the entire application.
+
+## Extensions.swift
+
+This file is used for many different class extensions that may be used throughout the application. The storyboard control is probably the most notable feature in this file. Other things include the ability for an empty message in a table view, order date strings, and color helpers.
+
+## Using Storyboards and View Controllers
+
+When you want to create a new view controller to use in a storyboard, create the view controller file as you normally would, then create a new storyboard file. In this new storyboard file, add a view controller and assign it to the class of your new view controller. Then make that view controller the initial view controller of that storyboard. Then go into the “Extensions.swift” file in the “Resources” folder to add the storyboard name (without the extension) to the case line in the AppStoryboard enum.
+
+When you want to transition to that view controller, you must execute the transitions in code. 
+
+```
+let nextVc = AppStoryboard.Register.initialViewController() as! RegisterViewController
+self.present(nextVc, animated: true)
+```
+
+## SideMenu
+
+The SideMenu storyboard is used to format how the sidemenu looks. 
+
+The HostViewController determines which controller identifiers (Storyboard identifiers found in the AppStoryboard enum) can be used. This is also the file that selects the first view controller after login.
+
+The NavigationMenuViewController determines the order of the cells in the side menu. There used to be a “hack” used to display everything correctly due to a status bar issue. Hopefully this hack is not needed anymore (we found that after adding the login view controller there were no issues).
+
+## PracticeViewController
+
+This file uses the SeeScoreLib library to display and listen to MXL or XML files as sheet music. Most of the variables used throughout the file are instantiated at the top of the class. Take some time to go through this file if needed to figure out how it all works. The updateSettings delegate function updates certain variables after the practice settings are changed. (To implement the ability to have certain volume differences for specified parts, the class variable for the specified volumes would be set here and implemented when playing sound from the “synth”. Look at “partsToDisplay” to figure this out)
+
+There are a bunch of delegate functions that are pretty much left as default for now because the sheet music worked. The license to use this library will need to be updated for a fully functional app.
+
+To make it work, you must put the SeeScoreLib executable file in the directory as shown in the image below.
+￼
+This file was too big to put on the repo directly, so you can either get this file from the SeeScoreLib website or uncompress the zip file and include it here.
+
+## PracticeSettingsViewController
+
+This VC is used to update various variables to be updated in the PracticeViewController. There are delegate methods to update the PracticeViewController variables when done here.
+
+## ChoirViewController
+
+This page displays choir information in table format. The first cell shows all the basic choir and organization information. The next cells show upcoming events and past events (limit 3). The functions for determining whether events are past or future is determined in a JSON extension in the “Extensions.swift” file.
+
+In the future, this should be the landing page. First, the data needs to be pulled from the server for the user’s choir involvement, then the first choir needs to be selected.
+
+## CalendarViewController
+
+This shows past and upcoming events in calendar format using the JTAppleCalendar library. In the storyboard, you can change how the CalendarCell looks and the EventCell
+
+## MusicLibraryViewController
+
+This file pulls the music library of a given organization in JSON format and displays the basic song information in searchable format.
+
+## NotificationViewController
+
+This is a future view controller to be used for announcements and file changes by the director. Other notifications could be included here as well.
+
+## LoginViewController and RegisterViewController
+
+The LoginVC is used to login or go to the RegisterVC. The main functionality of the login is done through the ApiHelper file, which has `userId` and `AUTH_TOKEN` variables to keep track of who is currently logged in. You can logout from the profile page.
 
 ## User View Controller
 This is the view controller used to display user information from the roster. It uses the same format as the Profile view controller, however it is not editable. 
